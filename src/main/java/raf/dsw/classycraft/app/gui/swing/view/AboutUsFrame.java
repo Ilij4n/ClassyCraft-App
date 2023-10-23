@@ -7,7 +7,6 @@ import java.awt.*;
 import java.net.URL;
 
 public class AboutUsFrame extends JFrame {
-    //TODO napraviti novi JFRAME
 
     public AboutUsFrame(){
         //klasika
