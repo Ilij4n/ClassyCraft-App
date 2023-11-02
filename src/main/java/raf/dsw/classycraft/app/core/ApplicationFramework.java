@@ -1,6 +1,9 @@
 package raf.dsw.classycraft.app.core;
 
 import lombok.Getter;
+import raf.dsw.classycraft.app.Loggers.ConsoleLogger;
+import raf.dsw.classycraft.app.Loggers.FileLogger;
+import raf.dsw.classycraft.app.Loggers.Logger;
 import raf.dsw.classycraft.app.MessageGenerator.MessageGenerator;
 import raf.dsw.classycraft.app.MessageGenerator.MessageGeneratorImp;
 import raf.dsw.classycraft.app.core.model.ClassyRepository;
@@ -20,9 +23,13 @@ public class ApplicationFramework {
      */
     private ClassyRepository repository = new ClassyRepositoryImp();
     private MessageGenerator messageGenerator = new MessageGeneratorImp();
+    private Logger consoleLogger = new ConsoleLogger();
+    private Logger fileLogger = new FileLogger();
 
     private ApplicationFramework(){
-
+        //subujemo sve subscribere
+        ((MessageGeneratorImp)messageGenerator).addSub((ConsoleLogger)consoleLogger);
+        ((MessageGeneratorImp)messageGenerator).addSub((FileLogger)fileLogger);
     }
 
     public void initialize(){

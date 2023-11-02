@@ -75,7 +75,8 @@ public class MainFrame extends JFrame implements ISubscriber {
         if(o instanceof Message){
             Message message = (Message)o;
             if(message.getType()== MessageType.INFO){
-                System.out.println(message.toString());
+                //TODO ovo sve zameniti sa novim JOptionPaneovima
+                //System.out.println(message.toString());
             }
             else if(message.getType()==MessageType.ERROR){
 
