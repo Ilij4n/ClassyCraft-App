@@ -1,7 +1,6 @@
 package raf.dsw.classycraft.app.core.model;
 
 import lombok.Getter;
-import lombok.Setter;
 import raf.dsw.classycraft.app.core.model.composite.ClassyNode;
 import raf.dsw.classycraft.app.core.model.implementation.ProjectExplorer;
 

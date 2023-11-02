@@ -29,4 +29,9 @@ public class Package extends ClassyNodeComposite {
              */
         }
     }
+
+    @Override
+    public void deleteChild(ClassyNode child) {
+
+    }
 }

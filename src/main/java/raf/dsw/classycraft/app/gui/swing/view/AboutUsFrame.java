@@ -28,7 +28,7 @@ public class AboutUsFrame extends JFrame {
         panel.add(new JLabel("Todor Bozovic RN 124/23"));
 
         add(panel);
-        this.setVisible(true);
+        //this.setVisible(true);
     }
 
     private Icon loadIcon(String fileName){

@@ -8,10 +8,12 @@ import raf.dsw.classycraft.app.core.model.composite.ClassyNodeComposite;
 @Setter
 public class Project extends ClassyNodeComposite {
     private String autor;
+    private String filePath;
 
-    public Project(ClassyNode parent, String name, String autor) {
+    public Project(ClassyNode parent, String name, String autor, String filePath) {
         super(parent, name);
         this.autor = autor;
+        this.filePath = filePath;
     }
 
     @Override
@@ -33,5 +35,10 @@ public class Project extends ClassyNodeComposite {
                 "Pogresen tip" ili tako nesto
              */
         }
+    }
+
+    @Override
+    public void deleteChild(ClassyNode child) {
+
     }
 }
