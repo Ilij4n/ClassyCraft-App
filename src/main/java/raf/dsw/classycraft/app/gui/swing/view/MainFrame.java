@@ -10,8 +10,7 @@ import java.awt.*;
 @Setter
 public class MainFrame extends JFrame {
     private static MainFrame instance;
-    /* TODO sve frameove koje budemo pravili, ukljucujuci i ovaj novi postojeci
-    TODO open about us frame, treba dodavati kao polja u mainframeu*/
+
     //buduca polja za sve komponente view-a na glavnom prozoru
     private ActionManager actionManager;
     private AboutUsFrame aboutUsFrame;
