@@ -14,9 +14,11 @@ public class MainFrame extends JFrame {
     TODO open about us frame, treba dodavati kao polja u mainframeu*/
     //buduca polja za sve komponente view-a na glavnom prozoru
     private ActionManager actionManager;
+    private AboutUsFrame aboutUsFrame;
 
     private MainFrame(){
         actionManager = new ActionManager();
+        aboutUsFrame = new AboutUsFrame();
     }
 
     private void initialize(){

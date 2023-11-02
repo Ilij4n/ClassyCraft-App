@@ -1,6 +1,7 @@
 package raf.dsw.classycraft.app.controller;
 
 import raf.dsw.classycraft.app.gui.swing.view.AboutUsFrame;
+import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -17,7 +18,6 @@ public class OpenAboutUsAction extends AbstractClassyAction{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        AboutUsFrame aboutUsFrame = new AboutUsFrame();
-        aboutUsFrame.setVisible(true);
+        MainFrame.getInstance().getAboutUsFrame().setVisible(true);
     }
 }
