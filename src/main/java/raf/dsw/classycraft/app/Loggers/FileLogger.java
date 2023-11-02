@@ -17,15 +17,16 @@ public class FileLogger implements Logger, ISubscriber {
             FileWriter fw = new FileWriter(file, true);
             bw = new BufferedWriter(fw);
             bw.write(text);
+            bw.write("\n");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println("File nije nadjen");
         } finally {
             try {
                 if (bw != null) {
                     bw.close();
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                System.err.println("Greska pri zatvaranju");
             }
         }
     }

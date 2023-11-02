@@ -1,5 +1,7 @@
 package raf.dsw.classycraft.app.core.model.implementation;
 
+import raf.dsw.classycraft.app.MessageGenerator.MessageType;
+import raf.dsw.classycraft.app.core.ApplicationFramework;
 import raf.dsw.classycraft.app.core.model.composite.ClassyNode;
 import raf.dsw.classycraft.app.core.model.composite.ClassyNodeComposite;
 
@@ -13,20 +15,14 @@ public class Package extends ClassyNodeComposite {
     public void addChild(ClassyNode child) {
         if(child instanceof Package || child instanceof Diagram){
             if(getChildren().contains(child)){
-                /*TODO:
-                    Ovde ce ici generacija poruke kad se napravi MessageGenerator
-                    "Paket/diagram vec postoji"
-                 */
+                ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Paket/diagram vec postoji", MessageType.ERROR);
             }
             else{
                 getChildren().add(child);
             }
         }
         else{
-            /*TODO:
-                Ovde ce ici generacija poruke kad se napravi MessageGenerator
-                "Pogresen tip" ili tako nesto
-             */
+            ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Pogresen tip", MessageType.ERROR);
         }
     }
 

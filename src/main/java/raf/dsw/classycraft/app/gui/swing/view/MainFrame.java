@@ -12,7 +12,6 @@ import raf.dsw.classycraft.app.observer.ISubscriber;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 @Getter
 @Setter
@@ -76,7 +75,7 @@ public class MainFrame extends JFrame implements ISubscriber {
             Message message = (Message)o;
             if(message.getType()== MessageType.INFO){
                 //TODO ovo sve zameniti sa novim JOptionPaneovima
-                //System.out.println(message.toString());
+                System.out.println(message.toString()+"Mainframe");
             }
             else if(message.getType()==MessageType.ERROR){
 
