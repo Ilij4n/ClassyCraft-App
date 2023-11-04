@@ -39,14 +39,29 @@ public class MainFrame extends JFrame implements ISubscriber {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("ClassyCrafT");
 
-        //TODO: namestiti ovo da bude SplitPane
-
         MyMenyBar menu = new MyMenyBar();
         setJMenuBar(menu);
 
         MyToolBar toolBar = new MyToolBar();
         add(toolBar, BorderLayout.NORTH);
-        //TEST DUGME, IZBISTATI
+
+        //SplitPane setup
+
+        JPanel jTreePanel = new JPanel();
+        //TODO: Ovde ce se raditi nesto za stablo
+
+        JPanel jTabbedPanel = new JPanel();
+        //TODO: Ovde ce se raditi nesto za ono TabbedPane cudo ili kakogod
+
+        JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, jTreePanel, jTabbedPanel);
+        splitPane.setDividerLocation(getWidth()/5);
+        add(splitPane);
+
+        //FIXME TEST DUGME, IZBISTATI PRE ILI KASNIJE
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel,BoxLayout.X_AXIS));
+
         JButton button = new JButton();
         AbstractAction action = new AbstractAction("Button Action") {
             @Override
@@ -56,7 +71,30 @@ public class MainFrame extends JFrame implements ISubscriber {
         };
 
         button.setAction(action);
-        add(button);
+        panel.add(button);
+
+        JButton button1 = new JButton();
+        AbstractAction action1 = new AbstractAction("Button Action") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ApplicationFramework.getInstance().getMessageGenerator().generateMessage("ALOOO",MessageType.ERROR);
+            }
+        };
+
+        button1.setAction(action1);
+        panel.add(button1);
+
+        JButton button2 = new JButton();
+        AbstractAction action2 = new AbstractAction("Button Action") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ApplicationFramework.getInstance().getMessageGenerator().generateMessage("EEJ",MessageType.WARNING);
+            }
+        };
+
+        button2.setAction(action2);
+        panel.add(button2);
+        this.add(panel);
     }
 
     public static MainFrame getInstance()
@@ -71,17 +109,22 @@ public class MainFrame extends JFrame implements ISubscriber {
 
     @Override
     public void update(Object o) {
+        /*
+            Svaki IPUBLISHER imace svoju posebnu Notification klasu (u donjem slucaju klasa Message)
+            Svaki ISUBSCRIBER ce imati provere za svaku od tih posebnih klasa u zavnisnosti od toga na koga je subovan
+            Metodama notifySubs i update je bas iz tog razloga tada sloboda da primaju argument tipa Object sa jedinim problemom
+            da je kast u specificnu notification klasu neophodan da bi imali pristup poljima iste.
+         */
         if(o instanceof Message){
             Message message = (Message)o;
             if(message.getType()== MessageType.INFO){
-                //TODO ovo sve zameniti sa novim JOptionPaneovima
-                System.out.println(message.toString()+"Mainframe");
+                JOptionPane.showMessageDialog(this,message.toString(),"Informacija",JOptionPane.INFORMATION_MESSAGE);
             }
             else if(message.getType()==MessageType.ERROR){
-
+                JOptionPane.showMessageDialog(this,message.toString(),"Greska",JOptionPane.ERROR_MESSAGE);
             }
             else if(message.getType()==MessageType.WARNING){
-
+                JOptionPane.showMessageDialog(this,message.toString(),"Upozorenje",JOptionPane.WARNING_MESSAGE);
             }
         }
     }
