@@ -25,10 +25,10 @@ public class AboutUsFrame extends JFrame {
         panel.add(new JLabel(loadIcon("/images/exit.png")));
         panel.add(new JLabel("Ilijan Kojovic RN 81/23"));
         panel.add(new JLabel(loadIcon("/images/exit.png")));
-        panel.add(new JLabel("Todor Bozovic RN zabindex/23"));
+        panel.add(new JLabel("Todor Bozovic RN 124/23"));
 
         add(panel);
-        this.setVisible(true);
+        //this.setVisible(true);
     }
 
     private Icon loadIcon(String fileName){
