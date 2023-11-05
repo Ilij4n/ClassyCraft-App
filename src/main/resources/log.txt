@@ -1,1 +1,16 @@
 
+[INFO] [05.11.2023 18:54] HEEEJ
+[ERROR] [05.11.2023 18:54] ALOOO
+[WARNING] [05.11.2023 18:54] EEJ
+[ERROR] [05.11.2023 20:18] Pogresen tip
+[ERROR] [05.11.2023 20:18] Pogresen tip
+[ERROR] [05.11.2023 20:19] Projekat vec postoji
+[ERROR] [05.11.2023 20:19] Projekat vec postoji
+[ERROR] [05.11.2023 20:20] Projekat vec postoji
+[ERROR] [05.11.2023 20:21] Pogresen tip
+[ERROR] [05.11.2023 20:21] Projekat vec postoji
+[ERROR] [05.11.2023 20:21] Projekat vec postoji
+[ERROR] [05.11.2023 20:21] Projekat vec postoji
+[ERROR] [05.11.2023 20:21] Projekat vec postoji
+[ERROR] [05.11.2023 20:22] Projekat vec postoji
+[ERROR] [05.11.2023 20:22] Projekat vec postoji

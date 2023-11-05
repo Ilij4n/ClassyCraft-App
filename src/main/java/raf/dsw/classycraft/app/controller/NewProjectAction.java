@@ -1,5 +1,8 @@
 package raf.dsw.classycraft.app.controller;
 
+import raf.dsw.classycraft.app.gui.swing.tree.model.ClassyTreeItem;
+import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.InputEvent;
@@ -16,6 +19,7 @@ public class NewProjectAction extends AbstractClassyAction{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        ClassyTreeItem selected = MainFrame.getInstance().getClassyTree().getSelectednode();
+        MainFrame.getInstance().getClassyTree().addChild(selected);
     }
 }
