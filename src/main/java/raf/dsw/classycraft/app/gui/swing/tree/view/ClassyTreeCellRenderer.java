@@ -18,16 +18,16 @@ public class ClassyTreeCellRenderer extends DefaultTreeCellRenderer {
         URL imageURL = null;
         //TODO ovde naci neke *jezivo* cool ikonice
         if (((ClassyTreeItem)value).getClassyNode() instanceof ProjectExplorer) {
-            imageURL = getClass().getResource("/images/tproject.gif");
+            imageURL = getClass().getResource("/images/projectExplorer.png");
         }
         else if (((ClassyTreeItem)value).getClassyNode() instanceof Project) {
-            imageURL = getClass().getResource("/images/tproject.gif");
+            imageURL = getClass().getResource("/images/project.png");
         }
         else if (((ClassyTreeItem)value).getClassyNode() instanceof Package) {
-            imageURL = getClass().getResource("/images/tproject.gif");
+            imageURL = getClass().getResource("/images/package.png");
         }
         else if (((ClassyTreeItem)value).getClassyNode() instanceof Diagram) {
-            imageURL = getClass().getResource("/images/tproject.gif");
+            imageURL = getClass().getResource("/images/diagram.png");
         }
 
         Icon icon = null;

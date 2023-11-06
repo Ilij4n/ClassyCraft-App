@@ -1,6 +1,8 @@
 package raf.dsw.classycraft.app.controller;
 
+import raf.dsw.classycraft.app.core.ApplicationFramework;
 import raf.dsw.classycraft.app.core.model.implementation.Package;
+import raf.dsw.classycraft.app.core.model.implementation.ProjectExplorer;
 import raf.dsw.classycraft.app.gui.swing.tree.model.ClassyTreeItem;
 import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
 
@@ -31,6 +33,7 @@ public class NewProjectAction extends AbstractClassyAction{
             }
         }
         MainFrame.getInstance().getClassyTree().addChild(selected, pakOrDia);
+        MainFrame.getInstance().refreshDivider();
     }
 
     private int options(){

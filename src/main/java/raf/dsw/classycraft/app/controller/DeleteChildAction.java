@@ -12,7 +12,7 @@ public class DeleteChildAction extends AbstractClassyAction{
 
     public DeleteChildAction() {
         putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.CTRL_MASK));
-        putValue(SMALL_ICON, loadIcon("/images/plus.png"));
+        putValue(SMALL_ICON, loadIcon("/images/kantica.png"));
         putValue(NAME, "New Project");
         putValue(SHORT_DESCRIPTION, "New project");
     }
@@ -21,6 +21,7 @@ public class DeleteChildAction extends AbstractClassyAction{
     public void actionPerformed(ActionEvent e) {
         ClassyTreeItem selected = MainFrame.getInstance().getClassyTree().getSelectednode();
         MainFrame.getInstance().getClassyTree().deleteChild(selected);
+        MainFrame.getInstance().refreshDivider();
     }
 
 }
