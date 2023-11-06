@@ -50,6 +50,8 @@ public class ClassyTreeImplementation implements ClassyTree {
         parent.add(new ClassyTreeItem(child));
         //reflektuje date promene u modelu
         ((ClassyNodeComposite) parent.getClassyNode()).addChild(child);
+        //fixme test print za proveru modela (izgleda ok)
+        System.out.println( ((ClassyNodeComposite) parent.getClassyNode()).getChildren().toString());
         //da lepo izgleda i da se refreshuje
         treeView.expandPath(treeView.getSelectionPath());
         SwingUtilities.updateComponentTreeUI(treeView);
@@ -62,33 +64,34 @@ public class ClassyTreeImplementation implements ClassyTree {
 
     @Override
     public void deleteChild(ClassyTreeItem item) {
-        //TODO Boga pitaj
+        //TODO Boga pitaj (zapravo izgleda ok)
         if (item.getClassyNode() instanceof ProjectExplorer){
             ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Explorer se ne brise ! ", MessageType.ERROR);
             return;
         }
+        //brisanje iz modela (valjda)
         ClassyNodeComposite parent = (ClassyNodeComposite)item.getClassyNode().getParent();
         parent.getChildren().remove(item.getClassyNode());
-
-        DefaultMutableTreeNode parent1 = (DefaultMutableTreeNode) item.getParent();
+        //za brisanje iz stabla
         treeModel.removeNodeFromParent(item);
 
 
     }
-
-    //TODO ovo dole raditi pomocu factoryMethod sablonu po parentu
+    //fixme random assigner indexa
+    int cnt = 0;
+    //TODO ovo dole raditi pomocu factoryMethod sablonu po parentu a ne ovako
     private ClassyNode createChild(ClassyNode parent,boolean pakOrDia) {
+        cnt++;
         if (parent instanceof ProjectExplorer)
-            //OVAJ KONSTRUKTOR NECE STAJATI OVAKO
-            return  new Project(parent, "Project","Autor","Path");
+            return  new Project(parent, "Project"+cnt,"Autor","Path");
         else if(parent instanceof Project){
-            return  new Package(parent, "Package");
+            return  new Package(parent, "Package"+cnt);
         }
         else if(parent instanceof Package){
-            System.out.println(pakOrDia);
-            if(!pakOrDia)return  new Diagram(parent, "Diagram");
-            return new Package(parent,"Package1");
+            if(!pakOrDia)return  new Diagram(parent, "Diagram"+cnt);
+            return new Package(parent,"Package"+cnt);
         }
+        cnt++;
         return null;
 
 

@@ -1,5 +1,9 @@
 package raf.dsw.classycraft.app.gui.swing.tree.controller;
 
+import raf.dsw.classycraft.app.MessageGenerator.MessageType;
+import raf.dsw.classycraft.app.core.ApplicationFramework;
+import raf.dsw.classycraft.app.core.model.composite.ClassyNode;
+import raf.dsw.classycraft.app.core.model.composite.ClassyNodeComposite;
 import raf.dsw.classycraft.app.gui.swing.tree.model.ClassyTreeItem;
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeCellEditor;
@@ -54,7 +58,15 @@ public class ClassyTreeCellEditor extends DefaultTreeCellEditor implements Actio
             return;
 
         ClassyTreeItem clicked = (ClassyTreeItem) clickedOn;
+        for(ClassyNode node : ((ClassyNodeComposite)clicked.getClassyNode().getParent()).getChildren()){
+            if(node.getName().equals(e.getActionCommand())){
+                ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Ime vec postoji", MessageType.ERROR);
+                return;
+            }
+        }
+        //postavlja ime iz textfielda
         clicked.setName(e.getActionCommand());
-
+        //samo izlazi iz edita
+        this.stopCellEditing();
     }
 }

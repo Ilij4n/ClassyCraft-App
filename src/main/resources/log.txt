@@ -51,3 +51,18 @@
 [ERROR] [06.11.2023 18:27] Explorer se ne brise ! 
 [ERROR] [06.11.2023 18:28] Paket vec postoji
 [ERROR] [06.11.2023 18:28] Paket/diagram vec postoji
+[ERROR] [06.11.2023 18:32] Ne moze da se doda!
+[ERROR] [06.11.2023 18:38] Paket vec postoji
+[ERROR] [06.11.2023 18:38] Projekat vec postoji
+[ERROR] [06.11.2023 18:38] Projekat vec postoji
+[ERROR] [06.11.2023 18:55] Ne moze da se doda!
+[ERROR] [06.11.2023 18:55] Ne moze da se doda!
+[ERROR] [06.11.2023 18:55] Ne moze da se doda!
+[ERROR] [06.11.2023 18:56] Ne moze da se doda!
+[ERROR] [06.11.2023 19:08] Ne moze da se doda!
+[ERROR] [06.11.2023 19:22] Ime vec postoji
+[ERROR] [06.11.2023 19:22] Ime vec postoji
+[ERROR] [06.11.2023 19:23] Ime vec postoji
+[ERROR] [06.11.2023 19:24] Ime vec postoji
+[ERROR] [06.11.2023 19:29] Ime vec postoji
+[ERROR] [06.11.2023 19:30] Ime vec postoji

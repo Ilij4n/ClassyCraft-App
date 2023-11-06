@@ -24,7 +24,6 @@ public class NewProjectAction extends AbstractClassyAction{
         boolean pakOrDia = false;
         if (selected.getClassyNode() instanceof Package) {
             //true je paket, false je diagram
-            System.out.println("USAO");
             switch (options()){
                 case 1:pakOrDia = true;break;
                 case 2:pakOrDia = false;break;
