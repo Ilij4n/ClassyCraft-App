@@ -1,2 +1,5 @@
 
 [ERROR] [06.11.2023 20:23] Explorer se ne brise ! 
+[ERROR] [06.11.2023 20:36] Explorer se ne brise ! 
+[ERROR] [06.11.2023 20:36] Ne moze da se doda!
+[ERROR] [06.11.2023 20:38] Explorer se ne brise ! 

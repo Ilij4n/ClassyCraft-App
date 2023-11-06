@@ -13,8 +13,8 @@ public class DeleteChildAction extends AbstractClassyAction{
     public DeleteChildAction() {
         putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.CTRL_MASK));
         putValue(SMALL_ICON, loadIcon("/images/kantica.png"));
-        putValue(NAME, "New Project");
-        putValue(SHORT_DESCRIPTION, "New project");
+        putValue(NAME, "Delete Project");
+        putValue(SHORT_DESCRIPTION, "Delete Project");
     }
 
     @Override
