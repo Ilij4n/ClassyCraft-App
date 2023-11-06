@@ -3,3 +3,7 @@
 [ERROR] [06.11.2023 20:36] Explorer se ne brise ! 
 [ERROR] [06.11.2023 20:36] Ne moze da se doda!
 [ERROR] [06.11.2023 20:38] Explorer se ne brise ! 
+[ERROR] [06.11.2023 20:40] Ne moze da se doda!
+[ERROR] [06.11.2023 20:48] Explorer se ne brise ! 
+[ERROR] [06.11.2023 20:57] Ne moze da se doda!
+[ERROR] [06.11.2023 20:57] Explorer se ne brise ! 

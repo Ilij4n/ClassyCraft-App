@@ -1,5 +1,6 @@
 package raf.dsw.classycraft.app.gui.swing.tree;
 
+import lombok.Getter;
 import raf.dsw.classycraft.app.MessageGenerator.MessageType;
 import raf.dsw.classycraft.app.core.ApplicationFramework;
 import raf.dsw.classycraft.app.core.model.composite.ClassyNode;
@@ -14,7 +15,7 @@ import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyTreeView;
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
-
+@Getter
 public class ClassyTreeImplementation implements ClassyTree {
     //ovaj treeView je prakticno pre-konstruisan JTree, nista spec
     private ClassyTreeView treeView;
