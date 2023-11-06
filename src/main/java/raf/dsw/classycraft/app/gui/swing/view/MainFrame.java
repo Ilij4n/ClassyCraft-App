@@ -10,12 +10,9 @@ import raf.dsw.classycraft.app.core.ApplicationFramework;
 import raf.dsw.classycraft.app.core.model.implementation.ProjectExplorer;
 import raf.dsw.classycraft.app.gui.swing.tree.ClassyTree;
 import raf.dsw.classycraft.app.gui.swing.tree.ClassyTreeImplementation;
-import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyTreeView;
 import raf.dsw.classycraft.app.observer.ISubscriber;
-
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 
 @Getter
 @Setter

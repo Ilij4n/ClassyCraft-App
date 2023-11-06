@@ -7,7 +7,7 @@ import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyTreeView;
 public interface ClassyTree {
     ClassyTreeView generateTree(ProjectExplorer projectExplorer);
 
-    void addChild(ClassyTreeItem parent);
+    void addChild(ClassyTreeItem parent, boolean pakOrDia);
 
     ClassyTreeItem getSelectednode();
 

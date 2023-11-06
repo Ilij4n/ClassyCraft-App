@@ -10,7 +10,7 @@ public class ClassyRepositoryImp implements ClassyRepository {
     private final ClassyNode root;
 
     public ClassyRepositoryImp() {
-       root = new ProjectExplorer("ProjectExplorer");
+        root = new ProjectExplorer("ProjectExplorer");
     }
 
     @Override

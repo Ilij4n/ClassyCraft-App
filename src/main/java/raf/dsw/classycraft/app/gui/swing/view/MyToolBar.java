@@ -10,10 +10,8 @@ public class MyToolBar extends JToolBar {
     public MyToolBar(){
         super(HORIZONTAL);
         setFloatable(false);
-
-        ExitAction ea = new ExitAction();
-        add(ea);
-        NewProjectAction npa = new NewProjectAction();
-        add(npa);
+        add(MainFrame.getInstance().getActionManager().getExitAction());
+        add(MainFrame.getInstance().getActionManager().getNewProjectAction());
+        add(add(MainFrame.getInstance().getActionManager().getDeleteChildAction()));
     }
 }
