@@ -7,11 +7,12 @@ import raf.dsw.classycraft.app.MessageGenerator.MessageGeneratorImp;
 import raf.dsw.classycraft.app.MessageGenerator.MessageType;
 import raf.dsw.classycraft.app.controller.ActionManager;
 import raf.dsw.classycraft.app.core.ApplicationFramework;
+import raf.dsw.classycraft.app.core.model.implementation.ProjectExplorer;
+import raf.dsw.classycraft.app.gui.swing.tree.ClassyTree;
+import raf.dsw.classycraft.app.gui.swing.tree.ClassyTreeImplementation;
 import raf.dsw.classycraft.app.observer.ISubscriber;
-
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 
 @Getter
 @Setter
@@ -21,10 +22,16 @@ public class MainFrame extends JFrame implements ISubscriber {
     //buduca polja za sve komponente view-a na glavnom prozoru
     private ActionManager actionManager;
     private AboutUsFrame aboutUsFrame;
+    //classyTree moze stajati i kao pole na ApplicationFramework ali posto je controller, i ovo je ok
+    private ClassyTree classyTree;
+    //ova polja sam dodao radi pristupa u refreshDivider metodi
+    private JSplitPane splitPane;
+    private JTree projectExplorerTree;
 
     private MainFrame(){
         actionManager = new ActionManager();
         aboutUsFrame = new AboutUsFrame();
+        classyTree = new ClassyTreeImplementation();
         //subujemo se na sve sto treba
         ((MessageGeneratorImp)ApplicationFramework.getInstance().getMessageGenerator()).addSub(this);
     }
@@ -50,14 +57,17 @@ public class MainFrame extends JFrame implements ISubscriber {
         JPanel jTreePanel = new JPanel();
         //TODO: Ovde ce se raditi nesto za stablo
 
+        projectExplorerTree = classyTree.generateTree((ProjectExplorer)ApplicationFramework.getInstance().getRepository().getRoot());
+        jTreePanel.add(projectExplorerTree);
+
         JPanel jTabbedPanel = new JPanel();
         //TODO: Ovde ce se raditi nesto za ono TabbedPane cudo ili kakogod
 
-        JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, jTreePanel, jTabbedPanel);
-        splitPane.setDividerLocation(getWidth()/5);
+        splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, jTreePanel, jTabbedPanel);
+        splitPane.setDividerLocation(projectExplorerTree.getPreferredSize().width);
         add(splitPane);
 
-        //FIXME TEST DUGME, IZBISTATI PRE ILI KASNIJE
+        /*FIXME TEST DUGME, IZBISTATI PRE ILI KASNIJE
 
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel,BoxLayout.X_AXIS));
@@ -94,7 +104,7 @@ public class MainFrame extends JFrame implements ISubscriber {
 
         button2.setAction(action2);
         panel.add(button2);
-        this.add(panel);
+        this.add(panel);*/
     }
 
     public static MainFrame getInstance()
@@ -105,6 +115,10 @@ public class MainFrame extends JFrame implements ISubscriber {
             instance.initialize();
         }
         return instance;
+    }
+
+    public void refreshDivider(){
+        splitPane.setDividerLocation(projectExplorerTree.getPreferredSize().width);
     }
 
     @Override

@@ -3,6 +3,7 @@ package raf.dsw.classycraft.app.core.model.composite;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
@@ -14,5 +15,10 @@ public abstract class ClassyNode {
     public ClassyNode(ClassyNode parent, String name) {
         this.parent = parent;
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }
