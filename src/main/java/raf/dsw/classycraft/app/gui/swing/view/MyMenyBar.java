@@ -17,6 +17,7 @@ public class MyMenyBar extends JMenuBar {
         fileMenu.add(MainFrame.getInstance().getActionManager().getExitAction()); //dodajemo ExitAction u File dropdown
         fileMenu.add(MainFrame.getInstance().getActionManager().getNewProjectAction());
         fileMenu.add(MainFrame.getInstance().getActionManager().getDeleteChildAction());
+        fileMenu.add(MainFrame.getInstance().getActionManager().getAuthorChangeAction());
         add(fileMenu); //dodajemu file opciju u menu bar
 
 
