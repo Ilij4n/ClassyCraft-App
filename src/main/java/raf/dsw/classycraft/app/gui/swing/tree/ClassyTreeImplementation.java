@@ -104,7 +104,9 @@ public class ClassyTreeImplementation implements ClassyTree {
 
             return new Project(parent, "Project" + cnt, "Autor", "Path");
         } else if(parent instanceof Project){
+
             Package package1 = new Package(parent,"Package"+cnt);
+            ((Project) parent).getPackages().add(package1);
             ClassyPackageView packageView = new ClassyPackageView();
             packageView.getLblProjectName().setText("Project name: "+ package1.projectName());
             packageView.getLblAuthorname().setText("Author: "+ package1.authorName());
@@ -121,6 +123,7 @@ public class ClassyTreeImplementation implements ClassyTree {
                 return  diagram;
             }
             Package package1 = new Package(parent,"Package"+cnt);
+            ((Package) parent).realPapa().getPackages().add(package1);
             ClassyPackageView packageView = new ClassyPackageView();
             packageView.getLblProjectName().setText("Project name: "+ package1.projectName());
             packageView.getLblAuthorname().setText("Author: "+ package1.authorName());

@@ -39,3 +39,4 @@
 [ERROR] [12.11.2023 17:17] Izaberite projekat kome zelite da promenite autora ! 
 [ERROR] [12.11.2023 18:30] Ne moze da se doda!
 [ERROR] [12.11.2023 19:16] Ime vec postoji
+[ERROR] [12.11.2023 21:00] Ime vec postoji

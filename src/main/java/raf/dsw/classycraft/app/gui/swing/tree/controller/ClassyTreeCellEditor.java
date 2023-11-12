@@ -80,7 +80,7 @@ public class ClassyTreeCellEditor extends DefaultTreeCellEditor implements Actio
 
         if (clicked.getClassyNode() instanceof Project){
             Project projekat = (Project) clicked.getClassyNode();
-            ((ClassyPackageView)MainFrame.getInstance().getSplitPane().getRightComponent()).getLblProjectName().setText("Project: "+e.getActionCommand());
+
             if (!projekat.getChildren().isEmpty()){
                 ((Package)projekat.getChildren().get(0)).notifySubs(projekat);
             }

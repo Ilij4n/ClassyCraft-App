@@ -80,8 +80,10 @@ public class ClassyPackageView extends JPanel implements ISubscriber {
     @Override
     public void update(Object o) {
         if(o instanceof Project){
-            this.getLblProjectName().setText("Project: "+((Project) o).getName());
-            this.getLblAuthorname().setText("Author: "+((Project) o).getAutor());
+            for(Package p:((Project) o).getPackages()){
+                p.getClassyPackageView().getLblProjectName().setText("Project: "+ ((Project) o).getName());
+                p.getClassyPackageView().getLblAuthorname().setText("Author: "+((Project) o).getAutor());
+            }
         } else if (o instanceof Package) {
 
         } else if (o instanceof Diagram) {

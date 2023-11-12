@@ -7,6 +7,7 @@ import raf.dsw.classycraft.app.core.ApplicationFramework;
 import raf.dsw.classycraft.app.core.model.composite.ClassyNode;
 import raf.dsw.classycraft.app.core.model.composite.ClassyNodeComposite;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -14,11 +15,13 @@ import java.util.List;
 public class Project extends ClassyNodeComposite {
     private String autor;
     private String filePath;
+    private List<Package> packages;
 
     public Project(ClassyNode parent, String name, String autor, String filePath) {
         super(parent, name);
         this.autor = autor;
         this.filePath = filePath;
+        packages = new ArrayList<>();
     }
 
     @Override
