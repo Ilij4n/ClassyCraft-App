@@ -4,15 +4,24 @@ import raf.dsw.classycraft.app.MessageGenerator.MessageType;
 import raf.dsw.classycraft.app.core.ApplicationFramework;
 import raf.dsw.classycraft.app.core.model.composite.ClassyNode;
 import raf.dsw.classycraft.app.core.model.composite.ClassyNodeComposite;
+import raf.dsw.classycraft.app.core.model.implementation.Diagram;
+import raf.dsw.classycraft.app.core.model.implementation.Package;
+import raf.dsw.classycraft.app.core.model.implementation.Project;
 import raf.dsw.classycraft.app.gui.swing.tree.model.ClassyTreeItem;
+import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyPackageView;
+import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
+
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeCellEditor;
 import javax.swing.tree.DefaultTreeCellRenderer;
+import javax.swing.tree.TreeCellRenderer;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.util.EventObject;
+import java.util.List;
 
 public class ClassyTreeCellEditor extends DefaultTreeCellEditor implements ActionListener {
 
@@ -41,7 +50,7 @@ public class ClassyTreeCellEditor extends DefaultTreeCellEditor implements Actio
     @Override
     public boolean isCellEditable(EventObject arg0) {
         if (arg0 instanceof MouseEvent)
-            if (((MouseEvent)arg0).getClickCount()==2){
+            if (((MouseEvent)arg0).getClickCount()==3){
                 return true;
             }
         return false;
@@ -65,7 +74,23 @@ public class ClassyTreeCellEditor extends DefaultTreeCellEditor implements Actio
             }
         }
         //postavlja ime iz textfielda
+        String diaName = clicked.getClassyNode().getName();
+
         clicked.setName(e.getActionCommand());
+
+        if (clicked.getClassyNode() instanceof Project){
+            Project projekat = (Project) clicked.getClassyNode();
+            ((ClassyPackageView)MainFrame.getInstance().getSplitPane().getRightComponent()).getLblProjectName().setText("Project: "+e.getActionCommand());
+            if (!projekat.getChildren().isEmpty()){
+                ((Package)projekat.getChildren().get(0)).notifySubs(projekat);
+            }
+        } else if (clicked.getClassyNode() instanceof Diagram) {
+            Diagram diagram = (Diagram)clicked.getClassyNode();
+            List<String> list = new ArrayList<>();
+            list.add(diaName);
+            list.add(diagram.getName());
+            ((Package)diagram.getParent()).notifySubs(list);
+        }
         //samo izlazi iz edita
         this.stopCellEditing();
     }
