@@ -12,28 +12,14 @@ import java.util.Objects;
 @Getter
 public class ClassyDiagramView extends JPanel implements ISubscriber{
     private String name;
-    private Diagram diagram =  null;
 
-    public ClassyDiagramView(){
-
-    }
+    public ClassyDiagramView(){}
 
 
     @Override
     public void update(Object o) {
-        if (true){}
+
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ClassyDiagramView that = (ClassyDiagramView) o;
-        return Objects.equals(name, that.name) && Objects.equals(diagram, that.diagram);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, diagram);
-    }
 }

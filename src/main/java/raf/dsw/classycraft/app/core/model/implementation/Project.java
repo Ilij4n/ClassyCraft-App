@@ -6,6 +6,9 @@ import raf.dsw.classycraft.app.MessageGenerator.MessageType;
 import raf.dsw.classycraft.app.core.ApplicationFramework;
 import raf.dsw.classycraft.app.core.model.composite.ClassyNode;
 import raf.dsw.classycraft.app.core.model.composite.ClassyNodeComposite;
+
+import java.util.List;
+
 @Getter
 @Setter
 public class Project extends ClassyNodeComposite {

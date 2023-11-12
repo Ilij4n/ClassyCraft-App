@@ -9,6 +9,7 @@ import raf.dsw.classycraft.app.observer.ISubscriber;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.List;
 
 public class ClassyPackageView extends JPanel implements ISubscriber {
     private String authorName = "";
@@ -17,10 +18,10 @@ public class ClassyPackageView extends JPanel implements ISubscriber {
     private JLabel lblAuthorname;
     private JTabbedPane jTabbedPane;
 
-    public ClassyPackageView(Package package1){
+    public ClassyPackageView(){
 
-        lblProjectName = new JLabel("Project: "+package1.projectName());
-        lblAuthorname = new JLabel("Author: "+package1.authorName());
+        lblProjectName = new JLabel("Project: ");
+        lblAuthorname = new JLabel("Author: ");
         jTabbedPane = new JTabbedPane();
 
         BorderLayout b = new BorderLayout();
@@ -81,20 +82,24 @@ public class ClassyPackageView extends JPanel implements ISubscriber {
         if(o instanceof Project){
             this.getLblProjectName().setText("Project: "+((Project) o).getName());
             this.getLblAuthorname().setText("Author: "+((Project) o).getAutor());
-            for(ClassyNode classyNode: ((Project) o).getChildren()){
-                for(ClassyNode c: ((Package) classyNode).getChildren()){
-                    ((Package)c).getClassyPackageView().getLblAuthorname().setText("Author: "+((Project) o).getAutor());
-                    ((Package)c).getClassyPackageView().getLblProjectName().setText("Project: "+((Project) o).getName());
-
-                }
-            }
-        } else if (o instanceof String) {
+        } else if (o instanceof Package) {
 
         } else if (o instanceof Diagram) {
-            for(Component c:jTabbedPane.getComponents()){
-                if(c.equals(((Diagram) o).getClassyDiagramView())){
-                    remove(c);
-                    break;
+            System.out.println("Uso");
+            Diagram d = (Diagram) o;
+            for (Component c:this.getjTabbedPane().getComponents()){
+                if (((Diagram) o).getName().equals(c.getName())){
+                    System.out.println("Uso");
+                    this.getjTabbedPane().remove(c);
+                }
+            }
+        } else if (o instanceof List) {
+            for (Component c:this.getjTabbedPane().getComponents()){
+                if(c.getName().equals(((List<String>) o).get(0))){
+                    int i = this.getjTabbedPane().indexOfComponent(c);
+                    this.getjTabbedPane().remove(c);
+                    c.setName(((List<String>) o).get(1));
+                    this.getjTabbedPane().add(c,i);
                 }
             }
         }

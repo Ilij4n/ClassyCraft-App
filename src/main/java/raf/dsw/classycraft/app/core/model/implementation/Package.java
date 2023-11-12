@@ -66,7 +66,7 @@ public class Package extends ClassyNodeComposite implements IPublisher {
         this.classyPackageView = classyPackageView;
     }
 
-    private Project realPapa(){
+    public Project realPapa(){
         ClassyNode project = getParent();
         while(true){
             if(project instanceof Project) {

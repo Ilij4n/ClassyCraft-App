@@ -80,8 +80,7 @@ public class ClassyTreeImplementation implements ClassyTree {
         ClassyNode nodeParent = item.getClassyNode().getParent();
 
         if(node instanceof Diagram){
-            ((Package)nodeParent).getClassyPackageView().getjTabbedPane().remove(((Diagram) node).getClassyDiagramView());
-            ((Package) nodeParent).notifySubs((Diagram)node);
+            ((Package)nodeParent).notifySubs((Diagram)node);
         } else if (node instanceof Project) {
             MainFrame.getInstance().getSplitPane().setRightComponent(new JPanel());
         }else if(node instanceof Package){
@@ -106,7 +105,9 @@ public class ClassyTreeImplementation implements ClassyTree {
             return new Project(parent, "Project" + cnt, "Autor", "Path");
         } else if(parent instanceof Project){
             Package package1 = new Package(parent,"Package"+cnt);
-            ClassyPackageView packageView = new ClassyPackageView(package1);
+            ClassyPackageView packageView = new ClassyPackageView();
+            packageView.getLblProjectName().setText("Project name: "+ package1.projectName());
+            packageView.getLblAuthorname().setText("Author: "+ package1.authorName());
             package1.setClassyPackageView(packageView);
             package1.addSub(packageView);
             return package1;
@@ -114,13 +115,15 @@ public class ClassyTreeImplementation implements ClassyTree {
             if(!pakOrDia){
                 Diagram diagram = new Diagram(parent, "Diagram"+cnt);
                 ClassyDiagramView diagramView = new ClassyDiagramView();
+                diagramView.setName(diagram.getName());
                 ((Package) parent).getClassyPackageView().getjTabbedPane().add(diagramView);
-
                 diagram.addSub(diagramView);
                 return  diagram;
             }
             Package package1 = new Package(parent,"Package"+cnt);
-            ClassyPackageView packageView = new ClassyPackageView(package1);
+            ClassyPackageView packageView = new ClassyPackageView();
+            packageView.getLblProjectName().setText("Project name: "+ package1.projectName());
+            packageView.getLblAuthorname().setText("Author: "+ package1.authorName());
             package1.setClassyPackageView(packageView);
             package1.addSub(packageView);
             return package1;
