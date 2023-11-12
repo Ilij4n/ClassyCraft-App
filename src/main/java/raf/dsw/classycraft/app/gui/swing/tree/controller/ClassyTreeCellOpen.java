@@ -16,14 +16,11 @@ public class ClassyTreeCellOpen implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        if(((ClassyTreeItem)MainFrame.getInstance().getProjectExplorerTree().getLastSelectedPathComponent()).getClassyNode()
-                instanceof Package) {
-            if (e.getClickCount() == 2) {
+            if (e.getClickCount() == 2&&((ClassyTreeItem)MainFrame.getInstance().getProjectExplorerTree().getLastSelectedPathComponent()).getClassyNode() instanceof Package) {
                 MainFrame.getInstance().getSplitPane()
                         .setRightComponent(((Package) ((ClassyTreeItem) MainFrame.getInstance().getProjectExplorerTree().
                                 getLastSelectedPathComponent()).getClassyNode()).getClassyPackageView());
             }
-        }
     }
 
     @Override
