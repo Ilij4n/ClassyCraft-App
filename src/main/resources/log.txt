@@ -7,3 +7,31 @@
 [ERROR] [06.11.2023 20:48] Explorer se ne brise ! 
 [ERROR] [06.11.2023 20:57] Ne moze da se doda!
 [ERROR] [06.11.2023 20:57] Explorer se ne brise ! 
+[ERROR] [08.11.2023 22:28] Ne moze da se doda!
+[ERROR] [08.11.2023 22:28] Ime vec postoji
+[ERROR] [08.11.2023 22:28] Explorer se ne brise ! 
+[ERROR] [08.11.2023 22:28] Explorer se ne brise ! 
+[ERROR] [09.11.2023 14:34] Explorer se ne brise ! 
+[ERROR] [10.11.2023 09:23] Explorer se ne brise ! 
+[ERROR] [10.11.2023 10:18] Explorer se ne brise ! 
+[ERROR] [11.11.2023 22:43] Izaberite projekat kome zelite da promenite autora ! 
+[ERROR] [11.11.2023 22:44] Izaberite projekat kome zelite da promenite autora ! 
+[ERROR] [11.11.2023 22:45] Izaberite projekat kome zelite da promenite autora ! 
+[ERROR] [11.11.2023 22:46] Izaberite projekat kome zelite da promenite autora ! 
+[ERROR] [11.11.2023 22:47] Izaberite projekat kome zelite da promenite autora ! 
+[ERROR] [11.11.2023 23:28] Izaberite projekat kome zelite da promenite autora ! 
+[ERROR] [11.11.2023 23:28] Explorer se ne brise ! 
+[ERROR] [11.11.2023 23:43] Izaberite projekat kome zelite da promenite autora ! 
+[ERROR] [12.11.2023 01:12] Izaberite projekat kome zelite da promenite autora ! 
+[ERROR] [12.11.2023 01:18] Izaberite projekat kome zelite da promenite autora ! 
+[ERROR] [12.11.2023 01:22] Izaberite projekat kome zelite da promenite autora ! 
+[ERROR] [12.11.2023 01:24] Izaberite projekat kome zelite da promenite autora ! 
+[ERROR] [12.11.2023 01:34] Izaberite projekat kome zelite da promenite autora ! 
+[ERROR] [12.11.2023 01:36] Izaberite projekat kome zelite da promenite autora ! 
+[ERROR] [12.11.2023 02:21] Izaberite projekat kome zelite da promenite autora ! 
+[ERROR] [12.11.2023 02:58] Izaberite projekat kome zelite da promenite autora ! 
+[ERROR] [12.11.2023 15:11] Ime vec postoji
+[ERROR] [12.11.2023 15:11] Ime vec postoji
+[ERROR] [12.11.2023 15:13] Ne moze da se doda!
+[ERROR] [12.11.2023 15:24] Ime vec postoji
+[ERROR] [12.11.2023 16:49] Ne moze da se doda!

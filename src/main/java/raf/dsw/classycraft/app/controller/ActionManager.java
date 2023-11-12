@@ -11,6 +11,8 @@ public class ActionManager {
     private NewProjectAction newProjectAction;
     private OpenAboutUsAction openAboutUsAction;
     private DeleteChildAction deleteChildAction;
+    private AuthorChangeAction authorChangeAction;
+    private ButtonChangeAuthorAction buttonChangeAuthorAction;
 
     public ActionManager() {
         intialise();
@@ -21,6 +23,8 @@ public class ActionManager {
         newProjectAction = new NewProjectAction();
         openAboutUsAction = new OpenAboutUsAction();
         deleteChildAction = new DeleteChildAction();
+        authorChangeAction = new AuthorChangeAction();
+        buttonChangeAuthorAction = new ButtonChangeAuthorAction();
     }
 
 }

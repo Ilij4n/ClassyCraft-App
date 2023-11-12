@@ -1,5 +1,6 @@
 package raf.dsw.classycraft.app.gui.swing.tree.controller;
 
+import raf.dsw.classycraft.app.core.model.implementation.Diagram;
 import raf.dsw.classycraft.app.gui.swing.tree.model.ClassyTreeItem;
 
 import javax.swing.event.TreeSelectionEvent;
