@@ -3,6 +3,9 @@ package raf.dsw.classycraft.app.gui.swing.tree;
 import lombok.Getter;
 import raf.dsw.classycraft.app.MessageGenerator.MessageType;
 import raf.dsw.classycraft.app.core.ApplicationFramework;
+import raf.dsw.classycraft.app.core.factory.ClassyNodeFactory;
+import raf.dsw.classycraft.app.core.factory.DiagramFactory;
+import raf.dsw.classycraft.app.core.factory.FactoryUtils;
 import raf.dsw.classycraft.app.core.model.composite.ClassyNode;
 import raf.dsw.classycraft.app.core.model.composite.ClassyNodeComposite;
 import raf.dsw.classycraft.app.core.model.implementation.Diagram;
@@ -55,7 +58,7 @@ public class ClassyTreeImplementation implements ClassyTree {
         parent.add(new ClassyTreeItem(child));
         //reflektuje date promene u modelu
         ((ClassyNodeComposite) parent.getClassyNode()).addChild(child);
-        //fixme test print za proveru modela (izgleda ok)
+
         System.out.println( ((ClassyNodeComposite) parent.getClassyNode()).getChildren().toString());
         //da lepo izgleda i da se refreshuje
         treeView.expandPath(treeView.getSelectionPath());
@@ -69,7 +72,7 @@ public class ClassyTreeImplementation implements ClassyTree {
 
     @Override
     public void deleteChild(ClassyTreeItem item) {
-        //TODO Boga pitaj (zapravo izgleda ok)
+
         if (item.getClassyNode() instanceof ProjectExplorer){
             ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Explorer se ne brise ! ", MessageType.ERROR);
             return;
@@ -95,16 +98,17 @@ public class ClassyTreeImplementation implements ClassyTree {
 
 
     }
-    //fixme random assigner indexa
+
     int cnt = 0;
-    //TODO ovo dole raditi pomocu factoryMethod sablonu po parentu a ne ovako
+
     private ClassyNode createChild(ClassyNode parent,boolean pakOrDia) {
         cnt++;
+        String string = null;
         if (parent instanceof ProjectExplorer) {
-
+            string = "PROJECT";
             return new Project(parent, "Project" + cnt, "Autor", "Path");
         } else if(parent instanceof Project){
-
+            string = "PACKAGE";
             Package package1 = new Package(parent,"Package"+cnt);
             ((Project) parent).getPackages().add(package1);
             ClassyPackageView packageView = new ClassyPackageView();
@@ -114,7 +118,8 @@ public class ClassyTreeImplementation implements ClassyTree {
             package1.addSub(packageView);
             return package1;
         } else if(parent instanceof Package){
-            if(!pakOrDia){
+            if(!pakOrDia) {
+                string = "DIAGRAM";
                 Diagram diagram = new Diagram(parent, "Diagram"+cnt);
                 ClassyDiagramView diagramView = new ClassyDiagramView();
                 diagramView.setName(diagram.getName());
@@ -122,6 +127,7 @@ public class ClassyTreeImplementation implements ClassyTree {
                 diagram.addSub(diagramView);
                 return  diagram;
             }
+               string = "PACKAGE";
             Package package1 = new Package(parent,"Package"+cnt);
             ((Package) parent).realPapa().getPackages().add(package1);
             ClassyPackageView packageView = new ClassyPackageView();
@@ -131,7 +137,9 @@ public class ClassyTreeImplementation implements ClassyTree {
             package1.addSub(packageView);
             return package1;
         }
-        cnt++;
-        return null;
+
+
+
+        return  null;
     }
 }

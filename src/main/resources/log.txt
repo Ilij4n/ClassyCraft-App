@@ -40,3 +40,5 @@
 [ERROR] [12.11.2023 18:30] Ne moze da se doda!
 [ERROR] [12.11.2023 19:16] Ime vec postoji
 [ERROR] [12.11.2023 21:00] Ime vec postoji
+[ERROR] [12.11.2023 23:36] Pogresen tip
+[ERROR] [12.11.2023 23:57] Explorer se ne brise ! 

@@ -28,11 +28,7 @@ public class MessageGeneratorImp implements MessageGenerator, IPublisher {
 
     @Override
     public void removeSub(ISubscriber subscriber) {
-        /*FIXME
-             potencijalno cemo morati za svaku klasu morati da override equals
-             ako bude problema oko brisanja vrv je ovde. Uraditi @HashAndEquals u lombok
-             anotaciji ako za to bude potrebe.
-         */
+
         subscribers.remove(subscriber);
     }
 

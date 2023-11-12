@@ -7,9 +7,11 @@ import raf.dsw.classycraft.app.MessageGenerator.MessageGeneratorImp;
 import raf.dsw.classycraft.app.MessageGenerator.MessageType;
 import raf.dsw.classycraft.app.controller.ActionManager;
 import raf.dsw.classycraft.app.core.ApplicationFramework;
+import raf.dsw.classycraft.app.core.model.implementation.Diagram;
 import raf.dsw.classycraft.app.core.model.implementation.ProjectExplorer;
 import raf.dsw.classycraft.app.gui.swing.tree.ClassyTree;
 import raf.dsw.classycraft.app.gui.swing.tree.ClassyTreeImplementation;
+import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyPackageView;
 import raf.dsw.classycraft.app.observer.ISubscriber;
 import javax.swing.*;
 import java.awt.*;
@@ -27,6 +29,7 @@ public class MainFrame extends JFrame implements ISubscriber {
     //ova polja sam dodao radi pristupa u refreshDivider metodi
     private JSplitPane splitPane;
     private JTree projectExplorerTree;
+
 
     private MainFrame(){
         actionManager = new ActionManager();
@@ -55,56 +58,19 @@ public class MainFrame extends JFrame implements ISubscriber {
         //SplitPane setup
 
         JPanel jTreePanel = new JPanel();
-        //TODO: Ovde ce se raditi nesto za stablo
+
 
         projectExplorerTree = classyTree.generateTree((ProjectExplorer)ApplicationFramework.getInstance().getRepository().getRoot());
         jTreePanel.add(projectExplorerTree);
 
-        JPanel jTabbedPanel = new JPanel();
-        //TODO: Ovde ce se raditi nesto za ono TabbedPane cudo ili kakogod
 
-        splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, jTreePanel, jTabbedPanel);
+
+
+        splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, jTreePanel,new JPanel());
         splitPane.setDividerLocation(projectExplorerTree.getPreferredSize().width);
         add(splitPane);
 
-        /*FIXME TEST DUGME, IZBISTATI PRE ILI KASNIJE
 
-        JPanel panel = new JPanel();
-        panel.setLayout(new BoxLayout(panel,BoxLayout.X_AXIS));
-
-        JButton button = new JButton();
-        AbstractAction action = new AbstractAction("Button Action") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ApplicationFramework.getInstance().getMessageGenerator().generateMessage("HEEEJ",MessageType.INFO);
-            }
-        };
-
-        button.setAction(action);
-        panel.add(button);
-
-        JButton button1 = new JButton();
-        AbstractAction action1 = new AbstractAction("Button Action") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ApplicationFramework.getInstance().getMessageGenerator().generateMessage("ALOOO",MessageType.ERROR);
-            }
-        };
-
-        button1.setAction(action1);
-        panel.add(button1);
-
-        JButton button2 = new JButton();
-        AbstractAction action2 = new AbstractAction("Button Action") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ApplicationFramework.getInstance().getMessageGenerator().generateMessage("EEJ",MessageType.WARNING);
-            }
-        };
-
-        button2.setAction(action2);
-        panel.add(button2);
-        this.add(panel);*/
     }
 
     public static MainFrame getInstance()
@@ -141,5 +107,15 @@ public class MainFrame extends JFrame implements ISubscriber {
                 JOptionPane.showMessageDialog(this,message.toString(),"Upozorenje",JOptionPane.WARNING_MESSAGE);
             }
         }
+
+        if(o instanceof Diagram){
+
+        }
+
+        if(o instanceof Package){
+
+        }
     }
+
+
 }

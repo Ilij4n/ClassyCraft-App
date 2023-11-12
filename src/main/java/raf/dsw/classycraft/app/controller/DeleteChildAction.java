@@ -23,9 +23,7 @@ public class DeleteChildAction extends AbstractClassyAction{
         ClassyTreeItem selected = MainFrame.getInstance().getClassyTree().getSelectednode();
         MainFrame.getInstance().getClassyTree().deleteChild(selected);
         MainFrame.getInstance().refreshDivider();
-        /*TODO :Svaki put kad se child obrise selected item bi trebalo da postane parent,
-            za sad se samo vraca na explorer. Valjalo bi da se uvede do observera sa tabbedPaneom...
-         */
+
         ((ClassyTreeImplementation)MainFrame.getInstance().getClassyTree()).getTreeView().setSelectionRow(0);
     }
 
