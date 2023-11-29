@@ -1,5 +1,7 @@
 package raf.dsw.classycraft.app.gui.swing.tree.view;
 
+import lombok.Getter;
+import lombok.Setter;
 import raf.dsw.classycraft.app.core.model.composite.ClassyNode;
 import raf.dsw.classycraft.app.core.model.composite.ClassyNodeComposite;
 import raf.dsw.classycraft.app.core.model.implementation.Diagram;
@@ -10,6 +12,8 @@ import raf.dsw.classycraft.app.observer.ISubscriber;
 import javax.swing.*;
 import java.awt.*;
 import java.util.List;
+@Getter
+@Setter
 
 public class ClassyPackageView extends JPanel implements ISubscriber {
     private String authorName = "";

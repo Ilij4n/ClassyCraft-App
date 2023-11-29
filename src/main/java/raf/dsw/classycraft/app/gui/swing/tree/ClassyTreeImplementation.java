@@ -99,46 +99,50 @@ public class ClassyTreeImplementation implements ClassyTree {
 
     }
 
-    int cnt = 0;
+
 
     private ClassyNode createChild(ClassyNode parent,boolean pakOrDia) {
-        cnt++;
-        String string = null;
+        String string;
+        ClassyNodeFactory classyNodeFactory;
         if (parent instanceof ProjectExplorer) {
             string = "PROJECT";
-            return new Project(parent, "Project" + cnt, "Autor", "Path");
+            classyNodeFactory = FactoryUtils.returnFactory(string,parent);
+            Project project = (Project) classyNodeFactory.createNode(parent);
+            return project;
         } else if(parent instanceof Project){
             string = "PACKAGE";
-            Package package1 = new Package(parent,"Package"+cnt);
-            ((Project) parent).getPackages().add(package1);
-            ClassyPackageView packageView = new ClassyPackageView();
-            packageView.getLblProjectName().setText("Project name: "+ package1.projectName());
-            packageView.getLblAuthorname().setText("Author: "+ package1.authorName());
-            package1.setClassyPackageView(packageView);
-            package1.addSub(packageView);
+            classyNodeFactory = FactoryUtils.returnFactory(string,parent);
+            Package package1 = (Package) classyNodeFactory.createNode(parent);
+//            ((Project) parent).getPackages().add(package1);
+//            ClassyPackageView packageView = new ClassyPackageView();
+//            packageView.getLblProjectName().setText("Project name: "+ package1.projectName());
+//            packageView.getLblAuthorname().setText("Author: "+ package1.authorName());
+//            package1.setClassyPackageView(packageView);
+//            package1.addSub(packageView);
             return package1;
         } else if(parent instanceof Package){
             if(!pakOrDia) {
                 string = "DIAGRAM";
-                Diagram diagram = new Diagram(parent, "Diagram"+cnt);
-                ClassyDiagramView diagramView = new ClassyDiagramView();
-                diagramView.setName(diagram.getName());
-                ((Package) parent).getClassyPackageView().getjTabbedPane().add(diagramView);
-                diagram.addSub(diagramView);
+                classyNodeFactory = FactoryUtils.returnFactory(string,parent);
+                Diagram diagram = (Diagram) classyNodeFactory.createNode(parent);
+//                ClassyDiagramView diagramView = new ClassyDiagramView();
+//                diagramView.setName(diagram.getName());
+//                ((Package) parent).getClassyPackageView().getjTabbedPane().add(diagramView);
+//                diagram.addSub(diagramView);
                 return  diagram;
+            }else{
+                string = "PACKAGE";
+                classyNodeFactory = FactoryUtils.returnFactory(string,parent);
+                Package package1 = (Package) classyNodeFactory.createNode(parent);
+//            ((Package) parent).realPapa().getPackages().add(package1);
+//            ClassyPackageView packageView = new ClassyPackageView();
+//            packageView.getLblProjectName().setText("Project name: "+ package1.projectName());
+//            packageView.getLblAuthorname().setText("Author: "+ package1.authorName());
+//            package1.setClassyPackageView(packageView);
+//            package1.addSub(packageView);
+                return package1;
             }
-               string = "PACKAGE";
-            Package package1 = new Package(parent,"Package"+cnt);
-            ((Package) parent).realPapa().getPackages().add(package1);
-            ClassyPackageView packageView = new ClassyPackageView();
-            packageView.getLblProjectName().setText("Project name: "+ package1.projectName());
-            packageView.getLblAuthorname().setText("Author: "+ package1.authorName());
-            package1.setClassyPackageView(packageView);
-            package1.addSub(packageView);
-            return package1;
         }
-
-
 
         return  null;
     }

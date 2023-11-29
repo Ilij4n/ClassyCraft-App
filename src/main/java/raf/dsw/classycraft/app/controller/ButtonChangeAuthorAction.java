@@ -11,6 +11,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 @Setter
 public class ButtonChangeAuthorAction extends AbstractClassyAction{
+
     private ChangeAuthorFrame authorFrame;
     public ButtonChangeAuthorAction(){
         putValue(NAME,"Change author !");

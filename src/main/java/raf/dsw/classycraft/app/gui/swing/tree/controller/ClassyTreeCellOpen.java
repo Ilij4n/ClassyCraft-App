@@ -21,10 +21,9 @@ public class ClassyTreeCellOpen implements MouseListener {
             if (e.getClickCount() == 2) {
                 ClassyPackageView packageView = ((Package) ((ClassyTreeItem) MainFrame.getInstance().getProjectExplorerTree().
                         getLastSelectedPathComponent()).getClassyNode()).getClassyPackageView();
-                packageView.getLblAuthorname().setText("Author:"+((Package) ((ClassyTreeItem)MainFrame.getInstance().getProjectExplorerTree().getLastSelectedPathComponent()).getClassyNode()).authorName());
-                packageView.getLblProjectName().setText("Project:"+((Package) ((ClassyTreeItem)MainFrame.getInstance().getProjectExplorerTree().getLastSelectedPathComponent()).getClassyNode()).projectName());
+//                packageView.getLblAuthorname().setText("Author:"+((Package) ((ClassyTreeItem)MainFrame.getInstance().getProjectExplorerTree().getLastSelectedPathComponent()).getClassyNode()).authorName());
+//                packageView.getLblProjectName().setText("Project:"+((Package) ((ClassyTreeItem)MainFrame.getInstance().getProjectExplorerTree().getLastSelectedPathComponent()).getClassyNode()).projectName());
                 MainFrame.getInstance().getSplitPane().setRightComponent(packageView);
-
             }
         }
     }

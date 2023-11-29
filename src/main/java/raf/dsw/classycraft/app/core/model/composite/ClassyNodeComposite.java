@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 @Getter
 public abstract class ClassyNodeComposite extends ClassyNode {
+
     private List<ClassyNode> children = new ArrayList<>();
 
     public ClassyNodeComposite(ClassyNode parent, String name) {
