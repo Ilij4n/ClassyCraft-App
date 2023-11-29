@@ -1,5 +1,7 @@
 package raf.dsw.classycraft.app.gui.swing.view;
 
+import lombok.Getter;
+import lombok.Setter;
 import raf.dsw.classycraft.app.controller.ActionManager;
 import raf.dsw.classycraft.app.controller.AuthorChangeAction;
 import raf.dsw.classycraft.app.controller.ButtonChangeAuthorAction;
@@ -12,7 +14,8 @@ import raf.dsw.classycraft.app.core.model.implementation.Project;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-
+@Getter
+@Setter
 public class ChangeAuthorFrame extends JFrame {
     private JLabel jLabel;
     private JTextField  textField;
@@ -48,21 +51,5 @@ public class ChangeAuthorFrame extends JFrame {
         jPanel.add(button);
 
         add(jPanel);
-    }
-
-    public JLabel getjLabel() {
-        return jLabel;
-    }
-
-    public void setjLabel(JLabel jLabel) {
-        this.jLabel = jLabel;
-    }
-
-    public JTextField getTextField() {
-        return textField;
-    }
-
-    public void setTextField(JTextField textField) {
-        this.textField = textField;
     }
 }

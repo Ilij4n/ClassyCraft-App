@@ -41,5 +41,4 @@
 [ERROR] [12.11.2023 19:16] Ime vec postoji
 [ERROR] [12.11.2023 21:00] Ime vec postoji
 [ERROR] [12.11.2023 23:36] Pogresen tip
-[ERROR] [12.11.2023 23:57] Explorer se ne brise ! 
-[ERROR] [19.11.2023 17:40] Izaberite projekat kome zelite da promenite autora ! 
+[ERROR] [12.11.2023 23:57] Explorer se ne brise !

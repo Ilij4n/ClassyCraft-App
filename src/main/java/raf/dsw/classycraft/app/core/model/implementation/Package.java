@@ -1,5 +1,7 @@
 package raf.dsw.classycraft.app.core.model.implementation;
 
+import lombok.Getter;
+import lombok.Setter;
 import raf.dsw.classycraft.app.MessageGenerator.MessageType;
 import raf.dsw.classycraft.app.core.ApplicationFramework;
 import raf.dsw.classycraft.app.core.model.composite.ClassyNode;
@@ -11,6 +13,8 @@ import raf.dsw.classycraft.app.observer.ISubscriber;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
+@Setter
+@Getter
 
 public class Package extends ClassyNodeComposite implements IPublisher {
     private List<ISubscriber> subs;
@@ -58,13 +62,6 @@ public class Package extends ClassyNodeComposite implements IPublisher {
         }
     }
 
-    public ClassyPackageView getClassyPackageView() {
-        return classyPackageView;
-    }
-
-    public void setClassyPackageView(ClassyPackageView classyPackageView) {
-        this.classyPackageView = classyPackageView;
-    }
 
     public Project realPapa(){
         ClassyNode project = getParent();
