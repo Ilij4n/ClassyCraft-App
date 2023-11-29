@@ -41,11 +41,4 @@
 [ERROR] [12.11.2023 19:16] Ime vec postoji
 [ERROR] [12.11.2023 21:00] Ime vec postoji
 [ERROR] [12.11.2023 23:36] Pogresen tip
-[ERROR] [12.11.2023 23:57] Explorer se ne brise ! 
-[ERROR] [18.11.2023 17:51] Paket/diagram vec postoji
-[ERROR] [18.11.2023 17:51] Paket/diagram vec postoji
-[ERROR] [28.11.2023 12:09] Paket vec postoji
-[ERROR] [28.11.2023 12:09] Paket vec postoji
-[ERROR] [28.11.2023 12:17] Ne moze da se doda!
-[ERROR] [28.11.2023 12:20] Paket vec postoji
-[ERROR] [29.11.2023 18:58] Ne moze da se doda!
+[ERROR] [12.11.2023 23:57] Explorer se ne brise !
