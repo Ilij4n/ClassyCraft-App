@@ -17,7 +17,7 @@ public class ActionManager {
     public ActionManager() {
         intialise();
     }
-
+    //komentar
     private void intialise(){
         exitAction = new ExitAction();
         newProjectAction = new NewProjectAction();
