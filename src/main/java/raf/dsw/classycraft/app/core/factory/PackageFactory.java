@@ -17,26 +17,12 @@ public class PackageFactory extends ClassyNodeFactory{
 
     @Override
     public ClassyNode createNode(ClassyNode parent) {
-        if(parent instanceof Package){
-            Package aPackage = new Package(parent,"Package"+cnt);
-            ((Package) parent).realPapa().getPackages().add(aPackage);
-            ClassyPackageView packageView = new ClassyPackageView();
-            packageView.getLblProjectName().setText("Project name: "+ aPackage.projectName());
-            packageView.getLblAuthorname().setText("Author: "+ aPackage.authorName());
-            aPackage.setClassyPackageView(packageView);
-            aPackage.addSub(packageView);
+
+            Package aPackage = new Package(parent,"Package "+cnt);
             cnt++;
+
             return aPackage;
-        }else{
-            Package aPackage = new Package(parent,"Package"+cnt);
-            ((Project) parent).getPackages().add(aPackage);
-            ClassyPackageView packageView = new ClassyPackageView();
-            packageView.getLblProjectName().setText("Project name: "+ aPackage.projectName());
-            packageView.getLblAuthorname().setText("Author: "+ aPackage.authorName());
-            aPackage.setClassyPackageView(packageView);
-            aPackage.addSub(packageView);
-            cnt++;
-            return aPackage;
-        }
+
+
     }
 }

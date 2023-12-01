@@ -21,10 +21,7 @@ public class ButtonChangeAuthorAction extends AbstractClassyAction{
     @Override
     public void actionPerformed(ActionEvent e) {
         String string = authorFrame.getTextField().getText();
-        ((Project) MainFrame.getInstance().getClassyTree().getSelectednode().getClassyNode()).setAutor(string);
-        for(ClassyNode node :(((Project) MainFrame.getInstance().getClassyTree().getSelectednode().getClassyNode()).getChildren())){
-            ((Package)node).notifySubs((Project) MainFrame.getInstance().getClassyTree().getSelectednode().getClassyNode());
-        }
+        ((Project)MainFrame.getInstance().getClassyTree().getSelectednode().getClassyNode()).setAutorOfProject(string);
         authorFrame.show(false);
     }
 }

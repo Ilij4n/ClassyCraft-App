@@ -13,13 +13,14 @@ import raf.dsw.classycraft.app.core.model.implementation.Project;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
+
 @Getter
 @Setter
 public class ChangeAuthorFrame extends JFrame {
     private JLabel jLabel;
     private JTextField  textField;
     private JButton button;
+    private ClassyNode classyNode;
 
     public ChangeAuthorFrame(){
         Toolkit kit = Toolkit.getDefaultToolkit();

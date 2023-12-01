@@ -16,13 +16,14 @@ import java.util.List;
 @Setter
 @Getter
 
-public class Package extends ClassyNodeComposite implements IPublisher {
-    private List<ISubscriber> subs;
-    private ClassyPackageView classyPackageView;
+public class Package extends ClassyNodeComposite implements IPublisher{
+
+    private List<ISubscriber> subscribers;
+
 
     public Package(ClassyNode parent, String name) {
         super(parent, name);
-        subs = new ArrayList<>();
+        subscribers = new ArrayList<>();
     }
 
     @Override
@@ -42,22 +43,30 @@ public class Package extends ClassyNodeComposite implements IPublisher {
 
     @Override
     public void deleteChild(ClassyNode child) {
-
+        ClassyPackageView cpv = null;
+        if(child instanceof Package){
+            for(ISubscriber s:getSubscribers()){
+                cpv = (ClassyPackageView) s;
+                notifySubs(cpv);
+            }
+        }else if (child instanceof Diagram){
+            notifySubs(child);
+        }
     }
 
     @Override
     public void addSub(ISubscriber subscriber) {
-        subs.add(subscriber);
+        subscribers.add(subscriber);
     }
 
     @Override
     public void removeSub(ISubscriber subscriber) {
-        subs.remove(subscriber);
+        subscribers.remove(subscriber);
     }
 
     @Override
     public void notifySubs(Object o) {
-        for ( ISubscriber i:subs){
+        for ( ISubscriber i:subscribers){
             i.update(o);
         }
     }
@@ -82,5 +91,14 @@ public class Package extends ClassyNodeComposite implements IPublisher {
     public String projectName(){
         return realPapa().getName();
     }
+
+    public void ChangeNameOfDiagramView(Object o){
+        notifySubs(o);
+    }
+
+    public void addingOfDiagramView(Object o){
+        notifySubs(o);
+    }
+
 
 }

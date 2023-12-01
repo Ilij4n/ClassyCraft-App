@@ -19,7 +19,7 @@ public class AuthorChangeAction extends AbstractClassyAction{
     @Override
     public void actionPerformed(ActionEvent e) {
         ClassyNode item = MainFrame.getInstance().getClassyTree().getSelectednode().getClassyNode();
-        if( item instanceof Project){
+        if(item instanceof Project){
             ChangeAuthorFrame changeAuthorFrame = new ChangeAuthorFrame();
             changeAuthorFrame.show();
         }else {

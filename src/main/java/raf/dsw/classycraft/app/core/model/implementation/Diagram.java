@@ -14,27 +14,27 @@ import java.util.concurrent.Flow;
 @Getter
 @Setter
 public class Diagram extends ClassyNode implements IPublisher {
-    private List<ISubscriber> subs;
-    private ClassyDiagramView classyDiagramView;
+
+    private List<ISubscriber> subscribers;
 
     public Diagram(ClassyNode parent, String name) {
         super(parent, name);
-        subs = new ArrayList<>();
+        subscribers = new ArrayList<>();
     }
 
     @Override
     public void addSub(ISubscriber subscriber) {
-        subs.add(subscriber);
+        subscribers.add(subscriber);
     }
 
     @Override
     public void removeSub(ISubscriber subscriber) {
-        subs.remove(subscriber);
+        subscribers.remove(subscriber);
     }
 
     @Override
     public void notifySubs(Object o) {
-        for(ISubscriber s:subs){
+        for(ISubscriber s:subscribers){
             s.update(o);
         }
     }

@@ -7,6 +7,7 @@ import raf.dsw.classycraft.app.core.model.implementation.Package;
 import raf.dsw.classycraft.app.gui.swing.tree.model.ClassyTreeItem;
 import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyPackageView;
 import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
+import raf.dsw.classycraft.app.observer.ISubscriber;
 
 import javax.swing.*;
 import java.awt.event.*;
@@ -16,14 +17,11 @@ public class ClassyTreeCellOpen implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        if(((ClassyTreeItem)MainFrame.getInstance().getProjectExplorerTree().getLastSelectedPathComponent()).getClassyNode()
-                instanceof Package) {
+        if(((ClassyTreeItem)MainFrame.getInstance().getProjectExplorerTree().getLastSelectedPathComponent()).getClassyNode() instanceof Package) {
             if (e.getClickCount() == 2) {
-                ClassyPackageView packageView = ((Package) ((ClassyTreeItem) MainFrame.getInstance().getProjectExplorerTree().
-                        getLastSelectedPathComponent()).getClassyNode()).getClassyPackageView();
-//                packageView.getLblAuthorname().setText("Author:"+((Package) ((ClassyTreeItem)MainFrame.getInstance().getProjectExplorerTree().getLastSelectedPathComponent()).getClassyNode()).authorName());
-//                packageView.getLblProjectName().setText("Project:"+((Package) ((ClassyTreeItem)MainFrame.getInstance().getProjectExplorerTree().getLastSelectedPathComponent()).getClassyNode()).projectName());
-                MainFrame.getInstance().getSplitPane().setRightComponent(packageView);
+                for(ISubscriber s: ((Package) ((ClassyTreeItem)MainFrame.getInstance().getProjectExplorerTree().getLastSelectedPathComponent()).getClassyNode()).getSubscribers()){
+                    MainFrame.getInstance().getSplitPane().setRightComponent((JPanel)s);
+                }
             }
         }
     }

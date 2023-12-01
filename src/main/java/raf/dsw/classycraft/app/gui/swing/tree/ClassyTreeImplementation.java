@@ -1,5 +1,6 @@
 package raf.dsw.classycraft.app.gui.swing.tree;
 
+import javafx.scene.Parent;
 import lombok.Getter;
 import raf.dsw.classycraft.app.MessageGenerator.MessageType;
 import raf.dsw.classycraft.app.core.ApplicationFramework;
@@ -17,6 +18,7 @@ import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyDiagramView;
 import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyPackageView;
 import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyTreeView;
 import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
+import raf.dsw.classycraft.app.observer.ISubscriber;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -83,20 +85,21 @@ public class ClassyTreeImplementation implements ClassyTree {
         ClassyNode nodeParent = item.getClassyNode().getParent();
 
         if(node instanceof Diagram){
-            ((Package)nodeParent).notifySubs((Diagram)node);
+            ((Package)nodeParent).deleteChild(node);
+        } else if (nodeParent instanceof Project) {
+            ((Project)nodeParent).deleteChild(node);
+        } else if (nodeParent instanceof Package) {
+            ((Package)nodeParent).deleteChild(node);
         } else if (node instanceof Project) {
-            MainFrame.getInstance().getSplitPane().setRightComponent(new JPanel());
-        }else if(node instanceof Package){
-            MainFrame.getInstance().getSplitPane().setRightComponent(new JPanel());
+            for(ClassyNode c:((Project) node).getChildren()){
+                ((Project) node).deleteChild(c);
+            }
         }
 
         parent.getChildren().remove(item.getClassyNode());
 
-
         //za brisanje iz stabla
         treeModel.removeNodeFromParent(item);
-
-
     }
 
 
@@ -108,38 +111,37 @@ public class ClassyTreeImplementation implements ClassyTree {
             string = "PROJECT";
             classyNodeFactory = FactoryUtils.returnFactory(string,parent);
             Project project = (Project) classyNodeFactory.createNode(parent);
+
             return project;
         } else if(parent instanceof Project){
             string = "PACKAGE";
             classyNodeFactory = FactoryUtils.returnFactory(string,parent);
             Package package1 = (Package) classyNodeFactory.createNode(parent);
-//            ((Project) parent).getPackages().add(package1);
-//            ClassyPackageView packageView = new ClassyPackageView();
-//            packageView.getLblProjectName().setText("Project name: "+ package1.projectName());
-//            packageView.getLblAuthorname().setText("Author: "+ package1.authorName());
-//            package1.setClassyPackageView(packageView);
-//            package1.addSub(packageView);
+            ClassyPackageView packageView = new ClassyPackageView(package1);
+            package1.realPapa().addSub(packageView);
+            package1.addSub(packageView);
+
             return package1;
         } else if(parent instanceof Package){
             if(!pakOrDia) {
                 string = "DIAGRAM";
                 classyNodeFactory = FactoryUtils.returnFactory(string,parent);
                 Diagram diagram = (Diagram) classyNodeFactory.createNode(parent);
-//                ClassyDiagramView diagramView = new ClassyDiagramView();
-//                diagramView.setName(diagram.getName());
-//                ((Package) parent).getClassyPackageView().getjTabbedPane().add(diagramView);
-//                diagram.addSub(diagramView);
+                ClassyDiagramView diagramView = new ClassyDiagramView(diagram);
+                diagram.addSub(diagramView);
+                ((Package) parent).addingOfDiagramView(diagramView);
+
+
+
                 return  diagram;
             }else{
                 string = "PACKAGE";
                 classyNodeFactory = FactoryUtils.returnFactory(string,parent);
                 Package package1 = (Package) classyNodeFactory.createNode(parent);
-//            ((Package) parent).realPapa().getPackages().add(package1);
-//            ClassyPackageView packageView = new ClassyPackageView();
-//            packageView.getLblProjectName().setText("Project name: "+ package1.projectName());
-//            packageView.getLblAuthorname().setText("Author: "+ package1.authorName());
-//            package1.setClassyPackageView(packageView);
-//            package1.addSub(packageView);
+                ClassyPackageView packageView = new ClassyPackageView(package1);
+                package1.realPapa().addSub(packageView);
+                package1.addSub(packageView);
+
                 return package1;
             }
         }
