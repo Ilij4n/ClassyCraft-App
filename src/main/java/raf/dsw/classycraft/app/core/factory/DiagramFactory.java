@@ -16,12 +16,10 @@ public class DiagramFactory extends ClassyNodeFactory{
 
     @Override
     public ClassyNode createNode(ClassyNode parent) {
-            Diagram diagram = new Diagram(parent, "Diagram"+cnt);
-            ClassyDiagramView diagramView = new ClassyDiagramView();
-            diagramView.setName(diagram.getName());
-            ((Package) parent).getClassyPackageView().getjTabbedPane().add(diagramView);
-            diagram.addSub(diagramView);
+
+            Diagram diagram = new Diagram(parent, "Diagram "+cnt);
             cnt++;
+
             return diagram;
     }
 }

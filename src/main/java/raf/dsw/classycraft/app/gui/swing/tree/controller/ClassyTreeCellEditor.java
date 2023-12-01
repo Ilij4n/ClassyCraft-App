@@ -80,16 +80,13 @@ public class ClassyTreeCellEditor extends DefaultTreeCellEditor implements Actio
 
         if (clicked.getClassyNode() instanceof Project){
             Project projekat = (Project) clicked.getClassyNode();
-
-            if (!projekat.getChildren().isEmpty()){
-                ((Package)projekat.getChildren().get(0)).notifySubs(projekat);
-            }
+            projekat.setNameOfProject(projekat);
         } else if (clicked.getClassyNode() instanceof Diagram) {
             Diagram diagram = (Diagram)clicked.getClassyNode();
             List<String> list = new ArrayList<>();
             list.add(diaName);
             list.add(diagram.getName());
-            ((Package)diagram.getParent()).notifySubs(list);
+            ((Package)diagram.getParent()).ChangeNameOfDiagramView(list);
         }
         //samo izlazi iz edita
         this.stopCellEditing();

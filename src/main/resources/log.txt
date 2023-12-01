@@ -49,3 +49,7 @@
 [ERROR] [28.11.2023 12:17] Ne moze da se doda!
 [ERROR] [28.11.2023 12:20] Paket vec postoji
 [ERROR] [29.11.2023 18:58] Ne moze da se doda!
+[ERROR] [30.11.2023 18:52] Izaberite projekat kome zelite da promenite autora ! 
+[ERROR] [30.11.2023 18:57] Izaberite projekat kome zelite da promenite autora ! 
+[ERROR] [30.11.2023 19:51] Izaberite projekat kome zelite da promenite autora ! 
+[ERROR] [30.11.2023 20:15] Explorer se ne brise ! 
