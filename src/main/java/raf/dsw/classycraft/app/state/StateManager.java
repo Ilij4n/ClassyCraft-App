@@ -9,6 +9,8 @@ public class StateManager {
     private ZoomInOutState zoomInOutState;
     private DeleteState deleteState;
     private MoveState moveState;
+    private EditState editState;
+
     private StateInterface currentState;
 
     public StateManager(){
@@ -22,12 +24,15 @@ public class StateManager {
         deleteState = new DeleteState();
         zoomInOutState = new ZoomInOutState();
         moveState = new MoveState();
+        editState = new EditState();
 
         currentState = selectionState;
     }
     public StateInterface getCurrentState(){
         return currentState;
     }
+
+    public void setEditState(){currentState = editState;}
 
     public void setAddElementState(){
         currentState = addElementState;

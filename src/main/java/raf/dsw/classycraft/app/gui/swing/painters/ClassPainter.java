@@ -22,6 +22,9 @@ public class ClassPainter implements ElementPainter{
 
     @Override
     public void draw(Graphics2D g) {
+        g.setColor(klasa.getColor());
+        g.setStroke(new BasicStroke(2));
+        g.drawRect((int)klasa.getLocation().getX(),(int)klasa.getLocation().getY(),100,200);
 
     }
 

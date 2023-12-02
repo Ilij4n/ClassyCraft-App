@@ -7,6 +7,7 @@ import raf.dsw.classycraft.app.core.model.composite.ClassyNodeComposite;
 import raf.dsw.classycraft.app.core.model.implementation.Diagram;
 import raf.dsw.classycraft.app.core.model.implementation.Package;
 import raf.dsw.classycraft.app.core.model.implementation.Project;
+import raf.dsw.classycraft.app.core.model.implementation.ProjectExplorer;
 import raf.dsw.classycraft.app.gui.swing.tree.ClassyTreeImplementation;
 import raf.dsw.classycraft.app.gui.swing.tree.model.ClassyTreeItem;
 import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyPackageView;

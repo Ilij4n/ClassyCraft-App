@@ -35,6 +35,7 @@ public class Diagram extends ClassyNodeComposite implements IPublisher {
             }
             else{
                 getChildren().add(child);
+                notifySubs(child);
             }
         }
         else{

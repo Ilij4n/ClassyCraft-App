@@ -13,6 +13,7 @@ import raf.dsw.classycraft.app.state.StateManager;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.geom.Point2D;
 import java.util.List;
 @Getter
 @Setter
@@ -72,6 +73,14 @@ public class ClassyPackageView extends JPanel implements ISubscriber {
 
     public void startSelectionState(){
         stateManager.setSelectionState();
+    }
+
+    public void startEditState(){
+        stateManager.setEditState();
+    }
+
+    public void misKliknut(Point2D p,ClassyDiagramView classyDiagramView){
+        stateManager.getCurrentState().misKliknut(p,classyDiagramView);
     }
 
     @Override
