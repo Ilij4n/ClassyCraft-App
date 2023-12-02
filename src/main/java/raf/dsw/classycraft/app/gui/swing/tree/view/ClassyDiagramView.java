@@ -23,6 +23,7 @@ public class ClassyDiagramView extends ImprovedJPanel implements IPublisher, ISu
     private Diagram diagram;
     private List<ElementPainter> painters = new ArrayList<>();
 
+
     private List<ISubscriber> subscribers;
     public ClassyDiagramView(Diagram d){
         diagram = d;

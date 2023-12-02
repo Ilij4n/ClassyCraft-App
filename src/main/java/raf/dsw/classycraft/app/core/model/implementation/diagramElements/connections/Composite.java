@@ -7,7 +7,7 @@ import java.awt.*;
 
 public class Composite extends Connection{
 
-    public Composite(ClassyNode parent, String name, Paint paint, int stroke, InterClass element1, InterClass element2, String kardinalnost, String imePromenljive) {
-        super(parent, name, paint, stroke, element1, element2, kardinalnost, imePromenljive);
+    public Composite(ClassyNode parent, String name, InterClass element1, InterClass element2, String kardinalnost, String imePromenljive) {
+        super(parent, name, Color.black, 2, element1, element2, kardinalnost, imePromenljive);
     }
 }

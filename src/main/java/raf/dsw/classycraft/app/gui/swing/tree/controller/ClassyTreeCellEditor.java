@@ -68,6 +68,11 @@ public class ClassyTreeCellEditor extends DefaultTreeCellEditor implements Actio
         if (!(clickedOn instanceof ClassyTreeItem))
             return;
 
+        if(((ClassyTreeItem) clickedOn).getClassyNode() instanceof ProjectExplorer){
+            ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Ne menja se ime", MessageType.ERROR);
+            return;
+        }
+
         ClassyTreeItem clicked = (ClassyTreeItem) clickedOn;
         for(ClassyNode node : ((ClassyNodeComposite)clicked.getClassyNode().getParent()).getChildren()){
             if(node.getName().equals(e.getActionCommand())){
@@ -84,6 +89,7 @@ public class ClassyTreeCellEditor extends DefaultTreeCellEditor implements Actio
             Project projekat = (Project) clicked.getClassyNode();
             projekat.setNameOfProject(projekat);
         } else if (clicked.getClassyNode() instanceof Diagram) {
+            //FIXME ako se pri renameovanju izbrise content diagramViewa
             Diagram diagram = (Diagram)clicked.getClassyNode();
             List<String> list = new ArrayList<>();
             list.add(diaName);

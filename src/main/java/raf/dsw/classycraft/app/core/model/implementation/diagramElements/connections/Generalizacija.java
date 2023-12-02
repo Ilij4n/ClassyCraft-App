@@ -7,7 +7,7 @@ import java.awt.*;
 
 public class Generalizacija extends Connection{
 
-    public Generalizacija(ClassyNode parent, String name, Paint paint, int stroke, InterClass element1, InterClass element2, String kardinalnost, String imePromenljive) {
-        super(parent, name, paint, stroke, element1, element2, kardinalnost, imePromenljive);
+    public Generalizacija(ClassyNode parent, String name, InterClass element1, InterClass element2, String kardinalnost, String imePromenljive) {
+        super(parent, name, Color.red, 2, element1, element2, kardinalnost, imePromenljive);
     }
 }

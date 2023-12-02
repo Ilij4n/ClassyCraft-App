@@ -22,7 +22,6 @@ public class ClassyTreeCellOpen implements MouseListener {
         if(((ClassyTreeItem)MainFrame.getInstance().getProjectExplorerTree().getLastSelectedPathComponent()).getClassyNode() instanceof Package) {
             if (e.getClickCount() == 2) {
                 for(ISubscriber s: ((Package) ((ClassyTreeItem)MainFrame.getInstance().getProjectExplorerTree().getLastSelectedPathComponent()).getClassyNode()).getSubscribers()){
-                    System.out.println("Usao");
                     MainFrame.getInstance().getSplitPane().setRightComponent((JPanel)s);
                 }
                 //samo da se lepo izvuce dropdown

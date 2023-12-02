@@ -57,3 +57,31 @@
 [ERROR] [02.12.2023 13:40] Pogresen tip
 [ERROR] [02.12.2023 13:41] Pogresen tip
 [ERROR] [02.12.2023 13:41] Pogresen tip
+[INFO] [02.12.2023 15:46] EEEE
+[INFO] [02.12.2023 15:46] EEEE
+[INFO] [02.12.2023 15:46] EEEE
+[INFO] [02.12.2023 15:46] EEEE
+[INFO] [02.12.2023 15:47] EEEE
+[INFO] [02.12.2023 15:47] EEEE
+[INFO] [02.12.2023 15:47] EEEE
+[INFO] [02.12.2023 15:47] EEEE
+[INFO] [02.12.2023 15:47] EEEE
+[INFO] [02.12.2023 15:48] EEEE
+[INFO] [02.12.2023 15:48] EEEE
+[INFO] [02.12.2023 15:48] EEEE
+[INFO] [02.12.2023 15:48] EEEE
+[ERROR] [02.12.2023 16:51] Paket/diagram vec postoji
+[ERROR] [02.12.2023 16:51] Paket/diagram vec postoji
+[ERROR] [02.12.2023 16:51] Paket/diagram vec postoji
+[ERROR] [02.12.2023 16:51] Paket/diagram vec postoji
+[ERROR] [02.12.2023 16:51] Paket/diagram vec postoji
+[ERROR] [02.12.2023 16:51] Pogresen tip
+[ERROR] [02.12.2023 16:51] Paket/diagram vec postoji
+[ERROR] [02.12.2023 16:52] Paket/diagram vec postoji
+[ERROR] [02.12.2023 17:03] Ne menja se ime
+[ERROR] [02.12.2023 17:07] Pogresen tip
+[ERROR] [02.12.2023 17:07] Pogresen tip
+[ERROR] [02.12.2023 17:10] Pogresen tip
+[ERROR] [02.12.2023 17:12] Ne moze da se doda!
+[ERROR] [02.12.2023 17:12] Ne moze da se doda!
+[ERROR] [02.12.2023 17:33] Explorer se ne brise ! 

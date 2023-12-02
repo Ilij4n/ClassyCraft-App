@@ -6,6 +6,7 @@ import raf.dsw.classycraft.app.core.model.composite.ClassyNode;
 import raf.dsw.classycraft.app.core.model.implementation.Package;
 import raf.dsw.classycraft.app.core.model.implementation.Project;
 import raf.dsw.classycraft.app.core.model.implementation.ProjectExplorer;
+import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyPackageView;
 import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
 
 import java.awt.event.ActionEvent;
@@ -20,7 +21,6 @@ public class AddInterClassAction extends AbstractClassyAction {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO NAPRAVITI STATE I OVDE KRENUTI SA POZIVANJEM
-
+        ((ClassyPackageView)MainFrame.getInstance().getSplitPane().getRightComponent()).startAddElementState();
     }
 }

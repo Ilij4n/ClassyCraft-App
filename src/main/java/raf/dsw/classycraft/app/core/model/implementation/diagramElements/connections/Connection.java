@@ -18,7 +18,7 @@ public abstract class Connection extends DiagramElement {
     private String imePromenljive;
     //mozda treba i staviti vidljivost te promenljiv ali za sad nek bude ovako
 
-    public Connection(ClassyNode parent, String name, Paint paint, int stroke, InterClass element1, InterClass element2, String kardinalnost, String imePromenljive) {
+    public Connection(ClassyNode parent, String name, Color paint, int stroke, InterClass element1, InterClass element2, String kardinalnost, String imePromenljive) {
         super(parent, name, paint, stroke);
         this.element1 = element1;
         this.element2 = element2;

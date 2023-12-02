@@ -50,7 +50,7 @@ public class ClassyTreeImplementation implements ClassyTree {
     @Override
     public void addChild(ClassyTreeItem parent,boolean pakOrDia) {
         //ako classyNode koji sadrzi nasa wrapper klasa nije kompozit, ne razmatrati dodavanje
-        if (!(parent.getClassyNode() instanceof ClassyNodeComposite)){
+        if (!(parent.getClassyNode() instanceof ClassyNodeComposite)|| parent.getClassyNode() instanceof Diagram ){
             ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Ne moze da se doda!", MessageType.ERROR);
             return;
         }
