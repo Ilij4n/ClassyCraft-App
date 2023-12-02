@@ -53,3 +53,7 @@
 [ERROR] [30.11.2023 18:57] Izaberite projekat kome zelite da promenite autora ! 
 [ERROR] [30.11.2023 19:51] Izaberite projekat kome zelite da promenite autora ! 
 [ERROR] [30.11.2023 20:15] Explorer se ne brise ! 
+[ERROR] [02.12.2023 13:37] Pogresen tip
+[ERROR] [02.12.2023 13:40] Pogresen tip
+[ERROR] [02.12.2023 13:41] Pogresen tip
+[ERROR] [02.12.2023 13:41] Pogresen tip

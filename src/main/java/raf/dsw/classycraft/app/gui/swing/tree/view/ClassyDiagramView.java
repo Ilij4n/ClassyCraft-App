@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Objects;
 @Setter
 @Getter
-public class ClassyDiagramView extends JPanel implements IPublisher, ISubscriber, MouseListener {
+public class ClassyDiagramView extends ImprovedJPanel implements IPublisher, ISubscriber{
     private String name;
     private Diagram diagram;
     private List<ElementPainter> painters = new ArrayList<>();
