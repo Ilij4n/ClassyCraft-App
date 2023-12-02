@@ -145,6 +145,9 @@ public class ClassyTreeImplementation implements ClassyTree {
                 return package1;
             }
         }
+        else if(parent instanceof Diagram){
+            //FIXME ovde na osnovu izabranog elementa dodati ga kao dete diagrama ((Diagram)parent).addChild(); vrv ce pucati ovde dok se ne sredi
+        }
 
         return  null;
     }

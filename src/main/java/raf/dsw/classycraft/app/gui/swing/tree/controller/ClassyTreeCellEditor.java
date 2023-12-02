@@ -7,8 +7,10 @@ import raf.dsw.classycraft.app.core.model.composite.ClassyNodeComposite;
 import raf.dsw.classycraft.app.core.model.implementation.Diagram;
 import raf.dsw.classycraft.app.core.model.implementation.Package;
 import raf.dsw.classycraft.app.core.model.implementation.Project;
+import raf.dsw.classycraft.app.gui.swing.tree.ClassyTreeImplementation;
 import raf.dsw.classycraft.app.gui.swing.tree.model.ClassyTreeItem;
 import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyPackageView;
+import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyTreeView;
 import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
 
 import javax.swing.*;
@@ -88,6 +90,8 @@ public class ClassyTreeCellEditor extends DefaultTreeCellEditor implements Actio
             list.add(diagram.getName());
             ((Package)diagram.getParent()).ChangeNameOfDiagramView(list);
         }
+        ClassyTreeView treeView = ((ClassyTreeImplementation)MainFrame.getInstance().getClassyTree()).getTreeView();
+        treeView.expandPath(treeView.getSelectionPath());
         //samo izlazi iz edita
         this.stopCellEditing();
     }

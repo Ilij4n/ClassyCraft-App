@@ -41,7 +41,8 @@ public class ClassyPackageView extends JPanel implements ISubscriber {
 
         add(jPanel,BorderLayout.NORTH);
         add(jTabbedPane,BorderLayout.CENTER);
-
+        PackageViewToolbar toolbar = new PackageViewToolbar();
+        add(toolbar,BorderLayout.EAST);
     }
 
 
