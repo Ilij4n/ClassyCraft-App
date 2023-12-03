@@ -10,6 +10,7 @@ import java.awt.geom.Point2D;
 public class DeleteState implements StateInterface{
     @Override
     public void misKliknut(Point2D p, ClassyDiagramView c) {
+        //TODO OVA PETLJA BI MOGLA DA IDE OD KRAJA I DA BRISE PRVI PAINTER NA KOJI NAIDJE ZAJEDNO SA NJEGOVIM MODELOM
         for(ElementPainter painter:c.getPainters()){
             if(painter.elementAt(p)){
                 c.getPainters().remove(painter);
