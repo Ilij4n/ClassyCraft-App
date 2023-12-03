@@ -1,6 +1,7 @@
 package raf.dsw.classycraft.app.controller.stateControllers;
 
 import raf.dsw.classycraft.app.controller.AbstractClassyAction;
+import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyDiagramView;
 import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyPackageView;
 import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
 

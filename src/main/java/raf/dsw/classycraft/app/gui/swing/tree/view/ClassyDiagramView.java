@@ -31,7 +31,7 @@ public class ClassyDiagramView extends JPanel implements ISubscriber{
     private List<ElementPainter> painters = new ArrayList<>();
     //msm da cu ovo polje da setujem
     private ElementCreationView elementCreationView;
-    private List<DiagramElement> lastSelected;
+    private List<ElementPainter> lastSelected;
 
     private List<ISubscriber> subscribers;
 

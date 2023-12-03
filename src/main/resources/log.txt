@@ -121,3 +121,10 @@
 [ERROR] [03.12.2023 14:26] Duplikat Ime
 [INFO] [03.12.2023 14:36] Dodajte na dijagram preko menija levo
 [INFO] [03.12.2023 15:07] Dodajte na dijagram preko menija levo
+[ERROR] [03.12.2023 16:18] raf.dsw.classycraft.app.gui.swing.painters.ClassPainter@2bf5eb5e
+[INFO] [03.12.2023 16:30] Nema nista
+[INFO] [03.12.2023 16:30] Nema nista
+[INFO] [03.12.2023 16:30] Nema nista
+[INFO] [03.12.2023 16:30] Nema nista
+[INFO] [03.12.2023 16:30] Nema nista
+[ERROR] [03.12.2023 16:45] Duplikat Ime
