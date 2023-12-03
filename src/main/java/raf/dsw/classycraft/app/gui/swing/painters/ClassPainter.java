@@ -29,30 +29,29 @@ public class ClassPainter implements ElementPainter{
 
 
 
-        // Set color for the rectangle outline
+        // Boja za ivice
         g.setColor(Color.BLACK);
 
-        // Draw the class rectangle outline using Rectangle2D
+        // Nacrtaj ivice
         g.draw(oblik);
 
-        // Set color for the rectangle fill
-        g.setColor(Color.GREEN);
+        // Fill boja
+        g.setColor(klasa.getColor());
 
-        // Fill the class rectangle
+        // Nacrtaj fill
         g.fill(oblik);
 
-        // Set font for text
+        // Font
         Font font = new Font("Arial", Font.PLAIN, 12);
         g.setFont(font);
 
-        // Set color for the text
+        // Boja teksta
         g.setColor(Color.BLACK);
 
-        // Calculate the height of the text
+        // Placement teksta
         FontMetrics fontMetrics = g.getFontMetrics();
         int textHeight = fontMetrics.getHeight();
-
-        // Draw class name at the top of the rectangle
+        // Nacrtaj na vrhu
         int classNameX = (int) oblik.getCenterX() - fontMetrics.stringWidth(klasa.getName()) / 2;
         int classNameY = (int) oblik.getY() + textHeight;
         g.drawString(klasa.getName(), classNameX, classNameY);

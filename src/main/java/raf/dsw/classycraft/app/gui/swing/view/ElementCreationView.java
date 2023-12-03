@@ -4,13 +4,17 @@ import lombok.Getter;
 import lombok.Setter;
 import raf.dsw.classycraft.app.controller.CreateInterClassAction;
 import raf.dsw.classycraft.app.controller.stateControllers.AddInterClassAction;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.classContents.ClassContent;
 import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyDiagramView;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.geom.Point2D;
+import java.util.List;
 
 @Getter
 @Setter
@@ -106,7 +110,7 @@ public class ElementCreationView extends JFrame {
         mainPanel.add(button, gbc);
 
         getContentPane().add(mainPanel);
-
+        // NE BRISTI OVU METODU, ONA DRZI FUNKCIONALNOST IZ NEKOG RAZLOGA
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowDeactivated(WindowEvent e) {
@@ -114,11 +118,43 @@ public class ElementCreationView extends JFrame {
             }
         });
 
+        addPlaceholder("/*Napisati input u sledecem formatu*/\nPolja:\nvidljivost Tip imePromenljive\n /*... (ostala polja)*/\nMetode:\n vidljivost Tip ime(arg1,arg2,arg3)\n/*... (ostale metode)*/\n /*kraj inputa*/ ", textAreaElementi);
+
+
         setLocationRelativeTo(null);
         setVisible(true);
         setResizable(false);
     }
     public static boolean pokazanSam(){
         return isShowing;
+    }
+
+    public List<ClassContent> vratiPoljaIMetode(){
+        String text = textAreaElementi.getText();
+        //TODO napraviti metodu koja parsuje input u naznacenom formatu i vraca listu ClassConteta
+        return null;
+    }
+
+    private void addPlaceholder(String placeholder, JTextArea textArea) {
+        textArea.setText(placeholder);
+        textArea.setForeground(java.awt.Color.GRAY);
+
+        textArea.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (textArea.getText().equals(placeholder)) {
+                    textArea.setText("");
+                    textArea.setForeground(java.awt.Color.BLACK);
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (textArea.getText().isEmpty()) {
+                    textArea.setText(placeholder);
+                    textArea.setForeground(java.awt.Color.GRAY);
+                }
+            }
+        });
     }
 }

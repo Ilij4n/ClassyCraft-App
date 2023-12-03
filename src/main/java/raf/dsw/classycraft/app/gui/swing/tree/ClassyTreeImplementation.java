@@ -171,7 +171,7 @@ public class ClassyTreeImplementation implements ClassyTree {
             }
         }
         else if(parent instanceof Diagram){
-            //FIXME ovde na osnovu izabranog elementa dodati ga kao dete diagrama ((Diagram)parent).addChild(); vrv ce pucati ovde dok se ne sredi
+            //Vraca poslednji element u listi childova, posto smo dole u stejtu vec dodali child, ovde ga samo pronalazi i prosledjuje da se doda u tree
             List<ClassyNode> lista = ((Diagram) parent).getChildren();
             System.out.println("Usao");
             return lista.get(lista.size()-1);
