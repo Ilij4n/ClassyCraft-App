@@ -43,6 +43,11 @@ public class Diagram extends ClassyNodeComposite implements IPublisher {
             ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Pogresen tip", MessageType.ERROR);
         }
     }
+    @Override
+    public void deleteChild(ClassyNode classyNode){
+        getChildren().remove(classyNode);
+        notifySubs(classyNode);
+    }
 
     @Override
     public void addSub(ISubscriber subscriber) {

@@ -26,19 +26,8 @@ public class AddElementState implements StateInterface{
     public void misKliknut(Point2D p, ClassyDiagramView c) {
         System.out.println(getClass().getSimpleName());
         // da ne bi moglo vise prozora da se otvori
-        if(ElementCreationView.jedini())return;
-
+        if(ElementCreationView.pokazanSam())return;
         ElementCreationView e = new ElementCreationView(c,p);
-        //wait(20.00);
-
-        if(e.getRadioBtnKlasa().isSelected()){
-            Klasa klasa = new Klasa(c.getDiagram(),e.getName(), p,null);
-            ClassPainter classPainter = new ClassPainter(klasa);
-            c.getPainters().add(classPainter);
-            c.getDiagram().addChild(klasa);
-        }
-
-
     }
 
     @Override

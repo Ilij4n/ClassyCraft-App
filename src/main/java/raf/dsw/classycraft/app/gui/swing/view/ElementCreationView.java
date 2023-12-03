@@ -29,6 +29,7 @@ public class ElementCreationView extends JFrame {
     private ClassyDiagramView classyDiagramView;
     private Point2D point2D;
     private String name;
+    private boolean goNext = true;
 
 
     public ElementCreationView(ClassyDiagramView classyDiagramView, Point2D point2D){

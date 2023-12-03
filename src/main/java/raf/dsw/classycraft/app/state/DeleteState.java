@@ -1,6 +1,9 @@
 package raf.dsw.classycraft.app.state;
 
+import raf.dsw.classycraft.app.core.model.composite.ClassyNode;
+import raf.dsw.classycraft.app.gui.swing.painters.ElementPainter;
 import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyDiagramView;
+import raf.dsw.classycraft.app.gui.swing.view.ElementCreationView;
 
 import java.awt.geom.Point2D;
 
