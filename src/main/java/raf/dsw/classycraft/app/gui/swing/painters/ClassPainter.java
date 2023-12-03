@@ -11,13 +11,14 @@ import java.awt.geom.Rectangle2D;
 
 @Getter
 @Setter
-public class ClassPainter implements ElementPainter{
+public class ClassPainter extends ElementPainter {
     //polje modela
     private Klasa klasa;
     //ovo polje nameravam da koristim takodje i za poziv za contains u elementAt-u
     private Rectangle2D oblik;
 
     public ClassPainter(Klasa klasa) {
+        super(klasa);
         this.klasa = klasa;
     }
 

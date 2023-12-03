@@ -10,12 +10,13 @@ import java.awt.geom.Rectangle2D;
 
 @Getter
 @Setter
-public class EnumPainter implements ElementPainter{
+public class EnumPainter extends ElementPainter {
 
     private Enum anEnum;
     private Rectangle2D oblik;
 
     public EnumPainter(Enum anEnum) {
+        super(anEnum);
         this.anEnum = anEnum;
     }
 

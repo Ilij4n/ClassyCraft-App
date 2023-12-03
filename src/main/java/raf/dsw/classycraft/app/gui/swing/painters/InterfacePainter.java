@@ -10,13 +10,14 @@ import java.awt.geom.Rectangle2D;
 
 @Getter
 @Setter
-public class InterfacePainter implements ElementPainter{
+public class InterfacePainter extends ElementPainter {
     //polje modela
     private Interfejs interfejs;
     //ovo polje nameravam da koristim takodje i za poziv za contains u elementAt-u
     private Rectangle2D oblik;
 
     public InterfacePainter(Interfejs interfejs) {
+        super(interfejs);
         this.interfejs = interfejs;
     }
 

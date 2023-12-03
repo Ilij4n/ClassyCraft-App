@@ -8,7 +8,7 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 @Getter
 @Setter
-public class ConnectionPainter implements ElementPainter{
+public abstract class ConnectionPainter{
     //slican fazon kao i u ostlaim klasama
     private Connection veza;
     private Shape oblik;
@@ -17,13 +17,4 @@ public class ConnectionPainter implements ElementPainter{
         this.veza = veza;
     }
 
-    @Override
-    public void draw(Graphics2D g) {
-
-    }
-
-    @Override
-    public boolean elementAt(Point2D p) {
-        return false;
-    }
 }

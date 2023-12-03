@@ -1,5 +1,7 @@
 package raf.dsw.classycraft.app.state;
 
+import raf.dsw.classycraft.app.MessageGenerator.MessageType;
+import raf.dsw.classycraft.app.core.ApplicationFramework;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.InterClass;
 import raf.dsw.classycraft.app.gui.swing.painters.ClassPainter;
 import raf.dsw.classycraft.app.gui.swing.painters.ElementPainter;
