@@ -3,7 +3,9 @@ package raf.dsw.classycraft.app.controller;
 import raf.dsw.classycraft.app.controller.AbstractClassyAction;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Klasa;
 import raf.dsw.classycraft.app.gui.swing.painters.ClassPainter;
+import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyPackageView;
 import raf.dsw.classycraft.app.gui.swing.view.ElementCreationView;
+import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
 
 import java.awt.event.ActionEvent;
 
@@ -19,16 +21,15 @@ public class CreateInterClassAction extends AbstractClassyAction{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(elementCreationView.getRadioBtnKlasa().isSelected()){
-            Klasa klasa = new Klasa(elementCreationView.getClassyDiagramView().getDiagram(),elementCreationView.getClassyDiagramView().getName(), elementCreationView.getLocation(),null);
-            ClassPainter classPainter = new ClassPainter(klasa);
-            elementCreationView.getClassyDiagramView().getPainters().add(classPainter);
-            elementCreationView.getClassyDiagramView().getDiagram().addChild(klasa);
-        } else if (elementCreationView.getRadioBtnInterfejs().isSelected()) {
+        /* fixme vraticu ovo ako ne ide
+        elementCreationView.getClassyDiagramView().setName(elementCreationView.getTfImeElementa().getText());
+        elementCreationView.setGoNext(false);
+        elementCreationView.dispose();*/
 
-        }else {
+        //OVDE MOZDA DA ZOVEMO mediator.ad
 
-        }
+        ((ClassyPackageView)MainFrame.getInstance().getSplitPane().getRightComponent()).misKliknut1(elementCreationView.getPoint2D(),elementCreationView);
         elementCreationView.dispose();
+
     }
 }

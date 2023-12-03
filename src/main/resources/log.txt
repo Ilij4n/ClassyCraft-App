@@ -85,3 +85,28 @@
 [ERROR] [02.12.2023 17:12] Ne moze da se doda!
 [ERROR] [02.12.2023 17:12] Ne moze da se doda!
 [ERROR] [02.12.2023 17:33] Explorer se ne brise ! 
+[ERROR] [03.12.2023 10:08] Paket/diagram vec postoji
+[ERROR] [03.12.2023 10:40] Paket/diagram vec postoji
+[ERROR] [03.12.2023 10:40] Duplikat Ime
+[ERROR] [03.12.2023 10:41] Paket/diagram vec postoji
+[ERROR] [03.12.2023 10:41] Duplikat Ime
+[ERROR] [03.12.2023 10:43] Paket/diagram vec postoji
+[ERROR] [03.12.2023 10:43] Duplikat Ime
+[ERROR] [03.12.2023 10:44] Paket/diagram vec postoji
+[ERROR] [03.12.2023 10:44] Duplikat Ime
+[ERROR] [03.12.2023 10:45] Duplikat Ime
+[ERROR] [03.12.2023 10:50] Duplikat Ime
+[ERROR] [03.12.2023 10:50] Duplikat Ime
+[ERROR] [03.12.2023 10:51] Duplikat Ime
+[ERROR] [03.12.2023 10:51] Duplikat Ime
+[ERROR] [03.12.2023 10:51] Duplikat Ime
+[ERROR] [03.12.2023 10:51] Duplikat Ime
+[INFO] [03.12.2023 10:54] Dodajte na dijagram preko menija levo
+[ERROR] [03.12.2023 10:55] Ne moze da se doda!
+[ERROR] [03.12.2023 10:55] Ne moze da se doda!
+[ERROR] [03.12.2023 10:55] Ne moze da se doda!
+[INFO] [03.12.2023 10:55] Dodajte na dijagram preko menija levo
+[ERROR] [03.12.2023 11:23] Explorer se ne brise ! 
+[INFO] [03.12.2023 11:57] Dodajte na dijagram preko menija levo
+[ERROR] [03.12.2023 12:25] Duplikat Ime
+[ERROR] [03.12.2023 12:25] Duplikat Ime

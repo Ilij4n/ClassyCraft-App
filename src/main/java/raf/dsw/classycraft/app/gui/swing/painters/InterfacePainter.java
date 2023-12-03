@@ -6,6 +6,8 @@ import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interCl
 
 import java.awt.*;
 import java.awt.geom.Point2D;
+import java.awt.geom.Rectangle2D;
+
 @Getter
 @Setter
 public class InterfacePainter implements ElementPainter{
@@ -20,11 +22,14 @@ public class InterfacePainter implements ElementPainter{
 
     @Override
     public void draw(Graphics2D g) {
-
+        g.setColor(interfejs.getColor());
+        g.setStroke(new BasicStroke(2));
+        oblik = new Rectangle2D.Double(interfejs.getLocation().getX(),interfejs.getLocation().getY(),100,200);
+        g.draw(oblik);
     }
 
     @Override
     public boolean elementAt(Point2D p) {
-        return false;
+        return oblik.contains(p);
     }
 }

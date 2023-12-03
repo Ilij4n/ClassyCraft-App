@@ -4,6 +4,7 @@ import raf.dsw.classycraft.app.MessageGenerator.MessageType;
 import raf.dsw.classycraft.app.core.ApplicationFramework;
 import raf.dsw.classycraft.app.core.model.composite.ClassyNode;
 import raf.dsw.classycraft.app.core.model.composite.ClassyNodeComposite;
+import raf.dsw.classycraft.app.core.model.composite.DiagramElement;
 import raf.dsw.classycraft.app.core.model.implementation.Diagram;
 import raf.dsw.classycraft.app.core.model.implementation.Package;
 import raf.dsw.classycraft.app.core.model.implementation.Project;
@@ -66,7 +67,7 @@ public class ClassyTreeCellEditor extends DefaultTreeCellEditor implements Actio
             proveravamo da li je polje koje menjamo s textboom zapravo maptreeItem
             ako jeste onda ga slobodno kastujemo, i setujemo ime kako pise (nzm zasto je tako)
          */
-        if (!(clickedOn instanceof ClassyTreeItem))
+        if (!(clickedOn instanceof ClassyTreeItem)||((ClassyTreeItem) clickedOn).getClassyNode() instanceof DiagramElement)
             return;
 
         if(((ClassyTreeItem) clickedOn).getClassyNode() instanceof ProjectExplorer){
@@ -89,8 +90,9 @@ public class ClassyTreeCellEditor extends DefaultTreeCellEditor implements Actio
         if (clicked.getClassyNode() instanceof Project){
             Project projekat = (Project) clicked.getClassyNode();
             projekat.setNameOfProject(projekat);
-        } else if (clicked.getClassyNode() instanceof Diagram) {
-            //FIXME ako se pri renameovanju izbrise content diagramViewa
+        }
+
+        else if (clicked.getClassyNode() instanceof Diagram) {
             Diagram diagram = (Diagram)clicked.getClassyNode();
             List<String> list = new ArrayList<>();
             list.add(diaName);

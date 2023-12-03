@@ -7,6 +7,7 @@ import raf.dsw.classycraft.app.core.model.implementation.Diagram;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.InterClass;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Klasa;
 import raf.dsw.classycraft.app.gui.swing.painters.ElementPainter;
+import raf.dsw.classycraft.app.gui.swing.view.ElementCreationView;
 import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
 import raf.dsw.classycraft.app.observer.IPublisher;
 import raf.dsw.classycraft.app.observer.ISubscriber;
@@ -27,7 +28,8 @@ public class ClassyDiagramView extends JPanel implements ISubscriber{
     private String name;
     private Diagram diagram;
     private List<ElementPainter> painters = new ArrayList<>();
-
+    //msm da cu ovo polje da setujem
+    private ElementCreationView elementCreationView;
 
     private List<ISubscriber> subscribers;
 

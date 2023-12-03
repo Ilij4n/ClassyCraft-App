@@ -9,6 +9,7 @@ import raf.dsw.classycraft.app.core.factory.DiagramFactory;
 import raf.dsw.classycraft.app.core.factory.FactoryUtils;
 import raf.dsw.classycraft.app.core.model.composite.ClassyNode;
 import raf.dsw.classycraft.app.core.model.composite.ClassyNodeComposite;
+import raf.dsw.classycraft.app.core.model.composite.DiagramElement;
 import raf.dsw.classycraft.app.core.model.implementation.Diagram;
 import raf.dsw.classycraft.app.core.model.implementation.Package;
 import raf.dsw.classycraft.app.core.model.implementation.Project;
@@ -23,12 +24,35 @@ import raf.dsw.classycraft.app.observer.ISubscriber;
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import java.util.List;
+
 @Getter
 public class ClassyTreeImplementation implements ClassyTree {
     //ovaj treeView je prakticno pre-konstruisan JTree, nista spec
     private ClassyTreeView treeView;
     private DefaultTreeModel treeModel;
 
+
+
+    public  ClassyTreeItem dfsSearch(ClassyTreeItem root, Object targetModel) {
+        // Base case: If the current root contains the target model, return it
+        if (root.getClassyNode().equals(targetModel)) {
+            return root;
+        }
+
+        // Recursive case: Check children
+        for (int i = 0; i < root.getChildCount(); i++) {
+            ClassyTreeItem child = (ClassyTreeItem) root.getChildAt(i);
+            ClassyTreeItem result = dfsSearch(child, targetModel);
+            if (result != null) {
+                // Model found in the subtree, return it
+                return result;
+            }
+        }
+
+        // Model not found in the current subtree
+        return null;
+    }
 
     @Override
     public ClassyTreeView generateTree(ProjectExplorer projectExplorer) {
@@ -50,16 +74,17 @@ public class ClassyTreeImplementation implements ClassyTree {
     @Override
     public void addChild(ClassyTreeItem parent,boolean pakOrDia) {
         //ako classyNode koji sadrzi nasa wrapper klasa nije kompozit, ne razmatrati dodavanje
-        if (!(parent.getClassyNode() instanceof ClassyNodeComposite)|| parent.getClassyNode() instanceof Diagram ){
+        if (!(parent.getClassyNode() instanceof ClassyNodeComposite) /*|| parent.getClassyNode() instanceof Diagram*/ ){
             ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Ne moze da se doda!", MessageType.ERROR);
             return;
         }
-
+        //ako je parent instanca dijagrama ovaj createchild ce samo vratiti poslednjeg dodatog s liste
         ClassyNode child = createChild(parent.getClassyNode(),pakOrDia);
         //dodaje Childa parentu u prikazu tree-a, on sam ovo u pozadini sljaka
         parent.add(new ClassyTreeItem(child));
         //reflektuje date promene u modelu
-        ((ClassyNodeComposite) parent.getClassyNode()).addChild(child);
+
+        if(!(parent.getClassyNode() instanceof Diagram))((ClassyNodeComposite) parent.getClassyNode()).addChild(child);
 
         System.out.println( ((ClassyNodeComposite) parent.getClassyNode()).getChildren().toString());
         //da lepo izgleda i da se refreshuje
@@ -147,6 +172,9 @@ public class ClassyTreeImplementation implements ClassyTree {
         }
         else if(parent instanceof Diagram){
             //FIXME ovde na osnovu izabranog elementa dodati ga kao dete diagrama ((Diagram)parent).addChild(); vrv ce pucati ovde dok se ne sredi
+            List<ClassyNode> lista = ((Diagram) parent).getChildren();
+            System.out.println("Usao");
+            return lista.get(lista.size()-1);
         }
 
         return  null;

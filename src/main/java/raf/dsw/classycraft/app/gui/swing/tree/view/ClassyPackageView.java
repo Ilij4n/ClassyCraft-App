@@ -7,6 +7,7 @@ import raf.dsw.classycraft.app.core.model.composite.ClassyNodeComposite;
 import raf.dsw.classycraft.app.core.model.implementation.Diagram;
 import raf.dsw.classycraft.app.core.model.implementation.Package;
 import raf.dsw.classycraft.app.core.model.implementation.Project;
+import raf.dsw.classycraft.app.gui.swing.view.ElementCreationView;
 import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
 import raf.dsw.classycraft.app.observer.ISubscriber;
 import raf.dsw.classycraft.app.state.StateManager;
@@ -81,6 +82,10 @@ public class ClassyPackageView extends JPanel implements ISubscriber {
 
     public void misKliknut(Point2D p,ClassyDiagramView classyDiagramView){
         stateManager.getCurrentState().misKliknut(p,classyDiagramView);
+    }
+
+    public void misKliknut1(Point2D p, ElementCreationView e){
+        stateManager.getCurrentState().misKliknut1(p,e);
     }
 
     @Override

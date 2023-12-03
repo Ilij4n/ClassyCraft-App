@@ -17,7 +17,7 @@ public abstract class DiagramElement extends ClassyNode{
         super(parent, name);
         this.color = paint;
         this.stroke = stroke;
-        super.setName(super.getName() + String.valueOf(counter));
+        super.setName(super.getName() /*+ String.valueOf(counter)*/);
         counter++;
     }
 }

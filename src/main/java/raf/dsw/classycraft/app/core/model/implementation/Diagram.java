@@ -31,7 +31,8 @@ public class Diagram extends ClassyNodeComposite implements IPublisher {
         //dodajemo iskljucivo diagramElemente na diagram
         if(child instanceof DiagramElement){
             if(getChildren().contains(child)){
-                ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Paket/diagram vec postoji", MessageType.ERROR);
+                //ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Paket/diagram vec postoji", MessageType.ERROR);
+                return;
             }
             else{
                 getChildren().add(child);

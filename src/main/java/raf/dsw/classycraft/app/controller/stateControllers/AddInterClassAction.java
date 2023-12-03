@@ -21,6 +21,7 @@ public class AddInterClassAction extends AbstractClassyAction {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
         ((ClassyPackageView)MainFrame.getInstance().getSplitPane().getRightComponent()).startAddElementState();
     }
 }
