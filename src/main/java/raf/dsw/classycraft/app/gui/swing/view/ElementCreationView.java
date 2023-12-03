@@ -2,9 +2,13 @@ package raf.dsw.classycraft.app.gui.swing.view;
 
 import lombok.Getter;
 import lombok.Setter;
+import raf.dsw.classycraft.app.MessageGenerator.MessageType;
 import raf.dsw.classycraft.app.controller.CreateInterClassAction;
 import raf.dsw.classycraft.app.controller.stateControllers.AddInterClassAction;
+import raf.dsw.classycraft.app.core.ApplicationFramework;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.classContents.Attribute;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.classContents.ClassContent;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.classContents.Method;
 import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyDiagramView;
 
 import javax.swing.*;
@@ -14,7 +18,10 @@ import java.awt.event.FocusListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.geom.Point2D;
+import java.util.*;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Getter
 @Setter
@@ -30,6 +37,7 @@ public class ElementCreationView extends JFrame {
     private Point2D point2D;
     private String name;
     private boolean goNext = true;
+    private Set<ClassContent> classContents = new LinkedHashSet<>();
 
 
     public ElementCreationView(ClassyDiagramView classyDiagramView, Point2D point2D){
@@ -119,7 +127,7 @@ public class ElementCreationView extends JFrame {
             }
         });
 
-        addPlaceholder("/*Napisati input u sledecem formatu*/\nPolja:\nvidljivost Tip imePromenljive\n /*... (ostala polja)*/\nMetode:\n vidljivost Tip ime(arg1,arg2,arg3)\n/*... (ostale metode)*/\n /*kraj inputa*/ ", textAreaElementi);
+        addPlaceholder("/*Napisati input u sledecem formatu*/\nPolja:\nvidljivost Tip imePromenljive\n /*... (ostala polja)*/\nMetode:\n vidljivost Tip ime\n/*... (ostale metode)*/\n /*kraj inputa*/ ", textAreaElementi);
 
 
         setLocationRelativeTo(null);
@@ -130,10 +138,39 @@ public class ElementCreationView extends JFrame {
         return isShowing;
     }
 
-    public List<ClassContent> vratiPoljaIMetode(){
-        String text = textAreaElementi.getText();
-        //TODO napraviti metodu koja parsuje input u naznacenom formatu i vraca listu ClassConteta
-        return null;
+    public Set<ClassContent> vratiPoljaIMetode(){
+        String input = textAreaElementi.getText();
+        String[] linije = input.split("\n");
+        String poljeIliMetoda = "";
+        if(linije[0].equalsIgnoreCase("/*Napisati input u sledecem formatu*/"))return classContents;
+        try{
+            for(String s : linije){
+                if(s.equalsIgnoreCase("Polja:")&&!radioBtnInterfejs.isSelected()){
+                    poljeIliMetoda = s;
+                    continue;
+                }
+                if(s.equalsIgnoreCase("Metode:")&&!radioBtnEnum.isSelected()){
+                    poljeIliMetoda = s;
+                    continue;
+                }
+                if(poljeIliMetoda.equalsIgnoreCase("Polja:")){
+                    String podLinije[] = s.split(" ");
+                    //ovde mogu ici linije za proveru podLinije[0] aka vidljivosti, ako nije + - ~ onda baci exception
+                    classContents.add(new Attribute(podLinije[0],podLinije[1],podLinije[2]));
+                }
+                if(poljeIliMetoda.equalsIgnoreCase("Metode:")){
+                    String podLinije[] = s.split(" ");
+                    ////ovde mogu ici linije za proveru podLinije[0] aka vidljivosti, ako nije + - ~ onda baci exception
+                    classContents.add(new Method(podLinije[0],podLinije[1],podLinije[2]));
+                }
+            }
+        }catch (Exception e){
+            Set<ClassContent> errorSet = new LinkedHashSet<>();
+            errorSet.add(new Method("error","error","error"));
+            return errorSet;
+        }
+
+        return classContents;
     }
 
     private void addPlaceholder(String placeholder, JTextArea textArea) {

@@ -41,8 +41,10 @@ public class AddElementState implements StateInterface{
          */
         int sizePre = c.getDiagram().getChildren().size();
         if(e.getRadioBtnKlasa().isSelected()){
-            Klasa klasa = new Klasa(c.getDiagram(),e.getTfImeElementa().getText(), p,null);
+            Klasa klasa = new Klasa(c.getDiagram(),e.getTfImeElementa().getText(), p,e.vratiPoljaIMetode()); //staviti umesto poljaIMetode null ako ne radi
             ClassPainter classPainter = new ClassPainter(klasa);
+            System.out.println(e.vratiPoljaIMetode());
+
 
             c.getDiagram().addChild(klasa);
             if(sizePre == c.getDiagram().getChildren().size()){
@@ -52,7 +54,7 @@ public class AddElementState implements StateInterface{
             c.getPainters().add(classPainter);
         }
         else if(e.getRadioBtnInterfejs().isSelected()){
-            Interfejs interfejs = new Interfejs(c.getDiagram(),e.getTfImeElementa().getText(),p,null);
+            Interfejs interfejs = new Interfejs(c.getDiagram(),e.getTfImeElementa().getText(),p,e.vratiPoljaIMetode());
             InterfacePainter interfacePainter = new InterfacePainter(interfejs);
             c.getDiagram().addChild(interfejs);
             if(sizePre == c.getDiagram().getChildren().size()){
@@ -62,7 +64,7 @@ public class AddElementState implements StateInterface{
             c.getPainters().add(interfacePainter);
         }
         else{
-            Enum enumncina = new Enum(c.getDiagram(),e.getTfImeElementa().getText(),p,null);
+            Enum enumncina = new Enum(c.getDiagram(),e.getTfImeElementa().getText(),p,e.vratiPoljaIMetode());
             EnumPainter enumPainter = new EnumPainter(enumncina);
             c.getDiagram().addChild(enumncina);
             if(sizePre == c.getDiagram().getChildren().size()){

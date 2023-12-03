@@ -2,12 +2,16 @@ package raf.dsw.classycraft.app.gui.swing.painters;
 
 import lombok.Getter;
 import lombok.Setter;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.classContents.Attribute;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.classContents.ClassContent;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.classContents.Method;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Interfejs;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Klasa;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -24,9 +28,25 @@ public class ClassPainter extends ElementPainter {
 
     @Override
     public void draw(Graphics2D g) {
+
+        FontMetrics fontMetrics = g.getFontMetrics();
+
+        int maxWidth = 0;
+        int totalHeight = 0;
+        for (ClassContent c: klasa.getContentSet()) {
+            int stringWidth = fontMetrics.stringWidth(c.toString());
+            maxWidth = Math.max(maxWidth, stringWidth);
+            totalHeight += fontMetrics.getHeight();
+        }
+
+        maxWidth = Math.max(maxWidth, fontMetrics.stringWidth(klasa.getName()));
+        totalHeight += fontMetrics.getHeight();
+        if(maxWidth < 100)maxWidth = 100;
+        if(totalHeight<150)totalHeight = 150;
+
         g.setColor(klasa.getColor());
         g.setStroke(new BasicStroke(2));
-        oblik = new Rectangle2D.Double(klasa.getLocation().getX(),(int)klasa.getLocation().getY(),100,200);
+        oblik = new Rectangle2D.Double(klasa.getLocation().getX(),(int)klasa.getLocation().getY(),maxWidth,totalHeight+10);
 
 
 
@@ -50,12 +70,19 @@ public class ClassPainter extends ElementPainter {
         g.setColor(Color.BLACK);
 
         // Placement teksta
-        FontMetrics fontMetrics = g.getFontMetrics();
+
         int textHeight = fontMetrics.getHeight();
         // Nacrtaj na vrhu
         int classNameX = (int) oblik.getCenterX() - fontMetrics.stringWidth(klasa.getName()) / 2;
         int classNameY = (int) oblik.getY() + textHeight;
         g.drawString(klasa.getName(), classNameX, classNameY);
+
+        textHeight+= 5;
+        for(ClassContent c: klasa.getContentSet()){
+            textHeight+= fontMetrics.getHeight();
+            g.drawString(c.toString(), (int) oblik.getX()+2, (int) (oblik.getY()+textHeight));
+        }
+
     }
 
     @Override

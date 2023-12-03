@@ -6,10 +6,12 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Method extends ClassContent{
-    private String povratnaVrednost;
+    public Method(String name, String vidljivost, String tip) {
+        super(name, vidljivost,tip);
+    }
 
-    public Method(String name, Vidljivost vidljivost, String povratnaVrednost) {
-        super(name, vidljivost);
-        this.povratnaVrednost = povratnaVrednost;
+    @Override
+    public String toString(){
+        return super.toString()+"()";
     }
 }

@@ -2,6 +2,6 @@ package raf.dsw.classycraft.app.core.model.implementation.diagramElements.classC
 
 public class EnumElement extends ClassContent{
     public EnumElement(String name) {
-        super(name, Vidljivost.PUBLIC);
+        super(name, "+","Enum");
     }
 }

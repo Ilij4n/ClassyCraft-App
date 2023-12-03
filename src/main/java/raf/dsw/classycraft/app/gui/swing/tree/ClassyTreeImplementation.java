@@ -35,22 +35,20 @@ public class ClassyTreeImplementation implements ClassyTree {
 
 
     public  ClassyTreeItem dfsSearch(ClassyTreeItem root, Object targetModel) {
-        // Base case: If the current root contains the target model, return it
+        // Base case, ako root sadrzi model koji trazimo vrati ga
         if (root.getClassyNode().equals(targetModel)) {
             return root;
         }
 
-        // Recursive case: Check children
+        // ako nije root vidi decu
         for (int i = 0; i < root.getChildCount(); i++) {
             ClassyTreeItem child = (ClassyTreeItem) root.getChildAt(i);
             ClassyTreeItem result = dfsSearch(child, targetModel);
             if (result != null) {
-                // Model found in the subtree, return it
+                // ako je u podstablu vrati ga
                 return result;
             }
         }
-
-        // Model not found in the current subtree
         return null;
     }
 

@@ -1,5 +1,6 @@
 package raf.dsw.classycraft.app.controller;
 
+import raf.dsw.classycraft.app.core.model.composite.DiagramElement;
 import raf.dsw.classycraft.app.gui.swing.tree.ClassyTreeImplementation;
 import raf.dsw.classycraft.app.gui.swing.tree.model.ClassyTreeItem;
 import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
@@ -21,6 +22,7 @@ public class DeleteChildAction extends AbstractClassyAction{
     @Override
     public void actionPerformed(ActionEvent e) {
         ClassyTreeItem selected = MainFrame.getInstance().getClassyTree().getSelectednode();
+        if(selected.getClassyNode() instanceof DiagramElement)return;
         MainFrame.getInstance().getClassyTree().deleteChild(selected);
         MainFrame.getInstance().refreshDivider();
 

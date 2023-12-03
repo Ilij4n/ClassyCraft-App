@@ -128,3 +128,45 @@
 [INFO] [03.12.2023 16:30] Nema nista
 [INFO] [03.12.2023 16:30] Nema nista
 [ERROR] [03.12.2023 16:45] Duplikat Ime
+[ERROR] [03.12.2023 17:19] Duplikat Ime
+[ERROR] [03.12.2023 17:19] Duplikat Ime
+[INFO] [03.12.2023 20:35] Proverite format
+[INFO] [03.12.2023 20:41] Proverite format
+[INFO] [03.12.2023 20:52] Proverite format
+[INFO] [03.12.2023 20:52] Proverite format
+[INFO] [03.12.2023 20:52] Proverite format
+[INFO] [03.12.2023 20:53] Proverite format
+[ERROR] [03.12.2023 20:53] Greska
+[INFO] [03.12.2023 20:53] Proverite format
+[INFO] [03.12.2023 20:53] Proverite format
+[ERROR] [03.12.2023 20:59] Duplikat Ime
+[INFO] [03.12.2023 21:04] Proverite format
+[INFO] [03.12.2023 21:04] Proverite format
+[INFO] [03.12.2023 21:23] Format unosa nije ispravan, text je copyovan na clipboad
+[INFO] [03.12.2023 21:24] Format unosa nije ispravan, text je copyovan na clipboad
+[INFO] [03.12.2023 21:24] Format unosa nije ispravan, text je copyovan na clipboad
+[ERROR] [03.12.2023 21:27] Duplikat Ime
+[INFO] [03.12.2023 21:28] Format unosa nije ispravan, pokusajte ponovo
+[INFO] [03.12.2023 21:30] Format unosa nije ispravan, pokusajte ponovo
+[INFO] [03.12.2023 21:51] Format unosa nije ispravan, pokusajte ponovo
+[ERROR] [03.12.2023 21:53] Duplikat Ime
+[ERROR] [03.12.2023 21:54] Duplikat Ime
+[ERROR] [03.12.2023 21:55] Duplikat Ime
+[ERROR] [03.12.2023 21:57] Duplikat Ime
+[INFO] [03.12.2023 22:00] Format unosa nije ispravan, pokusajte ponovo
+[INFO] [03.12.2023 22:00] Format unosa nije ispravan, pokusajte ponovo
+[ERROR] [03.12.2023 22:00] Duplikat Ime
+[INFO] [03.12.2023 22:00] Format unosa nije ispravan, pokusajte ponovo
+[ERROR] [03.12.2023 22:00] Duplikat Ime
+[INFO] [03.12.2023 22:01] Format unosa nije ispravan, pokusajte ponovo
+[INFO] [03.12.2023 22:01] Format unosa nije ispravan, pokusajte ponovo
+[INFO] [03.12.2023 22:02] Format unosa nije ispravan, pokusajte ponovo
+[INFO] [03.12.2023 22:02] Format unosa nije ispravan, pokusajte ponovo
+[INFO] [03.12.2023 22:42] Format unosa nije ispravan, pokusajte ponovo
+[INFO] [03.12.2023 22:43] Format unosa nije ispravan, pokusajte ponovo
+[ERROR] [03.12.2023 22:43] Duplikat Ime
+[INFO] [03.12.2023 22:45] Format unosa nije ispravan, pokusajte ponovo
+[ERROR] [03.12.2023 22:46] Duplikat Ime
+[INFO] [03.12.2023 22:48] Format unosa nije ispravan, pokusajte ponovo
+[INFO] [03.12.2023 22:48] Format unosa nije ispravan, pokusajte ponovo
+[ERROR] [03.12.2023 22:50] Duplikat Ime
