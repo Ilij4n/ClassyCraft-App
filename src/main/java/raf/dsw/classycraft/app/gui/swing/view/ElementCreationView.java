@@ -118,7 +118,7 @@ public class ElementCreationView extends JFrame {
         setVisible(true);
         setResizable(false);
     }
-    public static boolean jedini(){
+    public static boolean pokazanSam(){
         return isShowing;
     }
 }
