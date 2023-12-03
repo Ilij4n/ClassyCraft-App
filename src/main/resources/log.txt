@@ -119,3 +119,5 @@
 [ERROR] [03.12.2023 14:26] Duplikat Ime
 [ERROR] [03.12.2023 14:26] Duplikat Ime
 [ERROR] [03.12.2023 14:26] Duplikat Ime
+[INFO] [03.12.2023 14:36] Dodajte na dijagram preko menija levo
+[INFO] [03.12.2023 15:07] Dodajte na dijagram preko menija levo

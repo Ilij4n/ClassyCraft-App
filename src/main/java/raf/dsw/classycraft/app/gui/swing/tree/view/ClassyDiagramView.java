@@ -3,6 +3,7 @@ package raf.dsw.classycraft.app.gui.swing.tree.view;
 import lombok.Getter;
 import lombok.Setter;
 import raf.dsw.classycraft.app.controller.mouseAdapters.ClassyMouseListener;
+import raf.dsw.classycraft.app.core.model.composite.DiagramElement;
 import raf.dsw.classycraft.app.core.model.implementation.Diagram;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.InterClass;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Klasa;
@@ -30,6 +31,7 @@ public class ClassyDiagramView extends JPanel implements ISubscriber{
     private List<ElementPainter> painters = new ArrayList<>();
     //msm da cu ovo polje da setujem
     private ElementCreationView elementCreationView;
+    private List<DiagramElement> lastSelected;
 
     private List<ISubscriber> subscribers;
 
@@ -38,7 +40,7 @@ public class ClassyDiagramView extends JPanel implements ISubscriber{
         this.name = diagram.getName();
         subscribers = new ArrayList<>();
         setBackground(Color.WHITE);
-
+        lastSelected = new ArrayList<>();
         addMouseListener(new ClassyMouseListener(this));
     }
 

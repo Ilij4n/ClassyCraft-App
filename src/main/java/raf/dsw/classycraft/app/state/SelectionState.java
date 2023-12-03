@@ -1,5 +1,6 @@
 package raf.dsw.classycraft.app.state;
 
+import raf.dsw.classycraft.app.gui.swing.painters.ElementPainter;
 import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyDiagramView;
 import raf.dsw.classycraft.app.gui.swing.view.ElementCreationView;
 
@@ -8,7 +9,11 @@ import java.awt.geom.Point2D;
 public class SelectionState implements StateInterface{
     @Override
     public void misKliknut(Point2D p, ClassyDiagramView c) {
-
+        for(int i = c.getPainters().size()-1;i>=0;i--){
+            if(c.getPainters().get(i).elementAt(p)){
+//                c.getLastSelected().add(c.getPainters().get(i));
+            }
+        }
     }
 
     @Override
