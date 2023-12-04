@@ -83,4 +83,19 @@ public class AddElementState implements StateInterface{
         tree.getTreeView().expandPath(new TreePath(diagramItem.getPath()));
         System.out.println(c.getDiagram().getChildren());
     }
+
+    @Override
+    public void misPovucen(Point2D p, ClassyDiagramView c) {
+
+    }
+
+    @Override
+    public void misPritisnut(Point2D p, ClassyDiagramView c) {
+
+    }
+
+    @Override
+    public void misOtpusten(Point2D p, ClassyDiagramView c) {
+
+    }
 }

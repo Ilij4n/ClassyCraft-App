@@ -7,10 +7,11 @@ import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.geom.Point2D;
 
-public class ClassyMouseListener extends MouseAdapter {
+public class ClassyMouseListener extends MouseAdapter implements MouseMotionListener {
 
     ClassyDiagramView classyDiagramView;
 
@@ -29,11 +30,13 @@ public class ClassyMouseListener extends MouseAdapter {
     @Override
     public void mousePressed(MouseEvent e) {
         super.mousePressed(e);
+        ((ClassyPackageView) MainFrame.getInstance().getSplitPane().getRightComponent()). misPritisnut((Point2D) e.getPoint(),classyDiagramView);
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
         super.mouseReleased(e);
+        ((ClassyPackageView) MainFrame.getInstance().getSplitPane().getRightComponent()).misOtpusten((Point2D) e.getPoint(),classyDiagramView);
     }
 
     @Override
@@ -53,7 +56,9 @@ public class ClassyMouseListener extends MouseAdapter {
 
     @Override
     public void mouseDragged(MouseEvent e) {
-        super.mouseDragged(e);
+//        super.mouseDragged(e);
+        System.out.println("vuci");
+        ((ClassyPackageView) MainFrame.getInstance().getSplitPane().getRightComponent()).misPovucen((Point2D) e.getPoint(),classyDiagramView);
     }
 
     @Override

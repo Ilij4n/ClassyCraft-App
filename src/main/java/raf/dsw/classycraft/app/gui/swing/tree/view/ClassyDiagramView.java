@@ -18,7 +18,9 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
+import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -31,17 +33,23 @@ public class ClassyDiagramView extends JPanel implements ISubscriber{
     private List<ElementPainter> painters = new ArrayList<>();
     //msm da cu ovo polje da setujem
     private ElementCreationView elementCreationView;
-    private List<ElementPainter> lastSelected;
+    private List<ElementPainter> sviselectovani;
 
     private List<ISubscriber> subscribers;
+
+    private Rectangle2D laso;
+    private Point2D prvaTacka;
+    private Line2D linija;
 
     public ClassyDiagramView(Diagram d){
         diagram = d;
         this.name = diagram.getName();
         subscribers = new ArrayList<>();
         setBackground(Color.WHITE);
-        lastSelected = new ArrayList<>();
+        sviselectovani = new ArrayList<>();
         addMouseListener(new ClassyMouseListener(this));
+        addMouseMotionListener(new ClassyMouseListener(this));
+        this.linija = new Line2D.Double();
     }
 
 
@@ -53,6 +61,8 @@ public class ClassyDiagramView extends JPanel implements ISubscriber{
         for(ElementPainter e : painters){
             e.draw(g2);
         }
+        g2.setColor(Color.BLACK);
+        g2.draw(linija);
     }
 
     @Override

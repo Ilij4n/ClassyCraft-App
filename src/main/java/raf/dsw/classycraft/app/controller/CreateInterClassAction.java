@@ -35,7 +35,7 @@ public class CreateInterClassAction extends AbstractClassyAction{
         //OVDE MOZDA DA ZOVEMO mediator.ad
 
         if(elementCreationView.vratiPoljaIMetode().contains(new Method("error","error","error"))){
-            ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Format unosa nije ispravan, pokusajte ponovo", MessageType.INFO);
+            ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja", MessageType.INFO);
             return;
         }
         ((ClassyPackageView)MainFrame.getInstance().getSplitPane().getRightComponent()).misKliknut1(elementCreationView.getPoint2D(),elementCreationView);

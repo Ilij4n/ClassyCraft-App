@@ -170,3 +170,6 @@
 [INFO] [03.12.2023 22:48] Format unosa nije ispravan, pokusajte ponovo
 [INFO] [03.12.2023 22:48] Format unosa nije ispravan, pokusajte ponovo
 [ERROR] [03.12.2023 22:50] Duplikat Ime
+[INFO] [04.12.2023 11:27] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
+[INFO] [04.12.2023 11:28] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
+[ERROR] [04.12.2023 16:04] Duplikat Ime

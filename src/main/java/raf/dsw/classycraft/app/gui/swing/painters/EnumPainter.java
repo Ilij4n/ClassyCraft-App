@@ -6,8 +6,11 @@ import raf.dsw.classycraft.app.core.model.implementation.diagramElements.classCo
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Enum;
 
 import java.awt.*;
+import java.awt.geom.Ellipse2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -15,6 +18,8 @@ public class EnumPainter extends ElementPainter {
 
     private Enum anEnum;
     private Rectangle2D oblik;
+    private boolean isSelected = false;
+
 
     public EnumPainter(Enum anEnum) {
         super(anEnum);
@@ -42,19 +47,35 @@ public class EnumPainter extends ElementPainter {
         g.setStroke(new BasicStroke(2));
         oblik = new Rectangle2D.Double(anEnum.getLocation().getX(),(int)anEnum.getLocation().getY(),maxWidth,totalHeight+10);
 
+        Point2D p1 = new Point2D.Double(oblik.getCenterX(),oblik.getY());
+        Point2D p2 = new Point2D.Double(oblik.getX(),oblik.getCenterY());
+        Point2D p3 = new Point2D.Double(oblik.getCenterX(),oblik.getY()+oblik.getHeight());
+        Point2D p4 = new Point2D.Double(oblik.getX()+oblik.getWidth(), oblik.getCenterY());
+
+        getListOfPoints().add((Point2D.Double) p1);
+        getListOfPoints().add((Point2D.Double) p2);
+        getListOfPoints().add((Point2D.Double) p3);
+        getListOfPoints().add((Point2D.Double) p4);
 
 
         // Boja za ivice
         g.setColor(Color.BLACK);
+        if(isSelected)g.setColor(Color.red);
 
         // Nacrtaj ivice
         g.draw(oblik);
 
+
+
         // Fill boja
         g.setColor(anEnum.getColor());
 
+
+
         // Nacrtaj fill
         g.fill(oblik);
+
+
 
         // Font
         Font font = new Font("Arial", Font.PLAIN, 12);

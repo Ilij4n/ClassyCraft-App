@@ -11,6 +11,8 @@ import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interCl
 import java.awt.*;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -20,6 +22,7 @@ public class ClassPainter extends ElementPainter {
     private Klasa klasa;
     //ovo polje nameravam da koristim takodje i za poziv za contains u elementAt-u
     private Rectangle2D oblik;
+    private boolean isSelected = false;
 
     public ClassPainter(Klasa klasa) {
         super(klasa);
@@ -48,17 +51,25 @@ public class ClassPainter extends ElementPainter {
         g.setStroke(new BasicStroke(2));
         oblik = new Rectangle2D.Double(klasa.getLocation().getX(),(int)klasa.getLocation().getY(),maxWidth,totalHeight+10);
 
+        Point2D p1 = new Point2D.Double(oblik.getCenterX(),oblik.getY());
+        Point2D p2 = new Point2D.Double(oblik.getX(),oblik.getCenterY());
+        Point2D p3 = new Point2D.Double(oblik.getCenterX(),oblik.getY()+oblik.getHeight());
+        Point2D p4 = new Point2D.Double(oblik.getX()+oblik.getWidth(), oblik.getCenterY());
+
+        getListOfPoints().add((Point2D.Double) p1);
+        getListOfPoints().add((Point2D.Double) p2);
+        getListOfPoints().add((Point2D.Double) p3);
+        getListOfPoints().add((Point2D.Double) p4);
 
 
         // Boja za ivice
         g.setColor(Color.BLACK);
-
+        if(isSelected)g.setColor(Color.red);
         // Nacrtaj ivice
         g.draw(oblik);
 
         // Fill boja
         g.setColor(klasa.getColor());
-
         // Nacrtaj fill
         g.fill(oblik);
 
@@ -82,6 +93,8 @@ public class ClassPainter extends ElementPainter {
             textHeight+= fontMetrics.getHeight();
             g.drawString(c.toString(), (int) oblik.getX()+2, (int) (oblik.getY()+textHeight));
         }
+
+
 
     }
 
