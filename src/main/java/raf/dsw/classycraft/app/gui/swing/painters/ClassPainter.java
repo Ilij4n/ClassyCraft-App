@@ -9,6 +9,7 @@ import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interCl
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Klasa;
 
 import java.awt.*;
+import java.awt.geom.Ellipse2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
@@ -51,10 +52,13 @@ public class ClassPainter extends ElementPainter {
         g.setStroke(new BasicStroke(2));
         oblik = new Rectangle2D.Double(klasa.getLocation().getX(),(int)klasa.getLocation().getY(),maxWidth,totalHeight+10);
 
-        Point2D p1 = new Point2D.Double(oblik.getCenterX(),oblik.getY());
-        Point2D p2 = new Point2D.Double(oblik.getX(),oblik.getCenterY());
-        Point2D p3 = new Point2D.Double(oblik.getCenterX(),oblik.getY()+oblik.getHeight());
-        Point2D p4 = new Point2D.Double(oblik.getX()+oblik.getWidth(), oblik.getCenterY());
+        Rectangle2D bounds = oblik.getBounds2D();
+        Point2D p1 = new Point2D.Double(bounds.getCenterX(),bounds.getMinY());
+        Point2D p2 = new Point2D.Double(bounds.getMinX(), bounds.getCenterY());
+        Point2D p3 = new Point2D.Double(bounds.getMaxX(),bounds.getCenterY());
+        Point2D p4 = new Point2D.Double(bounds.getCenterX(),bounds.getMaxY());
+
+
 
         getListOfPoints().add((Point2D.Double) p1);
         getListOfPoints().add((Point2D.Double) p2);

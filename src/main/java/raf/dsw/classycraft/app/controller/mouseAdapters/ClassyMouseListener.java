@@ -56,8 +56,8 @@ public class ClassyMouseListener extends MouseAdapter implements MouseMotionList
 
     @Override
     public void mouseDragged(MouseEvent e) {
-//        super.mouseDragged(e);
-        System.out.println("vuci");
+        super.mouseDragged(e);
+        //System.out.println("vuci");
         ((ClassyPackageView) MainFrame.getInstance().getSplitPane().getRightComponent()).misPovucen((Point2D) e.getPoint(),classyDiagramView);
     }
 

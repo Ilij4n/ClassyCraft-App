@@ -28,7 +28,7 @@ public class AddConnectionState implements StateInterface{
     public void misPovucen(Point2D p, ClassyDiagramView c) {
         if(moze){
             c.getLinija().setLine(c.getPrvaTacka(),p);
-            System.out.println("vuci1");
+            //System.out.println("vuci1");
             c.repaint();
         }
     }

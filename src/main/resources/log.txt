@@ -173,3 +173,12 @@
 [INFO] [04.12.2023 11:27] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
 [INFO] [04.12.2023 11:28] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
 [ERROR] [04.12.2023 16:04] Duplikat Ime
+[INFO] [04.12.2023 20:41] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
+[ERROR] [04.12.2023 20:42] Duplikat Ime
+[ERROR] [04.12.2023 21:06] Duplikat Ime
+[ERROR] [04.12.2023 21:38] Duplikat Ime
+[ERROR] [04.12.2023 21:40] Duplikat Ime
+[ERROR] [04.12.2023 21:40] Duplikat Ime
+[ERROR] [04.12.2023 21:43] Duplikat Ime
+[ERROR] [04.12.2023 21:44] Duplikat Ime
+[ERROR] [04.12.2023 22:06] Duplikat Ime

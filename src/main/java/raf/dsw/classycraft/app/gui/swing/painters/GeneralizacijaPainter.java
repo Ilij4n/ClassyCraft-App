@@ -5,6 +5,7 @@ import raf.dsw.classycraft.app.core.model.implementation.diagramElements.connect
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.InterClass;
 
 import java.awt.*;
+import java.awt.geom.Point2D;
 
 public class GeneralizacijaPainter extends ConnectionPainter{
     public GeneralizacijaPainter(Connection veza) {
@@ -15,7 +16,10 @@ public class GeneralizacijaPainter extends ConnectionPainter{
         InterClass diagramElement = getVeza().getElement1();
         InterClass diagramElement1 = getVeza().getElement2();
         g.setColor(Color.BLACK);
-        g.drawLine((int)diagramElement.getLocation().getX(),(int) diagramElement.getLocation().getY(), (int)diagramElement1.getLocation().getX(),(int)diagramElement1.getLocation().getY());
+        Point2D pointPocetak = getListOfPoints().get(0);
+        Point2D pointKraj = getListOfPoints().get(1);
+//        g.drawLine((int)diagramElement.getLocation().getX(),(int) diagramElement.getLocation().getY(), (int)diagramElement1.getLocation().getX(),(int)diagramElement1.getLocation().getY());
+        g.drawLine((int)pointPocetak.getX(),(int)pointPocetak.getY(),(int)pointKraj.getX(),(int)pointKraj.getY());
 
     }
 
