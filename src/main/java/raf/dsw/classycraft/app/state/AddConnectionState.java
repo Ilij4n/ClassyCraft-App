@@ -70,9 +70,39 @@ public class AddConnectionState implements StateInterface{
                     break;
                 }
             }
+            double najkraci = 100000;
+            double najkraciXPocetni = 0;
+            double najkraciYPocetni = 0;
+            double najkraciXKrajnji = 0;
+            double najkraciYKrajnji = 0;
+
             Connection connection = new Generalizacija(c.getDiagram(),"nesto", (InterClass)elementPainterPocetni.getDiagramElement(),(InterClass) elementPainterKrajnji.getDiagramElement(),"0..1","promenjiva");
+            for(int i = elementPainterPocetni.getListOfPoints().size() - 1; i >= 0; i--){
+                for(int j = elementPainterKrajnji.getListOfPoints().size() - 1; j >= 0; j--){
+
+                    double xPocetni = elementPainterPocetni.getListOfPoints().get(i).getX();
+                    double xKrajnji = elementPainterKrajnji.getListOfPoints().get(j).getX();
+                    double yPocetni  = elementPainterPocetni.getListOfPoints().get(i).getY();
+                    double yKrajnji  = elementPainterKrajnji.getListOfPoints().get(j).getY();
+
+                    double d = Math.sqrt(Math.pow(xKrajnji-xPocetni,2)+Math.pow(yKrajnji-yPocetni,2));
+                    if(d<najkraci){
+                        najkraci = d;
+                        najkraciXPocetni = xPocetni;
+                        najkraciYPocetni = yPocetni;
+                        najkraciXKrajnji = xKrajnji;
+                        najkraciYKrajnji = yKrajnji;
+                    }
+
+                }
+            }
+
             GeneralizacijaPainter g = new GeneralizacijaPainter(connection);
+            g.getListOfPoints().add(new Point2D.Double(najkraciXPocetni,najkraciYPocetni));
+            g.getListOfPoints().add(new Point2D.Double(najkraciXKrajnji,najkraciYKrajnji));
+
             c.getPainters().add(g);
+
             c.getLinija().setLine(c.getPrvaTacka(), p);
 
             c.repaint();
