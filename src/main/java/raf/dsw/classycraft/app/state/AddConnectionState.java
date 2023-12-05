@@ -75,7 +75,10 @@ public class AddConnectionState implements StateInterface{
 
             GeneralizacijaPainter g = new GeneralizacijaPainter(connection,elementPainterPocetni,elementPainterKrajnji);
 
-            c.getPainters().add(g);
+            if(!c.getPainters().contains(g) && !elementPainterPocetni.equals(elementPainterKrajnji)){
+                c.getPainters().add(g);
+            }
+
 
             //c.repaint();
         }

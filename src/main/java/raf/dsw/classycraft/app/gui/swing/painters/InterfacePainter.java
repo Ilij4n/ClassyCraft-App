@@ -20,7 +20,6 @@ public class InterfacePainter extends ElementPainter {
     //polje modela
     private Interfejs interfejs;
     //ovo polje nameravam da koristim takodje i za poziv za contains u elementAt-u
-    private Rectangle2D oblik;
     private boolean isSelected = false;
 
     public InterfacePainter(Interfejs interfejs) {
@@ -99,6 +98,6 @@ public class InterfacePainter extends ElementPainter {
 
     @Override
     public boolean elementAt(Point2D p) {
-        return oblik.contains(p);
+        return getOblik().contains(p);
     }
 }

@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
+import java.util.Objects;
 
 @Getter
 @Setter
@@ -17,7 +18,6 @@ public abstract class ConnectionPainter extends ElementPainter{
     private ElementPainter elementPainter2;
     private Connection veza;
     private boolean isSelected;
-    private Rectangle2D.Double oblik;
 
     public ConnectionPainter(Connection veza,ElementPainter elementPainter1,ElementPainter elementPainter2) {
         super(veza);
@@ -27,6 +27,8 @@ public abstract class ConnectionPainter extends ElementPainter{
     }
 
     public void draw(Graphics2D g) {
+
+
         double najkraci = 1000;
         double najkraciXPocetni = 0;
         double najkraciYPocetni = 0;
@@ -59,15 +61,7 @@ public abstract class ConnectionPainter extends ElementPainter{
             g.setColor(Color.RED);
         }
 
-//        if(najkraciXPocetni > najkraciXKrajnji && najkraciYPocetni>najkraciYKrajnji){
-//            oblik = new Rectangle2D.Double((int) najkraciXPocetni,(int) najkraciYPocetni,(int)najkraciXPocetni-(int)najkraciXKrajnji,(int)najkraciYPocetni-(int)najkraciYKrajnji);
-//        } else if (najkraciXPocetni<najkraciXKrajnji && najkraciYPocetni>najkraciYKrajnji) {
-//            oblik = new Rectangle2D.Double((int) najkraciXPocetni,(int) najkraciYPocetni,najkraciXKrajnji-najkraciXPocetni,(int)najkraciYPocetni-(int)najkraciYKrajnji);
-//        } else if (najkraciXPocetni > najkraciXKrajnji && najkraciYPocetni<najkraciYKrajnji) {
-//            oblik = new Rectangle2D.Double((int) najkraciXPocetni,(int) najkraciYPocetni,(int)najkraciXPocetni-(int)najkraciXKrajnji,(int)najkraciYKrajnji-(int)najkraciYPocetni);
-//        } else if (najkraciXPocetni<najkraciXKrajnji && najkraciYPocetni< najkraciYKrajnji) {
-//            oblik = new Rectangle2D.Double((int) najkraciXPocetni,(int) najkraciYPocetni,najkraciXKrajnji-najkraciXPocetni,(int)najkraciYKrajnji-(int)najkraciYPocetni);
-//        }
+
 
         g.drawLine((int)najkraciXPocetni,(int)najkraciYPocetni,(int)najkraciXKrajnji,(int)najkraciYKrajnji);
 
@@ -77,7 +71,8 @@ public abstract class ConnectionPainter extends ElementPainter{
         int y = Math.min((int)najkraciYKrajnji,(int)najkraciYPocetni);
         int width = Math.abs((int)najkraciXKrajnji-(int)najkraciXPocetni);
         int height = Math.abs((int)najkraciYKrajnji-(int)najkraciYPocetni);
-        oblik = new Rectangle2D.Double(x,y,width,height);
+        oblik.setRect(x,y,width,height);
+//        oblik = new Rectangle2D.Double(x,y,width,height);
 
         g.draw(oblik);
 
@@ -85,6 +80,19 @@ public abstract class ConnectionPainter extends ElementPainter{
 
     @Override
     public boolean elementAt(Point2D p) {
-        return oblik.contains(p);
+        return getOblik().contains(p);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ConnectionPainter that = (ConnectionPainter) o;
+        return Objects.equals(elementPainter1, that.elementPainter1) && Objects.equals(elementPainter2, that.elementPainter2);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(elementPainter1, elementPainter2);
     }
 }

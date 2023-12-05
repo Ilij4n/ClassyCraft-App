@@ -22,7 +22,7 @@ public class ClassPainter extends ElementPainter {
     //polje modela
     private Klasa klasa;
     //ovo polje nameravam da koristim takodje i za poziv za contains u elementAt-u
-    private Rectangle2D oblik;
+    //polje shapea je na kraju prebaceno u nadklasu
     private boolean isSelected = false;
 
     public ClassPainter(Klasa klasa) {
@@ -104,6 +104,6 @@ public class ClassPainter extends ElementPainter {
 
     @Override
     public boolean elementAt(Point2D p) {
-        return oblik.contains(p);
+        return getOblik().contains(p);
     }
 }

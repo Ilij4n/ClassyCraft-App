@@ -17,7 +17,6 @@ import java.util.List;
 public class EnumPainter extends ElementPainter {
 
     private Enum anEnum;
-    private Rectangle2D oblik;
     private boolean isSelected = false;
 
 
@@ -101,6 +100,6 @@ public class EnumPainter extends ElementPainter {
 
     @Override
     public boolean elementAt(Point2D p) {
-        return oblik.contains(p);
+        return getOblik().contains(p);
     }
 }

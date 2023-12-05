@@ -33,6 +33,7 @@ public class SelectionState implements StateInterface{
                 break;
             }
         }
+
     }
 
     @Override
@@ -46,10 +47,22 @@ public class SelectionState implements StateInterface{
         int y = Math.min((int)c.getPrvaTacka().getY(),(int)p.getY());
         int w = Math.abs((int)p.getX()-(int)c.getPrvaTacka().getX());
         int h = Math.abs((int)p.getY()-(int)c.getPrvaTacka().getY());
-            c.setLaso(new Rectangle2D.Double(x,y,w,h));
-
-            c.repaint();
+        c.setLaso(new Rectangle2D.Double(x,y,w,h));
+        for(ElementPainter painter: c.getPainters()){
+            if(c.getLaso().intersects(painter.getOblik()) && !(c.getSviselectovani().contains(painter))){
+                //System.out.println("Usao");
+                painter.setSelected(true);
+                c.getSviselectovani().add(painter);
+            }
+            if (!(c.getLaso().intersects(painter.getOblik())) && c.getSviselectovani().contains(painter)) {
+                painter.setSelected(false);
+                c.getSviselectovani().remove(painter);
+                c.repaint();
+            }
+        }
+        c.repaint();
     }
+
 
     @Override
     public void misPritisnut(Point2D p, ClassyDiagramView c) {
@@ -59,6 +72,7 @@ public class SelectionState implements StateInterface{
                 c.getLaso().setRect(c.getPrvaTacka().getX(), c.getPrvaTacka().getY(),0,0);
                 c.repaint();
             }
+
         }
 
     }
@@ -67,5 +81,6 @@ public class SelectionState implements StateInterface{
     public void misOtpusten(Point2D p, ClassyDiagramView c) {
         c.setLaso(new Rectangle2D.Double());
         c.repaint();
+        System.out.println(c.getSviselectovani());
     }
 }

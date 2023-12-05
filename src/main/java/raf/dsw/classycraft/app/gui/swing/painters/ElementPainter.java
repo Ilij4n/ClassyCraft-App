@@ -10,6 +10,7 @@ import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Getter
 @Setter
@@ -18,7 +19,7 @@ public abstract class ElementPainter {
     private DiagramElement diagramElement;
     private boolean selected = false;
     private List<Point2D> listOfPoints;
-    private Rectangle2D rectangle2D;
+    protected Rectangle2D oblik = new Rectangle2D.Double();
 
     public ElementPainter(DiagramElement diagramElement){
         this.diagramElement = diagramElement;
@@ -32,5 +33,18 @@ public abstract class ElementPainter {
     // ova metoda ce biti korisna da proverimo da li je kad kliknemo misom kliknut neki element
     public boolean elementAt(Point2D p) {
         return false;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ElementPainter that = (ElementPainter) o;
+        return Objects.equals(diagramElement, that.diagramElement);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(diagramElement);
     }
 }
