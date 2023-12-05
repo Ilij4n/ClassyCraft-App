@@ -74,6 +74,11 @@ public class DeleteState implements StateInterface{
         List<ElementPainter> listaSelektovanih = c.getSviselectovani();
         ClassyTreeImplementation tree = ((ClassyTreeImplementation) MainFrame.getInstance().getClassyTree());
 
+        //ne mogu vise, idemo da spavam
+        for(int i = c.getPainters().size()-1;i>=0;i--){
+            ElementPainter painter = c.getPainters().get(i);
+            if(painter.getDiagramElement() instanceof  Connection && c.getSviselectovani().contains(painter))c.getPainters().remove(painter);
+        }
 
         for(ElementPainter painter : listaSelektovanih){
 
@@ -83,7 +88,7 @@ public class DeleteState implements StateInterface{
                     ElementPainter painter1 = c.getPainters().get(i);
                     if(painter1.getDiagramElement() instanceof Connection){
                         Connection connection = (Connection) painter1.getDiagramElement();
-                        if(connection.getElement1().equals(painter.getDiagramElement())||connection.getElement2().equals(painter.getDiagramElement())){
+                        if((connection.getElement1().equals(painter.getDiagramElement())||connection.getElement2().equals(painter.getDiagramElement()))){
                             c.getPainters().remove(painter1);
                             c.getDiagram().getChildren().remove(connection);
                             tree.deleteChild(tree.dfsSearch((ClassyTreeItem) tree.getTreeModel().getRoot(),connection));
