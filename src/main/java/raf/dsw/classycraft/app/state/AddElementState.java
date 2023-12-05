@@ -28,6 +28,7 @@ public class AddElementState implements StateInterface{
         // da ne bi moglo vise prozora da se otvori
         if(ElementCreationView.pokazanSam())return;
         ElementCreationView e = new ElementCreationView(c,p);
+        e.setVisible(true);
     }
 
     @Override
@@ -96,6 +97,11 @@ public class AddElementState implements StateInterface{
 
     @Override
     public void misOtpusten(Point2D p, ClassyDiagramView c) {
+
+    }
+
+    @Override
+    public void misSkrolovan(Point2D p, ClassyDiagramView c) {
 
     }
 }

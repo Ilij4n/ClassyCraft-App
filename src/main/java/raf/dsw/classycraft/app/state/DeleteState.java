@@ -67,7 +67,7 @@ public class DeleteState implements StateInterface{
                 break;
             }
         }
-
+        c.getSviselectovani().clear();
     }
 
     private void brisanjeZaVise(ClassyDiagramView c, List<DiagramElement> vezeDaSeObrisu){
@@ -117,6 +117,11 @@ public class DeleteState implements StateInterface{
 
     @Override
     public void misOtpusten(Point2D p, ClassyDiagramView c) {
+
+    }
+
+    @Override
+    public void misSkrolovan(Point2D p, ClassyDiagramView c) {
 
     }
 }

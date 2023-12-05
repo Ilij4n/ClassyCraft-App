@@ -9,6 +9,9 @@ import raf.dsw.classycraft.app.core.ApplicationFramework;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.classContents.Attribute;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.classContents.ClassContent;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.classContents.Method;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.InterClass;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Interfejs;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Klasa;
 import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyDiagramView;
 
 import javax.swing.*;
@@ -59,10 +62,10 @@ public class ElementCreationView extends JFrame {
 
         radioBtnKlasa.setSelected(true);
 
-        // GridBagLayout
+
         JPanel mainPanel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(5, 5, 5, 5); // Adjust insets as needed
+        gbc.insets = new Insets(5, 5, 5, 5);
 
         // Prvi red
         gbc.gridx = 0;
@@ -102,11 +105,11 @@ public class ElementCreationView extends JFrame {
         // Cetvri red
         gbc.gridx = 0;
         gbc.gridy = 3;
-        gbc.gridwidth = 1; // Reset gridwidth
+        gbc.gridwidth = 1;
         mainPanel.add(new JLabel("Potvrdi !"), gbc);
 
         gbc.gridx = 1;
-        gbc.gridwidth = 3; // Span three columns
+        gbc.gridwidth = 3;
         /*
             Kontroler na ovom dugmetu ce u zavisnosti od izbora elementa u radiobutonima
             da proveri ispravnost formata ulaza i da parsuje podatke u slucaju da su dobri
@@ -131,19 +134,49 @@ public class ElementCreationView extends JFrame {
 
 
         setLocationRelativeTo(null);
-        setVisible(true);
+        //setVisible(true);
         setResizable(false);
     }
     public static boolean pokazanSam(){
         return isShowing;
     }
 
+
+    public void postaviPolja(InterClass c){
+        if(c instanceof Klasa) radioBtnKlasa.setSelected(true);
+        else if (c instanceof Interfejs)radioBtnInterfejs.setSelected(true);
+        else radioBtnEnum.setSelected(true);
+
+        tfImeElementa.setText(c.getName());
+        StringBuilder builder = new StringBuilder();
+        boolean flag1 = false;
+        boolean flag2 = false;
+        for (ClassContent content: c.getContentSet()){
+            if(content instanceof Attribute && !flag1){
+                builder.append("Polja:\n");
+                flag1 = true;
+            }
+            else if(content instanceof Method && !flag2){
+                builder.append("Metode:\n");
+                flag2 = true;
+            }
+            System.out.println("Usao u edit");
+            if(flag2)builder.append(content.toString().replace("()",""));
+            else builder.append(content.toString());
+
+            builder.append("\n");
+        }
+        textAreaElementi.setText(builder.toString());
+
+    }
+
     public Set<ClassContent> vratiPoljaIMetode(){
         String input = textAreaElementi.getText();
         String[] linije = input.split("\n");
         String poljeIliMetoda = "";
-       // Za proveru pravilnog inputa vidjlivosti
 
+
+       // Za proveru pravilnog inputa vidjlivost
 
         Set<String> vrednostiVidljivosti = new HashSet<>();
         vrednostiVidljivosti.add("+");

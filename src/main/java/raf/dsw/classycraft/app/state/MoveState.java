@@ -30,4 +30,9 @@ public class MoveState implements StateInterface{
     public void misOtpusten(Point2D p, ClassyDiagramView c) {
 
     }
+
+    @Override
+    public void misSkrolovan(Point2D p, ClassyDiagramView c) {
+
+    }
 }

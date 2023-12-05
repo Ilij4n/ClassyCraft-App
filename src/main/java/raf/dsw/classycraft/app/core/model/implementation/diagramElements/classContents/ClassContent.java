@@ -20,6 +20,6 @@ public abstract class ClassContent {
 
     @Override
     public String toString() {
-        return vidljivost + tip + " " + name;
+        return vidljivost +" "+ tip + " " + name;
     }
 }

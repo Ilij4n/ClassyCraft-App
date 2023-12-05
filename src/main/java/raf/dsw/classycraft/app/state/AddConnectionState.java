@@ -109,4 +109,9 @@ public class AddConnectionState implements StateInterface{
         c.setLinija(new Line2D.Double());
         c.repaint();
     }
+
+    @Override
+    public void misSkrolovan(Point2D p, ClassyDiagramView c) {
+
+    }
 }

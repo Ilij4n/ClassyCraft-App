@@ -83,4 +83,9 @@ public class SelectionState implements StateInterface{
         c.repaint();
         System.out.println("svi selektovani"+ c.getSviselectovani());
     }
+
+    @Override
+    public void misSkrolovan(Point2D p, ClassyDiagramView c) {
+
+    }
 }

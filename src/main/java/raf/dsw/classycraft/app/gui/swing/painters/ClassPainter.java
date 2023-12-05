@@ -35,6 +35,8 @@ public class ClassPainter extends ElementPainter {
 
         FontMetrics fontMetrics = g.getFontMetrics();
 
+        //odredjivanje sirine i duzine teksta
+
         int maxWidth = 0;
         int totalHeight = 0;
         for (ClassContent c: klasa.getContentSet()) {
@@ -48,9 +50,13 @@ public class ClassPainter extends ElementPainter {
         if(maxWidth < 100)maxWidth = 100;
         if(totalHeight<150)totalHeight = 150;
 
+        //oblik je polje nadklase, tako je zbog pristupa metodi elementaAt
+
         g.setColor(klasa.getColor());
         g.setStroke(new BasicStroke(2));
         oblik = new Rectangle2D.Double(klasa.getLocation().getX(),(int)klasa.getLocation().getY(),maxWidth,totalHeight+10);
+
+        //racunanje tacaka
 
         Rectangle2D bounds = oblik.getBounds2D();
         Point2D p1 = new Point2D.Double(bounds.getCenterX(),bounds.getMinY());
@@ -58,7 +64,7 @@ public class ClassPainter extends ElementPainter {
         Point2D p3 = new Point2D.Double(bounds.getMaxX(),bounds.getCenterY());
         Point2D p4 = new Point2D.Double(bounds.getCenterX(),bounds.getMaxY());
 
-
+        //svaka klasa ima listu svojih tacaka
 
         getListOfPoints().add((Point2D.Double) p1);
         getListOfPoints().add((Point2D.Double) p2);
@@ -68,6 +74,7 @@ public class ClassPainter extends ElementPainter {
 
         // Boja za ivice
         g.setColor(Color.BLACK);
+        //ako je selected nacrtaj ga crveno
         if(isSelected)g.setColor(Color.red);
         // Nacrtaj ivice
         g.draw(oblik);
@@ -84,13 +91,15 @@ public class ClassPainter extends ElementPainter {
         // Boja teksta
         g.setColor(Color.BLACK);
 
-        // Placement teksta
+
+        //centriranje naslova i postalvjanje na vrh
 
         int textHeight = fontMetrics.getHeight();
-        // Nacrtaj na vrhu
         int classNameX = (int) oblik.getCenterX() - fontMetrics.stringWidth(klasa.getName()) / 2;
         int classNameY = (int) oblik.getY() + textHeight;
         g.drawString(klasa.getName(), classNameX, classNameY);
+
+        //ispis svega unutar
 
         textHeight+= 5;
         for(ClassContent c: klasa.getContentSet()){
@@ -101,7 +110,6 @@ public class ClassPainter extends ElementPainter {
 
 
     }
-
     @Override
     public boolean elementAt(Point2D p) {
         return getOblik().contains(p);
