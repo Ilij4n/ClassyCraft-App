@@ -142,6 +142,15 @@ public class ElementCreationView extends JFrame {
         String input = textAreaElementi.getText();
         String[] linije = input.split("\n");
         String poljeIliMetoda = "";
+       // Za proveru pravilnog inputa vidjlivosti
+
+
+        Set<String> vrednostiVidljivosti = new HashSet<>();
+        vrednostiVidljivosti.add("+");
+        vrednostiVidljivosti.add("-");
+        vrednostiVidljivosti.add("#");
+        vrednostiVidljivosti.add("~");
+
         if(linije[0].equalsIgnoreCase("/*Napisati input u sledecem formatu*/"))return classContents;
         try{
             for(String s : linije){
@@ -156,11 +165,13 @@ public class ElementCreationView extends JFrame {
                 if(poljeIliMetoda.equalsIgnoreCase("Polja:")){
                     String podLinije[] = s.split(" ");
                     //ovde mogu ici linije za proveru podLinije[0] aka vidljivosti, ako nije + - ~ onda baci exception
+                    if(!(vrednostiVidljivosti).contains(podLinije[0]))throw new Exception();
                     classContents.add(new Attribute(podLinije[0],podLinije[1],podLinije[2]));
                 }
                 if(poljeIliMetoda.equalsIgnoreCase("Metode:")){
                     String podLinije[] = s.split(" ");
                     ////ovde mogu ici linije za proveru podLinije[0] aka vidljivosti, ako nije + - ~ onda baci exception
+                    if(!(vrednostiVidljivosti).contains(podLinije[0]))throw new Exception();
                     classContents.add(new Method(podLinije[0],podLinije[1],podLinije[2]));
                 }
             }
