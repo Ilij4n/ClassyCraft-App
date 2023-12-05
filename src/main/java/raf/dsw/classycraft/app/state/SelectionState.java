@@ -15,15 +15,15 @@ public class SelectionState implements StateInterface{
     public void misKliknut(Point2D p, ClassyDiagramView c) {
         if (c.getSviselectovani().size() == 1){
             c.getSviselectovani().get(0).setSelected(false);
-            System.out.println("Usoo");
+           // System.out.println("Usoo");
         }
         for(int j = c.getSviselectovani().size()-1;j>=0;j--){
             c.getPainters().get(j).setSelected(false);
-            System.out.println("usao");
+           // System.out.println("usao");
         }
         c.repaint();
         c.getSviselectovani().clear();
-        System.out.println(c.getSviselectovani());
+        System.out.println("svi selektovani"+ c.getSviselectovani());
         for(int i = c.getPainters().size()-1;i>=0;i--){
             ElementPainter painter = c.getPainters().get(i);
             if(painter.elementAt(p)){
@@ -81,6 +81,6 @@ public class SelectionState implements StateInterface{
     public void misOtpusten(Point2D p, ClassyDiagramView c) {
         c.setLaso(new Rectangle2D.Double());
         c.repaint();
-        System.out.println(c.getSviselectovani());
+        System.out.println("svi selektovani"+ c.getSviselectovani());
     }
 }

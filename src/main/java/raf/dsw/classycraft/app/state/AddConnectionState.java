@@ -1,14 +1,19 @@
 package raf.dsw.classycraft.app.state;
 
+import raf.dsw.classycraft.app.core.ApplicationFramework;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.connections.Connection;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.connections.Generalizacija;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.InterClass;
 import raf.dsw.classycraft.app.gui.swing.painters.ConnectionPainter;
 import raf.dsw.classycraft.app.gui.swing.painters.ElementPainter;
 import raf.dsw.classycraft.app.gui.swing.painters.GeneralizacijaPainter;
+import raf.dsw.classycraft.app.gui.swing.tree.ClassyTreeImplementation;
+import raf.dsw.classycraft.app.gui.swing.tree.model.ClassyTreeItem;
 import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyDiagramView;
 import raf.dsw.classycraft.app.gui.swing.view.ElementCreationView;
+import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
 
+import javax.swing.tree.TreePath;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 
@@ -70,13 +75,31 @@ public class AddConnectionState implements StateInterface{
                     break;
                 }
             }
-            if(elementPainterPocetni==null)return;
+            if(elementPainterPocetni==null||elementPainterKrajnji==null)return;
+            //TODO ovde naci nacin da proveris kako da pravis razlicite veze, verovatno kao miskliknut1 u dodajElementStateu
             Connection connection = new Generalizacija(c.getDiagram(),"nesto", (InterClass)elementPainterPocetni.getDiagramElement(),(InterClass) elementPainterKrajnji.getDiagramElement(),"0..1","promenjiva");
-
             GeneralizacijaPainter g = new GeneralizacijaPainter(connection,elementPainterPocetni,elementPainterKrajnji);
 
+
+
+
+
+
+
             if(!c.getPainters().contains(g) && !elementPainterPocetni.equals(elementPainterKrajnji)){
+
+               c.getDiagram().addChild(connection);
+
+                ClassyTreeImplementation tree = ((ClassyTreeImplementation) MainFrame.getInstance().getClassyTree());
+                //Ova metoda pronalazi treenode koji odgovara selectovanom dijagramu i dodaje mu dete tako sto se rekurzivno krece kroz nas JTREE
+                ClassyTreeItem diagramNode = tree.dfsSearch((ClassyTreeItem) tree.getTreeModel().getRoot(),c.getDiagram());
+                //ovo je samo za dodavanje u jtree, u modelu je vec dodat
                 c.getPainters().add(g);
+                MainFrame.getInstance().getClassyTree().addChild(diagramNode,false);
+                //samo rasiri sve
+                tree.getTreeView().expandPath(new TreePath(diagramNode.getPath()));
+                System.out.println(c.getDiagram().getChildren());
+
             }
 
 

@@ -47,4 +47,9 @@ public abstract class ElementPainter {
     public int hashCode() {
         return Objects.hash(diagramElement);
     }
+
+    @Override
+    public String toString() {
+        return diagramElement.toString();
+    }
 }
