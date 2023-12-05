@@ -12,9 +12,10 @@ import java.awt.geom.Point2D;
 public class SelectionState implements StateInterface{
     @Override
     public void misKliknut(Point2D p, ClassyDiagramView c) {
-        if(c.getSviselectovani().size()==1)
+        if (c.getSviselectovani().size() == 1){
             c.getSviselectovani().get(0).setSelected(false);
-
+            System.out.println("Usoo");
+        }
         for(int j = c.getSviselectovani().size()-1;j>=0;j--){
             c.getPainters().get(j).setSelected(false);
             System.out.println("usao");

@@ -7,6 +7,8 @@ import raf.dsw.classycraft.app.core.model.implementation.diagramElements.connect
 import java.awt.*;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
+import java.awt.geom.Rectangle2D;
+
 @Getter
 @Setter
 public abstract class ConnectionPainter extends ElementPainter{
