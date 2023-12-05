@@ -70,7 +70,7 @@ public class AddConnectionState implements StateInterface{
                     break;
                 }
             }
-
+            if(elementPainterPocetni==null)return;
             Connection connection = new Generalizacija(c.getDiagram(),"nesto", (InterClass)elementPainterPocetni.getDiagramElement(),(InterClass) elementPainterKrajnji.getDiagramElement(),"0..1","promenjiva");
 
             GeneralizacijaPainter g = new GeneralizacijaPainter(connection,elementPainterPocetni,elementPainterKrajnji);
