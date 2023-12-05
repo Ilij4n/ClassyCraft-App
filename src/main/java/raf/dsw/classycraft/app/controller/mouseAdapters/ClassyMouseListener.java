@@ -5,13 +5,10 @@ import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyDiagramView;
 import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyPackageView;
 import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
 
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionListener;
-import java.awt.event.MouseWheelEvent;
+import java.awt.event.*;
 import java.awt.geom.Point2D;
 
-public class ClassyMouseListener extends MouseAdapter implements MouseMotionListener {
+public class ClassyMouseListener extends MouseAdapter implements MouseMotionListener, MouseWheelListener {
 
     ClassyDiagramView classyDiagramView;
 
@@ -52,6 +49,7 @@ public class ClassyMouseListener extends MouseAdapter implements MouseMotionList
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
         super.mouseWheelMoved(e);
+        ((ClassyPackageView)MainFrame.getInstance().getSplitPane().getRightComponent()).misSkrolovan((Point2D) e.getPoint(),classyDiagramView);
     }
 
     @Override

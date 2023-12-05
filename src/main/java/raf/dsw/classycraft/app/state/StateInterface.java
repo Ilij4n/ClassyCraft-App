@@ -14,4 +14,9 @@ public interface StateInterface {
     void misPritisnut(Point2D p, ClassyDiagramView c);
 
     void misOtpusten(Point2D p, ClassyDiagramView c);
+
+    void misSkrolovan(Point2D p, ClassyDiagramView c);
+
+
+
 }

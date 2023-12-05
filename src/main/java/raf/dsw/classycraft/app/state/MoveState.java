@@ -23,7 +23,7 @@ public class MoveState implements StateInterface{
 
     @Override
     public void misPritisnut(Point2D p, ClassyDiagramView c) {
-
+        
     }
 
     @Override

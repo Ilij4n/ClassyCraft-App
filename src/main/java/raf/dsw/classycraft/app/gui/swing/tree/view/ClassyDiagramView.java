@@ -49,6 +49,7 @@ public class ClassyDiagramView extends JPanel implements ISubscriber{
         sviselectovani = new ArrayList<>();
         addMouseListener(new ClassyMouseListener(this));
         addMouseMotionListener(new ClassyMouseListener(this));
+        addMouseWheelListener(new ClassyMouseListener(this));
         this.linija = new Line2D.Double();
         this.laso = new Rectangle2D.Double();
     }

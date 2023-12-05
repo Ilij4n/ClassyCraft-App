@@ -95,6 +95,13 @@ public class ClassyPackageView extends JPanel implements ISubscriber {
     public void misOtpusten(Point2D p,ClassyDiagramView classyDiagramView){
         stateManager.getCurrentState().misOtpusten(p,classyDiagramView);
     }
+
+    public void misSkrolovan(Point2D p,ClassyDiagramView classyDiagramView){
+        stateManager.getCurrentState().misSkrolovan(p,classyDiagramView);
+    }
+
+
+
     public void misKliknut1(Point2D p, ElementCreationView e){
         stateManager.getCurrentState().misKliknut1(p,e);
     }
