@@ -16,7 +16,8 @@ public abstract class ConnectionPainter extends ElementPainter{
     private ElementPainter elementPainter1;
     private ElementPainter elementPainter2;
     private Connection veza;
-    private Shape oblik = new Line2D.Double();
+    private boolean isSelected;
+    private Rectangle2D.Double oblik;
 
     public ConnectionPainter(Connection veza,ElementPainter elementPainter1,ElementPainter elementPainter2) {
         super(veza);
@@ -53,7 +54,37 @@ public abstract class ConnectionPainter extends ElementPainter{
         }
         g.setColor(Color.BLACK);
         g.setStroke(new BasicStroke(2));
+
+        if(isSelected){
+            g.setColor(Color.RED);
+        }
+
+//        if(najkraciXPocetni > najkraciXKrajnji && najkraciYPocetni>najkraciYKrajnji){
+//            oblik = new Rectangle2D.Double((int) najkraciXPocetni,(int) najkraciYPocetni,(int)najkraciXPocetni-(int)najkraciXKrajnji,(int)najkraciYPocetni-(int)najkraciYKrajnji);
+//        } else if (najkraciXPocetni<najkraciXKrajnji && najkraciYPocetni>najkraciYKrajnji) {
+//            oblik = new Rectangle2D.Double((int) najkraciXPocetni,(int) najkraciYPocetni,najkraciXKrajnji-najkraciXPocetni,(int)najkraciYPocetni-(int)najkraciYKrajnji);
+//        } else if (najkraciXPocetni > najkraciXKrajnji && najkraciYPocetni<najkraciYKrajnji) {
+//            oblik = new Rectangle2D.Double((int) najkraciXPocetni,(int) najkraciYPocetni,(int)najkraciXPocetni-(int)najkraciXKrajnji,(int)najkraciYKrajnji-(int)najkraciYPocetni);
+//        } else if (najkraciXPocetni<najkraciXKrajnji && najkraciYPocetni< najkraciYKrajnji) {
+//            oblik = new Rectangle2D.Double((int) najkraciXPocetni,(int) najkraciYPocetni,najkraciXKrajnji-najkraciXPocetni,(int)najkraciYKrajnji-(int)najkraciYPocetni);
+//        }
+
         g.drawLine((int)najkraciXPocetni,(int)najkraciYPocetni,(int)najkraciXKrajnji,(int)najkraciYKrajnji);
+
+        Color transparentColor = new Color(255,0,0,0);
+        g.setColor(transparentColor);
+        int x = Math.min((int)najkraciXKrajnji,(int)najkraciXPocetni);
+        int y = Math.min((int)najkraciYKrajnji,(int)najkraciYPocetni);
+        int width = Math.abs((int)najkraciXKrajnji-(int)najkraciXPocetni);
+        int height = Math.abs((int)najkraciYKrajnji-(int)najkraciYPocetni);
+        oblik = new Rectangle2D.Double(x,y,width,height);
+
+        g.draw(oblik);
+
     }
 
+    @Override
+    public boolean elementAt(Point2D p) {
+        return oblik.contains(p);
+    }
 }

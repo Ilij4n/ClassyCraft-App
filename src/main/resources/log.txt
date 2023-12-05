@@ -183,3 +183,9 @@
 [ERROR] [04.12.2023 21:44] Duplikat Ime
 [ERROR] [04.12.2023 22:06] Duplikat Ime
 [ERROR] [05.12.2023 12:10] Duplikat Ime
+[ERROR] [05.12.2023 12:56] Duplikat Ime
+[ERROR] [05.12.2023 13:43] Duplikat Ime
+[ERROR] [05.12.2023 13:45] Duplikat Ime
+[ERROR] [05.12.2023 13:47] Duplikat Ime
+[ERROR] [05.12.2023 14:22] Duplikat Ime
+[ERROR] [05.12.2023 14:28] Duplikat Ime

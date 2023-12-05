@@ -50,6 +50,7 @@ public class ClassyDiagramView extends JPanel implements ISubscriber{
         addMouseListener(new ClassyMouseListener(this));
         addMouseMotionListener(new ClassyMouseListener(this));
         this.linija = new Line2D.Double();
+        this.laso = new Rectangle2D.Double();
     }
 
 
@@ -63,6 +64,7 @@ public class ClassyDiagramView extends JPanel implements ISubscriber{
         }
         g2.setColor(Color.BLACK);
         g2.draw(linija);
+        g2.draw(laso);
     }
 
     @Override

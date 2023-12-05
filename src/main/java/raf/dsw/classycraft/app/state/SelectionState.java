@@ -8,6 +8,7 @@ import raf.dsw.classycraft.app.gui.swing.view.ElementCreationView;
 
 import javax.swing.*;
 import java.awt.geom.Point2D;
+import java.awt.geom.Rectangle2D;
 
 public class SelectionState implements StateInterface{
     @Override
@@ -41,16 +42,30 @@ public class SelectionState implements StateInterface{
 
     @Override
     public void misPovucen(Point2D p, ClassyDiagramView c) {
+        int x = Math.min((int)c.getPrvaTacka().getX(),(int)p.getX());
+        int y = Math.min((int)c.getPrvaTacka().getY(),(int)p.getY());
+        int w = Math.abs((int)p.getX()-(int)c.getPrvaTacka().getX());
+        int h = Math.abs((int)p.getY()-(int)c.getPrvaTacka().getY());
+            c.setLaso(new Rectangle2D.Double(x,y,w,h));
 
+            c.repaint();
     }
 
     @Override
     public void misPritisnut(Point2D p, ClassyDiagramView c) {
+        c.setPrvaTacka(p);
+        for(int i =c.getPainters().size()-1;i>=0;i--){
+            if(c.getPainters().get(i).elementAt(c.getPrvaTacka())){
+                c.getLaso().setRect(c.getPrvaTacka().getX(), c.getPrvaTacka().getY(),0,0);
+                c.repaint();
+            }
+        }
 
     }
 
     @Override
     public void misOtpusten(Point2D p, ClassyDiagramView c) {
-
+        c.setLaso(new Rectangle2D.Double());
+        c.repaint();
     }
 }

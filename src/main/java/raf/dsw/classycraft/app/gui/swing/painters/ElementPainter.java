@@ -7,6 +7,7 @@ import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interCl
 
 import java.awt.*;
 import java.awt.geom.Point2D;
+import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +18,7 @@ public abstract class ElementPainter {
     private DiagramElement diagramElement;
     private boolean selected = false;
     private List<Point2D> listOfPoints;
+    private Rectangle2D rectangle2D;
 
     public ElementPainter(DiagramElement diagramElement){
         this.diagramElement = diagramElement;
