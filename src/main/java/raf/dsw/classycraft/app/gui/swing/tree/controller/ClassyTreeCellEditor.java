@@ -4,11 +4,15 @@ import raf.dsw.classycraft.app.MessageGenerator.MessageType;
 import raf.dsw.classycraft.app.core.ApplicationFramework;
 import raf.dsw.classycraft.app.core.model.composite.ClassyNode;
 import raf.dsw.classycraft.app.core.model.composite.ClassyNodeComposite;
+import raf.dsw.classycraft.app.core.model.composite.DiagramElement;
 import raf.dsw.classycraft.app.core.model.implementation.Diagram;
 import raf.dsw.classycraft.app.core.model.implementation.Package;
 import raf.dsw.classycraft.app.core.model.implementation.Project;
+import raf.dsw.classycraft.app.core.model.implementation.ProjectExplorer;
+import raf.dsw.classycraft.app.gui.swing.tree.ClassyTreeImplementation;
 import raf.dsw.classycraft.app.gui.swing.tree.model.ClassyTreeItem;
 import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyPackageView;
+import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyTreeView;
 import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
 
 import javax.swing.*;
@@ -63,8 +67,13 @@ public class ClassyTreeCellEditor extends DefaultTreeCellEditor implements Actio
             proveravamo da li je polje koje menjamo s textboom zapravo maptreeItem
             ako jeste onda ga slobodno kastujemo, i setujemo ime kako pise (nzm zasto je tako)
          */
-        if (!(clickedOn instanceof ClassyTreeItem))
+        if (!(clickedOn instanceof ClassyTreeItem)||((ClassyTreeItem) clickedOn).getClassyNode() instanceof DiagramElement)
             return;
+
+        if(((ClassyTreeItem) clickedOn).getClassyNode() instanceof ProjectExplorer){
+            ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Ne menja se ime", MessageType.ERROR);
+            return;
+        }
 
         ClassyTreeItem clicked = (ClassyTreeItem) clickedOn;
         for(ClassyNode node : ((ClassyNodeComposite)clicked.getClassyNode().getParent()).getChildren()){
@@ -81,13 +90,17 @@ public class ClassyTreeCellEditor extends DefaultTreeCellEditor implements Actio
         if (clicked.getClassyNode() instanceof Project){
             Project projekat = (Project) clicked.getClassyNode();
             projekat.setNameOfProject(projekat);
-        } else if (clicked.getClassyNode() instanceof Diagram) {
+        }
+
+        else if (clicked.getClassyNode() instanceof Diagram) {
             Diagram diagram = (Diagram)clicked.getClassyNode();
             List<String> list = new ArrayList<>();
             list.add(diaName);
             list.add(diagram.getName());
             ((Package)diagram.getParent()).ChangeNameOfDiagramView(list);
         }
+        ClassyTreeView treeView = ((ClassyTreeImplementation)MainFrame.getInstance().getClassyTree()).getTreeView();
+        treeView.expandPath(treeView.getSelectionPath());
         //samo izlazi iz edita
         this.stopCellEditing();
     }

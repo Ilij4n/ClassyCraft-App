@@ -12,7 +12,7 @@ public class MyToolBar extends JToolBar {
         setFloatable(false);
         add(MainFrame.getInstance().getActionManager().getExitAction());
         add(MainFrame.getInstance().getActionManager().getNewProjectAction());
-        add(add(MainFrame.getInstance().getActionManager().getDeleteChildAction()));
-        add(add(MainFrame.getInstance().getActionManager().getAuthorChangeAction()));
+        add(MainFrame.getInstance().getActionManager().getDeleteChildAction());
+        add(MainFrame.getInstance().getActionManager().getAuthorChangeAction());
     }
 }

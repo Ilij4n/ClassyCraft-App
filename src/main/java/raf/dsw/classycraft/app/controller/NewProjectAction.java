@@ -1,6 +1,9 @@
 package raf.dsw.classycraft.app.controller;
 
+import raf.dsw.classycraft.app.MessageGenerator.MessageType;
 import raf.dsw.classycraft.app.core.ApplicationFramework;
+import raf.dsw.classycraft.app.core.model.composite.DiagramElement;
+import raf.dsw.classycraft.app.core.model.implementation.Diagram;
 import raf.dsw.classycraft.app.core.model.implementation.Package;
 import raf.dsw.classycraft.app.core.model.implementation.ProjectExplorer;
 import raf.dsw.classycraft.app.gui.swing.tree.model.ClassyTreeItem;
@@ -31,6 +34,10 @@ public class NewProjectAction extends AbstractClassyAction{
                 case 2:pakOrDia = false;break;
                 case 3:return;
             }
+        }
+        if(selected.getClassyNode() instanceof Diagram){
+            ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Dodajte na dijagram preko menija levo", MessageType.INFO);
+            return;
         }
         MainFrame.getInstance().getClassyTree().addChild(selected, pakOrDia);
         MainFrame.getInstance().refreshDivider();

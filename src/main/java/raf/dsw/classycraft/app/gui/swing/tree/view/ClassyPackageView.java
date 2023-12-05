@@ -7,16 +7,20 @@ import raf.dsw.classycraft.app.core.model.composite.ClassyNodeComposite;
 import raf.dsw.classycraft.app.core.model.implementation.Diagram;
 import raf.dsw.classycraft.app.core.model.implementation.Package;
 import raf.dsw.classycraft.app.core.model.implementation.Project;
+import raf.dsw.classycraft.app.gui.swing.view.ElementCreationView;
 import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
 import raf.dsw.classycraft.app.observer.ISubscriber;
+import raf.dsw.classycraft.app.state.StateManager;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.geom.Point2D;
 import java.util.List;
 @Getter
 @Setter
 
 public class ClassyPackageView extends JPanel implements ISubscriber {
+
     private String authorName;
     private String projectName;
     private JLabel lblProjectName;
@@ -25,11 +29,14 @@ public class ClassyPackageView extends JPanel implements ISubscriber {
 
     private Package aPackage;
 
+    private StateManager stateManager;
+
     public ClassyPackageView(Package p){
         aPackage = p;
         lblProjectName = new JLabel("Project: "+ aPackage.projectName());
         lblAuthorname = new JLabel("Author: "+ aPackage.authorName());
         jTabbedPane = new JTabbedPane();
+        stateManager = new StateManager();
 
         BorderLayout b = new BorderLayout();
 
@@ -41,10 +48,56 @@ public class ClassyPackageView extends JPanel implements ISubscriber {
 
         add(jPanel,BorderLayout.NORTH);
         add(jTabbedPane,BorderLayout.CENTER);
-
+        PackageViewToolbar toolbar = new PackageViewToolbar();
+        add(toolbar,BorderLayout.EAST);
     }
 
+    public void startAddElementState(){
+        stateManager.setAddElementState();
+    }
 
+    public void startAddConnectionState(){
+        stateManager.setAddConnectionState();
+    }
+
+    public void startDeleteState(){
+        stateManager.setDeleteState();
+    }
+
+    public void startMoveState(){
+        stateManager.setMoveState();
+    }
+
+    public void startZoomInOutState(){
+        stateManager.setZoomInOutState();
+    }
+
+    public void startSelectionState(){
+        stateManager.setSelectionState();
+    }
+
+    public void startEditState(){
+        stateManager.setEditState();
+    }
+
+    public void misKliknut(Point2D p,ClassyDiagramView classyDiagramView){
+        stateManager.getCurrentState().misKliknut(p,classyDiagramView);
+    }
+
+    public void misPovucen(Point2D p,ClassyDiagramView classyDiagramView){
+        stateManager.getCurrentState().misPovucen(p,classyDiagramView);
+    }
+
+    public void misPritisnut(Point2D p,ClassyDiagramView classyDiagramView){
+        stateManager.getCurrentState().misPritisnut(p,classyDiagramView);
+    }
+
+    public void misOtpusten(Point2D p,ClassyDiagramView classyDiagramView){
+        stateManager.getCurrentState().misOtpusten(p,classyDiagramView);
+    }
+    public void misKliknut1(Point2D p, ElementCreationView e){
+        stateManager.getCurrentState().misKliknut1(p,e);
+    }
 
     @Override
     public void update(Object o) {

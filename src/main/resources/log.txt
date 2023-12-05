@@ -53,3 +53,132 @@
 [ERROR] [30.11.2023 18:57] Izaberite projekat kome zelite da promenite autora ! 
 [ERROR] [30.11.2023 19:51] Izaberite projekat kome zelite da promenite autora ! 
 [ERROR] [30.11.2023 20:15] Explorer se ne brise ! 
+[ERROR] [02.12.2023 13:37] Pogresen tip
+[ERROR] [02.12.2023 13:40] Pogresen tip
+[ERROR] [02.12.2023 13:41] Pogresen tip
+[ERROR] [02.12.2023 13:41] Pogresen tip
+[INFO] [02.12.2023 15:46] EEEE
+[INFO] [02.12.2023 15:46] EEEE
+[INFO] [02.12.2023 15:46] EEEE
+[INFO] [02.12.2023 15:46] EEEE
+[INFO] [02.12.2023 15:47] EEEE
+[INFO] [02.12.2023 15:47] EEEE
+[INFO] [02.12.2023 15:47] EEEE
+[INFO] [02.12.2023 15:47] EEEE
+[INFO] [02.12.2023 15:47] EEEE
+[INFO] [02.12.2023 15:48] EEEE
+[INFO] [02.12.2023 15:48] EEEE
+[INFO] [02.12.2023 15:48] EEEE
+[INFO] [02.12.2023 15:48] EEEE
+[ERROR] [02.12.2023 16:51] Paket/diagram vec postoji
+[ERROR] [02.12.2023 16:51] Paket/diagram vec postoji
+[ERROR] [02.12.2023 16:51] Paket/diagram vec postoji
+[ERROR] [02.12.2023 16:51] Paket/diagram vec postoji
+[ERROR] [02.12.2023 16:51] Paket/diagram vec postoji
+[ERROR] [02.12.2023 16:51] Pogresen tip
+[ERROR] [02.12.2023 16:51] Paket/diagram vec postoji
+[ERROR] [02.12.2023 16:52] Paket/diagram vec postoji
+[ERROR] [02.12.2023 17:03] Ne menja se ime
+[ERROR] [02.12.2023 17:07] Pogresen tip
+[ERROR] [02.12.2023 17:07] Pogresen tip
+[ERROR] [02.12.2023 17:10] Pogresen tip
+[ERROR] [02.12.2023 17:12] Ne moze da se doda!
+[ERROR] [02.12.2023 17:12] Ne moze da se doda!
+[ERROR] [02.12.2023 17:33] Explorer se ne brise ! 
+[ERROR] [03.12.2023 10:08] Paket/diagram vec postoji
+[ERROR] [03.12.2023 10:40] Paket/diagram vec postoji
+[ERROR] [03.12.2023 10:40] Duplikat Ime
+[ERROR] [03.12.2023 10:41] Paket/diagram vec postoji
+[ERROR] [03.12.2023 10:41] Duplikat Ime
+[ERROR] [03.12.2023 10:43] Paket/diagram vec postoji
+[ERROR] [03.12.2023 10:43] Duplikat Ime
+[ERROR] [03.12.2023 10:44] Paket/diagram vec postoji
+[ERROR] [03.12.2023 10:44] Duplikat Ime
+[ERROR] [03.12.2023 10:45] Duplikat Ime
+[ERROR] [03.12.2023 10:50] Duplikat Ime
+[ERROR] [03.12.2023 10:50] Duplikat Ime
+[ERROR] [03.12.2023 10:51] Duplikat Ime
+[ERROR] [03.12.2023 10:51] Duplikat Ime
+[ERROR] [03.12.2023 10:51] Duplikat Ime
+[ERROR] [03.12.2023 10:51] Duplikat Ime
+[INFO] [03.12.2023 10:54] Dodajte na dijagram preko menija levo
+[ERROR] [03.12.2023 10:55] Ne moze da se doda!
+[ERROR] [03.12.2023 10:55] Ne moze da se doda!
+[ERROR] [03.12.2023 10:55] Ne moze da se doda!
+[INFO] [03.12.2023 10:55] Dodajte na dijagram preko menija levo
+[ERROR] [03.12.2023 11:23] Explorer se ne brise ! 
+[INFO] [03.12.2023 11:57] Dodajte na dijagram preko menija levo
+[ERROR] [03.12.2023 12:25] Duplikat Ime
+[ERROR] [03.12.2023 12:25] Duplikat Ime
+[ERROR] [03.12.2023 12:31] Duplikat Ime
+[ERROR] [03.12.2023 12:37] Duplikat Ime
+[ERROR] [03.12.2023 12:47] Duplikat Ime
+[ERROR] [03.12.2023 12:48] Duplikat Ime
+[ERROR] [03.12.2023 12:48] Duplikat Ime
+[ERROR] [03.12.2023 12:49] Duplikat Ime
+[ERROR] [03.12.2023 14:26] Duplikat Ime
+[ERROR] [03.12.2023 14:26] Duplikat Ime
+[ERROR] [03.12.2023 14:26] Duplikat Ime
+[INFO] [03.12.2023 14:36] Dodajte na dijagram preko menija levo
+[INFO] [03.12.2023 15:07] Dodajte na dijagram preko menija levo
+[ERROR] [03.12.2023 16:18] raf.dsw.classycraft.app.gui.swing.painters.ClassPainter@2bf5eb5e
+[INFO] [03.12.2023 16:30] Nema nista
+[INFO] [03.12.2023 16:30] Nema nista
+[INFO] [03.12.2023 16:30] Nema nista
+[INFO] [03.12.2023 16:30] Nema nista
+[INFO] [03.12.2023 16:30] Nema nista
+[ERROR] [03.12.2023 16:45] Duplikat Ime
+[ERROR] [03.12.2023 17:19] Duplikat Ime
+[ERROR] [03.12.2023 17:19] Duplikat Ime
+[INFO] [03.12.2023 20:35] Proverite format
+[INFO] [03.12.2023 20:41] Proverite format
+[INFO] [03.12.2023 20:52] Proverite format
+[INFO] [03.12.2023 20:52] Proverite format
+[INFO] [03.12.2023 20:52] Proverite format
+[INFO] [03.12.2023 20:53] Proverite format
+[ERROR] [03.12.2023 20:53] Greska
+[INFO] [03.12.2023 20:53] Proverite format
+[INFO] [03.12.2023 20:53] Proverite format
+[ERROR] [03.12.2023 20:59] Duplikat Ime
+[INFO] [03.12.2023 21:04] Proverite format
+[INFO] [03.12.2023 21:04] Proverite format
+[INFO] [03.12.2023 21:23] Format unosa nije ispravan, text je copyovan na clipboad
+[INFO] [03.12.2023 21:24] Format unosa nije ispravan, text je copyovan na clipboad
+[INFO] [03.12.2023 21:24] Format unosa nije ispravan, text je copyovan na clipboad
+[ERROR] [03.12.2023 21:27] Duplikat Ime
+[INFO] [03.12.2023 21:28] Format unosa nije ispravan, pokusajte ponovo
+[INFO] [03.12.2023 21:30] Format unosa nije ispravan, pokusajte ponovo
+[INFO] [03.12.2023 21:51] Format unosa nije ispravan, pokusajte ponovo
+[ERROR] [03.12.2023 21:53] Duplikat Ime
+[ERROR] [03.12.2023 21:54] Duplikat Ime
+[ERROR] [03.12.2023 21:55] Duplikat Ime
+[ERROR] [03.12.2023 21:57] Duplikat Ime
+[INFO] [03.12.2023 22:00] Format unosa nije ispravan, pokusajte ponovo
+[INFO] [03.12.2023 22:00] Format unosa nije ispravan, pokusajte ponovo
+[ERROR] [03.12.2023 22:00] Duplikat Ime
+[INFO] [03.12.2023 22:00] Format unosa nije ispravan, pokusajte ponovo
+[ERROR] [03.12.2023 22:00] Duplikat Ime
+[INFO] [03.12.2023 22:01] Format unosa nije ispravan, pokusajte ponovo
+[INFO] [03.12.2023 22:01] Format unosa nije ispravan, pokusajte ponovo
+[INFO] [03.12.2023 22:02] Format unosa nije ispravan, pokusajte ponovo
+[INFO] [03.12.2023 22:02] Format unosa nije ispravan, pokusajte ponovo
+[INFO] [03.12.2023 22:42] Format unosa nije ispravan, pokusajte ponovo
+[INFO] [03.12.2023 22:43] Format unosa nije ispravan, pokusajte ponovo
+[ERROR] [03.12.2023 22:43] Duplikat Ime
+[INFO] [03.12.2023 22:45] Format unosa nije ispravan, pokusajte ponovo
+[ERROR] [03.12.2023 22:46] Duplikat Ime
+[INFO] [03.12.2023 22:48] Format unosa nije ispravan, pokusajte ponovo
+[INFO] [03.12.2023 22:48] Format unosa nije ispravan, pokusajte ponovo
+[ERROR] [03.12.2023 22:50] Duplikat Ime
+[INFO] [04.12.2023 11:27] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
+[INFO] [04.12.2023 11:28] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
+[ERROR] [04.12.2023 16:04] Duplikat Ime
+[INFO] [04.12.2023 20:41] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
+[ERROR] [04.12.2023 20:42] Duplikat Ime
+[ERROR] [04.12.2023 21:06] Duplikat Ime
+[ERROR] [04.12.2023 21:38] Duplikat Ime
+[ERROR] [04.12.2023 21:40] Duplikat Ime
+[ERROR] [04.12.2023 21:40] Duplikat Ime
+[ERROR] [04.12.2023 21:43] Duplikat Ime
+[ERROR] [04.12.2023 21:44] Duplikat Ime
+[ERROR] [04.12.2023 22:06] Duplikat Ime
