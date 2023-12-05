@@ -3,6 +3,8 @@ package raf.dsw.classycraft.app.state;
 import raf.dsw.classycraft.app.MessageGenerator.MessageType;
 import raf.dsw.classycraft.app.core.ApplicationFramework;
 import raf.dsw.classycraft.app.core.model.composite.DiagramElement;
+import raf.dsw.classycraft.app.core.model.implementation.Diagram;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.connections.Connection;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.InterClass;
 import raf.dsw.classycraft.app.gui.swing.painters.*;
 import raf.dsw.classycraft.app.gui.swing.tree.ClassyTreeImplementation;
@@ -24,6 +26,10 @@ public class DeleteState implements StateInterface{
 
         List<DiagramElement> vezeDaSeObrisu = new ArrayList<>();
         //prolazi kroz sve paintere unazad
+        if(!c.getSviselectovani().isEmpty()){
+            brisanjeZaVise(c,vezeDaSeObrisu);
+            return;
+        }
         for(int i =c.getPainters().size()-1;i>=0;i--){
             //trenutni painter na kome smo
             ElementPainter painter = c.getPainters().get(i);
@@ -62,7 +68,36 @@ public class DeleteState implements StateInterface{
             }
         }
 
+    }
 
+    private void brisanjeZaVise(ClassyDiagramView c, List<DiagramElement> vezeDaSeObrisu){
+        List<ElementPainter> listaSelektovanih = c.getSviselectovani();
+        ClassyTreeImplementation tree = ((ClassyTreeImplementation) MainFrame.getInstance().getClassyTree());
+
+
+        for(ElementPainter painter : listaSelektovanih){
+
+
+            if(painter.getDiagramElement() instanceof InterClass){
+                for (int i =c.getPainters().size()-1;i>=0;i--){
+                    ElementPainter painter1 = c.getPainters().get(i);
+                    if(painter1.getDiagramElement() instanceof Connection){
+                        Connection connection = (Connection) painter1.getDiagramElement();
+                        if(connection.getElement1().equals(painter.getDiagramElement())||connection.getElement2().equals(painter.getDiagramElement())){
+                            c.getPainters().remove(painter1);
+                            c.getDiagram().getChildren().remove(connection);
+                            tree.deleteChild(tree.dfsSearch((ClassyTreeItem) tree.getTreeModel().getRoot(),connection));
+                        }
+                    }
+                }
+            }
+
+            c.getPainters().remove(painter);
+            c.getDiagram().getChildren().remove(painter.getDiagramElement());
+            tree.deleteChild(tree.dfsSearch((ClassyTreeItem) tree.getTreeModel().getRoot(),painter.getDiagramElement()));
+            c.repaint();
+        }
+        listaSelektovanih.clear();
     }
 
     @Override
