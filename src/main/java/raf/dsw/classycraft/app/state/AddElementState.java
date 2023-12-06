@@ -40,7 +40,10 @@ public class AddElementState implements StateInterface{
             ako je uspesno dodat, onda ce sizePre liste razlicit  sizePosle liste i onda cemo dodati i njegov painter u listu paintera i zavrsiti posao
             ovo se radi u svakom od ovih ifova, samo se kod ponavlja.
          */
-
+        if(e.getTfImeElementa().getText().isEmpty()){
+            ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Element mora imati ime",MessageType.INFO);
+            return;
+        }
         int sizePre = c.getDiagram().getChildren().size();
         if(e.getRadioBtnKlasa().isSelected()){
             Klasa klasa = new Klasa(c.getDiagram(),e.getTfImeElementa().getText(), p,e.vratiPoljaIMetode()); //staviti umesto poljaIMetode null ako ne radi

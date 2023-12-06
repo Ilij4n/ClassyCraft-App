@@ -1,5 +1,7 @@
 package raf.dsw.classycraft.app.state;
 
+import raf.dsw.classycraft.app.MessageGenerator.MessageType;
+import raf.dsw.classycraft.app.core.ApplicationFramework;
 import raf.dsw.classycraft.app.core.model.composite.DiagramElement;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.connections.Connection;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.InterClass;
@@ -17,21 +19,20 @@ public class EditState implements StateInterface{
 
     @Override
     public void misKliknut(Point2D p, ClassyDiagramView c) {
-        System.out.println(getClass().getSimpleName());
+        //System.out.println(getClass().getSimpleName());
         // da ne bi moglo vise prozora da se otvori
         if(ElementCreationView.pokazanSam())return;
-       // ElementCreationView e = new ElementCreationView(c,p);
 
         for(int i = c.getPainters().size() - 1 ; i>=0 ; i--){
             ElementPainter painter = c.getPainters().get(i);
             if(painter.elementAt(p)){
-                //TODO Provera da li je selectovana veza ili Interclass
                 DiagramElement model = painter.getDiagramElement();
                 if(model instanceof InterClass){
                     ElementCreationView e = new ElementCreationView(c,p);
                     e.postaviPolja((InterClass) model);
                     e.setTitle("Edit view");
                     e.setVisible(true);
+                    break;
 
                 }
                 else if(model instanceof Connection){
@@ -46,6 +47,11 @@ public class EditState implements StateInterface{
 
     @Override
     public void misKliknut1(Point2D p, ElementCreationView e) {
+
+        if(e.getTfImeElementa().getText().isEmpty()){
+            ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Element mora imati ime", MessageType.INFO);
+            return;
+        }
         ClassyDiagramView c = e.getClassyDiagramView();
         DiagramElement diagramElement = null;
         for(int i = c.getPainters().size()-1 ; i>=0; i--){
