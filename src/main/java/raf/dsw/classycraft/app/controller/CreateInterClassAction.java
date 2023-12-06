@@ -49,7 +49,7 @@ public class CreateInterClassAction extends AbstractClassyAction{
             }
             mediator.misKliknut1(elementCreationView.getPoint2D(),elementCreationView);
         }
-        else if(elementCreationView.parsujUVezu().contains("//error//")){
+        else if(elementCreationView.parsujUVezu().contains("//neispravan format//")){
             ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Ne valja format", MessageType.INFO);
             return;
         }

@@ -366,3 +366,106 @@
 [INFO] [06.12.2023 17:51] Za vezu zavisnosti ne birati radioButton
  U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
 [INFO] [06.12.2023 17:54] Element mora imati ime
+[INFO] [06.12.2023 17:58] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [06.12.2023 17:58] Edit element ne poseduje mogucnost promenu samog tipa elementa
+[INFO] [06.12.2023 17:59] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [06.12.2023 18:00] Edit element ne poseduje mogucnost promenu samog tipa elementa
+[INFO] [06.12.2023 18:04] Element mora imati ime
+[INFO] [06.12.2023 18:09] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [06.12.2023 18:10] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [06.12.2023 18:11] Edit element ne poseduje mogucnost promenu samog tipa elementa
+[INFO] [06.12.2023 18:19] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [06.12.2023 18:19] Edit element ne poseduje mogucnost promenu samog tipa elementa
+[INFO] [06.12.2023 21:42] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [06.12.2023 21:42] Ne valja format
+[INFO] [06.12.2023 21:42] Ne valja format
+[INFO] [06.12.2023 21:42] Ne valja format
+[INFO] [06.12.2023 21:42] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [06.12.2023 21:42] Ne valja format
+[INFO] [06.12.2023 21:42] Ne valja format
+[INFO] [06.12.2023 21:45] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [06.12.2023 21:45] Ne valja format
+[INFO] [06.12.2023 21:45] Ne valja format
+[INFO] [06.12.2023 21:45] Edit element ne poseduje mogucnost promenu samog tipa elementa
+[INFO] [06.12.2023 21:45] Ne valja format
+[INFO] [06.12.2023 21:45] Ne valja format
+[INFO] [06.12.2023 21:46] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [06.12.2023 21:46] Ne valja format
+[INFO] [06.12.2023 22:09] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [06.12.2023 22:09] Ne valja format
+[INFO] [06.12.2023 22:10] Ne valja format
+[INFO] [06.12.2023 22:10] Edit element ne poseduje mogucnost promenu samog tipa elementa
+[INFO] [06.12.2023 22:11] Element mora imati ime
+[INFO] [06.12.2023 22:13] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [06.12.2023 22:13] Ne valja format
+[INFO] [06.12.2023 22:14] Edit element ne poseduje mogucnost promenu samog tipa elementa
+[INFO] [06.12.2023 22:24] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [06.12.2023 22:25] Ne valja format
+[INFO] [06.12.2023 22:25] Ne valja format
+[INFO] [06.12.2023 22:25] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [06.12.2023 22:25] Ne valja format
+[INFO] [06.12.2023 22:25] Edit element ne poseduje mogucnost promenu samog tipa elementa
+[INFO] [06.12.2023 22:28] Izaberite jednu od opcija
+[INFO] [06.12.2023 22:28] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [06.12.2023 22:28] Edit element ne poseduje mogucnost promenu samog tipa elementa
+[INFO] [06.12.2023 22:31] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[ERROR] [06.12.2023 22:31] Duplikat Ime
+[INFO] [06.12.2023 22:31] Izaberite jednu od opcija
+[INFO] [06.12.2023 22:32] Izaberite jednu od opcija
+[ERROR] [06.12.2023 22:33] Duplikat Ime
+[INFO] [06.12.2023 22:33] Ne valja format
+[INFO] [06.12.2023 22:33] Edit element ne poseduje mogucnost promenu samog tipa elementa
+[INFO] [06.12.2023 22:35] Ne valja format
+[INFO] [06.12.2023 22:36] Ne valja format
+[INFO] [06.12.2023 22:36] Ne valja format
+[INFO] [06.12.2023 22:37] Izaberite jednu od opcija
+[INFO] [06.12.2023 22:38] Izaberite jednu od opcija
+[INFO] [06.12.2023 22:38] Izaberite jednu od opcija
+[ERROR] [06.12.2023 22:39] Duplikat Ime
+[INFO] [06.12.2023 22:39] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [06.12.2023 22:40] Edit element ne poseduje mogucnost promenu samog tipa elementa
+[INFO] [06.12.2023 22:41] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
+[INFO] [06.12.2023 22:44] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [06.12.2023 22:44] Edit element ne poseduje mogucnost promenu samog tipa elementa
+[INFO] [06.12.2023 22:51] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [06.12.2023 22:51] Edit element ne poseduje mogucnost promenu samog tipa elementa
+[INFO] [06.12.2023 22:55] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [06.12.2023 22:55] Edit element ne poseduje mogucnost promenu samog tipa elementa
+[INFO] [06.12.2023 22:56] Izaberite jednu od opcija
+[INFO] [06.12.2023 22:56] Izaberite jednu od opcija
+[ERROR] [06.12.2023 22:57] Duplikat Ime
+[INFO] [06.12.2023 22:57] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [06.12.2023 22:57] Edit element ne poseduje mogucnost promenu samog tipa elementa
+[INFO] [06.12.2023 22:57] Ne valja format
+[INFO] [06.12.2023 22:59] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
+[INFO] [06.12.2023 23:00] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
+[INFO] [06.12.2023 23:00] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
+[INFO] [06.12.2023 23:00] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
+[INFO] [06.12.2023 23:01] Element mora imati ime
+[INFO] [06.12.2023 23:01] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
+[INFO] [06.12.2023 23:01] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
+[INFO] [06.12.2023 23:02] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [06.12.2023 23:02] Edit element ne poseduje mogucnost promenu samog tipa elementa
+[INFO] [06.12.2023 23:04] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
+[INFO] [06.12.2023 23:04] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja

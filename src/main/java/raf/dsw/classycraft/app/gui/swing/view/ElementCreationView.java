@@ -35,6 +35,8 @@ public class ElementCreationView extends JFrame {
     private JRadioButton radioBtnEnum = new JRadioButton("Enum");
     private JTextArea textAreaElementi = new JTextArea(10, 15);
     private JTextField tfImeElementa = new JTextField(20);
+    private JLabel labelOdabir = new JLabel("Odabir:");
+    private JLabel labelNapisati = new JLabel("Napisati Elemente");
     private static boolean isShowing = false;
     private ClassyDiagramView classyDiagramView;
     private Point2D point2D;
@@ -70,7 +72,7 @@ public class ElementCreationView extends JFrame {
         // Prvi red
         gbc.gridx = 0;
         gbc.gridy = 0;
-        mainPanel.add(new JLabel("Odabir:"), gbc);
+        mainPanel.add(labelOdabir, gbc);
 
         gbc.gridx = 1;
         mainPanel.add(radioBtnKlasa, gbc);
@@ -95,7 +97,7 @@ public class ElementCreationView extends JFrame {
         gbc.gridx = 0;
         gbc.gridy = 2;
         gbc.gridwidth = 1;
-        mainPanel.add(new JLabel("Napisati Elemente"), gbc);
+        mainPanel.add(labelNapisati, gbc);
 
         gbc.gridx = 1;
         gbc.gridwidth = 3;
@@ -235,11 +237,11 @@ public class ElementCreationView extends JFrame {
         vrednostiKardinaliteta.add("n..1");
         vrednostiKardinaliteta.add("m..n");
 
-        /*if(!radioBtnInterfejs.isSelected() && !radioBtnEnum.isSelected()){
+        if(!radioBtnInterfejs.isSelected() && !radioBtnEnum.isSelected()){
             idemooo.add("");
             idemooo.add("");
             return idemooo;
-        }*/
+        }
 
         boolean parsePolje = true;
         boolean parseKardinalitet = true;
@@ -249,6 +251,7 @@ public class ElementCreationView extends JFrame {
                 String podLinije[] = s.split(" ");
                 if(podLinije.length == 2 && parsePolje){
                     if(!vrednostiVidljivosti.contains(podLinije[0])){
+                        System.out.println("usao error");
                         throw new Exception();
                     }
                     System.out.println("usao vidljivost");
@@ -267,10 +270,17 @@ public class ElementCreationView extends JFrame {
         }
         catch (Exception e){
             List<String> errorList = new ArrayList<>();
-            errorList.add("//error//");
+            errorList.add("//neispravan format//");
             return errorList;
         }
         return idemooo;
+    }
+
+    public void sakrijZaEdit(){
+        radioBtnKlasa.hide();
+        radioBtnInterfejs.hide();
+        radioBtnEnum.hide();
+        labelOdabir.hide();
     }
 
     public void addPlaceholder(String placeholder, JTextArea textArea) {

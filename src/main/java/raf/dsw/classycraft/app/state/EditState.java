@@ -4,6 +4,8 @@ import raf.dsw.classycraft.app.MessageGenerator.MessageType;
 import raf.dsw.classycraft.app.core.ApplicationFramework;
 import raf.dsw.classycraft.app.core.model.composite.DiagramElement;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.connections.Connection;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.connections.Generalizacija;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.connections.Zavisnost;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.InterClass;
 import raf.dsw.classycraft.app.gui.swing.painters.ElementPainter;
 import raf.dsw.classycraft.app.gui.swing.tree.ClassyTreeImplementation;
@@ -40,6 +42,7 @@ public class EditState implements StateInterface{
                 if(model instanceof InterClass){
                     e.postaviPolja((InterClass) model);
                     e.setTitle("Edit view");
+                    e.sakrijZaEdit();
                     e.setVisible(true);
                     break;
 
@@ -49,7 +52,16 @@ public class EditState implements StateInterface{
                     e.getRadioBtnKlasa().setText("General.");
                     e.getRadioBtnInterfejs().setText("Agreg.");
                     e.getRadioBtnEnum().setText("Kompo.");
-                    e.getRadioBtnKlasa().setSelected(true);
+
+                    if(model instanceof Zavisnost || model instanceof Generalizacija){
+                        e.getRadioBtnKlasa().setSelected(true);
+                        e.getTextAreaElementi().hide();
+                        e.getLabelNapisati().hide();
+                    }
+                    else e.getRadioBtnInterfejs().setSelected(true);
+
+                    e.sakrijZaEdit();
+
                     e.getTfImeElementa().setText(model.getName());
                     System.out.println(((Connection) model).getImePromenljive());
                     e.getTextAreaElementi().setText(((Connection) model).getImePromenljive()+"\n"+((Connection) model).getKardinalnost());

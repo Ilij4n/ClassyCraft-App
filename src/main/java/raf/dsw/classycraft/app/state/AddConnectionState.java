@@ -102,7 +102,8 @@ public class AddConnectionState implements StateInterface{
             e.getRadioBtnKlasa().setText("General.");
             e.getRadioBtnInterfejs().setText("Agreg.");
             e.getRadioBtnEnum().setText("Kompo.");
-            e.addPlaceholder("/*Primer inputa*/\n- ime\n0..1\nmoguci kardinaliteti:\n1..1, 1..n\nn..1, m..n",e.getTextAreaElementi());
+            e.addPlaceholder("/*Primer inputa*/\n- ime\n1..1\nmoguci kardinaliteti:\n1..1, 1..n\nn..1, n..m\n/*veze generalizacije i zavisnosti\nne cuvaju polja*/",e.getTextAreaElementi());
+
 
             e.setVisible(true);
         }
@@ -125,6 +126,7 @@ public class AddConnectionState implements StateInterface{
         System.out.println(e.parsujUVezu());
         String polje = "";
         String kardinalnost = "";
+
         for(String s : e.parsujUVezu()){
             if(s.split(" ").length==2)polje = s;
             else kardinalnost = s;
