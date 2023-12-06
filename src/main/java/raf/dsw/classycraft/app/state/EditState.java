@@ -4,8 +4,11 @@ import raf.dsw.classycraft.app.core.model.composite.DiagramElement;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.connections.Connection;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.InterClass;
 import raf.dsw.classycraft.app.gui.swing.painters.ElementPainter;
+import raf.dsw.classycraft.app.gui.swing.tree.ClassyTreeImplementation;
+import raf.dsw.classycraft.app.gui.swing.tree.model.ClassyTreeItem;
 import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyDiagramView;
 import raf.dsw.classycraft.app.gui.swing.view.ElementCreationView;
+import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
 
 import javax.swing.*;
 import java.awt.geom.Point2D;
@@ -27,6 +30,7 @@ public class EditState implements StateInterface{
                 if(model instanceof InterClass){
                     ElementCreationView e = new ElementCreationView(c,p);
                     e.postaviPolja((InterClass) model);
+                    e.setTitle("Edit view");
                     e.setVisible(true);
 
                 }
@@ -42,7 +46,31 @@ public class EditState implements StateInterface{
 
     @Override
     public void misKliknut1(Point2D p, ElementCreationView e) {
+        ClassyDiagramView c = e.getClassyDiagramView();
+        DiagramElement diagramElement = null;
+        for(int i = c.getPainters().size()-1 ; i>=0; i--){
+            ElementPainter painter = c.getPainters().get(i);
+            if(painter.elementAt(p)){
+                diagramElement = painter.getDiagramElement();
+                break;
+            }
+        }
+        if(diagramElement!=null){
+            if(diagramElement instanceof InterClass){
+                //za model
+                diagramElement = (InterClass)diagramElement;
 
+                diagramElement.setName(e.getTfImeElementa().getText());
+                ((InterClass) diagramElement).setContentSet(e.getClassContents());
+
+                //za stablo
+                ClassyTreeImplementation tree = (ClassyTreeImplementation) MainFrame.getInstance().getClassyTree();
+                ClassyTreeItem item = tree.dfsSearch((ClassyTreeItem) tree.getTreeModel().getRoot(), diagramElement);
+                item.setName(e.getTfImeElementa().getText());
+                SwingUtilities.updateComponentTreeUI(tree.getTreeView());
+            }
+        }
+        c.repaint();
     }
 
     @Override

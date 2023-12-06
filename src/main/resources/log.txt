@@ -221,3 +221,17 @@
 [ERROR] [05.12.2023 20:30] Duplikat Ime
 [INFO] [05.12.2023 21:58] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
 [INFO] [05.12.2023 22:04] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
+[ERROR] [05.12.2023 23:51] Duplikat Ime
+[ERROR] [05.12.2023 23:52] Duplikat Ime
+[ERROR] [05.12.2023 23:52] Duplikat Ime
+[ERROR] [05.12.2023 23:59] Duplikat Ime
+[ERROR] [06.12.2023 00:00] Duplikat Ime
+[ERROR] [06.12.2023 00:00] Duplikat Ime
+[ERROR] [06.12.2023 00:01] Duplikat Ime
+[ERROR] [06.12.2023 00:01] Duplikat Ime
+[ERROR] [06.12.2023 00:01] Duplikat Ime
+[ERROR] [06.12.2023 00:01] Duplikat Ime
+[ERROR] [06.12.2023 00:01] Duplikat Ime
+[ERROR] [06.12.2023 00:02] Duplikat Ime
+[ERROR] [06.12.2023 00:05] Duplikat Ime
+[ERROR] [06.12.2023 00:05] Duplikat Ime

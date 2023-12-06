@@ -40,6 +40,7 @@ public class AddElementState implements StateInterface{
             ako je uspesno dodat, onda ce sizePre liste razlicit  sizePosle liste i onda cemo dodati i njegov painter u listu paintera i zavrsiti posao
             ovo se radi u svakom od ovih ifova, samo se kod ponavlja.
          */
+
         int sizePre = c.getDiagram().getChildren().size();
         if(e.getRadioBtnKlasa().isSelected()){
             Klasa klasa = new Klasa(c.getDiagram(),e.getTfImeElementa().getText(), p,e.vratiPoljaIMetode()); //staviti umesto poljaIMetode null ako ne radi
@@ -76,7 +77,7 @@ public class AddElementState implements StateInterface{
         }
         //TODO ovo mozda radi napisacu DFS staticku metodu (za prolazak kroz celo stablo) u ClassyTreeimpu koja ce proci kroz bukvalno celo stablo i vratiti mi instancu dijagrama koji je aktivan hahahahah
         ClassyTreeImplementation tree = ((ClassyTreeImplementation)MainFrame.getInstance().getClassyTree());
-        //Ova metoda pronalazi treenode koji odgovara selectovanom dijagramu i dodaje mu dete tako sto se rekurzivno krece kroz nas JTREE
+        //Ova metoda pronalazi treenode koji odgovara selectovanom classynodeu i dodaje mu dete tako sto se rekurzivno krece kroz nas JTREE
         ClassyTreeItem diagramItem = tree.dfsSearch((ClassyTreeItem) tree.getTreeModel().getRoot(),c.getDiagram());
         //ovo je samo za dodavanje u jtree, u modelu je vec dodat
         MainFrame.getInstance().getClassyTree().addChild(diagramItem,false);
