@@ -106,6 +106,10 @@ public class ClassyPackageView extends JPanel implements ISubscriber {
         stateManager.getCurrentState().misKliknut1(p,e);
     }
 
+    public void misOtpusten1(Point2D p, ElementCreationView e){
+        stateManager.getCurrentState().misOtpusten1(p,e);
+    }
+
     @Override
     public void update(Object o) {
         if(o instanceof Project){

@@ -9,6 +9,7 @@ import raf.dsw.classycraft.app.gui.swing.painters.ClassPainter;
 import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyPackageView;
 import raf.dsw.classycraft.app.gui.swing.view.ElementCreationView;
 import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
+import raf.dsw.classycraft.app.state.AddConnectionState;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
@@ -39,7 +40,11 @@ public class CreateInterClassAction extends AbstractClassyAction{
             ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja", MessageType.INFO);
             return;
         }
-        ((ClassyPackageView)MainFrame.getInstance().getSplitPane().getRightComponent()).misKliknut1(elementCreationView.getPoint2D(),elementCreationView);
+
+        ClassyPackageView mediator = ((ClassyPackageView)MainFrame.getInstance().getSplitPane().getRightComponent());
+
+        if(!(mediator.getStateManager().getCurrentState() instanceof AddConnectionState))mediator.misKliknut1(elementCreationView.getPoint2D(),elementCreationView);
+        else mediator.misOtpusten1(elementCreationView.getPoint2D(),elementCreationView);
         elementCreationView.dispose();
 
     }

@@ -236,3 +236,7 @@
 [ERROR] [06.12.2023 00:05] Duplikat Ime
 [ERROR] [06.12.2023 00:05] Duplikat Ime
 [ERROR] [06.12.2023 09:18] Duplikat Ime
+[ERROR] [06.12.2023 10:05] Duplikat Ime
+[INFO] [06.12.2023 10:18] Element mora imati ime
+[ERROR] [06.12.2023 10:26] Duplikat Ime
+[ERROR] [06.12.2023 10:28] Duplikat Ime

@@ -6,7 +6,7 @@ import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interCl
 import java.awt.*;
 
 public class Kompozicija extends Connection{
-    public Kompozicija(ClassyNode parent, String name, Color paint, int stroke, InterClass element1, InterClass element2, String kardinalnost, String imePromenljive) {
-        super(parent, name, paint, stroke, element1, element2, kardinalnost, imePromenljive);
+    public Kompozicija(ClassyNode parent, String name, InterClass element1, InterClass element2, String kardinalnost, String imePromenljive) {
+        super(parent, name, Color.red, 2, element1, element2, kardinalnost, imePromenljive);
     }
 }

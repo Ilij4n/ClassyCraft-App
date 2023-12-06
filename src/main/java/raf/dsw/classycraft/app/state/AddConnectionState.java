@@ -1,12 +1,13 @@
 package raf.dsw.classycraft.app.state;
 
+import raf.dsw.classycraft.app.MessageGenerator.MessageType;
 import raf.dsw.classycraft.app.core.ApplicationFramework;
-import raf.dsw.classycraft.app.core.model.implementation.diagramElements.connections.Connection;
-import raf.dsw.classycraft.app.core.model.implementation.diagramElements.connections.Generalizacija;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.connections.*;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Enum;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.InterClass;
-import raf.dsw.classycraft.app.gui.swing.painters.ConnectionPainter;
-import raf.dsw.classycraft.app.gui.swing.painters.ElementPainter;
-import raf.dsw.classycraft.app.gui.swing.painters.GeneralizacijaPainter;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Interfejs;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Klasa;
+import raf.dsw.classycraft.app.gui.swing.painters.*;
 import raf.dsw.classycraft.app.gui.swing.tree.ClassyTreeImplementation;
 import raf.dsw.classycraft.app.gui.swing.tree.model.ClassyTreeItem;
 import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyDiagramView;
@@ -19,6 +20,8 @@ import java.awt.geom.Point2D;
 
 public class AddConnectionState implements StateInterface{
     private boolean moze = false;
+    ElementPainter elementPainterPocetni = null;
+    ElementPainter elementPainterKrajnji = null;
     @Override
     public void misKliknut(Point2D p, ClassyDiagramView c) {
 
@@ -55,8 +58,6 @@ public class AddConnectionState implements StateInterface{
     public void misOtpusten(Point2D p, ClassyDiagramView c) {
         moze = false;
 
-        ElementPainter elementPainterPocetni = null;
-        ElementPainter elementPainterKrajnji = null;
 
         for (int i = c.getPainters().size() - 1; i >= 0; i--) {
             if (c.getPainters().get(i).elementAt(p)) {
@@ -77,34 +78,72 @@ public class AddConnectionState implements StateInterface{
             }
             if(elementPainterPocetni==null||elementPainterKrajnji==null)return;
             //TODO ovde naci nacin da proveris kako da pravis razlicite veze, verovatno kao miskliknut1 u dodajElementStateu
-            Connection connection = new Generalizacija(c.getDiagram(),"nesto", (InterClass)elementPainterPocetni.getDiagramElement(),(InterClass) elementPainterKrajnji.getDiagramElement(),"0..1","promenjiva");
-            GeneralizacijaPainter g = new GeneralizacijaPainter(connection,elementPainterPocetni,elementPainterKrajnji);
 
-
-
-
-
-
-
-            if(!c.getPainters().contains(g) && !elementPainterPocetni.equals(elementPainterKrajnji)){
-
-               c.getDiagram().addChild(connection);
-
-                ClassyTreeImplementation tree = ((ClassyTreeImplementation) MainFrame.getInstance().getClassyTree());
-                //Ova metoda pronalazi treenode koji odgovara selectovanom dijagramu i dodaje mu dete tako sto se rekurzivno krece kroz nas JTREE
-                ClassyTreeItem diagramNode = tree.dfsSearch((ClassyTreeItem) tree.getTreeModel().getRoot(),c.getDiagram());
-                //ovo je samo za dodavanje u jtree, u modelu je vec dodat
-                c.getPainters().add(g);
-                MainFrame.getInstance().getClassyTree().addChild(diagramNode,false);
-                //samo rasiri sve
-                tree.getTreeView().expandPath(new TreePath(diagramNode.getPath()));
-                System.out.println(c.getDiagram().getChildren());
-
-            }
+            //TODO deo koda od todo-a do ovde treba da bude u novoj metodi misOtpusten1
         }
+
+        if(ElementCreationView.pokazanSam())return;
+        ElementCreationView e = new ElementCreationView(c,p);
+        e.getRadioBtnKlasa().setText("General.");
+        e.getRadioBtnInterfejs().setText("Agreg.");
+        e.getRadioBtnEnum().setText("Kompo.");
+        e.setVisible(true);
 
         c.setLinija(new Line2D.Double());
         c.repaint();
+    }
+
+    @Override
+    public void misOtpusten1(Point2D p, ElementCreationView e) {
+
+        ClassyDiagramView c = e.getClassyDiagramView();
+        //todo ovde dodavanje i izbor veze
+       // Connection connection = new Generalizacija(c.getDiagram(),"nesto", (InterClass)elementPainterPocetni.getDiagramElement(),(InterClass) elementPainterKrajnji.getDiagramElement(),"0..1","promenjiva");
+        //GeneralizacijaPainter g = new GeneralizacijaPainter(connection,elementPainterPocetni,elementPainterKrajnji);
+
+        Connection connection = null;
+        ConnectionPainter connectionPainter = null;
+
+
+        if(e.getTfImeElementa().getText().isEmpty()){
+            ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Element mora imati ime", MessageType.INFO);
+            return;
+        }
+        if(e.getRadioBtnKlasa().isSelected()){
+            //ovde praviti specificne paitnere
+            connection = new Generalizacija(c.getDiagram(),e.getTfImeElementa().getText(), (InterClass) elementPainterPocetni.getDiagramElement(),(InterClass) elementPainterKrajnji.getDiagramElement(),"vidljivost","nesto"); //staviti umesto poljaIMetode null ako ne radi
+            connectionPainter = new GeneralizacijaPainter(connection,elementPainterPocetni,elementPainterKrajnji);
+
+        }
+        else if(e.getRadioBtnInterfejs().isSelected()){
+            connection = new Agregacija(c.getDiagram(),e.getTfImeElementa().getText(), (InterClass) elementPainterPocetni.getDiagramElement(),(InterClass) elementPainterKrajnji.getDiagramElement(),"vidljivost","nesto"); //staviti umesto poljaIMetode null ako ne radi
+            connectionPainter = new AgregacijaPainter(connection,elementPainterPocetni,elementPainterKrajnji);
+        }
+        else if(e.getRadioBtnEnum().isSelected()){
+            connection = new Kompozicija(c.getDiagram(),e.getTfImeElementa().getText(), (InterClass) elementPainterPocetni.getDiagramElement(),(InterClass) elementPainterKrajnji.getDiagramElement(),"vidljivost","nesto"); //staviti umesto poljaIMetode null ako ne radi
+            connectionPainter = new KompozicijaPainter(connection,elementPainterPocetni,elementPainterKrajnji);
+        }
+        else{
+            connection = new Zavisnost(c.getDiagram(),e.getTfImeElementa().getText(), (InterClass) elementPainterPocetni.getDiagramElement(),(InterClass) elementPainterKrajnji.getDiagramElement(),"vidljivost","nesto"); //staviti umesto poljaIMetode null ako ne radi
+            connectionPainter = new ZavisnostPainter(connection,elementPainterPocetni,elementPainterKrajnji);
+        }
+
+
+        if(!c.getPainters().contains(connectionPainter) && !elementPainterPocetni.equals(elementPainterKrajnji)){
+
+            c.getDiagram().addChild(connection);
+
+            ClassyTreeImplementation tree = ((ClassyTreeImplementation) MainFrame.getInstance().getClassyTree());
+            //Ova metoda pronalazi treenode koji odgovara selectovanom dijagramu i dodaje mu dete tako sto se rekurzivno krece kroz nas JTREE
+            ClassyTreeItem diagramNode = tree.dfsSearch((ClassyTreeItem) tree.getTreeModel().getRoot(),c.getDiagram());
+            //ovo je samo za dodavanje u jtree, u modelu je vec dodat
+            c.getPainters().add(connectionPainter);
+            MainFrame.getInstance().getClassyTree().addChild(diagramNode,false);
+            //samo rasiri sve
+            tree.getTreeView().expandPath(new TreePath(diagramNode.getPath()));
+            System.out.println(c.getDiagram().getChildren());
+
+        }
     }
 
     @Override

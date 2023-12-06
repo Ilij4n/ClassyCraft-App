@@ -105,6 +105,11 @@ public class AddElementState implements StateInterface{
     }
 
     @Override
+    public void misOtpusten1(Point2D p, ElementCreationView e) {
+
+    }
+
+    @Override
     public void misSkrolovan(Point2D p, ClassyDiagramView c) {
 
     }
