@@ -54,7 +54,8 @@ public abstract class ConnectionPainter extends ElementPainter{
 
             }
         }
-        g.setColor(Color.BLACK);
+        //TODO: umesto ove linije zezati se sa zapravo iscrtavanjem
+        g.setColor(veza.getColor());
         g.setStroke(new BasicStroke(2));
 
         if(isSelected){

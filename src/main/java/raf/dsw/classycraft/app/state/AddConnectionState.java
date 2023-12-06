@@ -101,9 +101,6 @@ public class AddConnectionState implements StateInterface{
                 System.out.println(c.getDiagram().getChildren());
 
             }
-
-
-            //c.repaint();
         }
 
         c.setLinija(new Line2D.Double());
