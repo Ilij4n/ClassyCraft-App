@@ -20,8 +20,10 @@ import java.awt.geom.Point2D;
 
 public class AddConnectionState implements StateInterface{
     private boolean moze = false;
-    ElementPainter elementPainterPocetni = null;
-    ElementPainter elementPainterKrajnji = null;
+    private ElementPainter elementPainterPocetni = null;
+    private  ElementPainter elementPainterKrajnji = null;
+    private boolean nePokazujVisePutaObavestenje = true;
+
     @Override
     public void misKliknut(Point2D p, ClassyDiagramView c) {
 
@@ -79,10 +81,18 @@ public class AddConnectionState implements StateInterface{
             if(elementPainterPocetni==null||elementPainterKrajnji==null)return;
             //TODO ovde naci nacin da proveris kako da pravis razlicite veze, verovatno kao miskliknut1 u dodajElementStateu
             if(ElementCreationView.pokazanSam())return;
+
+            if(nePokazujVisePutaObavestenje){
+                ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Za vezu zavisnosti ne birati radioButton\n U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod",MessageType.INFO);
+                nePokazujVisePutaObavestenje = false;
+            }
+
             ElementCreationView e = new ElementCreationView(c,p);
             e.getRadioBtnKlasa().setText("General.");
             e.getRadioBtnInterfejs().setText("Agreg.");
             e.getRadioBtnEnum().setText("Kompo.");
+            e.addPlaceholder("/*Primer inputa*/\n- String ime\n0..1",e.getTextAreaElementi());
+
             e.setVisible(true);
             //TODO deo koda od todo-a do ovde treba da bude u novoj metodi misOtpusten1
         }
@@ -95,13 +105,13 @@ public class AddConnectionState implements StateInterface{
     public void misOtpusten1(Point2D p, ElementCreationView e) {
 
         ClassyDiagramView c = e.getClassyDiagramView();
-        //todo ovde dodavanje i izbor veze
        // Connection connection = new Generalizacija(c.getDiagram(),"nesto", (InterClass)elementPainterPocetni.getDiagramElement(),(InterClass) elementPainterKrajnji.getDiagramElement(),"0..1","promenjiva");
         //GeneralizacijaPainter g = new GeneralizacijaPainter(connection,elementPainterPocetni,elementPainterKrajnji);
 
         Connection connection = null;
         ConnectionPainter connectionPainter = null;
 
+        //todo nastaviti sa parsovanjem podataka i napraviti editState za konekcije
 
         if(e.getTfImeElementa().getText().isEmpty()){
             ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Element mora imati ime", MessageType.INFO);

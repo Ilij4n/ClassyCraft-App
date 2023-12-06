@@ -17,6 +17,8 @@ import java.awt.geom.Point2D;
 
 public class EditState implements StateInterface{
 
+    boolean nePokazujVisePutaObavestenje = true;
+
     @Override
     public void misKliknut(Point2D p, ClassyDiagramView c) {
         //System.out.println(getClass().getSimpleName());
@@ -27,8 +29,15 @@ public class EditState implements StateInterface{
             ElementPainter painter = c.getPainters().get(i);
             if(painter.elementAt(p)){
                 DiagramElement model = painter.getDiagramElement();
+                ElementCreationView e = new ElementCreationView(c,p);
+                e.isAlwaysOnTop();
+
+                if(nePokazujVisePutaObavestenje){
+                    ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Edit element ne poseduje mogucnost promenu samog tipa elementa",MessageType.INFO);
+                    nePokazujVisePutaObavestenje = false;
+                }
+
                 if(model instanceof InterClass){
-                    ElementCreationView e = new ElementCreationView(c,p);
                     e.postaviPolja((InterClass) model);
                     e.setTitle("Edit view");
                     e.setVisible(true);

@@ -46,7 +46,7 @@ public class AddElementState implements StateInterface{
         }
         int sizePre = c.getDiagram().getChildren().size();
         if(e.getRadioBtnKlasa().isSelected()){
-            Klasa klasa = new Klasa(c.getDiagram(),e.getTfImeElementa().getText(), p,e.vratiPoljaIMetode()); //staviti umesto poljaIMetode null ako ne radi
+            Klasa klasa = new Klasa(c.getDiagram(),e.getTfImeElementa().getText(), p,e.vratiPoljaIMetode());
             ClassPainter classPainter = new ClassPainter(klasa);
             System.out.println(e.vratiPoljaIMetode());
 

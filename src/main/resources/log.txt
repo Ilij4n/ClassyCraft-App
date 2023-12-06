@@ -246,3 +246,19 @@
 [INFO] [06.12.2023 10:44] Izaberite jednu od opcija
 [INFO] [06.12.2023 10:48] Izaberite jednu od opcija
 [INFO] [06.12.2023 10:49] Izaberite jednu od opcija
+[INFO] [06.12.2023 10:56] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
+[INFO] [06.12.2023 10:59] Edit Element nema mogucnost promene samog tipa elementa
+[INFO] [06.12.2023 11:00] Izaberite jednu od opcija
+[INFO] [06.12.2023 11:00] Edit Element nema mogucnost promene samog tipa elementa
+[INFO] [06.12.2023 11:01] Edit Element nema mogucnost promene samog tipa elementa
+[INFO] [06.12.2023 11:02] Edit Element nema mogucnost promene samog tipa elementa
+[INFO] [06.12.2023 11:03] Edit Element nema mogucnost promene samog tipa elementa
+[INFO] [06.12.2023 11:07] Edit element ne poseduje mogucnost promenu samog tipa elementa
+[INFO] [06.12.2023 11:10] Izaberite jednu od opcija
+[INFO] [06.12.2023 11:11] Za vezu zavisnosti ne birati radioButton
+[ERROR] [06.12.2023 11:11] Duplikat Ime
+[INFO] [06.12.2023 11:27] Za vezu zavisnosti ne birati radioButton
+ Upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[ERROR] [06.12.2023 11:35] Duplikat Ime
+[INFO] [06.12.2023 11:35] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod

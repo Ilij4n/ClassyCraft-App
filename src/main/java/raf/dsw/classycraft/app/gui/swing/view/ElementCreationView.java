@@ -130,7 +130,7 @@ public class ElementCreationView extends JFrame {
             }
         });
 
-        addPlaceholder("/*Napisati input u sledecem formatu*/\nPolja:\nvidljivost Tip imePromenljive\n /*... (ostala polja)*/\nMetode:\n vidljivost Tip ime\n/*... (ostale metode)*/\n /*kraj inputa*/ ", textAreaElementi);
+        addPlaceholder("/*Napisati input u sledecem formatu*/\nPolja:\nvidljivost Tip imePromenljive\n /*... (ostala polja)*/\nMetode:\n vidljivost Tip ime\n/*... (ostale metode)*/\n ", textAreaElementi);
 
 
         setLocationRelativeTo(null);
@@ -217,7 +217,7 @@ public class ElementCreationView extends JFrame {
         return classContents;
     }
 
-    private void addPlaceholder(String placeholder, JTextArea textArea) {
+    public void addPlaceholder(String placeholder, JTextArea textArea) {
         textArea.setText(placeholder);
         textArea.setForeground(java.awt.Color.GRAY);
 
