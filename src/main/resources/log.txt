@@ -262,3 +262,13 @@
 [ERROR] [06.12.2023 11:35] Duplikat Ime
 [INFO] [06.12.2023 11:35] Za vezu zavisnosti ne birati radioButton
  U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [06.12.2023 13:54] Edit element ne poseduje mogucnost promenu samog tipa elementa
+[ERROR] [06.12.2023 13:56] Duplikat Ime
+[ERROR] [06.12.2023 13:56] Duplikat Ime
+[INFO] [06.12.2023 13:56] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [06.12.2023 13:58] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [06.12.2023 14:02] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [06.12.2023 14:03] Edit element ne poseduje mogucnost promenu samog tipa elementa

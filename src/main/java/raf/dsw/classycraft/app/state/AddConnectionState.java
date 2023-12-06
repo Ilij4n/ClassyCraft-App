@@ -79,14 +79,25 @@ public class AddConnectionState implements StateInterface{
                 }
             }
             if(elementPainterPocetni==null||elementPainterKrajnji==null)return;
-            //TODO ovde naci nacin da proveris kako da pravis razlicite veze, verovatno kao miskliknut1 u dodajElementStateu
             if(ElementCreationView.pokazanSam())return;
+
+            for(ElementPainter painter : c.getPainters()){
+                if(painter instanceof ConnectionPainter){
+                    ElementPainter painter1 = ((ConnectionPainter) painter).getElementPainter1();
+                    ElementPainter painter2 = ((ConnectionPainter) painter).getElementPainter2();
+                    if(elementPainterPocetni.equals(painter1) && elementPainterKrajnji.equals(painter2) || elementPainterKrajnji.equals(painter1) && elementPainterKrajnji.equals(painter2)){
+                        c.setLinija(new Line2D.Double());
+                        c.repaint();
+                        return;
+                    }
+                }
+            }
 
             if(nePokazujVisePutaObavestenje){
                 ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Za vezu zavisnosti ne birati radioButton\n U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod",MessageType.INFO);
                 nePokazujVisePutaObavestenje = false;
             }
-
+            //ako prodje sve provere ovde se dodaje veza
             ElementCreationView e = new ElementCreationView(c,p);
             e.getRadioBtnKlasa().setText("General.");
             e.getRadioBtnInterfejs().setText("Agreg.");
@@ -94,7 +105,6 @@ public class AddConnectionState implements StateInterface{
             e.addPlaceholder("/*Primer inputa*/\n- String ime\n0..1",e.getTextAreaElementi());
 
             e.setVisible(true);
-            //TODO deo koda od todo-a do ovde treba da bude u novoj metodi misOtpusten1
         }
 
         c.setLinija(new Line2D.Double());
