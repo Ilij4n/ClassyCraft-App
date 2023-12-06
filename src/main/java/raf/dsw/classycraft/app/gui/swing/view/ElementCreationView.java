@@ -184,7 +184,7 @@ public class ElementCreationView extends JFrame {
         vrednostiVidljivosti.add("#");
         vrednostiVidljivosti.add("~");
 
-        if(linije[0].equalsIgnoreCase("/*Napisati input u sledecem formatu*/"))return classContents;
+        if(linije.length==0||linije[0].equalsIgnoreCase("/*Napisati input u sledecem formatu*/"))return classContents;
         try{
             for(String s : linije){
                 if(s.equalsIgnoreCase("Polja:")&&!radioBtnInterfejs.isSelected()){
@@ -215,6 +215,62 @@ public class ElementCreationView extends JFrame {
         }
 
         return classContents;
+    }
+
+    public List<String> parsujUVezu(){
+        String input = textAreaElementi.getText();
+        String lines[] = input.split("\n");
+
+        List<String> idemooo = new ArrayList<>();
+
+        Set<String> vrednostiVidljivosti = new HashSet<>();
+        vrednostiVidljivosti.add("+");
+        vrednostiVidljivosti.add("-");
+        vrednostiVidljivosti.add("#");
+        vrednostiVidljivosti.add("~");
+
+        Set<String> vrednostiKardinaliteta = new HashSet<>();
+        vrednostiKardinaliteta.add("1..1");
+        vrednostiKardinaliteta.add("1..n");
+        vrednostiKardinaliteta.add("n..1");
+        vrednostiKardinaliteta.add("m..n");
+
+        /*if(!radioBtnInterfejs.isSelected() && !radioBtnEnum.isSelected()){
+            idemooo.add("");
+            idemooo.add("");
+            return idemooo;
+        }*/
+
+        boolean parsePolje = true;
+        boolean parseKardinalitet = true;
+
+        try {
+            for(String s : lines){
+                String podLinije[] = s.split(" ");
+                if(podLinije.length == 2 && parsePolje){
+                    if(!vrednostiVidljivosti.contains(podLinije[0])){
+                        throw new Exception();
+                    }
+                    System.out.println("usao vidljivost");
+                    idemooo.add(podLinije[0]+" "+podLinije[1]);
+                    parsePolje = false;
+                }
+                if(podLinije.length == 1 && parseKardinalitet){
+                    System.out.println("usao kardinalitet");
+                    if(!vrednostiKardinaliteta.contains(podLinije[0])){
+                        throw new Exception();
+                    }
+                    idemooo.add(podLinije[0]);
+                    parseKardinalitet = false;
+                }
+            }
+        }
+        catch (Exception e){
+            List<String> errorList = new ArrayList<>();
+            errorList.add("//error//");
+            return errorList;
+        }
+        return idemooo;
     }
 
     public void addPlaceholder(String placeholder, JTextArea textArea) {

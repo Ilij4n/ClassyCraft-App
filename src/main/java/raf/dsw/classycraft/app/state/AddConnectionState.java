@@ -102,7 +102,7 @@ public class AddConnectionState implements StateInterface{
             e.getRadioBtnKlasa().setText("General.");
             e.getRadioBtnInterfejs().setText("Agreg.");
             e.getRadioBtnEnum().setText("Kompo.");
-            e.addPlaceholder("/*Primer inputa*/\n- String ime\n0..1",e.getTextAreaElementi());
+            e.addPlaceholder("/*Primer inputa*/\n- ime\n0..1\nmoguci kardinaliteti:\n1..1, 1..n\nn..1, m..n",e.getTextAreaElementi());
 
             e.setVisible(true);
         }
@@ -122,8 +122,13 @@ public class AddConnectionState implements StateInterface{
         ConnectionPainter connectionPainter = null;
 
         //todo nastaviti sa parsovanjem podataka i napraviti editState za konekcije
-        String polje;
-        String kardinalnost;
+        System.out.println(e.parsujUVezu());
+        String polje = "";
+        String kardinalnost = "";
+        for(String s : e.parsujUVezu()){
+            if(s.split(" ").length==2)polje = s;
+            else kardinalnost = s;
+        }
 
         if(e.getTfImeElementa().getText().isEmpty()){
             ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Element mora imati ime", MessageType.INFO);
@@ -131,20 +136,20 @@ public class AddConnectionState implements StateInterface{
         }
         if(e.getRadioBtnKlasa().isSelected()){
             //ovde praviti specificne paitnere
-            connection = new Generalizacija(c.getDiagram(),e.getTfImeElementa().getText(), (InterClass) elementPainterPocetni.getDiagramElement(),(InterClass) elementPainterKrajnji.getDiagramElement(),"vidljivost","nesto"); //staviti umesto poljaIMetode null ako ne radi
+            connection = new Generalizacija(c.getDiagram(),e.getTfImeElementa().getText(), (InterClass) elementPainterPocetni.getDiagramElement(),(InterClass) elementPainterKrajnji.getDiagramElement(),"",""); //staviti umesto poljaIMetode null ako ne radi
             connectionPainter = new GeneralizacijaPainter(connection,elementPainterPocetni,elementPainterKrajnji);
 
         }
         else if(e.getRadioBtnInterfejs().isSelected()){
-            connection = new Agregacija(c.getDiagram(),e.getTfImeElementa().getText(), (InterClass) elementPainterPocetni.getDiagramElement(),(InterClass) elementPainterKrajnji.getDiagramElement(),"vidljivost","nesto"); //staviti umesto poljaIMetode null ako ne radi
+            connection = new Agregacija(c.getDiagram(),e.getTfImeElementa().getText(), (InterClass) elementPainterPocetni.getDiagramElement(),(InterClass) elementPainterKrajnji.getDiagramElement(),kardinalnost,polje); //staviti umesto poljaIMetode null ako ne radi
             connectionPainter = new AgregacijaPainter(connection,elementPainterPocetni,elementPainterKrajnji);
         }
         else if(e.getRadioBtnEnum().isSelected()){
-            connection = new Kompozicija(c.getDiagram(),e.getTfImeElementa().getText(), (InterClass) elementPainterPocetni.getDiagramElement(),(InterClass) elementPainterKrajnji.getDiagramElement(),"vidljivost","nesto"); //staviti umesto poljaIMetode null ako ne radi
+            connection = new Kompozicija(c.getDiagram(),e.getTfImeElementa().getText(), (InterClass) elementPainterPocetni.getDiagramElement(),(InterClass) elementPainterKrajnji.getDiagramElement(),kardinalnost,polje); //staviti umesto poljaIMetode null ako ne radi
             connectionPainter = new KompozicijaPainter(connection,elementPainterPocetni,elementPainterKrajnji);
         }
         else{
-            connection = new Zavisnost(c.getDiagram(),e.getTfImeElementa().getText(), (InterClass) elementPainterPocetni.getDiagramElement(),(InterClass) elementPainterKrajnji.getDiagramElement(),"vidljivost","nesto"); //staviti umesto poljaIMetode null ako ne radi
+            connection = new Zavisnost(c.getDiagram(),e.getTfImeElementa().getText(), (InterClass) elementPainterPocetni.getDiagramElement(),(InterClass) elementPainterKrajnji.getDiagramElement(),"",""); //staviti umesto poljaIMetode null ako ne radi
             connectionPainter = new ZavisnostPainter(connection,elementPainterPocetni,elementPainterKrajnji);
         }
 

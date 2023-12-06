@@ -45,11 +45,14 @@ public class EditState implements StateInterface{
 
                 }
                 else if(model instanceof Connection){
-                    e.getTextAreaElementi().setText((((Connection) model).getImePromenljive()+"\n"+((Connection) model).getKardinalnost()));
                     e.setTitle("Edit view");
                     e.getRadioBtnKlasa().setText("General.");
-                    e.getRadioBtnKlasa().setText("Agreg.");
-                    e.getRadioBtnKlasa().setText("Kompo.");
+                    e.getRadioBtnInterfejs().setText("Agreg.");
+                    e.getRadioBtnEnum().setText("Kompo.");
+                    e.getRadioBtnKlasa().setSelected(true);
+                    e.getTfImeElementa().setText(model.getName());
+                    System.out.println(((Connection) model).getImePromenljive());
+                    e.getTextAreaElementi().setText(((Connection) model).getImePromenljive()+"\n"+((Connection) model).getKardinalnost());
                     e.setVisible(true);
                     return;
                 }
@@ -84,7 +87,16 @@ public class EditState implements StateInterface{
                 ((InterClass) diagramElement).setContentSet(e.getClassContents());
             }
             else if(diagramElement instanceof Connection){
+                diagramElement.setName(e.getTfImeElementa().getText());
 
+                String polje = "";
+                String kardinalnost = "";
+                for(String s : e.parsujUVezu()){
+                    if(s.split(" ").length==2)polje = s;
+                    else kardinalnost = s;
+                }
+                ((Connection) diagramElement).setImePromenljive(polje);
+                ((Connection) diagramElement).setKardinalnost(kardinalnost);
             }
         }
         //za stablo
