@@ -240,3 +240,9 @@
 [INFO] [06.12.2023 10:18] Element mora imati ime
 [ERROR] [06.12.2023 10:26] Duplikat Ime
 [ERROR] [06.12.2023 10:28] Duplikat Ime
+[INFO] [06.12.2023 10:37] Izaberite jednu od opcija
+[INFO] [06.12.2023 10:40] Izaberite jednu od opcija
+[INFO] [06.12.2023 10:42] Izaberite jednu od opcija
+[INFO] [06.12.2023 10:44] Izaberite jednu od opcija
+[INFO] [06.12.2023 10:48] Izaberite jednu od opcija
+[INFO] [06.12.2023 10:49] Izaberite jednu od opcija

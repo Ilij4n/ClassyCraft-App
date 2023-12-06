@@ -60,7 +60,7 @@ public class ElementCreationView extends JFrame {
         buttonGroup.add(radioBtnEnum);
         buttonGroup.add(radioBtnInterfejs);
 
-        radioBtnKlasa.setSelected(true);
+        //radioBtnKlasa.setSelected(true);
 
 
         JPanel mainPanel = new JPanel(new GridBagLayout());

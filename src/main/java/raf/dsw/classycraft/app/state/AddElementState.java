@@ -68,7 +68,7 @@ public class AddElementState implements StateInterface{
             }
             c.getPainters().add(interfacePainter);
         }
-        else{
+        else if(e.getRadioBtnEnum().isSelected()){
             Enum enumncina = new Enum(c.getDiagram(),e.getTfImeElementa().getText(),p,e.vratiPoljaIMetode());
             EnumPainter enumPainter = new EnumPainter(enumncina);
             c.getDiagram().addChild(enumncina);
@@ -77,6 +77,9 @@ public class AddElementState implements StateInterface{
                 return;
             }
             c.getPainters().add(enumPainter);
+        }
+        else{
+
         }
         //TODO ovo mozda radi napisacu DFS staticku metodu (za prolazak kroz celo stablo) u ClassyTreeimpu koja ce proci kroz bukvalno celo stablo i vratiti mi instancu dijagrama koji je aktivan hahahahah
         ClassyTreeImplementation tree = ((ClassyTreeImplementation)MainFrame.getInstance().getClassyTree());

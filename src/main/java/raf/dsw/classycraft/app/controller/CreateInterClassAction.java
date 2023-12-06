@@ -40,10 +40,15 @@ public class CreateInterClassAction extends AbstractClassyAction{
             ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja", MessageType.INFO);
             return;
         }
-
         ClassyPackageView mediator = ((ClassyPackageView)MainFrame.getInstance().getSplitPane().getRightComponent());
 
-        if(!(mediator.getStateManager().getCurrentState() instanceof AddConnectionState))mediator.misKliknut1(elementCreationView.getPoint2D(),elementCreationView);
+        if(!(mediator.getStateManager().getCurrentState() instanceof AddConnectionState)){
+            if(!elementCreationView.getRadioBtnKlasa().isSelected() && !elementCreationView.getRadioBtnEnum().isSelected() && !elementCreationView.getRadioBtnInterfejs().isSelected()){
+                ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Izaberite jednu od opcija", MessageType.INFO);
+                return;
+            }
+            mediator.misKliknut1(elementCreationView.getPoint2D(),elementCreationView);
+        }
         else mediator.misOtpusten1(elementCreationView.getPoint2D(),elementCreationView);
         elementCreationView.dispose();
 

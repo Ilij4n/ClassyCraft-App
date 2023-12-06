@@ -66,7 +66,7 @@ public class AddConnectionState implements StateInterface{
                 break;
             }
         }
-
+        if(elementPainterPocetni==elementPainterKrajnji)moze = false;
 
         if (moze) {
 
@@ -78,16 +78,14 @@ public class AddConnectionState implements StateInterface{
             }
             if(elementPainterPocetni==null||elementPainterKrajnji==null)return;
             //TODO ovde naci nacin da proveris kako da pravis razlicite veze, verovatno kao miskliknut1 u dodajElementStateu
-
+            if(ElementCreationView.pokazanSam())return;
+            ElementCreationView e = new ElementCreationView(c,p);
+            e.getRadioBtnKlasa().setText("General.");
+            e.getRadioBtnInterfejs().setText("Agreg.");
+            e.getRadioBtnEnum().setText("Kompo.");
+            e.setVisible(true);
             //TODO deo koda od todo-a do ovde treba da bude u novoj metodi misOtpusten1
         }
-
-        if(ElementCreationView.pokazanSam())return;
-        ElementCreationView e = new ElementCreationView(c,p);
-        e.getRadioBtnKlasa().setText("General.");
-        e.getRadioBtnInterfejs().setText("Agreg.");
-        e.getRadioBtnEnum().setText("Kompo.");
-        e.setVisible(true);
 
         c.setLinija(new Line2D.Double());
         c.repaint();
@@ -127,7 +125,6 @@ public class AddConnectionState implements StateInterface{
             connection = new Zavisnost(c.getDiagram(),e.getTfImeElementa().getText(), (InterClass) elementPainterPocetni.getDiagramElement(),(InterClass) elementPainterKrajnji.getDiagramElement(),"vidljivost","nesto"); //staviti umesto poljaIMetode null ako ne radi
             connectionPainter = new ZavisnostPainter(connection,elementPainterPocetni,elementPainterKrajnji);
         }
-
 
         if(!c.getPainters().contains(connectionPainter) && !elementPainterPocetni.equals(elementPainterKrajnji)){
 
