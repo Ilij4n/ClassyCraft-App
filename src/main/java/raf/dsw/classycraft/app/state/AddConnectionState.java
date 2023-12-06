@@ -122,6 +122,8 @@ public class AddConnectionState implements StateInterface{
         ConnectionPainter connectionPainter = null;
 
         //todo nastaviti sa parsovanjem podataka i napraviti editState za konekcije
+        String polje;
+        String kardinalnost;
 
         if(e.getTfImeElementa().getText().isEmpty()){
             ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Element mora imati ime", MessageType.INFO);

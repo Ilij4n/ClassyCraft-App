@@ -45,7 +45,12 @@ public class EditState implements StateInterface{
 
                 }
                 else if(model instanceof Connection){
-                    //TODO za sad nista..
+                    e.getTextAreaElementi().setText((((Connection) model).getImePromenljive()+"\n"+((Connection) model).getKardinalnost()));
+                    e.setTitle("Edit view");
+                    e.getRadioBtnKlasa().setText("General.");
+                    e.getRadioBtnKlasa().setText("Agreg.");
+                    e.getRadioBtnKlasa().setText("Kompo.");
+                    e.setVisible(true);
                     return;
                 }
 
@@ -77,14 +82,17 @@ public class EditState implements StateInterface{
 
                 diagramElement.setName(e.getTfImeElementa().getText());
                 ((InterClass) diagramElement).setContentSet(e.getClassContents());
+            }
+            else if(diagramElement instanceof Connection){
 
-                //za stablo
-                ClassyTreeImplementation tree = (ClassyTreeImplementation) MainFrame.getInstance().getClassyTree();
-                ClassyTreeItem item = tree.dfsSearch((ClassyTreeItem) tree.getTreeModel().getRoot(), diagramElement);
-                item.setName(e.getTfImeElementa().getText());
-                SwingUtilities.updateComponentTreeUI(tree.getTreeView());
             }
         }
+        //za stablo
+        ClassyTreeImplementation tree = (ClassyTreeImplementation) MainFrame.getInstance().getClassyTree();
+        ClassyTreeItem item = tree.dfsSearch((ClassyTreeItem) tree.getTreeModel().getRoot(), diagramElement);
+        item.setName(e.getTfImeElementa().getText());
+
+        SwingUtilities.updateComponentTreeUI(tree.getTreeView());
         c.repaint();
     }
 
