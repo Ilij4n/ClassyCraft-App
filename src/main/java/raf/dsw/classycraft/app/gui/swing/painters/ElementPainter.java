@@ -18,7 +18,7 @@ public abstract class ElementPainter {
 
     private DiagramElement diagramElement;
     private boolean selected = false;
-    private List<Point2D> listOfPoints;
+    protected List<Point2D> listOfPoints;
     protected Rectangle2D oblik = new Rectangle2D.Double();
 
     public ElementPainter(DiagramElement diagramElement){

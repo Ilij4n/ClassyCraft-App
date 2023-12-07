@@ -472,3 +472,60 @@
 [ERROR] [07.12.2023 09:14] Duplikat Ime
 [INFO] [07.12.2023 09:14] Za vezu zavisnosti ne birati radioButton
  U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 09:20] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 09:21] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[ERROR] [07.12.2023 09:21] Duplikat Ime
+[INFO] [07.12.2023 09:22] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 09:22] Element mora imati ime
+[INFO] [07.12.2023 09:23] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 09:28] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 09:31] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 09:32] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[ERROR] [07.12.2023 09:33] Duplikat Ime
+[INFO] [07.12.2023 09:33] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 09:39] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 09:42] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 09:46] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 09:53] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 09:53] Element mora imati ime
+[INFO] [07.12.2023 09:55] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 09:56] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 10:01] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[ERROR] [07.12.2023 10:02] Duplikat Ime
+[INFO] [07.12.2023 10:02] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 10:04] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 10:05] Edit element ne poseduje mogucnost promenu samog tipa elementa
+[INFO] [07.12.2023 10:06] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 10:06] Ne valja format
+[INFO] [07.12.2023 10:07] Edit element ne poseduje mogucnost promenu samog tipa elementa
+[INFO] [07.12.2023 10:12] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 10:13] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 10:17] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 10:19] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 10:20] Element mora imati ime
+[INFO] [07.12.2023 10:28] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 10:34] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod

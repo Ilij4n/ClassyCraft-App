@@ -98,6 +98,24 @@ public class EnumPainter extends ElementPainter {
         }
     }
 
+    public List<Point2D> getListOfPoints(){
+        listOfPoints.clear();
+        Rectangle2D bounds = oblik.getBounds2D();
+        Point2D p1 = new Point2D.Double(bounds.getCenterX(),bounds.getMinY());
+        Point2D p2 = new Point2D.Double(bounds.getMinX(), bounds.getCenterY());
+        Point2D p3 = new Point2D.Double(bounds.getMaxX(),bounds.getCenterY());
+        Point2D p4 = new Point2D.Double(bounds.getCenterX(),bounds.getMaxY());
+
+        //svaka klasa ima listu svojih tacaka
+
+        listOfPoints.add((Point2D.Double) p1);
+        listOfPoints.add((Point2D.Double) p2);
+        listOfPoints.add((Point2D.Double) p3);
+        listOfPoints.add((Point2D.Double) p4);
+
+        return listOfPoints;
+    }
+
     @Override
     public boolean elementAt(Point2D p) {
         return getOblik().contains(p);

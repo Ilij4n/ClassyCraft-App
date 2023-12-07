@@ -2,6 +2,7 @@ package raf.dsw.classycraft.app.state;
 
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.connections.Connection;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.InterClass;
+import raf.dsw.classycraft.app.gui.swing.painters.ConnectionPainter;
 import raf.dsw.classycraft.app.gui.swing.painters.ElementPainter;
 import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyDiagramView;
 import raf.dsw.classycraft.app.gui.swing.view.ElementCreationView;
@@ -24,9 +25,34 @@ public class MoveState implements StateInterface{
 
     @Override
     public void misPovucen(Point2D p, ClassyDiagramView c) {
-        if(nabodeniPainter != null && nabodeniPainter.getDiagramElement() instanceof InterClass){
+        if(nabodeniPainter != null && nabodeniPainter.getDiagramElement() instanceof InterClass && c.getSviselectovani().isEmpty()){
+
+            for(ElementPainter painter : c.getPainters()){
+
+                InterClass element = (InterClass) nabodeniPainter.getDiagramElement();
+                element.setLocation(p);
+                // za refreshovanje konekcija
+                if(painter instanceof ConnectionPainter){
+                    if(((ConnectionPainter) painter).getElementPainter1().equals(nabodeniPainter)){
+                        ((ConnectionPainter) painter).setElementPainter1(nabodeniPainter);
+                    }
+                    else if(((ConnectionPainter) painter).getElementPainter2().equals(nabodeniPainter)){
+                        ((ConnectionPainter) painter).setElementPainter2(nabodeniPainter);
+                    }
+                }
+            }
+
             InterClass element = (InterClass) nabodeniPainter.getDiagramElement();
             element.setLocation(p);
+        }
+        else if(!c.getSviselectovani().isEmpty()){
+            for(ElementPainter painter: c.getSviselectovani()){
+                if(painter.getDiagramElement() instanceof InterClass){
+                    InterClass element = (InterClass) painter.getDiagramElement();
+                    element.setLocation1(p);
+                }
+            }
+            c.repaint();
         }
     }
 

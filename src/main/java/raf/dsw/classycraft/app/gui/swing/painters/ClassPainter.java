@@ -82,7 +82,12 @@ public class ClassPainter extends ElementPainter {
         // Fill boja
         g.setColor(klasa.getColor());
         // Nacrtaj fill
-        g.fill(oblik);
+       // g.fill(oblik);
+
+        /*g.drawRect((int)p1.getX(),(int)p1.getY(),20,20);
+        g.drawRect((int)p2.getX(),(int)p2.getY(),20,20);
+        g.drawRect((int)p3.getX(),(int)p3.getY(),20,20);
+        g.drawRect((int)p4.getX(),(int)p4.getY(),20,20);*/
 
         // Font
         Font font = new Font("Arial", Font.PLAIN, 12);
@@ -110,6 +115,25 @@ public class ClassPainter extends ElementPainter {
 
 
     }
+
+    public List<Point2D> getListOfPoints(){
+        listOfPoints.clear();
+        Rectangle2D bounds = oblik.getBounds2D();
+        Point2D p1 = new Point2D.Double(bounds.getCenterX(),bounds.getMinY());
+        Point2D p2 = new Point2D.Double(bounds.getMinX(), bounds.getCenterY());
+        Point2D p3 = new Point2D.Double(bounds.getMaxX(),bounds.getCenterY());
+        Point2D p4 = new Point2D.Double(bounds.getCenterX(),bounds.getMaxY());
+
+        //svaka klasa ima listu svojih tacaka
+
+        listOfPoints.add((Point2D.Double) p1);
+        listOfPoints.add((Point2D.Double) p2);
+        listOfPoints.add((Point2D.Double) p3);
+        listOfPoints.add((Point2D.Double) p4);
+
+        return listOfPoints;
+    }
+
     @Override
     public boolean elementAt(Point2D p) {
         return getOblik().contains(p);

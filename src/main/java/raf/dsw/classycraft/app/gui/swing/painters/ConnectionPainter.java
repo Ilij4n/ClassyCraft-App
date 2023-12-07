@@ -3,6 +3,7 @@ package raf.dsw.classycraft.app.gui.swing.painters;
 import lombok.Getter;
 import lombok.Setter;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.connections.Connection;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.InterClass;
 
 import java.awt.*;
 import java.awt.geom.Line2D;
@@ -29,11 +30,14 @@ public abstract class ConnectionPainter extends ElementPainter{
     public void draw(Graphics2D g) {
 
 
-        double najkraci = 1000;
-        double najkraciXPocetni = 0;
-        double najkraciYPocetni = 0;
-        double najkraciXKrajnji = 0;
-        double najkraciYKrajnji = 0;
+        double najkraci = Double.MAX_VALUE;
+        double najkraciXPocetni = Double.MIN_VALUE;
+        double najkraciYPocetni = Double.MIN_VALUE;
+        double najkraciXKrajnji = Double.MIN_VALUE;
+        double najkraciYKrajnji = Double.MIN_VALUE;
+
+        //System.out.println(elementPainter1.getListOfPoints().get(0));
+
 
         for(int i = elementPainter1.getListOfPoints().size() - 1; i >= 0; i--){
             for(int j = elementPainter2.getListOfPoints().size() - 1; j >= 0; j--){
@@ -65,6 +69,16 @@ public abstract class ConnectionPainter extends ElementPainter{
 
 
         g.drawLine((int)najkraciXPocetni,(int)najkraciYPocetni,(int)najkraciXKrajnji,(int)najkraciYKrajnji);
+        /*int x1 = (int)((InterClass) elementPainter1.getDiagramElement()).getLocation().getX();
+        int y1 = (int)((InterClass) elementPainter1.getDiagramElement()).getLocation().getY();
+        int x2 = (int)((InterClass) elementPainter2.getDiagramElement()).getLocation().getX();
+        int y2 = (int)((InterClass) elementPainter2.getDiagramElement()).getLocation().getY();
+
+        g.drawLine(x1,y1,x2,y2);*/
+       /* System.out.println(najkraciXPocetni);
+        System.out.println(najkraciYPocetni);
+        System.out.println(najkraciXKrajnji);
+        System.out.println(najkraciYKrajnji);*/
 
         Color transparentColor = new Color(255,0,0,0);
         g.setColor(transparentColor);
@@ -82,6 +96,14 @@ public abstract class ConnectionPainter extends ElementPainter{
     @Override
     public boolean elementAt(Point2D p) {
         return getOblik().contains(p);
+    }
+
+    public void setElementPainter1(ElementPainter elementPainter){
+        this.elementPainter1 = elementPainter;
+
+    }
+    public void setElementPainter2(ElementPainter elementPainter){
+        this.elementPainter2 = elementPainter;
     }
 
     @Override
