@@ -596,3 +596,20 @@
 [INFO] [07.12.2023 13:57] Duplikat ime
 [INFO] [07.12.2023 13:57] Za vezu zavisnosti ne birati radioButton
  U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 14:12] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 14:13] Izaberite jednu od opcija
+[ERROR] [07.12.2023 14:13] Duplikat Ime
+[INFO] [07.12.2023 14:13] Duplikat ime
+[ERROR] [07.12.2023 14:14] Duplikat Ime
+[INFO] [07.12.2023 14:15] Izaberite jednu od opcija
+[INFO] [07.12.2023 14:15] Duplikat ime
+[INFO] [07.12.2023 14:15] Element mora imati ime
+[INFO] [07.12.2023 14:16] Duplikat ime
+[ERROR] [07.12.2023 14:16] Duplikat Ime
+[INFO] [07.12.2023 14:17] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[ERROR] [07.12.2023 14:17] Duplikat Ime
+[INFO] [07.12.2023 14:17] Ne valja format
+[INFO] [07.12.2023 14:18] Ne valja format
+[INFO] [07.12.2023 14:19] Ne valja format
