@@ -10,8 +10,8 @@ public class DuplicateAction extends AbstractClassyAction {
 
     public DuplicateAction() {
         putValue(SMALL_ICON, loadIcon("/images/kantica.png"));
-        putValue(NAME, "Delete Element");
-        putValue(SHORT_DESCRIPTION, "Delete Element");
+        putValue(NAME, "Duplicate element");
+        putValue(SHORT_DESCRIPTION, "Duplicate element");
     }
 
     @Override

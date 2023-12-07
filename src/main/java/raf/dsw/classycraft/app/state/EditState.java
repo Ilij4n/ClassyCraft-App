@@ -35,7 +35,7 @@ public class EditState implements StateInterface{
                 e.isAlwaysOnTop();
 
                 if(nePokazujVisePutaObavestenje){
-                    ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Edit element ne poseduje mogucnost promenu samog tipa elementa",MessageType.INFO);
+                    //ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Edit element ne poseduje mogucnost promenu samog tipa elementa",MessageType.INFO);
                     nePokazujVisePutaObavestenje = false;
                 }
 

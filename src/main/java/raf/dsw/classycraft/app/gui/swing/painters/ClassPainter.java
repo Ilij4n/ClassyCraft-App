@@ -82,7 +82,7 @@ public class ClassPainter extends ElementPainter {
         // Fill boja
         g.setColor(klasa.getColor());
         // Nacrtaj fill
-       // g.fill(oblik);
+        g.fill(oblik);
 
         /*g.drawRect((int)p1.getX(),(int)p1.getY(),20,20);
         g.drawRect((int)p2.getX(),(int)p2.getY(),20,20);

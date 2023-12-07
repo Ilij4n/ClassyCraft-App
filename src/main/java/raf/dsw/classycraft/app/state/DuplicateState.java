@@ -1,9 +1,15 @@
 package raf.dsw.classycraft.app.state;
 
+import raf.dsw.classycraft.app.MessageGenerator.MessageType;
+import raf.dsw.classycraft.app.core.ApplicationFramework;
 import raf.dsw.classycraft.app.core.model.composite.DiagramElement;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Enum;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.InterClass;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Interfejs;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Klasa;
+import raf.dsw.classycraft.app.gui.swing.painters.ClassPainter;
 import raf.dsw.classycraft.app.gui.swing.painters.ElementPainter;
+import raf.dsw.classycraft.app.gui.swing.painters.EnumPainter;
 import raf.dsw.classycraft.app.gui.swing.painters.InterfacePainter;
 import raf.dsw.classycraft.app.gui.swing.tree.ClassyTreeImplementation;
 import raf.dsw.classycraft.app.gui.swing.tree.model.ClassyTreeItem;
@@ -18,19 +24,54 @@ public class DuplicateState implements StateInterface{
     int copyCounter = 1;
     @Override
     public void misKliknut(Point2D p, ClassyDiagramView c) {
-        /*ElementPainter izabraniPainter = null;
+        ElementPainter izabraniPainter = null;
         for(int i = c.getPainters().size() -1 ; i>=0 ; i--){
             ElementPainter painter = c.getPainters().get(i);
-            if(painter.elementAt(p)) izabraniPainter = painter;
+            if(painter.elementAt(p)){
+                izabraniPainter = painter;
+                break;
+            }
         }
         if(izabraniPainter!=null && izabraniPainter.getDiagramElement() instanceof InterClass){
             //TODO nastaviti sutra...
-            DiagramElement model =
+            DiagramElement model = izabraniPainter.getDiagramElement();
 
-            Interfejs interfejs = new Interfejs(c.getDiagram(),,p,);
-            InterfacePainter interfacePainter = new InterfacePainter(interfejs);
-            c.getDiagram().addChild(interfejs);
-            c.getPainters().add(interfacePainter);
+            Point2D oldPoint = ((InterClass)model).getLocation();
+
+            int pointMoveX = 0;
+            int pointMoveY = 0;
+
+
+            Point2D newPoint = new Point2D.Double(oldPoint.getX()+10,oldPoint.getY()+10);
+
+            if(model instanceof Klasa){
+
+                Klasa klasa = new Klasa(c.getDiagram(), model.getName() + "(Copy " + copyCounter + ")",newPoint,((Klasa) model).getContentSet());
+                ClassPainter classPainter = new ClassPainter(klasa);
+
+
+                c.getDiagram().addChild(klasa);
+
+                klasa.addSub(c);
+                c.getPainters().add(classPainter);
+            }
+            else if(model instanceof Interfejs){
+                Interfejs interfejs = new Interfejs(c.getDiagram(), model.getName() + "(Copy " + copyCounter + ")",newPoint,((Interfejs) model).getContentSet());
+                InterfacePainter interfacePainter = new InterfacePainter(interfejs);
+                c.getDiagram().addChild(interfejs);
+                interfejs.addSub(c);
+                c.getPainters().add(interfacePainter);
+            }
+
+            else if(model instanceof Enum){
+                Enum enumncina= new Enum(c.getDiagram(), model.getName() + "(Copy " + copyCounter + ")",newPoint,((Enum) model).getContentSet());
+                EnumPainter enumPainter = new EnumPainter(enumncina);
+                c.getDiagram().addChild(enumncina);
+
+                enumncina.addSub(c);
+                c.getPainters().add(enumPainter);
+            }
+
 
             ClassyTreeImplementation tree = ((ClassyTreeImplementation) MainFrame.getInstance().getClassyTree());
             //Ova metoda pronalazi treenode koji odgovara selectovanom classynodeu i dodaje mu dete tako sto se rekurzivno krece kroz nas JTREE
@@ -39,8 +80,10 @@ public class DuplicateState implements StateInterface{
             MainFrame.getInstance().getClassyTree().addChild(diagramItem,false);
             //samo rasiri sve
             tree.getTreeView().expandPath(new TreePath(diagramItem.getPath()));
-            System.out.println(c.getDiagram().getChildren());
-        }*/
+
+            copyCounter++;
+
+        }
     }
 
     @Override
