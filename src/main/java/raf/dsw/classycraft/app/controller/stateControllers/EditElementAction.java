@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 public class EditElementAction extends AbstractClassyAction {
 
     public EditElementAction() {
-        putValue(SMALL_ICON, loadIcon("/images/kantica.png"));
+        putValue(SMALL_ICON, loadIcon("/images/editovanje.png"));
         putValue(NAME, "Edit Element");
         putValue(SHORT_DESCRIPTION, "Edit Element");
     }

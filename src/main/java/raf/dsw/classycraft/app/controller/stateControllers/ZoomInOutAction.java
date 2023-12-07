@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 public class ZoomInOutAction extends AbstractClassyAction {
 
     public ZoomInOutAction() {
-        putValue(SMALL_ICON, loadIcon("/images/kantica.png"));
+        putValue(SMALL_ICON, loadIcon("/images/zum.png"));
         putValue(NAME, "Zoom in/out");
         putValue(SHORT_DESCRIPTION, "Zoom in/out");
     }

@@ -14,7 +14,7 @@ import java.awt.event.ActionEvent;
 public class AddInterClassAction extends AbstractClassyAction {
 
     public AddInterClassAction() {
-        putValue(SMALL_ICON, loadIcon("/images/kantica.png"));
+        putValue(SMALL_ICON, loadIcon("/images/diagram1.png"));
         putValue(NAME, "Add InterClass");
         putValue(SHORT_DESCRIPTION, "Add InterClass");
     }

@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 public class SelectElementAction extends AbstractClassyAction {
 
     public SelectElementAction() {
-        putValue(SMALL_ICON, loadIcon("/images/kantica.png"));
+        putValue(SMALL_ICON, loadIcon("/images/selekcija.png"));
         putValue(NAME, "Select Element");
         putValue(SHORT_DESCRIPTION, "Select element");
     }

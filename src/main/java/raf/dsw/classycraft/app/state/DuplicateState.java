@@ -33,7 +33,6 @@ public class DuplicateState implements StateInterface{
             }
         }
         if(izabraniPainter!=null && izabraniPainter.getDiagramElement() instanceof InterClass){
-            //TODO nastaviti sutra...
             DiagramElement model = izabraniPainter.getDiagramElement();
 
             Point2D oldPoint = ((InterClass)model).getLocation();
@@ -48,13 +47,6 @@ public class DuplicateState implements StateInterface{
 
                 Klasa klasa = new Klasa(c.getDiagram(), model.getName() + "(Copy " + copyCounter + ")",newPoint,((Klasa) model).getContentSet());
                 ClassPainter classPainter = new ClassPainter(klasa);
-                //TODO logika za dodavanje moze i da se koristi u addElementStateu
-                /*while(){
-                    for (ElementPainter painter : c.getPainters()){
-
-                    }
-                }*/
-
 
                 c.getDiagram().addChild(klasa);
 

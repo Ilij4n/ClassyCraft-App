@@ -636,3 +636,22 @@
  U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
 [ERROR] [07.12.2023 17:24] Duplikat Ime
 [INFO] [07.12.2023 17:24] Ne valja format
+[INFO] [07.12.2023 18:10] Izaberite jednu od opcija
+[INFO] [07.12.2023 18:10] Izaberite jednu od opcija
+[INFO] [07.12.2023 18:10] Element mora imati ime
+[INFO] [07.12.2023 18:10] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
+[INFO] [07.12.2023 18:16] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 18:22] Izaberite jednu od opcija
+[INFO] [07.12.2023 18:23] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 18:23] Ne valja format
+[ERROR] [07.12.2023 18:42] Duplikat Ime
+[INFO] [07.12.2023 18:42] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 18:44] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 18:44] Element mora imati ime
+[INFO] [07.12.2023 18:50] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 18:50] Element mora imati ime

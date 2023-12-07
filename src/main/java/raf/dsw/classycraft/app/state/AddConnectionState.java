@@ -102,7 +102,7 @@ public class AddConnectionState implements StateInterface{
             e.getRadioBtnKlasa().setText("General.");
             e.getRadioBtnInterfejs().setText("Agreg.");
             e.getRadioBtnEnum().setText("Kompo.");
-            e.addPlaceholder("/*Primer inputa*/\n- ime\n1..1\nmoguci kardinaliteti:\n1..1, 1..n\nn..1, n..m\n/*veze generalizacije i zavisnosti\nne cuvaju polja*/",e.getTextAreaElementi());
+            e.addPlaceholder("/*Primer inputa*/\n- ime\n1..1\n/*moguci kardinaliteti:\n1..1, 1..n\nn..1, n..m\nveze generalizacije i zavisnosti\nne cuvaju polja*/",e.getTextAreaElementi());
 
 
             e.setVisible(true);
