@@ -132,7 +132,7 @@ public class ElementCreationView extends JFrame {
             }
         });
 
-        addPlaceholder("/*Napisati input u sledecem formatu*/\nPolja:\nvidljivost Tip imePromenljive\n /*... (ostala polja)*/\nMetode:\n vidljivost Tip ime\n/*... (ostale metode)*/\n ", textAreaElementi);
+        addPlaceholder("/*Napisati input u sledecem formatu*/\nPolja:\nvidljivost Tip imePromenljive\n /*... (ostala polja)*/\nMetode:\nvidljivost Tip ime\n/*... (ostale metode)*/\n ", textAreaElementi);
 
 
         setLocationRelativeTo(null);

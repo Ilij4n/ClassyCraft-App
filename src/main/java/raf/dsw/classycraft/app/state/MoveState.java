@@ -14,8 +14,8 @@ import java.util.List;
 public class MoveState implements StateInterface{
 
     private ElementPainter nabodeniPainter;
-    private List<Point2D> poslednjeTacke = new ArrayList<>();
-    private Point2D poslednjaTacka;
+    private List<Point2D> prvobitneTacke = new ArrayList<>();
+    private Point2D poslednjaDraggedTacka;
 
     @Override
     public void misKliknut(Point2D p, ClassyDiagramView c) {
@@ -45,43 +45,42 @@ public class MoveState implements StateInterface{
                     }
                 }
             }
-
+            System.out.println("usao");
             InterClass element = (InterClass) nabodeniPainter.getDiagramElement();
             element.setLocation(p);
         }
-        else if(!c.getSviselectovani().isEmpty()){
-
+        else if(nabodeniPainter != null && nabodeniPainter.getDiagramElement() instanceof InterClass && !c.getSviselectovani().isEmpty()){
+            //trenutna tacka misa
             int misX = (int)p.getX();
             int misY = (int)p.getY();
-        /*
-            int deltaX = misX - (int)poslednjaTacka.getX();
-            int deltaY = misY - (int)poslednjaTacka.getY();
-                                                            */
-            poslednjaTacka = new Point2D.Double(misX,misY);
+            // delta je razlika pointa izmedju prethodnog i sadasnjeg dragged poziva
+            int deltaX = misX - (int)poslednjaDraggedTacka.getX();
+            int deltaY = misY - (int)poslednjaDraggedTacka.getY();
+
+           // poslednjaTacka = new Point2D.Double(misX,misY);
 
 
             for(ElementPainter painter: c.getSviselectovani()){
-                // TODO ovde ipak mora da se radi ono dx dy ahahah, her se u ovom stanju svi elementi setuju na jednu lokaciju i onda se poredjaju jedan na drugi kad ih movujem
+
                 if(painter.getDiagramElement() instanceof InterClass){
                     InterClass element = (InterClass) painter.getDiagramElement();
-                    Point2D poslednjaTacka1 = poslednjeTacke.get(c.getSviselectovani().indexOf(painter));
+                    Point2D tackaElementa = element.getLocation();
 
-                    int deltaX = misX - (int)poslednjaTacka1.getX();
-                    int deltaY = misY - (int)poslednjaTacka1.getY();
 
-                    Point2D tackaDelta = new Point2D.Double(p.getX() + deltaX, p.getY() + deltaY);
+                    Point2D tackaDelta = new Point2D.Double(tackaElementa.getX() + deltaX, tackaElementa.getY() + deltaY);
                     element.setLocation(tackaDelta);
-                    poslednjeTacke.set(c.getSviselectovani().indexOf(painter), tackaDelta);
+                   // poslednjeTacke.set(c.getSviselectovani().indexOf(painter), tackaDelta);
 
                 }
             }
+            poslednjaDraggedTacka = p;
         }
     }
 
     @Override
     public void misPritisnut(Point2D p, ClassyDiagramView c) {
         nabodeniPainter = null;
-        if(c.getSviselectovani().isEmpty()){
+        int counterKlasa = 0;
             for(int i = c.getPainters().size()-1;i>=0;i--){
                 ElementPainter painter = c.getPainters().get(i);
                 if(painter.elementAt(p)){
@@ -89,22 +88,29 @@ public class MoveState implements StateInterface{
                     break;
                 }
             }
-        }
-        else{
-            poslednjeTacke.clear();
+        if(!c.getSviselectovani().isEmpty()){
+            prvobitneTacke.clear();
             for(ElementPainter painter: c.getSviselectovani()){
-                if(painter.getDiagramElement() instanceof  InterClass)poslednjeTacke.add(((InterClass) painter.getDiagramElement()).getLocation());
+                if(painter.getDiagramElement() instanceof  InterClass){
+                    prvobitneTacke.add(((InterClass) painter.getDiagramElement()).getLocation());
+                    counterKlasa++;
+                }
+                poslednjaDraggedTacka = p;
             }
-            //poslednjaTacka = p;
+            if(counterKlasa == 0){
+                c.getSviselectovani().clear();
+                c.repaint();
+            }
         }
     }
 
     @Override
     public void misOtpusten(Point2D p, ClassyDiagramView c) {
-        if(nabodeniPainter != null && nabodeniPainter.getDiagramElement() instanceof InterClass){
+        if(nabodeniPainter != null && nabodeniPainter.getDiagramElement() instanceof InterClass && c.getSviselectovani().isEmpty()){
             InterClass element = (InterClass) nabodeniPainter.getDiagramElement();
             element.setLocation(p);
         }
+        c.repaint();
     }
 
     @Override
