@@ -13,6 +13,7 @@ import java.awt.geom.Rectangle2D;
 public class SelectionState implements StateInterface{
     @Override
     public void misKliknut(Point2D p, ClassyDiagramView c) {
+
         if (c.getSviselectovani().size() == 1){
             c.getSviselectovani().get(0).setSelected(false);
            // System.out.println("Usoo");
@@ -21,7 +22,11 @@ public class SelectionState implements StateInterface{
             c.getPainters().get(j).setSelected(false);
            // System.out.println("usao");
         }
+
         c.repaint();
+        for(ElementPainter painter: c.getPainters()){
+            painter.setSelected(false);
+        }
         c.getSviselectovani().clear();
         System.out.println("svi selektovani"+ c.getSviselectovani());
         for(int i = c.getPainters().size()-1;i>=0;i--){
@@ -34,6 +39,7 @@ public class SelectionState implements StateInterface{
             }
         }
 
+        c.repaint();
     }
 
     @Override
