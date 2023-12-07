@@ -10,6 +10,7 @@ public class StateManager {
     private DeleteState deleteState;
     private MoveState moveState;
     private EditState editState;
+    private DuplicateState duplicateState;
 
     private StateInterface currentState;
 
@@ -25,6 +26,7 @@ public class StateManager {
         zoomInOutState = new ZoomInOutState();
         moveState = new MoveState();
         editState = new EditState();
+        duplicateState = new DuplicateState();
 
         currentState = selectionState;
     }
@@ -56,5 +58,9 @@ public class StateManager {
 
     public void setZoomInOutState(){
         currentState = zoomInOutState;
+    }
+
+    public void setDuplicateState(){
+        currentState = duplicateState;
     }
 }

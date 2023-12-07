@@ -140,19 +140,22 @@ public class AddConnectionState implements StateInterface{
             //ovde praviti specificne paitnere
             connection = new Generalizacija(c.getDiagram(),e.getTfImeElementa().getText(), (InterClass) elementPainterPocetni.getDiagramElement(),(InterClass) elementPainterKrajnji.getDiagramElement(),"",""); //staviti umesto poljaIMetode null ako ne radi
             connectionPainter = new GeneralizacijaPainter(connection,elementPainterPocetni,elementPainterKrajnji);
-
+            connection.addSub(c);
         }
         else if(e.getRadioBtnInterfejs().isSelected()){
             connection = new Agregacija(c.getDiagram(),e.getTfImeElementa().getText(), (InterClass) elementPainterPocetni.getDiagramElement(),(InterClass) elementPainterKrajnji.getDiagramElement(),kardinalnost,polje); //staviti umesto poljaIMetode null ako ne radi
             connectionPainter = new AgregacijaPainter(connection,elementPainterPocetni,elementPainterKrajnji);
+            connection.addSub(c);
         }
         else if(e.getRadioBtnEnum().isSelected()){
             connection = new Kompozicija(c.getDiagram(),e.getTfImeElementa().getText(), (InterClass) elementPainterPocetni.getDiagramElement(),(InterClass) elementPainterKrajnji.getDiagramElement(),kardinalnost,polje); //staviti umesto poljaIMetode null ako ne radi
             connectionPainter = new KompozicijaPainter(connection,elementPainterPocetni,elementPainterKrajnji);
+            connection.addSub(c);
         }
         else{
             connection = new Zavisnost(c.getDiagram(),e.getTfImeElementa().getText(), (InterClass) elementPainterPocetni.getDiagramElement(),(InterClass) elementPainterKrajnji.getDiagramElement(),"",""); //staviti umesto poljaIMetode null ako ne radi
             connectionPainter = new ZavisnostPainter(connection,elementPainterPocetni,elementPainterKrajnji);
+            connection.addSub(c);
         }
 
         if(!c.getPainters().contains(connectionPainter) && !elementPainterPocetni.equals(elementPainterKrajnji)){

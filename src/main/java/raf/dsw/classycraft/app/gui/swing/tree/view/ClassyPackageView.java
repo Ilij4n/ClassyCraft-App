@@ -80,6 +80,10 @@ public class ClassyPackageView extends JPanel implements ISubscriber {
         stateManager.setEditState();
     }
 
+    public void startDuplicateState(){
+        stateManager.setDuplicateState();
+    }
+
     public void misKliknut(Point2D p,ClassyDiagramView classyDiagramView){
         stateManager.getCurrentState().misKliknut(p,classyDiagramView);
     }

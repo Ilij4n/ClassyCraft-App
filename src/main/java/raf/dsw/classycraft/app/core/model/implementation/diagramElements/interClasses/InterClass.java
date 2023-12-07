@@ -25,4 +25,8 @@ public abstract class InterClass extends DiagramElement {
         //TODO: prosledjivanje liste contenta ce verovatno trebati priv pravljenju samog interklas elementa
         this.contentSet = contentSet;
     }
+    public void setLocation(Point2D location){
+        this.location = location;
+        notifySubs(null);
+    }
 }

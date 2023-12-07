@@ -21,6 +21,7 @@ public class ActionManager {
     private MoveElementAction moveElementAction;
     private SelectElementAction selectElementAction;
     private ZoomInOutAction zoomInOutAction;
+    private DuplicateAction duplicateAction;
 
     public ActionManager() {
         intialise();
@@ -40,6 +41,7 @@ public class ActionManager {
         moveElementAction = new MoveElementAction();
         selectElementAction = new SelectElementAction();
         zoomInOutAction = new ZoomInOutAction();
+        duplicateAction = new DuplicateAction();
     }
 
 }

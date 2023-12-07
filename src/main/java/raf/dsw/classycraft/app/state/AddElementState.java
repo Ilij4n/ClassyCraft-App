@@ -56,6 +56,7 @@ public class AddElementState implements StateInterface{
                 ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Duplikat Ime", MessageType.ERROR);
                 return;
             }
+            klasa.addSub(c);
             c.getPainters().add(classPainter);
         }
         else if(e.getRadioBtnInterfejs().isSelected()){
@@ -66,6 +67,7 @@ public class AddElementState implements StateInterface{
                 ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Duplikat Ime", MessageType.ERROR);
                 return;
             }
+            interfejs.addSub(c);
             c.getPainters().add(interfacePainter);
         }
         else if(e.getRadioBtnEnum().isSelected()){
@@ -76,6 +78,7 @@ public class AddElementState implements StateInterface{
                 ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Duplikat Ime", MessageType.ERROR);
                 return;
             }
+            enumncina.addSub(c);
             c.getPainters().add(enumPainter);
         }
         else{
