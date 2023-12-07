@@ -95,6 +95,13 @@ public class EditState implements StateInterface{
                 //za model
                 diagramElement = (InterClass)diagramElement;
 
+                for(ElementPainter painter: c.getPainters()){
+                    if(painter.getDiagramElement().getName().equals(e.getTfImeElementa().getText()) && painter.getDiagramElement() != diagramElement){
+                        ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Duplikat ime", MessageType.INFO);
+                        return;
+                    }
+                }
+
                 diagramElement.setName(e.getTfImeElementa().getText());
                 ((InterClass) diagramElement).setContentSet(e.getClassContents());
             }

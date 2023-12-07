@@ -571,3 +571,28 @@
 [INFO] [07.12.2023 13:05] Za vezu zavisnosti ne birati radioButton
  U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
 [INFO] [07.12.2023 13:05] Ne valja format
+[INFO] [07.12.2023 13:28] Izaberite jednu od opcija
+[INFO] [07.12.2023 13:28] Duplikat ime
+[INFO] [07.12.2023 13:29] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.12.2023 13:29] Duplikat ime
+[INFO] [07.12.2023 13:30] Ne valja format
+[INFO] [07.12.2023 13:31] Izaberite jednu od opcija
+[INFO] [07.12.2023 13:31] Duplikat ime
+[INFO] [07.12.2023 13:32] Duplikat ime
+[ERROR] [07.12.2023 13:35] Duplikat Ime
+[INFO] [07.12.2023 13:38] Duplikat ime
+[ERROR] [07.12.2023 13:44] Duplikat Ime
+[INFO] [07.12.2023 13:44] Izaberite jednu od opcija
+[INFO] [07.12.2023 13:45] Duplikat ime
+[INFO] [07.12.2023 13:45] Duplikat ime
+[INFO] [07.12.2023 13:45] Duplikat ime
+[INFO] [07.12.2023 13:47] Izaberite jednu od opcija
+[INFO] [07.12.2023 13:47] Izaberite jednu od opcija
+[INFO] [07.12.2023 13:48] Duplikat ime
+[INFO] [07.12.2023 13:56] Izaberite jednu od opcija
+[INFO] [07.12.2023 13:56] Duplikat ime
+[INFO] [07.12.2023 13:57] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
+[INFO] [07.12.2023 13:57] Duplikat ime
+[INFO] [07.12.2023 13:57] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
