@@ -76,7 +76,7 @@ public class AddConnectionState implements StateInterface{
         if(elementPainterPocetni==elementPainterKrajnji){
             moze = false;
         }
-        if(!(elementPainterPocetni.getDiagramElement() instanceof InterClass && elementPainterKrajnji.getDiagramElement() instanceof  InterClass))moze = false;
+        if(elementPainterPocetni!=null && elementPainterKrajnji!=null&&!(elementPainterPocetni.getDiagramElement() instanceof InterClass && elementPainterKrajnji.getDiagramElement() instanceof  InterClass))moze = false;
 
         for(ElementPainter painter : c.getPainters()){
             if(painter instanceof ConnectionPainter){
