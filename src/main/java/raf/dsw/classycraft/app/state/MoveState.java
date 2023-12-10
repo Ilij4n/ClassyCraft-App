@@ -45,7 +45,7 @@ public class MoveState implements StateInterface{
                     }
                 }
             }
-            System.out.println("usao");
+            //System.out.println("usao");
             InterClass element = (InterClass) nabodeniPainter.getDiagramElement();
             element.setLocation(p);
         }
