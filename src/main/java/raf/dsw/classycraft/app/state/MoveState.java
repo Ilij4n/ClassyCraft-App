@@ -19,7 +19,7 @@ public class MoveState implements StateInterface{
 
     @Override
     public void misKliknut(Point2D p, ClassyDiagramView c) {
-        System.out.println(c.getDiagram().getName());
+        //System.out.println(c.getDiagram().getName());
     }
 
     @Override
