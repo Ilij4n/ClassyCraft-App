@@ -49,10 +49,12 @@ public class AddConnectionState implements StateInterface{
         moze = false;
         for(int i =c.getPainters().size()-1;i>=0;i--){
             if(c.getPainters().get(i).elementAt(c.getPrvaTacka())){
-                c.getLinija().setLine(p,p);
-                moze = true;
-                c.repaint();
-                elementPainterPocetni = c.getPainters().get(i);
+                if(c.getPainters().get(i).getDiagramElement() instanceof InterClass){
+                    c.getLinija().setLine(p,p);
+                    moze = true;
+                    c.repaint();
+                    elementPainterPocetni = c.getPainters().get(i);
+                }
             }
         }
     }
@@ -74,6 +76,7 @@ public class AddConnectionState implements StateInterface{
         if(elementPainterPocetni==elementPainterKrajnji){
             moze = false;
         }
+        if(!(elementPainterPocetni.getDiagramElement() instanceof InterClass && elementPainterKrajnji.getDiagramElement() instanceof  InterClass))moze = false;
 
         for(ElementPainter painter : c.getPainters()){
             if(painter instanceof ConnectionPainter){
