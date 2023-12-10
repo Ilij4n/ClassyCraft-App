@@ -235,7 +235,7 @@ public class ElementCreationView extends JFrame {
         vrednostiKardinaliteta.add("1..1");
         vrednostiKardinaliteta.add("1..n");
         vrednostiKardinaliteta.add("n..1");
-        vrednostiKardinaliteta.add("m..n");
+        vrednostiKardinaliteta.add("n..m");
 
         if(!radioBtnInterfejs.isSelected() && !radioBtnEnum.isSelected()){
             idemooo.add("");

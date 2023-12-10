@@ -52,6 +52,7 @@ public class AddConnectionState implements StateInterface{
                 c.getLinija().setLine(p,p);
                 moze = true;
                 c.repaint();
+                elementPainterPocetni = c.getPainters().get(i);
             }
         }
     }
@@ -68,10 +69,25 @@ public class AddConnectionState implements StateInterface{
                 break;
             }
         }
-        if(elementPainterPocetni==elementPainterKrajnji)moze = false;
+
+
+        if(elementPainterPocetni==elementPainterKrajnji){
+            moze = false;
+        }
+
+        for(ElementPainter painter : c.getPainters()){
+            if(painter instanceof ConnectionPainter){
+                ElementPainter painter1 = ((ConnectionPainter) painter).getElementPainter1();
+                ElementPainter painter2 = ((ConnectionPainter) painter).getElementPainter2();
+                if(elementPainterPocetni == painter1 && elementPainterKrajnji == painter2 || elementPainterKrajnji == painter1 && elementPainterPocetni == painter2){
+                    c.setLinija(new Line2D.Double());
+                    c.repaint();
+                    return;
+                }
+            }
+        }
 
         if (moze) {
-
             for (int i = c.getPainters().size() - 1; i >= 0; i--) {
                 if (c.getPainters().get(i).elementAt(c.getPrvaTacka())) {
                     elementPainterPocetni = c.getPainters().get(i);
@@ -81,17 +97,6 @@ public class AddConnectionState implements StateInterface{
             if(elementPainterPocetni==null||elementPainterKrajnji==null)return;
             if(ElementCreationView.pokazanSam())return;
 
-            for(ElementPainter painter : c.getPainters()){
-                if(painter instanceof ConnectionPainter){
-                    ElementPainter painter1 = ((ConnectionPainter) painter).getElementPainter1();
-                    ElementPainter painter2 = ((ConnectionPainter) painter).getElementPainter2();
-                    if(elementPainterPocetni.equals(painter1) && elementPainterKrajnji.equals(painter2) || elementPainterKrajnji.equals(painter1) && elementPainterKrajnji.equals(painter2)){
-                        c.setLinija(new Line2D.Double());
-                        c.repaint();
-                        return;
-                    }
-                }
-            }
 
             if(nePokazujVisePutaObavestenje){
                 ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Za vezu zavisnosti ne birati radioButton\n U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod",MessageType.INFO);
@@ -103,7 +108,6 @@ public class AddConnectionState implements StateInterface{
             e.getRadioBtnInterfejs().setText("Agreg.");
             e.getRadioBtnEnum().setText("Kompo.");
             e.addPlaceholder("/*Primer inputa*/\n- ime\n1..1\n/*moguci kardinaliteti:\n1..1, 1..n\nn..1, n..m\nveze generalizacije i zavisnosti\nne cuvaju polja*/",e.getTextAreaElementi());
-
 
             e.setVisible(true);
         }

@@ -8,6 +8,7 @@ import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interCl
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Interfejs;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Klasa;
 import raf.dsw.classycraft.app.gui.swing.painters.ClassPainter;
+import raf.dsw.classycraft.app.gui.swing.painters.ElementPainter;
 import raf.dsw.classycraft.app.gui.swing.painters.EnumPainter;
 import raf.dsw.classycraft.app.gui.swing.painters.InterfacePainter;
 import raf.dsw.classycraft.app.gui.swing.tree.ClassyTreeImplementation;
@@ -20,12 +21,22 @@ import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
 import javax.swing.tree.TreePath;
 import java.awt.*;
 import java.awt.geom.Point2D;
+import java.awt.geom.Rectangle2D;
 
 public class AddElementState implements StateInterface{
     @Override
     public void misKliknut(Point2D p, ClassyDiagramView c) {
         System.out.println(getClass().getSimpleName());
         // da ne bi moglo vise prozora da se otvori
+        Rectangle2D rect = new Rectangle2D.Double(p.getX(),p.getY(), 100, 150);
+        for(ElementPainter painter : c.getPainters()){
+            if(rect.intersects(painter.getOblik())){
+                ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Poklapaju se", MessageType.INFO);
+                return;
+            }
+        }
+
+
         if(ElementCreationView.pokazanSam())return;
         ElementCreationView e = new ElementCreationView(c,p);
         e.setVisible(true);
