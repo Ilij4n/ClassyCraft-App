@@ -723,3 +723,11 @@
  U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
 [INFO] [12.12.2023 11:57] Za vezu zavisnosti ne birati radioButton
  U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [12.12.2023 13:09] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[ERROR] [12.12.2023 13:09] Duplikat Ime
+[INFO] [12.12.2023 13:12] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [12.12.2023 13:15] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [12.12.2023 13:15] Element mora imati ime

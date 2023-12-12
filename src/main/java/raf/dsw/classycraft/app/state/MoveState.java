@@ -29,6 +29,7 @@ public class MoveState implements StateInterface{
 
     @Override
     public void misPovucen(Point2D p, ClassyDiagramView c) {
+        p.setLocation(p.getX()/c.getScale(),p.getY()/c.getScale());
         if(nabodeniPainter != null && nabodeniPainter.getDiagramElement() instanceof InterClass && c.getSviselectovani().isEmpty()){
 
             for(ElementPainter painter : c.getPainters()){
@@ -79,6 +80,7 @@ public class MoveState implements StateInterface{
 
     @Override
     public void misPritisnut(Point2D p, ClassyDiagramView c) {
+        p.setLocation(p.getX()/c.getScale(),p.getY()/c.getScale());
         nabodeniPainter = null;
         int counterKlasa = 0;
             for(int i = c.getPainters().size()-1;i>=0;i--){
@@ -106,6 +108,7 @@ public class MoveState implements StateInterface{
 
     @Override
     public void misOtpusten(Point2D p, ClassyDiagramView c) {
+        p.setLocation(p.getX()/c.getScale(),p.getY()/c.getScale());
         if(nabodeniPainter != null && nabodeniPainter.getDiagramElement() instanceof InterClass && c.getSviselectovani().isEmpty()){
             InterClass element = (InterClass) nabodeniPainter.getDiagramElement();
             element.setLocation(p);

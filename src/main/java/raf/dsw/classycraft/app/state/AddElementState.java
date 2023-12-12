@@ -26,6 +26,7 @@ import java.awt.geom.Rectangle2D;
 public class AddElementState implements StateInterface{
     @Override
     public void misKliknut(Point2D p, ClassyDiagramView c) {
+        p.setLocation(p.getX()/c.getScale(),p.getY()/c.getScale());
         System.out.println(getClass().getSimpleName());
         // da ne bi moglo vise prozora da se otvori
         Rectangle2D rect = new Rectangle2D.Double(p.getX(),p.getY(), 100, 150);

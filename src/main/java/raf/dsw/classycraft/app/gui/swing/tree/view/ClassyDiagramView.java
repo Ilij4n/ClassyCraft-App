@@ -18,6 +18,7 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.geom.AffineTransform;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
@@ -41,6 +42,8 @@ public class ClassyDiagramView extends JPanel implements ISubscriber{
     private Point2D prvaTacka;
     private Line2D linija;
 
+    private double scale = 1.0;
+
     public ClassyDiagramView(Diagram d){
         diagram = d;
         this.name = diagram.getName();
@@ -60,6 +63,9 @@ public class ClassyDiagramView extends JPanel implements ISubscriber{
         //TODO: nije dovrseno
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
+        AffineTransform af = new AffineTransform();
+        af.setToScale(scale,scale);
+        g2.setTransform(af);
         for(ElementPainter e : painters){
             e.draw(g2);
         }

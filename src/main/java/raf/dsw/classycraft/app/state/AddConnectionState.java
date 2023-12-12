@@ -36,6 +36,7 @@ public class AddConnectionState implements StateInterface{
 
     @Override
     public void misPovucen(Point2D p, ClassyDiagramView c) {
+        p.setLocation(p.getX()/c.getScale(),p.getY()/c.getScale());
         if(moze){
             c.getLinija().setLine(c.getPrvaTacka(),p);
             //System.out.println("vuci1");
@@ -45,6 +46,7 @@ public class AddConnectionState implements StateInterface{
 
     @Override
     public void misPritisnut(Point2D p, ClassyDiagramView c) {
+        p.setLocation(p.getX()/c.getScale(),p.getY()/c.getScale());
         c.setPrvaTacka(p);
         moze = false;
         for(int i =c.getPainters().size()-1;i>=0;i--){
@@ -61,6 +63,7 @@ public class AddConnectionState implements StateInterface{
 
     @Override
     public void misOtpusten(Point2D p, ClassyDiagramView c) {
+        p.setLocation(p.getX()/c.getScale(),p.getY()/c.getScale());
         moze = false;
 
 
