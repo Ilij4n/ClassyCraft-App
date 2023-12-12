@@ -68,8 +68,11 @@ public class ClassyPackageView extends JPanel implements ISubscriber {
         stateManager.setMoveState();
     }
 
-    public void startZoomInOutState(){
-        stateManager.setZoomInOutState();
+    public void startZoomInState(){
+        stateManager.setZoomInState();
+    }
+    public void startZoomOutState(){
+        stateManager.setZoomOutState();
     }
 
     public void startSelectionState(){

@@ -5,7 +5,7 @@ import raf.dsw.classycraft.app.gui.swing.view.ElementCreationView;
 
 import java.awt.geom.Point2D;
 
-public class ZoomInOutState implements StateInterface{
+public class ZoomOutState implements StateInterface{
     @Override
     public void misKliknut(Point2D p, ClassyDiagramView c) {
 
@@ -37,11 +37,7 @@ public class ZoomInOutState implements StateInterface{
     }
 
     @Override
-    public void misSkrolovan(Point2D p,ClassyDiagramView c) {
+    public void misSkrolovan(Point2D p, ClassyDiagramView c) {
 
     }
-
-
-
-
 }

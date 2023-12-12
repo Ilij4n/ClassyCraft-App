@@ -19,7 +19,9 @@ public class PackageViewToolbar extends JToolBar {
         add(Box.createVerticalStrut(10));
         add(MainFrame.getInstance().getActionManager().getMoveElementAction());
         add(Box.createVerticalStrut(10));
-        add(MainFrame.getInstance().getActionManager().getZoomInOutAction());
+        add(MainFrame.getInstance().getActionManager().getZoomInAction());
+        add(Box.createVerticalStrut(10));
+        add(MainFrame.getInstance().getActionManager().getZoomOutAction());
         add(Box.createVerticalStrut(10));
         add(MainFrame.getInstance().getActionManager().getEditElementAction());
         add(Box.createVerticalStrut(10));

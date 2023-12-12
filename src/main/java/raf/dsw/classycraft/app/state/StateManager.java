@@ -1,12 +1,11 @@
 package raf.dsw.classycraft.app.state;
 
-import javax.swing.plaf.nimbus.State;
-
 public class StateManager {
     private AddElementState addElementState;
     private AddConnectionState addConnectionState;
     private SelectionState selectionState;
-    private ZoomInOutState zoomInOutState;
+    private ZoomInState zoomInState;
+    private ZoomOutState zoomOutState;
     private DeleteState deleteState;
     private MoveState moveState;
     private EditState editState;
@@ -23,7 +22,8 @@ public class StateManager {
         addConnectionState = new AddConnectionState();
         selectionState =  new SelectionState();
         deleteState = new DeleteState();
-        zoomInOutState = new ZoomInOutState();
+        zoomInState = new ZoomInState();
+        zoomOutState = new ZoomOutState();
         moveState = new MoveState();
         editState = new EditState();
         duplicateState = new DuplicateState();
@@ -56,8 +56,11 @@ public class StateManager {
         currentState = moveState;
     }
 
-    public void setZoomInOutState(){
-        currentState = zoomInOutState;
+    public void setZoomInState(){
+        currentState = zoomInState;
+    }
+    public void setZoomOutState(){
+        currentState = zoomOutState;
     }
 
     public void setDuplicateState(){

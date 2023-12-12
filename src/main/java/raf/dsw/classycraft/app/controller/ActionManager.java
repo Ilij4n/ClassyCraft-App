@@ -20,7 +20,8 @@ public class ActionManager {
     private EditElementAction editElementAction;
     private MoveElementAction moveElementAction;
     private SelectElementAction selectElementAction;
-    private ZoomInOutAction zoomInOutAction;
+    private ZoomInAction zoomInAction;
+    private ZoomOutAction zoomOutAction;
     private DuplicateAction duplicateAction;
 
     public ActionManager() {
@@ -40,7 +41,8 @@ public class ActionManager {
         editElementAction = new EditElementAction();
         moveElementAction = new MoveElementAction();
         selectElementAction = new SelectElementAction();
-        zoomInOutAction = new ZoomInOutAction();
+        zoomInAction = new ZoomInAction();
+        zoomOutAction = new ZoomOutAction();
         duplicateAction = new DuplicateAction();
     }
 
