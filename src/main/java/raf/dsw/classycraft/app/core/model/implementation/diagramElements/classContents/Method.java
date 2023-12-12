@@ -12,6 +12,6 @@ public class Method extends ClassContent{
 
     @Override
     public String toString(){
-        return super.toString()+"()";
+        return super.toString();
     }
 }

@@ -104,6 +104,8 @@ public class ClassPainter extends ElementPainter {
         int classNameY = (int) oblik.getY() + textHeight;
         g.drawString(klasa.getName(), classNameX, classNameY);
 
+        g.drawLine((int)oblik.getX(), (int)oblik.getY()+textHeight+5, (int)(oblik.getX()+oblik.getWidth()), (int)oblik.getY()+textHeight+5);
+
         //ispis svega unutar
 
         textHeight+= 5;

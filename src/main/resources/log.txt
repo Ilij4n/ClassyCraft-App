@@ -655,3 +655,69 @@
 [INFO] [07.12.2023 18:50] Za vezu zavisnosti ne birati radioButton
  U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
 [INFO] [07.12.2023 18:50] Element mora imati ime
+[INFO] [10.12.2023 16:33] Izaberite jednu od opcija
+[INFO] [10.12.2023 16:33] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [10.12.2023 16:34] Izaberite jednu od opcija
+[INFO] [10.12.2023 16:40] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [10.12.2023 16:41] Poklapaju se
+[INFO] [10.12.2023 16:41] Izaberite jednu od opcija
+[ERROR] [10.12.2023 16:41] Duplikat Ime
+[INFO] [10.12.2023 16:43] Duplikat ime
+[INFO] [10.12.2023 16:43] Duplikat ime
+[INFO] [10.12.2023 16:47] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[ERROR] [10.12.2023 16:48] Duplikat Ime
+[ERROR] [10.12.2023 16:48] Duplikat Ime
+[INFO] [10.12.2023 16:48] Izaberite jednu od opcija
+[INFO] [10.12.2023 16:52] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [10.12.2023 16:59] Izaberite jednu od opcija
+[ERROR] [10.12.2023 16:59] Duplikat Ime
+[INFO] [10.12.2023 16:59] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [10.12.2023 17:04] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[ERROR] [10.12.2023 17:04] Duplikat Ime
+[INFO] [10.12.2023 17:09] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
+[INFO] [10.12.2023 19:29] Poklapaju se
+[INFO] [10.12.2023 19:30] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [10.12.2023 19:37] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [10.12.2023 19:39] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [10.12.2023 22:23] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
+[INFO] [11.12.2023 13:07] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[ERROR] [11.12.2023 13:09] Duplikat Ime
+[INFO] [11.12.2023 13:09] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [11.12.2023 13:10] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
+[INFO] [11.12.2023 13:11] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
+[INFO] [11.12.2023 17:58] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [11.12.2023 18:00] Ne valja format
+[INFO] [11.12.2023 19:13] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
+[INFO] [11.12.2023 19:13] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
+[INFO] [11.12.2023 19:13] Format unosa nije ispravan, koristite razmak izmedju vrednosti metode i polja
+[INFO] [11.12.2023 19:14] Poklapaju se
+[INFO] [11.12.2023 20:17] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [11.12.2023 20:18] Poklapaju se
+[INFO] [11.12.2023 20:18] Poklapaju se
+[INFO] [11.12.2023 20:19] Ne valja format
+[INFO] [11.12.2023 20:20] Izaberite jednu od opcija
+[INFO] [11.12.2023 20:21] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[ERROR] [11.12.2023 20:21] Explorer se ne brise ! 
+[INFO] [12.12.2023 10:01] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [12.12.2023 10:01] Poklapaju se
+[INFO] [12.12.2023 10:02] Duplikat ime
+[INFO] [12.12.2023 10:04] Duplikat ime
+[INFO] [12.12.2023 10:05] Ne valja format
+[INFO] [12.12.2023 10:06] Ne valja format
+[INFO] [12.12.2023 11:31] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod

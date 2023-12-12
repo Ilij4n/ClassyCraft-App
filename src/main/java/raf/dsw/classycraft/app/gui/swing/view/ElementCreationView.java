@@ -163,8 +163,10 @@ public class ElementCreationView extends JFrame {
                 flag2 = true;
             }
             System.out.println("Usao u edit");
-            if(flag2)builder.append(content.toString().replace("()",""));
-            else builder.append(content.toString());
+
+            /*if(flag2)builder.append(content.toString().replace("()",""));
+            else builder.append(content.toString());*/
+            builder.append(content.getVidljivost()).append(" ").append(content.getTip()).append(" ").append(content.getName());
 
             builder.append("\n");
         }

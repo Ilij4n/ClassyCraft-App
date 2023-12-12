@@ -88,6 +88,8 @@ public class InterfacePainter extends ElementPainter {
         int classNameY = (int) oblik.getY() + textHeight;
         g.drawString(interfejs.getName(), classNameX, classNameY);
 
+        g.drawLine((int)oblik.getX(), (int)oblik.getY()+textHeight+5, (int)(oblik.getX()+oblik.getWidth()), (int)oblik.getY()+textHeight+5);
+
         textHeight+= 5;
         for(ClassContent c: interfejs.getContentSet()){
             textHeight+= fontMetrics.getHeight();

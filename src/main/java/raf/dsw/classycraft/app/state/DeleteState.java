@@ -59,9 +59,12 @@ public class DeleteState implements StateInterface{
                 //Ova metoda pronalazi treenode koji odgovara selectovanom dijagramu i dodaje mu dete tako sto se rekurzivno krece kroz nas JTREE
                 ClassyTreeItem diagramItem = tree.dfsSearch((ClassyTreeItem) tree.getTreeModel().getRoot(),painter.getDiagramElement());
                 //ovo je samo za dodavanje u jtree, u modelu je vec dodat
-                MainFrame.getInstance().getClassyTree().deleteChild(diagramItem);
-                //samo rasiri sve
-                tree.getTreeView().expandPath(new TreePath(diagramItem.getPath()));
+                if(diagramItem != null){
+                    MainFrame.getInstance().getClassyTree().deleteChild(diagramItem);
+                    //samo rasiri sve
+                    tree.getTreeView().expandPath(new TreePath(diagramItem.getPath()));
+                }
+
 
                 c.getPainters().remove(painter);
                 break;

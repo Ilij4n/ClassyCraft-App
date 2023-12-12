@@ -36,7 +36,7 @@ public class ClassyTreeImplementation implements ClassyTree {
 
     public  ClassyTreeItem dfsSearch(ClassyTreeItem root, Object targetModel) {
         // Base case, ako root sadrzi model koji trazimo vrati ga
-        if (root.getClassyNode().equals(targetModel)) {
+        if (root.getClassyNode() == targetModel) {
             return root;
         }
 

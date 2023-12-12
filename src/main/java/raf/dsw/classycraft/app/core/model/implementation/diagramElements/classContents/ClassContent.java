@@ -18,8 +18,16 @@ public abstract class ClassContent {
         this.tip = tip;
     }
 
+    private String prvoVeliko(String str) {
+        if (str == null || str.isEmpty()) {
+            return str;
+        }
+        return str.substring(0, 1).toUpperCase() + str.substring(1);
+    }
+
     @Override
     public String toString() {
-        return vidljivost +" "+ tip + " " + name;
+        if(this instanceof Method) return vidljivost +" "+ name +"()" + " : " + prvoVeliko(tip);
+        return vidljivost +" "+ name + " : " + prvoVeliko(tip);
     }
 }

@@ -91,6 +91,8 @@ public class EnumPainter extends ElementPainter {
         int classNameY = (int) oblik.getY() + textHeight;
         g.drawString(anEnum.getName(), classNameX, classNameY);
 
+        g.drawLine((int)oblik.getX(), (int)oblik.getY()+textHeight+5, (int)(oblik.getX()+oblik.getWidth()), (int)oblik.getY()+textHeight+5);
+
         textHeight+= 5;
         for(ClassContent c: anEnum.getContentSet()){
             textHeight+= fontMetrics.getHeight();
