@@ -65,7 +65,6 @@ public class ClassyDiagramView extends JPanel implements ISubscriber{
 
     @Override
     protected void paintComponent(Graphics g) {
-        //TODO: nije dovrseno
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
         AffineTransform af = new AffineTransform();

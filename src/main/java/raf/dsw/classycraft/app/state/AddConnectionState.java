@@ -132,7 +132,6 @@ public class AddConnectionState implements StateInterface{
         Connection connection = null;
         ConnectionPainter connectionPainter = null;
 
-        //todo nastaviti sa parsovanjem podataka i napraviti editState za konekcije
         System.out.println(e.parsujUVezu());
         String polje = "";
         String kardinalnost = "";

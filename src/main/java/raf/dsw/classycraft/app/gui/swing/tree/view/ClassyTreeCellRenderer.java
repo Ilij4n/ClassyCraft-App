@@ -17,7 +17,6 @@ public class ClassyTreeCellRenderer extends DefaultTreeCellRenderer {
 
         super.getTreeCellRendererComponent(tree, value, sel,expanded, leaf, row, hasFocus);
         URL imageURL = null;
-        //TODO ovde naci neke *jezivo* cool ikonice
         if (((ClassyTreeItem)value).getClassyNode() instanceof ProjectExplorer) {
             imageURL = getClass().getResource("/images/projectExplorer.png");
         }

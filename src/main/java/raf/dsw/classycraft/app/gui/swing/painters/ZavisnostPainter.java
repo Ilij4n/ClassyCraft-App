@@ -44,7 +44,7 @@ public class ZavisnostPainter extends ConnectionPainter{
         g.setColor(Color.black);
 
         float[] tackice = {5.0f};
-        BasicStroke bs = new BasicStroke(3.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER, 10.0f, tackice, 0.0f);
+        BasicStroke bs = new BasicStroke(3.0f, BasicStroke.CAP_SQUARE, BasicStroke.JOIN_MITER, 10.0f, tackice, 0.0f);
         g.setStroke(bs);
 
         if(isSelected()){

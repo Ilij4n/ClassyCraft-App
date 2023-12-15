@@ -96,7 +96,7 @@ public class AddElementState implements StateInterface{
         else{
 
         }
-        //TODO ovo mozda radi napisacu DFS staticku metodu (za prolazak kroz celo stablo) u ClassyTreeimpu koja ce proci kroz bukvalno celo stablo i vratiti mi instancu dijagrama koji je aktivan hahahahah
+        //dfs
         ClassyTreeImplementation tree = ((ClassyTreeImplementation)MainFrame.getInstance().getClassyTree());
         //Ova metoda pronalazi treenode koji odgovara selectovanom classynodeu i dodaje mu dete tako sto se rekurzivno krece kroz nas JTREE
         ClassyTreeItem diagramItem = tree.dfsSearch((ClassyTreeItem) tree.getTreeModel().getRoot(),c.getDiagram());

@@ -22,7 +22,6 @@ public abstract class InterClass extends DiagramElement {
     public InterClass(ClassyNode parent, String name, Color paint, Integer stroke, Point2D location, Set<ClassContent>contentSet) {
         super(parent, name, paint, stroke);
         this.location = location;
-        //TODO: prosledjivanje liste contenta ce verovatno trebati priv pravljenju samog interklas elementa
         this.contentSet = contentSet;
     }
     public void setLocation(Point2D location){

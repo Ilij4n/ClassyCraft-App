@@ -828,3 +828,33 @@
  U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
 [INFO] [15.12.2023 21:43] Izaberite jednu od opcija
 [ERROR] [15.12.2023 21:43] Duplikat Ime
+[INFO] [15.12.2023 22:45] Izaberite jednu od opcija
+[INFO] [15.12.2023 22:46] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [15.12.2023 22:47] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [15.12.2023 22:48] Duplikat ime
+[INFO] [15.12.2023 22:48] Poklapaju se
+[INFO] [15.12.2023 22:48] Poklapaju se
+[INFO] [15.12.2023 22:50] Ne valja format
+[INFO] [15.12.2023 22:51] Ne valja format
+[INFO] [15.12.2023 22:54] Poklapaju se
+[INFO] [15.12.2023 22:54] Poklapaju se
+[INFO] [15.12.2023 22:54] Poklapaju se
+[INFO] [15.12.2023 22:55] Ne valja format
+[INFO] [15.12.2023 22:56] Izaberite jednu od opcija
+[INFO] [15.12.2023 22:56] Element mora imati ime
+[INFO] [15.12.2023 22:59] Izaberite jednu od opcija
+[INFO] [15.12.2023 22:59] Izaberite jednu od opcija
+[INFO] [15.12.2023 23:02] Izaberite jednu od opcija
+[INFO] [15.12.2023 23:07] Dodajte na dijagram preko menija levo
+[INFO] [15.12.2023 23:07] Izaberite jednu od opcija
+[INFO] [15.12.2023 23:10] Izaberite jednu od opcija
+[INFO] [15.12.2023 23:11] Poklapaju se
+[INFO] [15.12.2023 23:11] Izaberite jednu od opcija
+[INFO] [15.12.2023 23:12] Izaberite jednu od opcija
+[INFO] [15.12.2023 23:12] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[ERROR] [15.12.2023 23:12] Duplikat Ime
+[INFO] [15.12.2023 23:12] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
