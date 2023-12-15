@@ -13,7 +13,7 @@ import java.awt.geom.Rectangle2D;
 public class SelectionState implements StateInterface{
     @Override
     public void misKliknut(Point2D p, ClassyDiagramView c) {
-
+        p.setLocation(p.getX()/c.getScale(),p.getY()/c.getScale());
         if (c.getSviselectovani().size() == 1){
             c.getSviselectovani().get(0).setSelected(false);
            // System.out.println("Usoo");
@@ -49,10 +49,10 @@ public class SelectionState implements StateInterface{
 
     @Override
     public void misPovucen(Point2D p, ClassyDiagramView c) {
-        int x = Math.min((int)c.getPrvaTacka().getX(),(int)p.getX());
-        int y = Math.min((int)c.getPrvaTacka().getY(),(int)p.getY());
-        int w = Math.abs((int)p.getX()-(int)c.getPrvaTacka().getX());
-        int h = Math.abs((int)p.getY()-(int)c.getPrvaTacka().getY());
+        int x = (int)(Math.min((int)c.getPrvaTacka().getX(),(int)p.getX())/c.getScale());
+        int y = (int)(Math.min((int)c.getPrvaTacka().getY(),(int)p.getY())/c.getScale());
+        int w = (int)(Math.abs((int)p.getX()-(int)c.getPrvaTacka().getX())/c.getScale());
+        int h = (int) (Math.abs((int)p.getY()-(int)c.getPrvaTacka().getY())/c.getScale());
         c.setLaso(new Rectangle2D.Double(x,y,w,h));
         for(ElementPainter painter: c.getPainters()){
             if(c.getLaso().intersects(painter.getOblik()) && !(c.getSviselectovani().contains(painter))){
@@ -72,13 +72,13 @@ public class SelectionState implements StateInterface{
 
     @Override
     public void misPritisnut(Point2D p, ClassyDiagramView c) {
+        p.setLocation(p.getX()/c.getScale(),p.getY()/c.getScale());
         c.setPrvaTacka(p);
         for(int i =c.getPainters().size()-1;i>=0;i--){
             if(c.getPainters().get(i).elementAt(c.getPrvaTacka())){
                 c.getLaso().setRect(c.getPrvaTacka().getX(), c.getPrvaTacka().getY(),0,0);
                 c.repaint();
             }
-
         }
 
     }

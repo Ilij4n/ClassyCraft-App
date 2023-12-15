@@ -48,6 +48,7 @@ public abstract class ConnectionPainter extends ElementPainter{
                 double yKrajnji  = elementPainter2.getListOfPoints().get(j).getY();
 
                 double d = Math.sqrt(Math.pow(xKrajnji-xPocetni,2)+Math.pow(yKrajnji-yPocetni,2));
+
                 if(d<najkraci){
                     najkraci = d;
                     najkraciXPocetni = xPocetni;
@@ -58,6 +59,7 @@ public abstract class ConnectionPainter extends ElementPainter{
 
             }
         }
+
         //TODO: umesto ove linije zezati se sa zapravo iscrtavanjem
         g.setColor(veza.getColor());
         g.setStroke(new BasicStroke(2));

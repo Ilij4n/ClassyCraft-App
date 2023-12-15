@@ -142,8 +142,8 @@ public class ClassyPackageView extends JPanel implements ISubscriber {
         } else if (o instanceof Package) {//ovo nicemu ne sluzi
             getLblProjectName().setText("Project: " + ((Package) o).projectName());
             getLblAuthorname().setText("Author: " + ((Package) o).authorName());
-        } else if(o instanceof ClassyDiagramView){
-            this.getjTabbedPane().add((JPanel)o);
+        } else if(o instanceof JPanel){
+            this.getjTabbedPane().add((JPanel) o);
         }else if(o instanceof ClassyPackageView){
             MainFrame.getInstance().getSplitPane().setRightComponent(new JPanel());
         }

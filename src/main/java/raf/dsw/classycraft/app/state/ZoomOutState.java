@@ -8,7 +8,11 @@ import java.awt.geom.Point2D;
 public class ZoomOutState implements StateInterface{
     @Override
     public void misKliknut(Point2D p, ClassyDiagramView c) {
-
+        c.setScale(c.getScale()-0.1);
+        if(c.getScale()<0.5){
+            c.setScale(0.5);
+        }
+        c.repaint();
     }
 
     @Override

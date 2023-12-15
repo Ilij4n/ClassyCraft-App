@@ -23,6 +23,7 @@ public class EditState implements StateInterface{
 
     @Override
     public void misKliknut(Point2D p, ClassyDiagramView c) {
+        p.setLocation(p.getX()/c.getScale(),p.getY()/c.getScale());
         //System.out.println(getClass().getSimpleName());
         // da ne bi moglo vise prozora da se otvori
         if(ElementCreationView.pokazanSam())return;

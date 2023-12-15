@@ -24,6 +24,7 @@ public class DuplicateState implements StateInterface{
     int copyCounter = 1;
     @Override
     public void misKliknut(Point2D p, ClassyDiagramView c) {
+        p.setLocation(p.getX()/c.getScale(),p.getY()/c.getScale());
         ElementPainter izabraniPainter = null;
         for(int i = c.getPainters().size() -1 ; i>=0 ; i--){
             ElementPainter painter = c.getPainters().get(i);

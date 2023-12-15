@@ -21,6 +21,7 @@ import java.util.List;
 public class DeleteState implements StateInterface{
     @Override
     public void misKliknut(Point2D p, ClassyDiagramView c) {
+        p.setLocation(p.getX()/c.getScale(),p.getY()/c.getScale());
 
         ClassyTreeImplementation tree = ((ClassyTreeImplementation) MainFrame.getInstance().getClassyTree());
 
