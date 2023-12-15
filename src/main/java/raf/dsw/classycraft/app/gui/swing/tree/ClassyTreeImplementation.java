@@ -24,6 +24,7 @@ import raf.dsw.classycraft.app.observer.ISubscriber;
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import java.awt.*;
 import java.util.List;
 
 @Getter
@@ -152,9 +153,8 @@ public class ClassyTreeImplementation implements ClassyTree {
                 Diagram diagram = (Diagram) classyNodeFactory.createNode(parent);
                 ClassyDiagramView diagramView = new ClassyDiagramView(diagram);
                 diagram.addSub(diagramView);
+
                 ((Package) parent).addingOfDiagramView(diagramView);
-
-
 
                 return  diagram;
             }else{

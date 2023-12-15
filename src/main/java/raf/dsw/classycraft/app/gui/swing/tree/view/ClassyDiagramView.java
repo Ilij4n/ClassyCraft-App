@@ -7,7 +7,10 @@ import raf.dsw.classycraft.app.core.model.composite.DiagramElement;
 import raf.dsw.classycraft.app.core.model.implementation.Diagram;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.InterClass;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Klasa;
+import raf.dsw.classycraft.app.gui.swing.painters.ClassPainter;
 import raf.dsw.classycraft.app.gui.swing.painters.ElementPainter;
+import raf.dsw.classycraft.app.gui.swing.painters.EnumPainter;
+import raf.dsw.classycraft.app.gui.swing.painters.InterfacePainter;
 import raf.dsw.classycraft.app.gui.swing.view.ElementCreationView;
 import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
 import raf.dsw.classycraft.app.observer.IPublisher;
@@ -44,6 +47,7 @@ public class ClassyDiagramView extends JPanel implements ISubscriber{
 
     private double scale = 1.0;
 
+
     public ClassyDiagramView(Diagram d){
         diagram = d;
         this.name = diagram.getName();
@@ -55,6 +59,7 @@ public class ClassyDiagramView extends JPanel implements ISubscriber{
         addMouseWheelListener(new ClassyMouseListener(this));
         this.linija = new Line2D.Double();
         this.laso = new Rectangle2D.Double();
+
     }
 
 
@@ -66,9 +71,10 @@ public class ClassyDiagramView extends JPanel implements ISubscriber{
         AffineTransform af = new AffineTransform();
         af.setToScale(scale,scale);
         g2.setTransform(af);
-        for(ElementPainter e : painters){
+        for(ElementPainter e:painters){
             e.draw(g2);
         }
+
         g2.setColor(Color.BLACK);
         g2.draw(linija);
         g2.draw(laso);
