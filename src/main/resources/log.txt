@@ -824,3 +824,7 @@
 [INFO] [15.12.2023 19:36] Za vezu zavisnosti ne birati radioButton
  U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
 [INFO] [15.12.2023 19:36] Ne valja format
+[INFO] [15.12.2023 21:42] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [15.12.2023 21:43] Izaberite jednu od opcija
+[ERROR] [15.12.2023 21:43] Duplikat Ime
