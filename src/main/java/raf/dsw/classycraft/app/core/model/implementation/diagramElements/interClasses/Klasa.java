@@ -16,4 +16,5 @@ public class Klasa extends InterClass{
     public Klasa(ClassyNode parent, String name, Point2D location, Set<ClassContent> contentSet) {
         super(parent, name, Color.GREEN, 2, location, contentSet);
     }
+
 }

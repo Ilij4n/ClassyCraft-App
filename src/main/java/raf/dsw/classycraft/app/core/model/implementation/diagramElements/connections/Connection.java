@@ -40,4 +40,11 @@ public abstract class Connection extends DiagramElement {
         this.kardinalnost = kardinalnost;
         this.imePromenljive = imePromenljive;
     }
+
+    @Override
+    public String toString() {
+        return "Connection{" +
+                "element1=" + element2 +
+                '}';
+    }
 }

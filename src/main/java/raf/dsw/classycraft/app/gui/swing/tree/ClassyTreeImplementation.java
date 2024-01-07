@@ -14,6 +14,8 @@ import raf.dsw.classycraft.app.core.model.implementation.Diagram;
 import raf.dsw.classycraft.app.core.model.implementation.Package;
 import raf.dsw.classycraft.app.core.model.implementation.Project;
 import raf.dsw.classycraft.app.core.model.implementation.ProjectExplorer;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.InterClass;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Klasa;
 import raf.dsw.classycraft.app.gui.swing.tree.model.ClassyTreeItem;
 import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyDiagramView;
 import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyPackageView;
@@ -33,7 +35,7 @@ public class ClassyTreeImplementation implements ClassyTree {
     private ClassyTreeView treeView;
     private DefaultTreeModel treeModel;
 
-    public  ClassyTreeItem dfsSearch(ClassyTreeItem root, Object targetModel) {
+    public ClassyTreeItem dfsSearch(ClassyTreeItem root, Object targetModel) {
         // Base case, ako root sadrzi model koji trazimo vrati ga
         if (root.getClassyNode() == targetModel) {
             return root;
@@ -124,15 +126,51 @@ public class ClassyTreeImplementation implements ClassyTree {
         treeModel.removeNodeFromParent(item);
     }
 
+    public void dfs2(ClassyNodeComposite currNode, ClassyTreeItem parent){
+        // TODO - logika za pravljenja kompozita, pitati se sa instanceofom sta je currentNode, i u zavisnosti od toga praviti sta treba (subovi itd), u sustini prekopiraj logiku iz factorya gde se prave nodeovi i bice fine
+        System.out.println(currNode);
+        currNode.setParent(parent.getClassyNode());
+        ClassyTreeItem newtreeItem = new ClassyTreeItem(currNode);
+        parent.add(newtreeItem);
+
+        // Recursively traverse each child
+        if (currNode.getChildren() != null) {
+            for (ClassyNode child : currNode.getChildren()) {
+                if (child instanceof ClassyNodeComposite) {
+                    dfs2((ClassyNodeComposite) child, newtreeItem);
+                } else {
+                    //TODO - logika za pravljenja leafova, pitati se sa instanceofom sta je currentNode, i u zavisnosti od toga praviti sta treba (subovi itd) - takodje pogledati kako se prave tamo gde se prave i super
+                    if(child instanceof InterClass){
+                        //ovde moze da se pita za instancu interclassa i da se na osnovu toga samo setuje boja, jer se boja ne serijalizuje
+                        ((InterClass) child).loadCoords();
+                    }
+                    currNode.setParent(currNode);
+                    ClassyTreeItem newtreeItem1 = new ClassyTreeItem(child);
+                    dfsSearch((ClassyTreeItem) getTreeModel().getRoot(),currNode).add(newtreeItem1);
+                    System.out.println(child);
+                }
+            }
+        }
+    }
+
     public void loadProject(Project node) {
         //TODO ovde sad treba proci kroz sve elemente, nakaciti ih na stablo, napraviti im viewove i povezati im subove
-        ClassyTreeItem loadedProject = new ClassyTreeItem(node);
+       //ClassyTreeItem loadedProject = new ClassyTreeItem(node);
         ClassyTreeItem root = (ClassyTreeItem)treeModel.getRoot();
-        root.add(loadedProject);
+       // root.add(loadedProject);
 
         ClassyNodeComposite rootModel = (ClassyNodeComposite) root.getClassyNode();
         rootModel.addChild(node);
-
+        dfs2(node,root);
+    /*
+        for(ClassyNode d1 : ((ClassyNodeComposite)node.getChildren().get(0)).getChildren()){
+            ClassyNodeComposite d2 = (ClassyNodeComposite) d1;
+            for(ClassyNode d3: d2.getChildren()){ //TODO ovde se na slican fazon moze setovati i boja, samo treba pomocu dfsa proci kroz ceo model i uraditi onaj gornji todo za svaki element
+                if(d3 instanceof InterClass)((InterClass) d3).loadCoords();
+                System.out.println(d3);
+            }
+        }
+    */
         treeView.expandPath(treeView.getSelectionPath());
         SwingUtilities.updateComponentTreeUI(treeView);
     }

@@ -959,3 +959,8 @@
 [INFO] [07.01.2024 19:58] Za vezu zavisnosti ne birati radioButton
  U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
 [INFO] [07.01.2024 19:59] Dodajte na dijagram preko menija levo
+[ERROR] [07.01.2024 21:32] Projekat vec postoji
+[INFO] [07.01.2024 21:42] Dodajte na dijagram preko menija levo
+[INFO] [07.01.2024 21:42] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[ERROR] [07.01.2024 21:49] Projekat vec postoji

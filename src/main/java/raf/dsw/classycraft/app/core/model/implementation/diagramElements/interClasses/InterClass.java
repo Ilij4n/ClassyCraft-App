@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import raf.dsw.classycraft.app.core.model.composite.ClassyNode;
 import raf.dsw.classycraft.app.core.model.composite.DiagramElement;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.classContents.ClassContent;
@@ -25,6 +26,7 @@ import java.util.Set;
 @JsonTypeName("interClass")
 @Getter
 @Setter
+@ToString
 public abstract class InterClass extends DiagramElement {
     @JsonIgnore
     private Point2D location = new Point2D.Double();
@@ -33,12 +35,16 @@ public abstract class InterClass extends DiagramElement {
     private Set<ClassContent> contentSet;
 
     public InterClass(){
-       if(xLocation!=0 && yLocation != 0)location.setLocation(xLocation,yLocation);
+
+    }
+    public void loadCoords(){
+        location = new Point2D.Double(xLocation,yLocation);
     }
 
     public InterClass(ClassyNode parent, String name, Color paint, Integer stroke, Point2D location, Set<ClassContent>contentSet) {
         super(parent, name, paint, stroke);
         this.location = location;
+        if(xLocation!=0 && yLocation != 0)setLocation(new Point2D.Double(xLocation,yLocation));
         xLocation = location.getX();
         yLocation = location.getY();
         this.contentSet = contentSet;

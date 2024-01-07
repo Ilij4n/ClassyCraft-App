@@ -27,12 +27,7 @@ public class LoadProjectAction extends AbstractClassyAction {
             try {
                 File file = jfc.getSelectedFile();
                 Project p = ApplicationFramework.getInstance().getMySerializer().loadProject(file);
-                /*for(ClassyNode d1 : ((ClassyNodeComposite)p.getChildren().get(0)).getChildren()){
-                    ClassyNodeComposite d2 = (ClassyNodeComposite) d1;
-                    for(ClassyNode d3: d2.getChildren()){
-                        System.out.println(d3);
-                    }
-                }*/
+
                 ClassyTreeImplementation tree = (ClassyTreeImplementation) MainFrame.getInstance().getClassyTree();
                 tree.loadProject(p);
 
