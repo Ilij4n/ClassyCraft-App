@@ -1,5 +1,6 @@
 package raf.dsw.classycraft.app.controller.stateControllers;
 
+import raf.dsw.classycraft.app.MessageGenerator.MessageType;
 import raf.dsw.classycraft.app.controller.AbstractClassyAction;
 import raf.dsw.classycraft.app.core.ApplicationFramework;
 import raf.dsw.classycraft.app.core.model.implementation.Project;
@@ -27,7 +28,7 @@ public class SaveProjectAction extends AbstractClassyAction {
         File projectFile = null;
 
        /*
-        Ovo ce biti za ono da ne moze da se menja ako je isti
+        TODO Ovo ce biti za ono da ne moze da se menja ako je isti, videti kako to
         if (!project.isChanged()) {
             return;
         }*/
@@ -36,14 +37,10 @@ public class SaveProjectAction extends AbstractClassyAction {
             if (jfc.showSaveDialog(MainFrame.getInstance()) == JFileChooser.APPROVE_OPTION) {
                 projectFile = jfc.getSelectedFile();
                 project.setFilePath(projectFile.getPath()+".json");
-            } else {
-                return;
             }
-
         }
         else{
-            //ovaj deo moze biti za save, jer je file vec jednom cuvan za sad samo returnuje
-            return;
+            ApplicationFramework.getInstance().getMessageGenerator().generateMessage("File sacuvan", MessageType.INFO);
         }
 
         ApplicationFramework.getInstance().getMySerializer().saveProject(project);

@@ -30,7 +30,7 @@ public abstract class DiagramElement extends ClassyNode implements IPublisher {
     private Color color;
     private Integer stroke;
     @JsonIgnore
-    private transient List<ISubscriber> subscribers;
+    private transient List<ISubscriber> subscribers = new ArrayList<>();
 
     public DiagramElement(ClassyNode parent, String name, Color paint, Integer stroke) {
         super(parent, name);

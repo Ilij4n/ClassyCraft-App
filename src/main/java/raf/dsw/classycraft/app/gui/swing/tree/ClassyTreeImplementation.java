@@ -14,8 +14,12 @@ import raf.dsw.classycraft.app.core.model.implementation.Diagram;
 import raf.dsw.classycraft.app.core.model.implementation.Package;
 import raf.dsw.classycraft.app.core.model.implementation.Project;
 import raf.dsw.classycraft.app.core.model.implementation.ProjectExplorer;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.connections.*;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Enum;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.InterClass;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Interfejs;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Klasa;
+import raf.dsw.classycraft.app.gui.swing.painters.*;
 import raf.dsw.classycraft.app.gui.swing.tree.model.ClassyTreeItem;
 import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyDiagramView;
 import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyPackageView;
@@ -155,11 +159,62 @@ public class ClassyTreeImplementation implements ClassyTree {
                     dfs2((ClassyNodeComposite) child, newtreeItem);
                 } else {
                     //TODO - logika za pravljenja leafova, pitati se sa instanceofom sta je currentNode, i u zavisnosti od toga praviti sta treba (subovi itd) - takodje pogledati kako se prave tamo gde se prave i super
+
+                    //kako dobaviti classyDiagramView na kome je painter
+                    Package p = (Package) currNode.getParent();
+                    ClassyPackageView p1 = (ClassyPackageView) p.getSubscribers().get(0);
+                    ClassyDiagramView c = null;
+                    for(Component d : p1.getjTabbedPane().getComponents()){
+                        ClassyDiagramView view = (ClassyDiagramView)d;
+                        if(view.getDiagram().equals(currNode)) c = view;
+
+                    }
+
                     if(child instanceof InterClass){
                         //ovde moze da se pita za instancu interclassa i da se na osnovu toga samo setuje boja, jer se boja ne serijalizuje
                         ((InterClass) child).loadCoords();
+
+                        if(child instanceof Klasa){
+                            ClassPainter classPainter = new ClassPainter((Klasa) child);
+                            ((Klasa)child).addSub(c);
+                            c.getPainters().add(classPainter);
+                        }
+                        else if(child instanceof Interfejs){
+                            InterfacePainter interfacePainter = new InterfacePainter((Interfejs) child);
+                            ((Interfejs)child).addSub(c);
+                            c.getPainters().add(interfacePainter);
+                        }
+                        else if(child instanceof Enum){
+                            EnumPainter enumPainter = new EnumPainter((Enum) child);
+                            ((Enum)child).addSub(c);
+                            c.getPainters().add(enumPainter);
+                        }
                     }
-                    currNode.setParent(currNode);
+                    else if(child instanceof Connection){
+                        ElementPainter painter1 = null;
+                        ElementPainter painter2 = null;
+                        ConnectionPainter connectionPainter = null;
+                        for(ElementPainter painter: c.getPainters()){
+                            if(painter.getDiagramElement().equals(((Connection) child).getElement1())) painter1 = painter;
+                            if(painter.getDiagramElement().equals(((Connection) child).getElement2())) painter2 = painter;
+                        }
+
+                        if(child instanceof Generalizacija){
+                            connectionPainter = new GeneralizacijaPainter((Connection) child,painter1,painter2);
+                        }
+                        if(child instanceof Agregacija){
+                            connectionPainter = new AgregacijaPainter((Connection) child,painter1,painter2);
+                        }
+                        if(child instanceof Kompozicija){
+                            connectionPainter = new KompozicijaPainter((Connection) child,painter1,painter2);
+                        }
+                        if(child instanceof Zavisnost){
+                            connectionPainter = new ZavisnostPainter((Connection) child,painter1,painter2);
+                        }
+                        ((Connection)child).addSub(c);
+                        c.getPainters().add(connectionPainter);
+                    }
+                    child.setParent(currNode);
                     ClassyTreeItem newtreeItem1 = new ClassyTreeItem(child);
                     dfsSearch((ClassyTreeItem) getTreeModel().getRoot(),currNode).add(newtreeItem1);
                     System.out.println(child);
