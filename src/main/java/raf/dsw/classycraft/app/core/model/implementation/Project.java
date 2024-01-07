@@ -27,7 +27,7 @@ public class Project extends ClassyNodeComposite implements IPublisher {
     private String autor;
     private String filePath;
     @JsonIgnore
-    private transient List<ISubscriber> subscribers;
+    private List<ISubscriber> subscribers = new ArrayList<>();
 
     public Project(ClassyNode parent, String name, String autor, String filePath) {
         super(parent, name);

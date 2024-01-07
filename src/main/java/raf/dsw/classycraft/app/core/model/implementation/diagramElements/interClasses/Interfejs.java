@@ -10,8 +10,12 @@ import java.awt.geom.Point2D;
 import java.util.List;
 import java.util.Set;
 @JsonTypeName("interfejs")
-@NoArgsConstructor
 public class Interfejs extends InterClass{
+
+    public Interfejs(){
+        setColor(Color.BLUE);
+    }
+
     public Interfejs(ClassyNode parent, String name, Point2D location, Set<ClassContent> contentSet) {
         super(parent, name, Color.blue, 2, location, contentSet);
     }

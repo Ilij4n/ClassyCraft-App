@@ -25,7 +25,7 @@ import java.util.concurrent.Flow;
 @Setter
 public class Diagram extends ClassyNodeComposite implements IPublisher {
     @JsonIgnore
-    private transient List<ISubscriber> subscribers;
+    private transient List<ISubscriber> subscribers = new ArrayList<>();
 
     public Diagram(ClassyNode parent, String name) {
         super(parent, name);

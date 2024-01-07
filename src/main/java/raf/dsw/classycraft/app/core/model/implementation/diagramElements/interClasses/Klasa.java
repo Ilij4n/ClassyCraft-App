@@ -11,8 +11,12 @@ import java.awt.geom.Point2D;
 import java.util.List;
 import java.util.Set;
 @JsonTypeName("klasa")
-@NoArgsConstructor
 public class Klasa extends InterClass{
+
+    public Klasa(){
+        setColor(Color.GREEN);
+    }
+
     public Klasa(ClassyNode parent, String name, Point2D location, Set<ClassContent> contentSet) {
         super(parent, name, Color.GREEN, 2, location, contentSet);
     }

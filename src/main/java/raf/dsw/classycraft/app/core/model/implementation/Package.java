@@ -23,7 +23,7 @@ import java.util.List;
 
 public class Package extends ClassyNodeComposite implements IPublisher{
     @JsonIgnore
-    private transient List<ISubscriber> subscribers;
+    private List<ISubscriber> subscribers = new ArrayList<>();
 
 
     public Package(ClassyNode parent, String name) {

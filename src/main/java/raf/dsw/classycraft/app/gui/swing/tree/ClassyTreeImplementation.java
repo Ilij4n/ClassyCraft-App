@@ -27,6 +27,7 @@ import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -130,6 +131,20 @@ public class ClassyTreeImplementation implements ClassyTree {
         // TODO - logika za pravljenja kompozita, pitati se sa instanceofom sta je currentNode, i u zavisnosti od toga praviti sta treba (subovi itd), u sustini prekopiraj logiku iz factorya gde se prave nodeovi i bice fine
         System.out.println(currNode);
         currNode.setParent(parent.getClassyNode());
+
+        if(currNode instanceof Package){
+            ClassyPackageView packageView = new ClassyPackageView((Package) currNode);
+            ((Package)currNode).realPapa().addSub(packageView);
+            ((Package)currNode).addSub(packageView);
+        }
+        if(currNode instanceof Diagram){
+            ClassyDiagramView diagramView = new ClassyDiagramView((Diagram)currNode);
+            ((Diagram)currNode).addSub(diagramView);
+
+            ((Package) currNode.getParent()).addingOfDiagramView(diagramView);
+
+        }
+
         ClassyTreeItem newtreeItem = new ClassyTreeItem(currNode);
         parent.add(newtreeItem);
 
