@@ -1,6 +1,10 @@
 package raf.dsw.classycraft.app.core.model.implementation;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import raf.dsw.classycraft.app.MessageGenerator.MessageType;
 import raf.dsw.classycraft.app.core.ApplicationFramework;
@@ -14,14 +18,15 @@ import raf.dsw.classycraft.app.observer.ISubscriber;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
-
+@JsonTypeName("project")
 @Getter
 @Setter
 public class Project extends ClassyNodeComposite implements IPublisher {
 
     private String autor;
     private String filePath;
-    private List<ISubscriber> subscribers;
+    @JsonIgnore
+    private transient List<ISubscriber> subscribers;
 
     public Project(ClassyNode parent, String name, String autor, String filePath) {
         super(parent, name);

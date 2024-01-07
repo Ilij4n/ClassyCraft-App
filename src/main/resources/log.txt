@@ -858,3 +858,63 @@
 [ERROR] [15.12.2023 23:12] Duplikat Ime
 [INFO] [15.12.2023 23:12] Za vezu zavisnosti ne birati radioButton
  U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [15.12.2023 23:26] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [16.12.2023 20:32] Poklapaju se
+[INFO] [16.12.2023 20:32] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [16.12.2023 20:33] Poklapaju se
+[INFO] [16.12.2023 20:33] Poklapaju se
+[INFO] [16.12.2023 20:33] Poklapaju se
+[INFO] [16.12.2023 20:33] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [16.12.2023 20:36] Element mora imati ime
+[INFO] [16.12.2023 20:36] Ne valja format
+[ERROR] [16.12.2023 20:37] Duplikat Ime
+[INFO] [16.12.2023 20:37] Izaberite jednu od opcija
+[INFO] [24.12.2023 12:42] Izaberite jednu od opcija
+[INFO] [24.12.2023 12:42] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [24.12.2023 12:43] Element mora imati ime
+[ERROR] [24.12.2023 12:49] Duplikat Ime
+[INFO] [24.12.2023 12:49] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[ERROR] [24.12.2023 12:51] Izaberite projekat kome zelite da promenite autora ! 
+[INFO] [24.12.2023 12:52] Izaberite jednu od opcija
+[INFO] [24.12.2023 12:55] Izaberite jednu od opcija
+[INFO] [24.12.2023 12:55] Element mora imati ime
+[INFO] [24.12.2023 12:56] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [24.12.2023 14:07] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [24.12.2023 14:10] Poklapaju se
+[INFO] [24.12.2023 14:20] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [24.12.2023 14:20] Ne valja format
+[ERROR] [25.12.2023 13:21] Duplikat Ime
+[INFO] [25.12.2023 13:21] Izaberite jednu od opcija
+[INFO] [25.12.2023 13:22] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[ERROR] [25.12.2023 13:24] Duplikat Ime
+[ERROR] [25.12.2023 13:38] Izaberite projekat kome zelite da promenite autora ! 
+[ERROR] [25.12.2023 13:38] Izaberite projekat kome zelite da promenite autora ! 
+[ERROR] [07.01.2024 15:17] Izaberite projekat kome zelite da promenite autora ! 
+[ERROR] [07.01.2024 16:01] Pogresen tip
+[ERROR] [07.01.2024 16:02] Pogresen tip
+[ERROR] [07.01.2024 16:02] Pogresen tip
+[ERROR] [07.01.2024 16:03] Pogresen tip
+[ERROR] [07.01.2024 16:04] Pogresen tip
+[ERROR] [07.01.2024 16:11] Pogresen tip
+[ERROR] [07.01.2024 16:12] Pogresen tip
+[ERROR] [07.01.2024 16:19] Pogresen tip
+[ERROR] [07.01.2024 16:20] Pogresen tip
+[ERROR] [07.01.2024 16:21] Pogresen tip
+[ERROR] [07.01.2024 16:22] Pogresen tip
+[ERROR] [07.01.2024 16:25] Pogresen tip
+[ERROR] [07.01.2024 16:27] Pogresen tip
+[ERROR] [07.01.2024 16:30] Pogresen tip
+[ERROR] [07.01.2024 16:31] Pogresen tip
+[ERROR] [07.01.2024 16:33] Pogresen tip
+[ERROR] [07.01.2024 16:36] Pogresen tip
+[ERROR] [07.01.2024 16:44] Pogresen tip
+[ERROR] [07.01.2024 17:18] Pogresen tip

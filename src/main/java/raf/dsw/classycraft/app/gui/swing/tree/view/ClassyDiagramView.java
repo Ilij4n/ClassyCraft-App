@@ -39,7 +39,7 @@ public class ClassyDiagramView extends JPanel implements ISubscriber{
     private ElementCreationView elementCreationView;
     private List<ElementPainter> sviselectovani;
 
-    private List<ISubscriber> subscribers;
+    private transient List<ISubscriber> subscribers;
 
     private Rectangle2D laso;
     private Point2D prvaTacka;

@@ -33,8 +33,6 @@ public class ClassyTreeImplementation implements ClassyTree {
     private ClassyTreeView treeView;
     private DefaultTreeModel treeModel;
 
-
-
     public  ClassyTreeItem dfsSearch(ClassyTreeItem root, Object targetModel) {
         // Base case, ako root sadrzi model koji trazimo vrati ga
         if (root.getClassyNode() == targetModel) {
@@ -126,7 +124,17 @@ public class ClassyTreeImplementation implements ClassyTree {
         treeModel.removeNodeFromParent(item);
     }
 
+    public void loadProject(Project node) {
+        ClassyTreeItem loadedProject = new ClassyTreeItem(node);
+        ClassyTreeItem root = (ClassyTreeItem)treeModel.getRoot();
+        root.add(loadedProject);
 
+        ClassyNodeComposite rootModel = (ClassyNodeComposite) root.getClassyNode();
+        rootModel.addChild(node);
+
+        treeView.expandPath(treeView.getSelectionPath());
+        SwingUtilities.updateComponentTreeUI(treeView);
+    }
 
     private ClassyNode createChild(ClassyNode parent,boolean pakOrDia) {
         String string;

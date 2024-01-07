@@ -10,6 +10,8 @@ import raf.dsw.classycraft.app.MessageGenerator.MessageGeneratorImp;
 import raf.dsw.classycraft.app.core.model.ClassyRepository;
 import raf.dsw.classycraft.app.core.model.ClassyRepositoryImp;
 import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
+import raf.dsw.classycraft.app.serializer.MySerializer;
+
 @Getter
 public class ApplicationFramework {
 
@@ -26,6 +28,7 @@ public class ApplicationFramework {
     private MessageGenerator messageGenerator = new MessageGeneratorImp();
     private Logger consoleLogger = SimpleLoggerFactory.createLogger("console");
     private Logger fileLogger = SimpleLoggerFactory.createLogger("file");
+    private MySerializer mySerializer = new MySerializer();
 
     private ApplicationFramework(){
         //subujemo sve subscribere

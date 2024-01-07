@@ -23,6 +23,8 @@ public class ActionManager {
     private ZoomInAction zoomInAction;
     private ZoomOutAction zoomOutAction;
     private DuplicateAction duplicateAction;
+    private LoadProjectAction loadProjectAction;
+    private SaveProjectAction saveProjectAction;
 
     public ActionManager() {
         intialise();
@@ -44,6 +46,8 @@ public class ActionManager {
         zoomInAction = new ZoomInAction();
         zoomOutAction = new ZoomOutAction();
         duplicateAction = new DuplicateAction();
+        loadProjectAction = new LoadProjectAction();
+        saveProjectAction = new SaveProjectAction();
     }
 
 }
