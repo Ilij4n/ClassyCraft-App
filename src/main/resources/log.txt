@@ -924,3 +924,38 @@
 [ERROR] [07.01.2024 17:57] Duplikat Ime
 [INFO] [07.01.2024 18:01] Za vezu zavisnosti ne birati radioButton
  U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.01.2024 18:14] Dodajte na dijagram preko menija levo
+[INFO] [07.01.2024 18:14] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[ERROR] [07.01.2024 18:27] Pogresen tip
+[ERROR] [07.01.2024 18:28] Pogresen tip
+[ERROR] [07.01.2024 18:33] Pogresen tip
+[ERROR] [07.01.2024 18:38] Pogresen tip
+[ERROR] [07.01.2024 18:40] Pogresen tip
+[ERROR] [07.01.2024 18:43] Pogresen tip
+[ERROR] [07.01.2024 18:44] Pogresen tip
+[ERROR] [07.01.2024 18:48] Pogresen tip
+[ERROR] [07.01.2024 18:49] Pogresen tip
+[ERROR] [07.01.2024 18:51] Pogresen tip
+[ERROR] [07.01.2024 19:05] Projekat vec postoji
+[ERROR] [07.01.2024 19:05] Pogresen tip
+[INFO] [07.01.2024 19:06] Izaberite jednu od opcija
+[ERROR] [07.01.2024 19:07] Pogresen tip
+[ERROR] [07.01.2024 19:14] Pogresen tip
+[ERROR] [07.01.2024 19:15] Pogresen tip
+[ERROR] [07.01.2024 19:21] Pogresen tip
+[ERROR] [07.01.2024 19:34] Pogresen tip
+[ERROR] [07.01.2024 19:37] Pogresen tip
+[ERROR] [07.01.2024 19:37] Pogresen tip
+[ERROR] [07.01.2024 19:37] Izaberite projekat kome zelite da promenite autora ! 
+[ERROR] [07.01.2024 19:37] Pogresen tip
+[ERROR] [07.01.2024 19:38] Explorer se ne brise ! 
+[ERROR] [07.01.2024 19:38] Pogresen tip
+[ERROR] [07.01.2024 19:41] Pogresen tip
+[INFO] [07.01.2024 19:42] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.01.2024 19:55] Dodajte na dijagram preko menija levo
+[ERROR] [07.01.2024 19:58] Duplikat Ime
+[INFO] [07.01.2024 19:58] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.01.2024 19:59] Dodajte na dijagram preko menija levo

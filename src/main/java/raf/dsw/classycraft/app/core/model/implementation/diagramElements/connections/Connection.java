@@ -2,6 +2,7 @@ package raf.dsw.classycraft.app.core.model.implementation.diagramElements.connec
 
 import com.fasterxml.jackson.annotation.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import raf.dsw.classycraft.app.core.model.composite.ClassyNode;
 import raf.dsw.classycraft.app.core.model.composite.DiagramElement;
@@ -18,6 +19,7 @@ import java.awt.*;
         @JsonSubTypes.Type(value = Generalizacija.class, name = "generalizacija"),
         @JsonSubTypes.Type(value = Zavisnost.class, name = "zavisnost"),
 })
+@NoArgsConstructor
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "name")
 @JsonTypeName("connection")
 @Getter

@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.connections.Connection;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.InterClass;
@@ -16,6 +17,7 @@ import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interCl
         @JsonSubTypes.Type(value = Method.class, name = "method"),
 })
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "name")
+@NoArgsConstructor
 @Getter
 @Setter
 @EqualsAndHashCode

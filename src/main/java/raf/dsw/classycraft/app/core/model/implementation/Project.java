@@ -19,6 +19,7 @@ import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 @JsonTypeName("project")
+@NoArgsConstructor
 @Getter
 @Setter
 public class Project extends ClassyNodeComposite implements IPublisher {

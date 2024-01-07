@@ -35,7 +35,7 @@ public class SaveProjectAction extends AbstractClassyAction {
         if (project.getFilePath() == null || project.getFilePath().isEmpty()) {
             if (jfc.showSaveDialog(MainFrame.getInstance()) == JFileChooser.APPROVE_OPTION) {
                 projectFile = jfc.getSelectedFile();
-                project.setFilePath(projectFile.getPath());
+                project.setFilePath(projectFile.getPath()+".json");
             } else {
                 return;
             }

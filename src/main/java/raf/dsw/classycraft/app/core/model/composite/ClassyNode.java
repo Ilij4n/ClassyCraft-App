@@ -12,7 +12,7 @@ import raf.dsw.classycraft.app.core.model.implementation.Project;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
 @JsonSubTypes({
         @JsonSubTypes.Type(value = Project.class, name = "project"),
-        @JsonSubTypes.Type(value = Package.class, name = "package"),
+        @JsonSubTypes.Type(value = raf.dsw.classycraft.app.core.model.implementation.Package.class, name = "package"),
         @JsonSubTypes.Type(value = Diagram.class, name = "diagram"),
         @JsonSubTypes.Type(value = DiagramElement.class, name = "diagramElement")
 })

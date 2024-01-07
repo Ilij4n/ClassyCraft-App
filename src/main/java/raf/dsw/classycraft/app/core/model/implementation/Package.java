@@ -3,6 +3,7 @@ package raf.dsw.classycraft.app.core.model.implementation;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import raf.dsw.classycraft.app.MessageGenerator.MessageType;
 import raf.dsw.classycraft.app.core.ApplicationFramework;
@@ -16,6 +17,7 @@ import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 @JsonTypeName("package")
+@NoArgsConstructor
 @Setter
 @Getter
 

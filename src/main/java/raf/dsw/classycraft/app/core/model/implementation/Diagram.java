@@ -3,6 +3,7 @@ package raf.dsw.classycraft.app.core.model.implementation;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import raf.dsw.classycraft.app.MessageGenerator.MessageType;
 import raf.dsw.classycraft.app.core.ApplicationFramework;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Flow;
 @JsonTypeName("diagram")
+@NoArgsConstructor
 @Getter
 @Setter
 public class Diagram extends ClassyNodeComposite implements IPublisher {

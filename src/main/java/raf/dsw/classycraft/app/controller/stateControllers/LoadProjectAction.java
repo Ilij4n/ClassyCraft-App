@@ -2,6 +2,9 @@ package raf.dsw.classycraft.app.controller.stateControllers;
 
 import raf.dsw.classycraft.app.controller.AbstractClassyAction;
 import raf.dsw.classycraft.app.core.ApplicationFramework;
+import raf.dsw.classycraft.app.core.model.composite.ClassyNode;
+import raf.dsw.classycraft.app.core.model.composite.ClassyNodeComposite;
+import raf.dsw.classycraft.app.core.model.composite.DiagramElement;
 import raf.dsw.classycraft.app.core.model.implementation.Project;
 import raf.dsw.classycraft.app.gui.swing.tree.ClassyTreeImplementation;
 import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
@@ -24,7 +27,12 @@ public class LoadProjectAction extends AbstractClassyAction {
             try {
                 File file = jfc.getSelectedFile();
                 Project p = ApplicationFramework.getInstance().getMySerializer().loadProject(file);
-                System.out.println(p);
+                /*for(ClassyNode d1 : ((ClassyNodeComposite)p.getChildren().get(0)).getChildren()){
+                    ClassyNodeComposite d2 = (ClassyNodeComposite) d1;
+                    for(ClassyNode d3: d2.getChildren()){
+                        System.out.println(d3);
+                    }
+                }*/
                 ClassyTreeImplementation tree = (ClassyTreeImplementation) MainFrame.getInstance().getClassyTree();
                 tree.loadProject(p);
 
