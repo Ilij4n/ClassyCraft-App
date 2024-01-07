@@ -1,18 +1,27 @@
 package raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses;
 
 
+import com.fasterxml.jackson.annotation.*;
 import lombok.Getter;
 import lombok.Setter;
 import raf.dsw.classycraft.app.core.model.composite.ClassyNode;
 import raf.dsw.classycraft.app.core.model.composite.DiagramElement;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.classContents.ClassContent;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.connections.Connection;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = Klasa.class, name = "klasa"),
+        @JsonSubTypes.Type(value = Interfejs.class, name = "interfejs"),
+        @JsonSubTypes.Type(value = Enum.class, name = "enum"),
+})
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "name")
+@JsonTypeName("interClass")
 @Getter
 @Setter
 public abstract class InterClass extends DiagramElement {

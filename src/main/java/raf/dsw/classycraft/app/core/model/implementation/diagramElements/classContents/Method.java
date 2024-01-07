@@ -1,8 +1,9 @@
 package raf.dsw.classycraft.app.core.model.implementation.diagramElements.classContents;
 
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import lombok.Getter;
 import lombok.Setter;
-
+@JsonTypeName("method")
 @Getter
 @Setter
 public class Method extends ClassContent{

@@ -1,9 +1,21 @@
 package raf.dsw.classycraft.app.core.model.implementation.diagramElements.classContents;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.connections.Connection;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.InterClass;
 
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = Attribute.class, name = "attribute"),
+        @JsonSubTypes.Type(value = Method.class, name = "method"),
+})
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "name")
 @Getter
 @Setter
 @EqualsAndHashCode
