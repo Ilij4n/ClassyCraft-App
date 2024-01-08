@@ -15,7 +15,7 @@ import java.io.File;
 
 public class LoadProjectAction extends AbstractClassyAction {
     public LoadProjectAction() {
-        putValue(SMALL_ICON, loadIcon("/images/editovanje.png"));
+        putValue(SMALL_ICON, loadIcon("/images/load.png"));
         putValue(NAME, "Load Project");
         putValue(SHORT_DESCRIPTION, "Load Project");
     }
