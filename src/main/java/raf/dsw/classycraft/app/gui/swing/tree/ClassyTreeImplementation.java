@@ -223,7 +223,7 @@ public class ClassyTreeImplementation implements ClassyTree {
         }
     }
 
-    public void loadProject(Project node) {
+    public void loadProject(ClassyNodeComposite node) {
         //TODO ovde sad treba proci kroz sve elemente, nakaciti ih na stablo, napraviti im viewove i povezati im subove
        //ClassyTreeItem loadedProject = new ClassyTreeItem(node);
         ClassyTreeItem root = (ClassyTreeItem)treeModel.getRoot();

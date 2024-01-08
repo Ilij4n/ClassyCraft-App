@@ -966,3 +966,36 @@
 [ERROR] [07.01.2024 21:49] Projekat vec postoji
 [INFO] [07.01.2024 21:55] Dodajte na dijagram preko menija levo
 [ERROR] [07.01.2024 21:55] Projekat vec postoji
+[INFO] [07.01.2024 23:46] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [07.01.2024 23:58] Izaberite jednu od opcija
+[INFO] [07.01.2024 23:58] Izaberite jednu od opcija
+[INFO] [07.01.2024 23:59] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 00:01] veoma kul
+[INFO] [08.01.2024 00:03] File sacuvan
+[INFO] [08.01.2024 00:03] File sacuvan
+[INFO] [08.01.2024 00:04] File sacuvan
+[INFO] [08.01.2024 00:06] File sacuvan
+[INFO] [08.01.2024 10:38] File sacuvan
+[ERROR] [08.01.2024 10:56] Projekat vec postoji
+[INFO] [08.01.2024 10:56] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 10:56] File sacuvan
+[ERROR] [08.01.2024 10:57] Pogresen tip
+[ERROR] [08.01.2024 10:59] Projekat vec postoji
+[INFO] [08.01.2024 11:00] File sacuvan
+[INFO] [08.01.2024 11:00] File sacuvan
+[INFO] [08.01.2024 11:18] Dodajte na dijagram preko menija levo
+[INFO] [08.01.2024 11:18] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 11:22] Dijagram pod tim imenom vec postoji
+[INFO] [08.01.2024 11:23] Dijagram pod tim imenom vec postoji
+[INFO] [08.01.2024 11:25] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 11:27] Dijagram pod tim imenom vec postoji
+[INFO] [08.01.2024 11:27] Diagram sacuvan
+[INFO] [08.01.2024 11:28] Dijagram pod tim imenom vec postoji
+[INFO] [08.01.2024 11:28] Diagram sacuvan
+[INFO] [08.01.2024 11:31] File sacuvan
+[INFO] [08.01.2024 11:31] File sacuvan
