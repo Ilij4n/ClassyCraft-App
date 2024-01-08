@@ -1,0 +1,39 @@
+{
+  "type" : "diagram",
+  "id" : 1561064916,
+  "name" : "sadm 1",
+  "children" : [ {
+    "type" : "klasa",
+    "id" : 1978735330,
+    "name" : "asdads",
+    "stroke" : 2,
+    "contentSet" : [ ],
+    "ylocation" : 253.0,
+    "xlocation" : 426.0
+  }, {
+    "type" : "enum",
+    "id" : 1137896432,
+    "name" : "asdasd",
+    "stroke" : 2,
+    "contentSet" : [ ],
+    "ylocation" : 256.0,
+    "xlocation" : 906.0
+  }, {
+    "type" : "enum",
+    "id" : 1481955115,
+    "name" : "asdasd(Copy 0)",
+    "stroke" : 2,
+    "contentSet" : [ ],
+    "ylocation" : 74.0,
+    "xlocation" : 705.0
+  }, {
+    "type" : "generalizacija",
+    "id" : 1746923149,
+    "name" : "ss",
+    "stroke" : 2,
+    "element1" : 1978735330,
+    "element2" : 1137896432,
+    "kardinalnost" : "",
+    "imePromenljive" : ""
+  } ]
+}

@@ -1,0 +1,22 @@
+{
+  "type" : "diagram",
+  "id" : 828439026,
+  "name" : "Diagram 2",
+  "children" : [ {
+    "type" : "klasa",
+    "id" : 930597603,
+    "name" : "asdasdasd",
+    "stroke" : 2,
+    "contentSet" : [ ],
+    "ylocation" : 210.0,
+    "xlocation" : 809.0
+  }, {
+    "type" : "interfejs",
+    "id" : 605195924,
+    "name" : "asdasd",
+    "stroke" : 2,
+    "contentSet" : [ ],
+    "ylocation" : 157.0,
+    "xlocation" : 650.0
+  } ]
+}

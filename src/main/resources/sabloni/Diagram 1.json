@@ -1,0 +1,57 @@
+{
+  "type" : "diagram",
+  "id" : 1423479526,
+  "name" : "Diagram 1",
+  "children" : [ {
+    "type" : "klasa",
+    "id" : 1871561885,
+    "name" : "asdasd",
+    "stroke" : 2,
+    "contentSet" : [ ],
+    "xlocation" : 432.0,
+    "ylocation" : 124.0
+  }, {
+    "type" : "klasa",
+    "id" : 830547297,
+    "name" : "asdasd",
+    "stroke" : 2,
+    "contentSet" : [ ],
+    "xlocation" : 760.0,
+    "ylocation" : 162.0
+  }, {
+    "type" : "generalizacija",
+    "id" : 138444609,
+    "name" : "asdasd",
+    "stroke" : 2,
+    "element1" : 1871561885,
+    "element2" : 830547297,
+    "kardinalnost" : "",
+    "imePromenljive" : ""
+  }, {
+    "type" : "klasa",
+    "id" : 1044007488,
+    "name" : "asdasd",
+    "stroke" : 2,
+    "contentSet" : [ ],
+    "xlocation" : 640.0,
+    "ylocation" : 385.0
+  }, {
+    "type" : "zavisnost",
+    "id" : 1065677448,
+    "name" : "asddd",
+    "stroke" : 2,
+    "element1" : 830547297,
+    "element2" : 1044007488,
+    "kardinalnost" : "",
+    "imePromenljive" : ""
+  }, {
+    "type" : "generalizacija",
+    "id" : 830857188,
+    "name" : "aa",
+    "stroke" : 2,
+    "element1" : 1871561885,
+    "element2" : 1044007488,
+    "kardinalnost" : "",
+    "imePromenljive" : ""
+  } ]
+}
