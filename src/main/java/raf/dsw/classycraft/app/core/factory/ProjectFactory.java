@@ -15,7 +15,7 @@ public class ProjectFactory extends ClassyNodeFactory{
     @Override
     public ClassyNode createNode(ClassyNode parent) {
 
-        ClassyNode project = new Project(parent, "Project " + cnt, "Autor", "Path");
+        ClassyNode project = new Project(parent, "Project " + cnt, "Autor", null);
         cnt++;
 
         return project;

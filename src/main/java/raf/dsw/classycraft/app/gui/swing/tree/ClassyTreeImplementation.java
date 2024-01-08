@@ -14,6 +14,12 @@ import raf.dsw.classycraft.app.core.model.implementation.Diagram;
 import raf.dsw.classycraft.app.core.model.implementation.Package;
 import raf.dsw.classycraft.app.core.model.implementation.Project;
 import raf.dsw.classycraft.app.core.model.implementation.ProjectExplorer;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.connections.*;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Enum;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.InterClass;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Interfejs;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Klasa;
+import raf.dsw.classycraft.app.gui.swing.painters.*;
 import raf.dsw.classycraft.app.gui.swing.tree.model.ClassyTreeItem;
 import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyDiagramView;
 import raf.dsw.classycraft.app.gui.swing.tree.view.ClassyPackageView;
@@ -25,6 +31,7 @@ import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -33,9 +40,7 @@ public class ClassyTreeImplementation implements ClassyTree {
     private ClassyTreeView treeView;
     private DefaultTreeModel treeModel;
 
-
-
-    public  ClassyTreeItem dfsSearch(ClassyTreeItem root, Object targetModel) {
+    public ClassyTreeItem dfsSearch(ClassyTreeItem root, Object targetModel) {
         // Base case, ako root sadrzi model koji trazimo vrati ga
         if (root.getClassyNode() == targetModel) {
             return root;
@@ -126,7 +131,122 @@ public class ClassyTreeImplementation implements ClassyTree {
         treeModel.removeNodeFromParent(item);
     }
 
+    public void dfs2(ClassyNodeComposite currNode, ClassyTreeItem parent){
+        // TODO - logika za pravljenja kompozita, pitati se sa instanceofom sta je currentNode, i u zavisnosti od toga praviti sta treba (subovi itd), u sustini prekopiraj logiku iz factorya gde se prave nodeovi i bice fine
+        System.out.println(currNode);
+        currNode.setParent(parent.getClassyNode());
 
+        if(currNode instanceof Package){
+            ClassyPackageView packageView = new ClassyPackageView((Package) currNode);
+            ((Package)currNode).realPapa().addSub(packageView);
+            ((Package)currNode).addSub(packageView);
+        }
+        if(currNode instanceof Diagram){
+            ClassyDiagramView diagramView = new ClassyDiagramView((Diagram)currNode);
+            ((Diagram)currNode).addSub(diagramView);
+
+            ((Package) currNode.getParent()).addingOfDiagramView(diagramView);
+
+        }
+
+        ClassyTreeItem newtreeItem = new ClassyTreeItem(currNode);
+        parent.add(newtreeItem);
+
+        // Recursively traverse each child
+        if (currNode.getChildren() != null) {
+            for (ClassyNode child : currNode.getChildren()) {
+                if (child instanceof ClassyNodeComposite) {
+                    dfs2((ClassyNodeComposite) child, newtreeItem);
+                } else {
+                    //TODO - logika za pravljenja leafova, pitati se sa instanceofom sta je currentNode, i u zavisnosti od toga praviti sta treba (subovi itd) - takodje pogledati kako se prave tamo gde se prave i super
+
+                    //kako dobaviti classyDiagramView na kome je painter
+                    Package p = (Package) currNode.getParent();
+                    ClassyPackageView p1 = (ClassyPackageView) p.getSubscribers().get(0);
+                    ClassyDiagramView c = null;
+                    for(Component d : p1.getjTabbedPane().getComponents()){
+                        ClassyDiagramView view = (ClassyDiagramView)d;
+                        if(view.getDiagram().equals(currNode)) c = view;
+
+                    }
+
+                    if(child instanceof InterClass){
+                        //ovde moze da se pita za instancu interclassa i da se na osnovu toga samo setuje boja, jer se boja ne serijalizuje
+                        ((InterClass) child).loadCoords();
+
+                        if(child instanceof Klasa){
+                            ClassPainter classPainter = new ClassPainter((Klasa) child);
+                            ((Klasa)child).addSub(c);
+                            c.getPainters().add(classPainter);
+                        }
+                        else if(child instanceof Interfejs){
+                            InterfacePainter interfacePainter = new InterfacePainter((Interfejs) child);
+                            ((Interfejs)child).addSub(c);
+                            c.getPainters().add(interfacePainter);
+                        }
+                        else if(child instanceof Enum){
+                            EnumPainter enumPainter = new EnumPainter((Enum) child);
+                            ((Enum)child).addSub(c);
+                            c.getPainters().add(enumPainter);
+                        }
+                    }
+                    else if(child instanceof Connection){
+                        ElementPainter painter1 = null;
+                        ElementPainter painter2 = null;
+                        ConnectionPainter connectionPainter = null;
+                        for(ElementPainter painter: c.getPainters()){
+                            if(painter.getDiagramElement().equals(((Connection) child).getElement1())) painter1 = painter;
+                            if(painter.getDiagramElement().equals(((Connection) child).getElement2())) painter2 = painter;
+                        }
+
+                        if(child instanceof Generalizacija){
+                            connectionPainter = new GeneralizacijaPainter((Connection) child,painter1,painter2);
+                        }
+                        if(child instanceof Agregacija){
+                            connectionPainter = new AgregacijaPainter((Connection) child,painter1,painter2);
+                        }
+                        if(child instanceof Kompozicija){
+                            connectionPainter = new KompozicijaPainter((Connection) child,painter1,painter2);
+                        }
+                        if(child instanceof Zavisnost){
+                            connectionPainter = new ZavisnostPainter((Connection) child,painter1,painter2);
+                        }
+                        ((Connection)child).addSub(c);
+                        c.getPainters().add(connectionPainter);
+                    }
+                    child.setParent(currNode);
+                    ClassyTreeItem newtreeItem1 = new ClassyTreeItem(child);
+                    dfsSearch((ClassyTreeItem) getTreeModel().getRoot(),currNode).add(newtreeItem1);
+                    System.out.println(child);
+                }
+            }
+        }
+    }
+
+    public void loadProject(ClassyNodeComposite node) {
+        //TODO ovde sad treba proci kroz sve elemente, nakaciti ih na stablo, napraviti im viewove i povezati im subove
+       //ClassyTreeItem loadedProject = new ClassyTreeItem(node);
+        ClassyTreeItem root = (ClassyTreeItem)treeModel.getRoot();
+       // root.add(loadedProject);
+
+        if(node instanceof Project){
+            ClassyNodeComposite rootModel = (ClassyNodeComposite) root.getClassyNode();
+            rootModel.addChild(node);
+            dfs2(node,root);
+        }
+        else dfs2(node,dfsSearch(root,node.getParent()));
+    /*
+        for(ClassyNode d1 : ((ClassyNodeComposite)node.getChildren().get(0)).getChildren()){
+            ClassyNodeComposite d2 = (ClassyNodeComposite) d1;
+            for(ClassyNode d3: d2.getChildren()){ //TODO ovde se na slican fazon moze setovati i boja, samo treba pomocu dfsa proci kroz ceo model i uraditi onaj gornji todo za svaki element
+                if(d3 instanceof InterClass)((InterClass) d3).loadCoords();
+                System.out.println(d3);
+            }
+        }
+    */
+        treeView.expandPath(treeView.getSelectionPath());
+        SwingUtilities.updateComponentTreeUI(treeView);
+    }
 
     private ClassyNode createChild(ClassyNode parent,boolean pakOrDia) {
         String string;

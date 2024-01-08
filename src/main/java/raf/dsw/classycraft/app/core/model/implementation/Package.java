@@ -1,6 +1,9 @@
 package raf.dsw.classycraft.app.core.model.implementation;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import raf.dsw.classycraft.app.MessageGenerator.MessageType;
 import raf.dsw.classycraft.app.core.ApplicationFramework;
@@ -13,12 +16,14 @@ import raf.dsw.classycraft.app.observer.ISubscriber;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
+@JsonTypeName("package")
+@NoArgsConstructor
 @Setter
 @Getter
 
 public class Package extends ClassyNodeComposite implements IPublisher{
-
-    private List<ISubscriber> subscribers;
+    @JsonIgnore
+    private List<ISubscriber> subscribers = new ArrayList<>();
 
 
     public Package(ClassyNode parent, String name) {

@@ -1,12 +1,15 @@
 package raf.dsw.classycraft.app.core.model.composite;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
+@NoArgsConstructor
 @Getter
 public abstract class ClassyNodeComposite extends ClassyNode {
-
+    @JsonManagedReference
     private List<ClassyNode> children = new ArrayList<>();
 
     public ClassyNodeComposite(ClassyNode parent, String name) {

@@ -39,7 +39,7 @@ public class DeleteState implements StateInterface{
                 //prodji kroz sve paintere ponovo i
                 for(int j =c.getPainters().size()-1;j>=0;j--){
                     if(c.getPainters().get(j) instanceof ConnectionPainter){
-                        if(((ConnectionPainter) c.getPainters().get(j)).getVeza().getElement1().equals(painter.getDiagramElement())||((ConnectionPainter) c.getPainters().get(j)).getVeza().getElement2().equals(painter.getDiagramElement())){
+                        if(((ConnectionPainter) c.getPainters().get(j)).getVeza().getElement1() == painter.getDiagramElement()||((ConnectionPainter) c.getPainters().get(j)).getVeza().getElement2() == painter.getDiagramElement()){
                             //dodato zbog brisanja svih veza povezanih na element
                             vezeDaSeObrisu.add(c.getPainters().get(j).getDiagramElement());
                             c.getPainters().remove(c.getPainters().get(j));

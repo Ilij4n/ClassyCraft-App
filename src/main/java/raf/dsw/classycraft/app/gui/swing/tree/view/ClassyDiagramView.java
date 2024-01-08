@@ -2,7 +2,10 @@ package raf.dsw.classycraft.app.gui.swing.tree.view;
 
 import lombok.Getter;
 import lombok.Setter;
+import raf.dsw.classycraft.app.MessageGenerator.MessageType;
+import raf.dsw.classycraft.app.command.CommandManager;
 import raf.dsw.classycraft.app.controller.mouseAdapters.ClassyMouseListener;
+import raf.dsw.classycraft.app.core.ApplicationFramework;
 import raf.dsw.classycraft.app.core.model.composite.DiagramElement;
 import raf.dsw.classycraft.app.core.model.implementation.Diagram;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.InterClass;
@@ -16,6 +19,7 @@ import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
 import raf.dsw.classycraft.app.observer.IPublisher;
 import raf.dsw.classycraft.app.observer.ISubscriber;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -25,6 +29,9 @@ import java.awt.geom.AffineTransform;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 import java.util.List;
 
@@ -39,12 +46,12 @@ public class ClassyDiagramView extends JPanel implements ISubscriber{
     private ElementCreationView elementCreationView;
     private List<ElementPainter> sviselectovani;
 
-    private List<ISubscriber> subscribers;
+    private transient List<ISubscriber> subscribers;
 
     private Rectangle2D laso;
     private Point2D prvaTacka;
     private Line2D linija;
-
+    private CommandManager commandManager;
     private double scale = 1.0;
 
 
@@ -59,7 +66,7 @@ public class ClassyDiagramView extends JPanel implements ISubscriber{
         addMouseWheelListener(new ClassyMouseListener(this));
         this.linija = new Line2D.Double();
         this.laso = new Rectangle2D.Double();
-
+        this.commandManager = new CommandManager();
     }
 
 
@@ -77,6 +84,20 @@ public class ClassyDiagramView extends JPanel implements ISubscriber{
         g2.setColor(Color.BLACK);
         g2.draw(linija);
         g2.draw(laso);
+    }
+
+    public void exportPanelAsImage() {
+        BufferedImage image = new BufferedImage(this.getWidth(), this.getHeight(), BufferedImage.TYPE_INT_ARGB);
+        Graphics g = image.getGraphics();
+        this.paint(g);
+        g.dispose();
+
+        try {
+            ImageIO.write(image, "png", new File("src\\main\\resources\\Slidze\\"+this.getName()+".png"));
+            ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Slika exportovana u resurse", MessageType.INFO);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

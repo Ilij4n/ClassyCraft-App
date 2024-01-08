@@ -1,8 +1,10 @@
 package raf.dsw.classycraft.app.state;
 
 import raf.dsw.classycraft.app.MessageGenerator.MessageType;
+import raf.dsw.classycraft.app.command.sveKomande.EditCommand;
 import raf.dsw.classycraft.app.core.ApplicationFramework;
 import raf.dsw.classycraft.app.core.model.composite.DiagramElement;
+import raf.dsw.classycraft.app.core.model.implementation.diagramElements.classContents.ClassContent;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.connections.Connection;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.connections.Generalizacija;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.connections.Zavisnost;
@@ -16,6 +18,7 @@ import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
 
 import javax.swing.*;
 import java.awt.geom.Point2D;
+import java.util.HashSet;
 
 public class EditState implements StateInterface{
 
@@ -77,13 +80,16 @@ public class EditState implements StateInterface{
 
     @Override
     public void misKliknut1(Point2D p, ElementCreationView e) {
-
+        String name = null;
+        HashSet<ClassContent> set = null;
+        String content = null;
         if(e.getTfImeElementa().getText().isEmpty()){
             ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Element mora imati ime", MessageType.INFO);
             return;
         }
         ClassyDiagramView c = e.getClassyDiagramView();
         DiagramElement diagramElement = null;
+
         for(int i = c.getPainters().size()-1 ; i>=0; i--){
             ElementPainter painter = c.getPainters().get(i);
             if(painter.elementAt(p)){
@@ -94,15 +100,14 @@ public class EditState implements StateInterface{
         if(diagramElement!=null){
             if(diagramElement instanceof InterClass){
                 //za model
-                diagramElement = (InterClass)diagramElement;
-
                 for(ElementPainter painter: c.getPainters()){
                     if(painter.getDiagramElement().getName().equals(e.getTfImeElementa().getText()) && painter.getDiagramElement() != diagramElement){
                         ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Duplikat ime", MessageType.INFO);
                         return;
                     }
                 }
-
+                name = diagramElement.getName();
+                set = (HashSet)((InterClass) diagramElement).getContentSet();
                 diagramElement.setName(e.getTfImeElementa().getText());
                 ((InterClass) diagramElement).setContentSet(e.getClassContents());
             }
@@ -115,17 +120,15 @@ public class EditState implements StateInterface{
                     if(s.split(" ").length==2)polje = s;
                     else kardinalnost = s;
                 }
+                name = diagramElement.getName();
+                content = ((Connection) diagramElement).getKardinalnost();
                 ((Connection) diagramElement).setImePromenljive(polje);
                 ((Connection) diagramElement).setKardinalnost(kardinalnost);
             }
         }
-        //za stablo
-        ClassyTreeImplementation tree = (ClassyTreeImplementation) MainFrame.getInstance().getClassyTree();
-        ClassyTreeItem item = tree.dfsSearch((ClassyTreeItem) tree.getTreeModel().getRoot(), diagramElement);
-        item.setName(e.getTfImeElementa().getText());
+        EditCommand command = new EditCommand(c,e,name,content,set,diagramElement);
+        c.getCommandManager().addCommand(command);
 
-        SwingUtilities.updateComponentTreeUI(tree.getTreeView());
-        c.repaint();
     }
 
     @Override

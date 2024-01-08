@@ -23,6 +23,11 @@ public class ActionManager {
     private ZoomInAction zoomInAction;
     private ZoomOutAction zoomOutAction;
     private DuplicateAction duplicateAction;
+    private LoadProjectAction loadProjectAction;
+    private SaveProjectAction saveProjectAction;
+    private ExportSlikaAction exportSlikaAction;
+    private UndoAction undoAction;
+    private RedoAction redoAction;
 
     public ActionManager() {
         intialise();
@@ -44,6 +49,11 @@ public class ActionManager {
         zoomInAction = new ZoomInAction();
         zoomOutAction = new ZoomOutAction();
         duplicateAction = new DuplicateAction();
+        undoAction = new UndoAction();
+        redoAction = new RedoAction();
+        loadProjectAction = new LoadProjectAction();
+        saveProjectAction = new SaveProjectAction();
+        exportSlikaAction = new ExportSlikaAction();
     }
 
 }

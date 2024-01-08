@@ -1,0 +1,39 @@
+{
+  "type" : "diagram",
+  "id" : 1438660538,
+  "name" : "preset",
+  "children" : [ {
+    "type" : "klasa",
+    "id" : 28947392,
+    "name" : "asdads",
+    "stroke" : 2,
+    "contentSet" : [ ],
+    "xlocation" : 426.0,
+    "ylocation" : 253.0
+  }, {
+    "type" : "enum",
+    "id" : 1580181592,
+    "name" : "asdasd",
+    "stroke" : 2,
+    "contentSet" : [ ],
+    "xlocation" : 906.0,
+    "ylocation" : 256.0
+  }, {
+    "type" : "enum",
+    "id" : 755316087,
+    "name" : "asdasd(Copy 0)",
+    "stroke" : 2,
+    "contentSet" : [ ],
+    "xlocation" : 705.0,
+    "ylocation" : 74.0
+  }, {
+    "type" : "generalizacija",
+    "id" : 1879718637,
+    "name" : "ss",
+    "stroke" : 2,
+    "element1" : 28947392,
+    "element2" : 1580181592,
+    "kardinalnost" : "",
+    "imePromenljive" : ""
+  } ]
+}
