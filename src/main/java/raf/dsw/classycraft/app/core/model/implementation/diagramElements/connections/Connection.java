@@ -31,8 +31,6 @@ public abstract class Connection extends DiagramElement {
     private InterClass element2;
     private String kardinalnost;
     private String imePromenljive;
-    private int id;
-    protected static int idGen = 1;
     //mozda treba i staviti vidljivost te promenljiv ali za sad nek bude ovako
 
     public Connection(ClassyNode parent, String name, Color paint, int stroke, InterClass element1, InterClass element2, String kardinalnost, String imePromenljive) {
@@ -41,7 +39,6 @@ public abstract class Connection extends DiagramElement {
         this.element2 = element2;
         this.kardinalnost = kardinalnost;
         this.imePromenljive = imePromenljive;
-        id = idGen++;
     }
 
     @Override

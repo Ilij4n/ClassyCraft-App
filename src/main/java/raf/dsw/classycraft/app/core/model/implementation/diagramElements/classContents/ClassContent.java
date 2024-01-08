@@ -11,12 +11,14 @@ import lombok.Setter;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.connections.Connection;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.InterClass;
 
+import java.util.Random;
+
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
 @JsonSubTypes({
         @JsonSubTypes.Type(value = Attribute.class, name = "attribute"),
         @JsonSubTypes.Type(value = Method.class, name = "method"),
 })
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "name")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 @NoArgsConstructor
 @Getter
 @Setter
@@ -25,11 +27,13 @@ public abstract class ClassContent {
     private String name;
     private String vidljivost;
     private String tip;
+    protected int id;
 
     public ClassContent(String vidljivost,String tip, String name ) {
         this.name = name;
         this.vidljivost = vidljivost;
         this.tip = tip;
+        id = new Random().nextInt(Integer.MAX_VALUE);
     }
 
     private String prvoVeliko(String str) {

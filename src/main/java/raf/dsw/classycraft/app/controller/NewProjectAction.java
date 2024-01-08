@@ -2,6 +2,7 @@ package raf.dsw.classycraft.app.controller;
 
 import raf.dsw.classycraft.app.MessageGenerator.MessageType;
 import raf.dsw.classycraft.app.core.ApplicationFramework;
+import raf.dsw.classycraft.app.core.model.composite.ClassyNodeComposite;
 import raf.dsw.classycraft.app.core.model.composite.DiagramElement;
 import raf.dsw.classycraft.app.core.model.implementation.Diagram;
 import raf.dsw.classycraft.app.core.model.implementation.Package;
@@ -16,6 +17,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.util.Random;
 
 public class NewProjectAction extends AbstractClassyAction{
 
@@ -58,8 +60,10 @@ public class NewProjectAction extends AbstractClassyAction{
                         System.out.println(file);
                         Diagram dia = ApplicationFramework.getInstance().getMySerializer().loadDiagram(file);
                         System.out.println(dia);
+                        dia.setId();
                         dia.setParent(selected.getClassyNode());
-
+                        ((Package) selected.getClassyNode()).addChild(dia);
+                        System.out.println("Parent je:"+dia.getParent());
                         ClassyTreeImplementation tree = (ClassyTreeImplementation) MainFrame.getInstance().getClassyTree();
                         tree.loadProject(dia);
 

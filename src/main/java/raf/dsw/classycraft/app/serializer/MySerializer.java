@@ -35,7 +35,7 @@ public class MySerializer {
 
         } catch (IOException e) {
             System.out.println("error");
-            //e.printStackTrace();
+            e.printStackTrace();
             return null;
         }
     }

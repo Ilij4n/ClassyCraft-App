@@ -22,7 +22,7 @@ import java.util.Set;
         @JsonSubTypes.Type(value = Interfejs.class, name = "interfejs"),
         @JsonSubTypes.Type(value = Enum.class, name = "enum"),
 })
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "name")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 @JsonTypeName("interClass")
 @Getter
 @Setter

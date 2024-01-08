@@ -20,7 +20,7 @@ import java.util.List;
         @JsonSubTypes.Type(value = Connection.class, name = "connection"),
 })
 @NoArgsConstructor
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "name")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 @JsonTypeName("diagramElement")
 @Getter
 @Setter
