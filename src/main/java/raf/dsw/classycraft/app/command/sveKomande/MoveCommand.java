@@ -18,12 +18,23 @@ public class MoveCommand extends AbstractCommand {
     private List<ElementPainter>  painters= new ArrayList<>();
 
 
+
     public MoveCommand(ClassyDiagramView classyDiagramView,List<Point2D> stareTacke,List<Point2D> noveTacke){
         this.classyDiagramView = classyDiagramView;
         this.stareTacke = stareTacke;
+
         this.noveTacke = noveTacke;
+
         System.out.println(classyDiagramView.getSviselectovani());
         this.painters.addAll(classyDiagramView.getSviselectovani());
+
+        for(ElementPainter elementPainter: classyDiagramView.getSviselectovani()){
+            if(elementPainter.getDiagramElement() instanceof InterClass){
+                Point2D point = ((InterClass) elementPainter.getDiagramElement()).getLocation();
+                noveTacke.add(new Point2D.Double(point.getX(),point.getY()));
+                System.out.println(point.getX());
+            }
+        }
         System.out.println(painters);
     }
     @Override
@@ -48,6 +59,7 @@ public class MoveCommand extends AbstractCommand {
             if(painters.size()!=i) {
                 if (e.getDiagramElement() instanceof InterClass){
                     ((InterClass) e.getDiagramElement()).setLocation(stareTacke.get(i));
+                    System.out.println(((InterClass) e.getDiagramElement()).getLocation());
                     i++;
                 }
             }

@@ -32,6 +32,7 @@ public abstract class DiagramElement extends ClassyNode implements IPublisher {
     @JsonIgnore
     private transient List<ISubscriber> subscribers = new ArrayList<>();
 
+
     public DiagramElement(ClassyNode parent, String name, Color paint, Integer stroke) {
         super(parent, name);
         this.color = paint;
@@ -40,6 +41,8 @@ public abstract class DiagramElement extends ClassyNode implements IPublisher {
         subscribers = new ArrayList<>();
         counter++;
     }
+
+
     @Override
     public void notifySubs(Object o){
         for (ISubscriber subscriber : subscribers){
