@@ -2,6 +2,7 @@ package raf.dsw.classycraft.app.gui.swing.tree.view;
 
 import lombok.Getter;
 import lombok.Setter;
+import raf.dsw.classycraft.app.command.CommandManager;
 import raf.dsw.classycraft.app.controller.mouseAdapters.ClassyMouseListener;
 import raf.dsw.classycraft.app.core.model.composite.DiagramElement;
 import raf.dsw.classycraft.app.core.model.implementation.Diagram;
@@ -48,7 +49,7 @@ public class ClassyDiagramView extends JPanel implements ISubscriber{
     private Rectangle2D laso;
     private Point2D prvaTacka;
     private Line2D linija;
-
+    private CommandManager commandManager;
     private double scale = 1.0;
 
 
@@ -63,7 +64,7 @@ public class ClassyDiagramView extends JPanel implements ISubscriber{
         addMouseWheelListener(new ClassyMouseListener(this));
         this.linija = new Line2D.Double();
         this.laso = new Rectangle2D.Double();
-
+        this.commandManager = new CommandManager();
     }
 
 

@@ -1,6 +1,7 @@
 package raf.dsw.classycraft.app.state;
 
 import raf.dsw.classycraft.app.MessageGenerator.MessageType;
+import raf.dsw.classycraft.app.command.sveKomande.AddConnectionCommand;
 import raf.dsw.classycraft.app.core.ApplicationFramework;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.connections.*;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.Enum;
@@ -126,7 +127,7 @@ public class AddConnectionState implements StateInterface{
     public void misOtpusten1(Point2D p, ElementCreationView e) {
 
         ClassyDiagramView c = e.getClassyDiagramView();
-       // Connection connection = new Generalizacija(c.getDiagram(),"nesto", (InterClass)elementPainterPocetni.getDiagramElement(),(InterClass) elementPainterKrajnji.getDiagramElement(),"0..1","promenjiva");
+        // Connection connection = new Generalizacija(c.getDiagram(),"nesto", (InterClass)elementPainterPocetni.getDiagramElement(),(InterClass) elementPainterKrajnji.getDiagramElement(),"0..1","promenjiva");
         //GeneralizacijaPainter g = new GeneralizacijaPainter(connection,elementPainterPocetni,elementPainterKrajnji);
 
         Connection connection = null;
@@ -168,19 +169,8 @@ public class AddConnectionState implements StateInterface{
         }
 
         if(!c.getPainters().contains(connectionPainter) && !elementPainterPocetni.equals(elementPainterKrajnji)){
-
-            c.getDiagram().addChild(connection);
-
-            ClassyTreeImplementation tree = ((ClassyTreeImplementation) MainFrame.getInstance().getClassyTree());
-            //Ova metoda pronalazi treenode koji odgovara selectovanom dijagramu i dodaje mu dete tako sto se rekurzivno krece kroz nas JTREE
-            ClassyTreeItem diagramNode = tree.dfsSearch((ClassyTreeItem) tree.getTreeModel().getRoot(),c.getDiagram());
-            //ovo je samo za dodavanje u jtree, u modelu je vec dodat
-            c.getPainters().add(connectionPainter);
-            MainFrame.getInstance().getClassyTree().addChild(diagramNode,false);
-            //samo rasiri sve
-            tree.getTreeView().expandPath(new TreePath(diagramNode.getPath()));
-            System.out.println(c.getDiagram().getChildren());
-
+            AddConnectionCommand addConnectionCommand = new AddConnectionCommand(c,connectionPainter,connection);
+            c.getCommandManager().addCommand(addConnectionCommand);
         }
     }
 
