@@ -30,7 +30,7 @@ public class DeleteCommand extends AbstractCommand {
 
     @Override
     public void doCommand() {
-        DeleteState.brisanjeZaVise(c,vezeDaSeObrisu);
+        //DeleteState.brisanjeZaVise(c,vezeDaSeObrisu);
     }
 
     @Override

@@ -2,8 +2,10 @@ package raf.dsw.classycraft.app.gui.swing.tree.view;
 
 import lombok.Getter;
 import lombok.Setter;
+import raf.dsw.classycraft.app.MessageGenerator.MessageType;
 import raf.dsw.classycraft.app.command.CommandManager;
 import raf.dsw.classycraft.app.controller.mouseAdapters.ClassyMouseListener;
+import raf.dsw.classycraft.app.core.ApplicationFramework;
 import raf.dsw.classycraft.app.core.model.composite.DiagramElement;
 import raf.dsw.classycraft.app.core.model.implementation.Diagram;
 import raf.dsw.classycraft.app.core.model.implementation.diagramElements.interClasses.InterClass;
@@ -92,7 +94,7 @@ public class ClassyDiagramView extends JPanel implements ISubscriber{
 
         try {
             ImageIO.write(image, "png", new File("src\\main\\resources\\Slidze\\"+this.getName()+".png"));
-            System.out.println("Image exported successfully.");
+            ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Slika exportovana u resurse", MessageType.INFO);
         } catch (IOException e) {
             e.printStackTrace();
         }

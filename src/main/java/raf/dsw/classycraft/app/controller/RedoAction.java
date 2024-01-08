@@ -13,7 +13,7 @@ public class RedoAction extends AbstractClassyAction{
 
     public RedoAction() {
         putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.CTRL_MASK));
-        putValue(SMALL_ICON, loadIcon("/images/plus.png"));
+        putValue(SMALL_ICON, loadIcon("/images/redo.png"));
         putValue(NAME, "Redo");
         putValue(SHORT_DESCRIPTION, "Redo");
     }

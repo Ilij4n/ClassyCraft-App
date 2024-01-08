@@ -1214,3 +1214,41 @@
 [INFO] [08.01.2024 19:36] File sacuvan
 [INFO] [08.01.2024 19:41] File sacuvan
 [INFO] [08.01.2024 19:42] File sacuvan
+[INFO] [08.01.2024 19:45] File sacuvan
+[INFO] [08.01.2024 19:52] Dijagram pod tim imenom vec postoji, sablon ce biti overwriteovan
+[INFO] [08.01.2024 19:52] Sablon sacuvan u resursima
+[INFO] [08.01.2024 19:52] File sacuvan
+[INFO] [08.01.2024 20:03] File sacuvan
+[INFO] [08.01.2024 20:18] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 20:20] Sablon sacuvan u resursima
+[INFO] [08.01.2024 20:21] Dijagram pod tim imenom vec postoji, sablon ce biti overwriteovan
+[INFO] [08.01.2024 20:21] Sablon sacuvan u resursima
+[INFO] [08.01.2024 20:22] Dijagram pod tim imenom vec postoji, sablon ce biti overwriteovan
+[INFO] [08.01.2024 20:22] Sablon sacuvan u resursima
+[INFO] [08.01.2024 20:25] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 22:04] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 23:04] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 23:05] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 23:09] Dodajte na dijagram preko menija desno
+[INFO] [08.01.2024 23:09] File sacuvan
+[INFO] [08.01.2024 23:09] Poklapaju se
+[INFO] [08.01.2024 23:09] Poklapaju se
+[INFO] [08.01.2024 23:09] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 23:09] Sablon sacuvan u resursima
+[INFO] [08.01.2024 23:10] File sacuvan
+[INFO] [08.01.2024 23:11] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 23:28] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 23:29] Dijagram pod tim imenom vec postoji, sablon ce biti overwriteovan
+[INFO] [08.01.2024 23:29] Sablon sacuvan u resursima
+[INFO] [08.01.2024 23:30] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 23:33] File sacuvan
+[INFO] [08.01.2024 23:33] Slika exportovana u resurse

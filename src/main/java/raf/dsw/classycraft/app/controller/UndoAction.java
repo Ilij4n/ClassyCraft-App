@@ -14,7 +14,7 @@ public class UndoAction extends AbstractClassyAction{
 
     public UndoAction() {
         putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.CTRL_MASK));
-        putValue(SMALL_ICON, loadIcon("/images/plus.png"));
+        putValue(SMALL_ICON, loadIcon("/images/undo.png"));
         putValue(NAME, "Undo");
         putValue(SHORT_DESCRIPTION, "Undo");
     }
