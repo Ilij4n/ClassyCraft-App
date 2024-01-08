@@ -999,3 +999,71 @@
 [INFO] [08.01.2024 11:28] Diagram sacuvan
 [INFO] [08.01.2024 11:31] File sacuvan
 [INFO] [08.01.2024 11:31] File sacuvan
+[ERROR] [08.01.2024 12:14] Pogresen tip
+[INFO] [08.01.2024 12:15] Diagram sacuvan
+[ERROR] [08.01.2024 12:15] Pogresen tip
+[ERROR] [08.01.2024 12:17] Pogresen tip
+[ERROR] [08.01.2024 12:18] Pogresen tip
+[ERROR] [08.01.2024 12:19] Pogresen tip
+[ERROR] [08.01.2024 12:20] Pogresen tip
+[ERROR] [08.01.2024 12:20] Pogresen tip
+[ERROR] [08.01.2024 12:21] Pogresen tip
+[INFO] [08.01.2024 12:47] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 12:47] Diagram sacuvan
+[INFO] [08.01.2024 13:00] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 13:00] Diagram sacuvan
+[INFO] [08.01.2024 13:01] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 13:02] Diagram sacuvan
+[ERROR] [08.01.2024 13:04] Paket/diagram vec postoji
+[INFO] [08.01.2024 13:05] Diagram sacuvan
+[ERROR] [08.01.2024 13:06] Paket/diagram vec postoji
+[INFO] [08.01.2024 13:15] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 13:15] Diagram sacuvan
+[ERROR] [08.01.2024 13:16] Paket/diagram vec postoji
+[INFO] [08.01.2024 13:17] Dodajte na dijagram preko menija desno
+[ERROR] [08.01.2024 13:43] Duplikat Ime
+[INFO] [08.01.2024 13:43] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 13:44] Diagram sacuvan
+[INFO] [08.01.2024 13:45] Izaberite jednu od opcija
+[INFO] [08.01.2024 13:45] Diagram sacuvan
+[ERROR] [08.01.2024 13:58] Paket/diagram vec postoji
+[INFO] [08.01.2024 14:01] Izaberite jednu od opcija
+[INFO] [08.01.2024 14:01] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 14:02] Dijagram pod tim imenom vec postoji
+[INFO] [08.01.2024 14:03] Diagram sacuvan
+[INFO] [08.01.2024 14:04] Diagram sacuvan
+[ERROR] [08.01.2024 14:05] Projekat vec postoji
+[ERROR] [08.01.2024 14:11] Paket/diagram vec postoji
+[INFO] [08.01.2024 14:13] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 14:13] Dijagram pod tim imenom vec postoji, sablon ce biti overwriteovan
+[INFO] [08.01.2024 14:13] Sablon sacuvan u resursima
+[ERROR] [08.01.2024 14:23] Paket/diagram vec postoji
+[INFO] [08.01.2024 14:32] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 14:53] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 14:53] Duplikat ime
+[INFO] [08.01.2024 14:53] Dijagram pod tim imenom vec postoji, sablon ce biti overwriteovan
+[INFO] [08.01.2024 14:53] Sablon sacuvan u resursima
+[INFO] [08.01.2024 14:54] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 14:55] File sacuvan
+[INFO] [08.01.2024 14:55] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 14:56] File sacuvan
+[INFO] [08.01.2024 14:57] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 14:57] File sacuvan
+[ERROR] [08.01.2024 14:59] Projekat vec postoji
+[ERROR] [08.01.2024 14:59] Paket/diagram vec postoji
+[INFO] [08.01.2024 15:00] File sacuvan
+[INFO] [08.01.2024 15:02] File sacuvan
+[INFO] [08.01.2024 15:02] File sacuvan
+[INFO] [08.01.2024 15:04] File sacuvan

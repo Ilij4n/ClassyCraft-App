@@ -25,6 +25,7 @@ public class ActionManager {
     private DuplicateAction duplicateAction;
     private LoadProjectAction loadProjectAction;
     private SaveProjectAction saveProjectAction;
+    private ExportSlikaAction exportSlikaAction;
 
     public ActionManager() {
         intialise();
@@ -48,6 +49,7 @@ public class ActionManager {
         duplicateAction = new DuplicateAction();
         loadProjectAction = new LoadProjectAction();
         saveProjectAction = new SaveProjectAction();
+        exportSlikaAction = new ExportSlikaAction();
     }
 
 }

@@ -83,20 +83,12 @@ public class ClassyDiagramView extends JPanel implements ISubscriber{
         g2.draw(laso);
     }
 
-    private void exportPanelAsImage() {
-        // Create a BufferedImage with the same size as the panel
+    public void exportPanelAsImage() {
         BufferedImage image = new BufferedImage(this.getWidth(), this.getHeight(), BufferedImage.TYPE_INT_ARGB);
-
-        // Create a Graphics object from the image
         Graphics g = image.getGraphics();
-
-        // Paint the panel onto the image
         this.paint(g);
-
-        // Dispose the Graphics object
         g.dispose();
 
-        // Save the image to a file
         try {
             ImageIO.write(image, "png", new File("src\\main\\resources\\Slidze\\"+this.getName()+".png"));
             System.out.println("Image exported successfully.");

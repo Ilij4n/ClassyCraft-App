@@ -51,6 +51,8 @@ public abstract class InterClass extends DiagramElement {
     }
     public void setLocation(Point2D location){
         this.location = location;
+        xLocation = location.getX();
+        yLocation = location.getY();
         notifySubs(null);
     }
     public void setLocation1(Point2D location){

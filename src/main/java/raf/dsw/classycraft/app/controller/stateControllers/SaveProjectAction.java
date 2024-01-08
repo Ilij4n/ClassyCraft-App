@@ -14,9 +14,9 @@ import java.io.File;
 public class SaveProjectAction extends AbstractClassyAction {
 
     public SaveProjectAction() {
-        putValue(SMALL_ICON, loadIcon("/images/editovanje.png"));
-        putValue(NAME, "Save Project");
-        putValue(SHORT_DESCRIPTION, "Save Project");
+        putValue(SMALL_ICON, loadIcon("/images/save.png"));
+        putValue(NAME, "Save Project/Diagram");
+        putValue(SHORT_DESCRIPTION, "Save Project/Diagram");
     }
 
     @Override
