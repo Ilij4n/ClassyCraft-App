@@ -1204,3 +1204,13 @@
 [INFO] [08.01.2024 19:27] Dodajte na dijagram preko menija desno
 [INFO] [08.01.2024 19:27] File sacuvan
 [INFO] [08.01.2024 19:28] File sacuvan
+[INFO] [08.01.2024 19:33] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 19:33] Dijagram pod tim imenom vec postoji, sablon ce biti overwriteovan
+[INFO] [08.01.2024 19:34] Za vezu zavisnosti ne birati radioButton
+ U textAreu upisati prvo podatke polja pa onda kardinalitet u redu ispod
+[INFO] [08.01.2024 19:34] Dijagram pod tim imenom vec postoji, sablon ce biti overwriteovan
+[INFO] [08.01.2024 19:34] Sablon sacuvan u resursima
+[INFO] [08.01.2024 19:36] File sacuvan
+[INFO] [08.01.2024 19:41] File sacuvan
+[INFO] [08.01.2024 19:42] File sacuvan
