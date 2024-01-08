@@ -35,7 +35,7 @@ public class MySerializer {
 
         } catch (IOException e) {
             System.out.println("error");
-            e.printStackTrace();
+            //e.printStackTrace();
             return null;
         }
     }
@@ -51,12 +51,12 @@ public class MySerializer {
         String pathString = "src\\main\\resources\\sabloni\\"+diagram.getName()+".json";
         Path path = Paths.get(pathString);
         if (Files.exists(path)) {
-            ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Dijagram pod tim imenom vec postoji", MessageType.INFO);
-            return;
+            ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Dijagram pod tim imenom vec postoji, sablon ce biti overwriteovan", MessageType.INFO);
+           // return;
         }
         try (FileWriter writer = new FileWriter(pathString)) {
             mapper.writeValue(writer,diagram);
-            ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Diagram sacuvan",MessageType.INFO);
+            ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Sablon sacuvan u resursima",MessageType.INFO);
         } catch (IOException e) {
             e.printStackTrace();
         }

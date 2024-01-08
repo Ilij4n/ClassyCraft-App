@@ -20,17 +20,19 @@ import java.awt.*;
         @JsonSubTypes.Type(value = Zavisnost.class, name = "zavisnost"),
 })
 @NoArgsConstructor
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "name")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 @JsonTypeName("connection")
 @Getter
 @Setter
 public abstract class Connection extends DiagramElement {
+    @JsonIdentityReference(alwaysAsId = true)
     private InterClass element1;
+    @JsonIdentityReference(alwaysAsId = true)
     private InterClass element2;
-
-    //fixme nisam siguran kako cemo cuvati kardinalnost veze
     private String kardinalnost;
     private String imePromenljive;
+    private int id;
+    protected static int idGen = 1;
     //mozda treba i staviti vidljivost te promenljiv ali za sad nek bude ovako
 
     public Connection(ClassyNode parent, String name, Color paint, int stroke, InterClass element1, InterClass element2, String kardinalnost, String imePromenljive) {
@@ -39,6 +41,7 @@ public abstract class Connection extends DiagramElement {
         this.element2 = element2;
         this.kardinalnost = kardinalnost;
         this.imePromenljive = imePromenljive;
+        id = idGen++;
     }
 
     @Override

@@ -229,9 +229,12 @@ public class ClassyTreeImplementation implements ClassyTree {
         ClassyTreeItem root = (ClassyTreeItem)treeModel.getRoot();
        // root.add(loadedProject);
 
-        ClassyNodeComposite rootModel = (ClassyNodeComposite) root.getClassyNode();
-        rootModel.addChild(node);
-        dfs2(node,root);
+        if(node instanceof Project){
+            ClassyNodeComposite rootModel = (ClassyNodeComposite) root.getClassyNode();
+            rootModel.addChild(node);
+            dfs2(node,root);
+        }
+        else dfs2(node,dfsSearch(root,node.getParent()));
     /*
         for(ClassyNode d1 : ((ClassyNodeComposite)node.getChildren().get(0)).getChildren()){
             ClassyNodeComposite d2 = (ClassyNodeComposite) d1;

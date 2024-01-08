@@ -5,7 +5,9 @@ import raf.dsw.classycraft.app.core.ApplicationFramework;
 import raf.dsw.classycraft.app.core.model.composite.DiagramElement;
 import raf.dsw.classycraft.app.core.model.implementation.Diagram;
 import raf.dsw.classycraft.app.core.model.implementation.Package;
+import raf.dsw.classycraft.app.core.model.implementation.Project;
 import raf.dsw.classycraft.app.core.model.implementation.ProjectExplorer;
+import raf.dsw.classycraft.app.gui.swing.tree.ClassyTreeImplementation;
 import raf.dsw.classycraft.app.gui.swing.tree.model.ClassyTreeItem;
 import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
 
@@ -13,6 +15,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
+import java.io.File;
 
 public class NewProjectAction extends AbstractClassyAction{
 
@@ -27,8 +30,10 @@ public class NewProjectAction extends AbstractClassyAction{
     public void actionPerformed(ActionEvent e) {
         ClassyTreeItem selected = MainFrame.getInstance().getClassyTree().getSelectednode();
         boolean pakOrDia = false;
+        boolean usao = false;
         if (selected.getClassyNode() instanceof Package) {
             //true je paket, false je diagram
+            usao = true;
             switch (options()){
                 case 1:pakOrDia = true;break;
                 case 2:pakOrDia = false;break;
@@ -36,9 +41,41 @@ public class NewProjectAction extends AbstractClassyAction{
             }
         }
         if(selected.getClassyNode() instanceof Diagram){
-            ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Dodajte na dijagram preko menija levo", MessageType.INFO);
+            ApplicationFramework.getInstance().getMessageGenerator().generateMessage("Dodajte na dijagram preko menija desno", MessageType.INFO);
             return;
         }
+
+        if(!pakOrDia && usao){
+            int dialogResult = JOptionPane.showConfirmDialog(null, "Zelite li da iskoristite neki od sablona?", "Confirmation", JOptionPane.YES_NO_OPTION);
+
+            if (dialogResult == JOptionPane.YES_OPTION) {
+                JFileChooser jfc = new JFileChooser();
+                jfc.setCurrentDirectory(new File("src\\main\\resources\\sabloni\\"));
+
+                if (jfc.showOpenDialog(MainFrame.getInstance()) == JFileChooser.APPROVE_OPTION) {
+                    try {
+                        File file = jfc.getSelectedFile();
+                        System.out.println(file);
+                        Diagram dia = ApplicationFramework.getInstance().getMySerializer().loadDiagram(file);
+                        System.out.println(dia);
+                        dia.setParent(selected.getClassyNode());
+
+                        ClassyTreeImplementation tree = (ClassyTreeImplementation) MainFrame.getInstance().getClassyTree();
+                        tree.loadProject(dia);
+
+                    } catch (Exception e1) {
+                        e1.printStackTrace();
+                    }
+                }
+                MainFrame.getInstance().refreshDivider();
+                return;
+            } else {
+                System.out.println("Nista");
+                // Perform actions for "No" option
+            }
+        }
+
+
         MainFrame.getInstance().getClassyTree().addChild(selected, pakOrDia);
         MainFrame.getInstance().refreshDivider();
     }

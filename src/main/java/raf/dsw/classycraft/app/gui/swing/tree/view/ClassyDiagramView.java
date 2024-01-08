@@ -16,6 +16,7 @@ import raf.dsw.classycraft.app.gui.swing.view.MainFrame;
 import raf.dsw.classycraft.app.observer.IPublisher;
 import raf.dsw.classycraft.app.observer.ISubscriber;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -25,6 +26,9 @@ import java.awt.geom.AffineTransform;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 import java.util.List;
 
@@ -77,6 +81,28 @@ public class ClassyDiagramView extends JPanel implements ISubscriber{
         g2.setColor(Color.BLACK);
         g2.draw(linija);
         g2.draw(laso);
+    }
+
+    private void exportPanelAsImage() {
+        // Create a BufferedImage with the same size as the panel
+        BufferedImage image = new BufferedImage(this.getWidth(), this.getHeight(), BufferedImage.TYPE_INT_ARGB);
+
+        // Create a Graphics object from the image
+        Graphics g = image.getGraphics();
+
+        // Paint the panel onto the image
+        this.paint(g);
+
+        // Dispose the Graphics object
+        g.dispose();
+
+        // Save the image to a file
+        try {
+            ImageIO.write(image, "png", new File("src\\main\\resources\\Slidze\\"+this.getName()+".png"));
+            System.out.println("Image exported successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
